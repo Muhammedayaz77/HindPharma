@@ -1,12 +1,14 @@
 [
   {
-    "username":"HindPharma",
-    "password_hash":"REPLACE_WITH_ARGON2_OR_BCRYPT_HASH",
-    "is_active":true
+    "username": "HindPharma",
+    "password_hash": "REPLACE_WITH_ARGON2_OR_BCRYPT_HASH",
+    "role": "user",
+    "is_active": true
   },
   {
-    "username":"Ayaz",
-    "password_hash":"REPLACE_WITH_ARGON2_OR_BCRYPT_HASH",
-    "is_active":true
+    "username": "Ayaz",
+    "password_hash": "REPLACE_WITH_ARGON2_OR_BCRYPT_HASH",
+    "role": "admin",
+    "is_active": true
   }
 ]

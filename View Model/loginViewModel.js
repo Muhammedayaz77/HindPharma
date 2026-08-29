@@ -14,8 +14,8 @@ form.addEventListener('submit', async event => {
   }
   try {
     const viewModel = new AuthViewModel(new ApiAuthDataSource(apiBaseUrl));
-    await viewModel.login(document.getElementById('username').value, document.getElementById('password').value);
-    location.href = 'medical.html';
+    const user = await viewModel.login(document.getElementById('username').value, document.getElementById('password').value);
+    location.href = user.role === 'admin' ? 'admin.html' : 'medical.html';
   } catch (loginError) {
     error.textContent = loginError.message;
   }

@@ -1,17 +1,4 @@
-from dataclasses import dataclass
-from typing import Optional
-
 from .database import get_connection
-
-@dataclass
-class Product:
-    id: str
-    code: Optional[str]
-    name: str
-    unit: Optional[str]
-    mrp: Optional[float]
-    formula: Optional[str]
-    company: Optional[str]
 
 class ProductModel:
     @staticmethod
@@ -29,3 +16,23 @@ class ProductModel:
                 "SELECT id, code, name, unit, mrp, formula, company FROM products WHERE is_active = TRUE AND (name ILIKE %s OR company ILIKE %s OR code ILIKE %s) ORDER BY name LIMIT %s",
                 (f"%{query}%", f"%{query}%", f"%{query}%", limit),
             ).fetchall()
+
+    @staticmethod
+    def create(product_id: str, code: str, name: str, unit: str, mrp, formula: str, company: str):
+        with get_connection() as connection:
+            company_id = None
+            if company:
+                row = connection.execute('SELECT id FROM companies WHERE name = %s', (company,)).fetchone()
+                if row:
+                    company_id = row['id']
+                else:
+                    row = connection.execute('INSERT INTO companies (name) VALUES (%s) RETURNING id', (company,)).fetchone()
+                    company_id = row['id']
+            row = connection.execute(
+                """INSERT INTO products (id, code, name, unit, mrp, formula, company_id, company)
+                   VALUES (%s,%s,%s,%s,%s,%s,%s,%s)
+                   RETURNING id, code, name, unit, mrp, formula, company""",
+                (product_id, code or None, name, unit or None, mrp, formula or None, company_id, company or None),
+            ).fetchone()
+            connection.commit()
+            return row
