@@ -1,25 +1,46 @@
+import { TempSessionService } from '../temp/temp_file_sessionService.js';
+
 const HomeViewModel = {
     paymentVpa: 'HINDPHARMA2022@SBI',
     paymentName: 'Hind Pharma',
-    fssaiNumber: '21521233001380',
-    sessionDurationMs: 12 * 60 * 60 * 1000,
 
     initialize() {
-        this.validateSession();
+        const session = TempSessionService.get();
+        this.setupLoginState(session);
         this.setupPaymentQrCode();
         this.setupPdfDownload();
-        this.setupFssaiCopy();
-        this.setupAdminDashboardButton();
+        this.setupAdminDashboardButton(session);
     },
 
-    validateSession() {
-        const loginTime = Number(localStorage.getItem('hindPharmaLoginTime') || 0);
-        if (loginTime && Date.now() - loginTime >= this.sessionDurationMs) {
-            localStorage.removeItem('hindPharmaUser');
-            localStorage.removeItem('hindPharmaRole');
-            localStorage.removeItem('hindPharmaToken');
-            localStorage.removeItem('hindPharmaLoginTime');
+    setupLoginState(session) {
+        const navLogin = document.getElementById('homeLogin');
+        const productLogin = document.getElementById('homeProductButton');
+        if (!navLogin || !productLogin) return;
+
+        if (session) {
+            navLogin.textContent = 'LOGOUT';
+            navLogin.href = '#';
+            navLogin.onclick = event => {
+                event.preventDefault();
+                TempSessionService.clear();
+                location.reload();
+            };
+            productLogin.textContent = 'CONTINUE TO MEDICALS →';
+            productLogin.href = 'medical.html';
+        } else {
+            navLogin.textContent = 'LOGIN';
+            navLogin.href = 'login.html';
+            navLogin.onclick = null;
+            productLogin.textContent = 'LOGIN TO VIEW PRODUCTS →';
+            productLogin.href = 'login.html';
         }
+    },
+
+    setupAdminDashboardButton(session) {
+        const adminSection = document.getElementById('adminDashboardSection');
+        if (!adminSection) return;
+        // The dashboard is visible only while a current 12-hour admin session exists.
+        adminSection.hidden = !(session && session.role === 'admin');
     },
 
     paymentPayload() {
@@ -31,31 +52,6 @@ const HomeViewModel = {
         if (!qrElement || typeof QRCode === 'undefined') return;
         qrElement.innerHTML = '';
         new QRCode(qrElement, { text: this.paymentPayload(), width: 240, height: 240, correctLevel: QRCode.CorrectLevel.H });
-    },
-
-    setupAdminDashboardButton() {
-        const adminSection = document.getElementById('adminDashboardSection');
-        if (!adminSection) return;
-
-        const token = localStorage.getItem('hindPharmaToken');
-        const role = localStorage.getItem('hindPharmaRole');
-        const loginTime = Number(localStorage.getItem('hindPharmaLoginTime') || 0);
-        const validSession = Boolean(token && loginTime && Date.now() - loginTime < this.sessionDurationMs);
-
-        adminSection.hidden = !(validSession && role === 'admin');
-    },
-
-    setupFssaiCopy() {
-        const hint = document.getElementById('fssaiHint');
-        const value = document.getElementById('fssaiCopyValue');
-        if (!hint || !value) return;
-        const copy = async () => {
-            try { await navigator.clipboard.writeText(this.fssaiNumber); }
-            catch (_) { value.select(); document.execCommand('copy'); }
-            hint.textContent = 'Copied ✓';
-            setTimeout(() => hint.textContent = 'Tap to copy number', 1800);
-        };
-        hint.addEventListener('click', copy);
     },
 
     setupPdfDownload() {
