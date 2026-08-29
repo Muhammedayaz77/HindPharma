@@ -1,4 +1,4 @@
-name: Prepare Product Data
+name: Prepare Hind Pharma Data
 
 on:
   push:
@@ -18,13 +18,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Prepare products.json
+      - name: Generate JSON data tables
         run: python scripts/prepare_products.py
 
-      - name: Commit generated product data
+      - name: Commit generated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/products.json
-          git diff --cached --quiet || git commit -m "Generate product list data"
+          git add data/products.json data/companies.json data/suppliers.json data/inventory.json data/purchases.json
+          git diff --cached --quiet || git commit -m "Generate Hind Pharma JSON data tables"
           git push
