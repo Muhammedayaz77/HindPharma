@@ -7,6 +7,7 @@ const HomeViewModel = {
         this.setupPaymentQrCode();
         this.setupPdfDownload();
         this.setupFssaiCopy();
+        this.setupAdminDashboardButton();
     },
 
     paymentPayload() {
@@ -20,50 +21,41 @@ const HomeViewModel = {
         new QRCode(qrElement, { text: this.paymentPayload(), width: 240, height: 240, correctLevel: QRCode.CorrectLevel.H });
     },
 
-    setupPdfDownload() {
-        const button = document.getElementById('downloadQr');
-        if (!button) return;
-        button.addEventListener('click', () => this.downloadPaymentQrPdf());
+    setupAdminDashboardButton() {
+        const adminSection = document.getElementById('adminDashboardSection');
+        if (!adminSection) return;
+        const role = sessionStorage.getItem('hindPharmaRole');
+        const token = sessionStorage.getItem('hindPharmaToken');
+        adminSection.hidden = !(role === 'admin' && token);
     },
 
     setupFssaiCopy() {
-        const card = document.querySelector('.fssaiNumber');
-        if (!card) return;
-        const copy = () => this.copyFssaiNumber();
-        card.addEventListener('click', copy);
-        card.addEventListener('keydown', event => {
-            if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); copy(); }
+        const hint = document.getElementById('fssaiHint');
+        const value = document.getElementById('fssaiCopyValue');
+        if (!hint || !value) return;
+        const copy = async () => {
+            try { await navigator.clipboard.writeText(this.fssaiNumber); }
+            catch (_) { value.select(); document.execCommand('copy'); }
+            hint.textContent = 'Copied ✓';
+            setTimeout(() => hint.textContent = 'Tap to copy number', 1800);
+        };
+        hint.addEventListener('click', copy);
+    },
+
+    setupPdfDownload() {
+        const button = document.getElementById('downloadQr');
+        if (!button) return;
+        button.addEventListener('click', () => {
+            if (!window.jspdf || !window.jspdf.jsPDF) return;
+            const canvas = document.querySelector('#hindPharmaQr canvas');
+            if (!canvas) return;
+            const pdf = new window.jspdf.jsPDF();
+            pdf.text('Hind Pharma - UPI Payment QR', 20, 20);
+            pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 35, 30, 140, 140);
+            pdf.text(`UPI: ${this.paymentVpa}`, 20, 185);
+            pdf.save('hind-pharma-payment-qr.pdf');
         });
-    },
-
-    async copyFssaiNumber() {
-        try {
-            if (navigator.clipboard?.writeText) await navigator.clipboard.writeText(this.fssaiNumber);
-            else {
-                const helper = document.getElementById('fssaiCopyValue');
-                helper.focus(); helper.select(); document.execCommand('copy'); helper.blur();
-            }
-            const hint = document.getElementById('fssaiHint');
-            if (hint) { hint.textContent = 'FSSAI number copied'; window.setTimeout(() => { hint.textContent = 'Tap to copy number'; }, 1600); }
-        } catch (_) {
-            const hint = document.getElementById('fssaiHint');
-            if (hint) hint.textContent = 'Tap and hold to copy';
-        }
-    },
-
-    downloadPaymentQrPdf() {
-        const qrCanvas = document.querySelector('#hindPharmaQr canvas');
-        if (!qrCanvas || !window.jspdf?.jsPDF) return;
-        const { jsPDF } = window.jspdf;
-        const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
-        const pageWidth = pdf.internal.pageSize.getWidth(), qrSize = 90, x = (pageWidth - qrSize) / 2;
-        pdf.setFont('helvetica', 'bold'); pdf.setFontSize(24); pdf.text('HIND PHARMA', pageWidth / 2, 35, { align: 'center' });
-        pdf.setFont('helvetica', 'normal'); pdf.setFontSize(14); pdf.text('SCAN TO PAY', pageWidth / 2, 48, { align: 'center' });
-        pdf.addImage(qrCanvas.toDataURL('image/png'), 'PNG', x, 60, qrSize, qrSize);
-        pdf.setFontSize(12); pdf.text('UPI: HINDPHARMA2022@SBI', pageWidth / 2, 165, { align: 'center' });
-        pdf.setFontSize(10); pdf.text('Open your UPI app and scan this QR code to make a payment.', pageWidth / 2, 174, { align: 'center' });
-        pdf.save('Hind-Pharma-Payment-QR.pdf');
     }
 };
 
-HomeViewModel.initialize();
+document.addEventListener('DOMContentLoaded', () => HomeViewModel.initialize());
