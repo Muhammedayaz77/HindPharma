@@ -1,19 +1,22 @@
 const HomeViewModel = {
-    websiteUrl: 'https://muhammedayaz77.github.io/HindPharma/',
+    paymentVpa: 'HINDPHARMA2022@SBI',
+    paymentName: 'Hind Pharma',
 
     initialize() {
-        const pageTitle = document.title;
-        if (!pageTitle) document.title = 'Hind Pharma';
-        this.setupQrCode();
+        this.setupPaymentQrCode();
         this.setupPdfDownload();
     },
 
-    setupQrCode() {
+    paymentPayload() {
+        return `upi://pay?pa=${encodeURIComponent(this.paymentVpa)}&pn=${encodeURIComponent(this.paymentName)}&cu=INR`;
+    },
+
+    setupPaymentQrCode() {
         const qrElement = document.getElementById('hindPharmaQr');
         if (!qrElement || typeof QRCode === 'undefined') return;
         qrElement.innerHTML = '';
         new QRCode(qrElement, {
-            text: this.websiteUrl,
+            text: this.paymentPayload(),
             width: 240,
             height: 240,
             correctLevel: QRCode.CorrectLevel.H
@@ -23,10 +26,10 @@ const HomeViewModel = {
     setupPdfDownload() {
         const button = document.getElementById('downloadQr');
         if (!button) return;
-        button.addEventListener('click', () => this.downloadQrPdf());
+        button.addEventListener('click', () => this.downloadPaymentQrPdf());
     },
 
-    async downloadQrPdf() {
+    downloadPaymentQrPdf() {
         const qrCanvas = document.querySelector('#hindPharmaQr canvas');
         if (!qrCanvas || !window.jspdf?.jsPDF) return;
 
@@ -40,12 +43,14 @@ const HomeViewModel = {
         pdf.setFontSize(24);
         pdf.text('HIND PHARMA', pageWidth / 2, 35, { align: 'center' });
         pdf.setFont('helvetica', 'normal');
-        pdf.setFontSize(13);
-        pdf.text('Scan to open the Hind Pharma website', pageWidth / 2, 47, { align: 'center' });
+        pdf.setFontSize(14);
+        pdf.text('SCAN TO PAY', pageWidth / 2, 48, { align: 'center' });
         pdf.addImage(qrCanvas.toDataURL('image/png'), 'PNG', x, 60, qrSize, qrSize);
-        pdf.setFontSize(11);
-        pdf.text(this.websiteUrl, pageWidth / 2, 165, { align: 'center' });
-        pdf.save('Hind-Pharma-Barcode.pdf');
+        pdf.setFontSize(12);
+        pdf.text('UPI: HINDPHARMA2022@SBI', pageWidth / 2, 165, { align: 'center' });
+        pdf.setFontSize(10);
+        pdf.text('Open your UPI app and scan this QR code to make a payment.', pageWidth / 2, 174, { align: 'center' });
+        pdf.save('Hind-Pharma-Payment-QR.pdf');
     }
 };
 
