@@ -29,7 +29,6 @@ def migrate():
                 (user.get('username'), user.get('password_hash',''), user.get('role','user'), int(bool(user.get('is_active', True)))))
 
         for medical in medicals:
-            # Keep duplicate names with different areas by using a stable unique suffix when necessary.
             name, area = medical.get('name','').strip(), medical.get('area')
             if not name:
                 continue
@@ -40,9 +39,9 @@ def migrate():
 
         for product in products:
             product_id = product.get('id')
-            values = (product_id, product.get('code'), product.get('name',''), product.get('unit'), product.get('mrp'), product.get('formula'), product.get('company'), product.get('image'))
             if not product.get('name'):
                 continue
+            values = (product_id, product.get('code'), product.get('name',''), product.get('unit'), product.get('mrp'), product.get('formula'), product.get('company'), product.get('image'))
             existing = connection.execute('SELECT id FROM products WHERE product_id=?', (product_id,)).fetchone() if product_id else None
             if existing:
                 connection.execute('''UPDATE products SET code=?,name=?,unit=?,mrp=?,formula=?,company=?,image=?,is_active=1,updated_at=CURRENT_TIMESTAMP WHERE product_id=?''', values[1:] + (product_id,))
