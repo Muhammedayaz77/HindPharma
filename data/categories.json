@@ -1,0 +1,8 @@
+[
+  {"id":"CAT001","name":"Medicines"},
+  {"id":"CAT002","name":"Surgical"},
+  {"id":"CAT003","name":"Medical Devices"},
+  {"id":"CAT004","name":"Personal Care"},
+  {"id":"CAT005","name":"Baby Care"},
+  {"id":"CAT006","name":"Other"}
+]
