@@ -1,17 +1,377 @@
 [
-  {"id":"COM001","name":"ABBOTT HEALTHCARE PVT. LTD."},
-  {"id":"COM002","name":"AJANTA PHARMA LTD"},
-  {"id":"COM003","name":"ALKEM LAB GENERIC"},
-  {"id":"COM004","name":"CIPLA GX"},
-  {"id":"COM005","name":"EMCURE PHARMA LTD GENERIC"},
-  {"id":"COM006","name":"LEEFORD HEALTHCARE LTD."},
-  {"id":"COM007","name":"LUPIN GENERIC"},
-  {"id":"COM008","name":"ROMSONS"},
-  {"id":"COM009","name":"TYNOR ORTHOTICS"},
-  {"id":"COM010","name":"UNIVERSAL TWIN LABS, GENERIC"},
-  {"id":"COM011","name":"NULIFE HEALTHCARE"},
-  {"id":"COM012","name":"LABORATE PHARMA"},
-  {"id":"COM013","name":"PENTAGON LABS LTD"},
-  {"id":"COM014","name":"YOGESH PHARMACY"},
-  {"id":"COM015","name":"AMAR PRODUCTS"}
+  {
+    "name": "TYNOR ORTHOTICS"
+  },
+  {
+    "name": "ABBOTT HEALTHCARE PVT. LTD."
+  },
+  {
+    "name": "AJANTA PHARMA LTD"
+  },
+  {
+    "name": "L&T'S"
+  },
+  {
+    "name": "LORDCENT & TORRENT HEALTHCARE"
+  },
+  {
+    "name": "LUPIN GENERIC"
+  },
+  {
+    "name": "LEEFORD HEALTHCARE LTD."
+  },
+  {
+    "name": "ACULIFE HEALTHCARE PVT. LTD."
+  },
+  {
+    "name": "STICKWELL INDUSTRIES"
+  },
+  {
+    "name": "ROMSONS"
+  },
+  {
+    "name": "FAMILYCARE CONSUMER PVT LTD_MH"
+  },
+  {
+    "name": "ALKEM LAB GENERIC"
+  },
+  {
+    "name": "MICRO LABS LTD"
+  },
+  {
+    "name": "KELVIN BIOPHARMA"
+  },
+  {
+    "name": "CIPLA GX"
+  },
+  {
+    "name": "M P I ETHICAL PVT"
+  },
+  {
+    "name": "ERIS PHARMA"
+  },
+  {
+    "name": "TORQUE PHARMACITICULS PVT LTD"
+  },
+  {
+    "name": "RAPPLE HEALTHCARE"
+  },
+  {
+    "name": "BD"
+  },
+  {
+    "name": "BESTOCHEM FORMULATION LTD"
+  },
+  {
+    "name": "BIPSON SURGICALS PVT LTD"
+  },
+  {
+    "name": "NIRAJ INDUSTRIES PVT LTD"
+  },
+  {
+    "name": "AMAR PRODUCTS"
+  },
+  {
+    "name": "MAY & BAKER"
+  },
+  {
+    "name": "INTAS PHARMA GENERIC"
+  },
+  {
+    "name": "EMCURE PHARMA LTD GENERIC"
+  },
+  {
+    "name": "YOGESH PHARMACY"
+  },
+  {
+    "name": "UNIVERSAL TWIN LABS, GENERIC"
+  },
+  {
+    "name": "REALCADE LIFE SCIENCES PVT LTD"
+  },
+  {
+    "name": "PENTAGON LABS LTD"
+  },
+  {
+    "name": "UNIVERSAL LIFE CARE"
+  },
+  {
+    "name": "LABORATE PHARMA"
+  },
+  {
+    "name": "GEM MANKIND"
+  },
+  {
+    "name": "NAVKAR HEALTH CARE"
+  },
+  {
+    "name": "CIPLA LTD"
+  },
+  {
+    "name": "ANONDITA HEALTHCARE"
+  },
+  {
+    "name": "AABHA CONTRACEPTIVES PVT. LTD."
+  },
+  {
+    "name": "POLY MEDICURE LTD"
+  },
+  {
+    "name": "SUDARSHAN SURGICALS"
+  },
+  {
+    "name": "HAPPY"
+  },
+  {
+    "name": "ANANT SURGICALS"
+  },
+  {
+    "name": "WOCKHARDT LTD GENERIC"
+  },
+  {
+    "name": "PAAM BIOTECH PVT LTD"
+  },
+  {
+    "name": "ELDER PHARMACEUTICALS LTD"
+  },
+  {
+    "name": "PANTACHEM"
+  },
+  {
+    "name": "PLENTEOUS PHARMACEUTICALS LTD"
+  },
+  {
+    "name": "ZYDUS HEALTHCARE"
+  },
+  {
+    "name": "DR MOREPEN"
+  },
+  {
+    "name": "HEMANTH SURGICAL INDUSTRIES LTD"
+  },
+  {
+    "name": "HINDUSTAN SYRINGES &MEDICAL"
+  },
+  {
+    "name": "ROUSSEL"
+  },
+  {
+    "name": "DIVISA HERBALS PVT LTD"
+  },
+  {
+    "name": "SANDOZ BUSINESS UNIT"
+  },
+  {
+    "name": "EAMON DRUGS PVT. LDT."
+  },
+  {
+    "name": "BHARTIYA SURGICALS"
+  },
+  {
+    "name": "NULIFE HEALTHCARE"
+  },
+  {
+    "name": "ABBOTT INDIA LTD"
+  },
+  {
+    "name": "DR REDDYS LABORATORIES"
+  },
+  {
+    "name": "SHARP CHEM INDIA"
+  },
+  {
+    "name": "USV LIMITEDS"
+  },
+  {
+    "name": "JOHNSON & JOHNSON"
+  },
+  {
+    "name": "HILON"
+  },
+  {
+    "name": "UNIGRIP"
+  },
+  {
+    "name": "ODEON PHARMA"
+  },
+  {
+    "name": "BANGA INTERNATIONAL"
+  },
+  {
+    "name": "STERISAFE HEATH CARE SOLUTIONS"
+  },
+  {
+    "name": "INTAS PHARMA LTD"
+  },
+  {
+    "name": "APEX LABS PVT LTD"
+  },
+  {
+    "name": "MOHINI SURGICALS PVT. LTD."
+  },
+  {
+    "name": "HUTCH SURGICALS"
+  },
+  {
+    "name": "AKUMENTIS HELTHCARE LTD"
+  },
+  {
+    "name": "MATRIXX RAMEDIES LLP"
+  },
+  {
+    "name": "J.K FOOD PHARMACEUTICALS"
+  },
+  {
+    "name": "MODI MUNDI PHARMA"
+  },
+  {
+    "name": "AMBI"
+  },
+  {
+    "name": "DANISH HEALTH CARE"
+  },
+  {
+    "name": "RELIEF BIOTECH PVT LTD"
+  },
+  {
+    "name": "M U AMBRELIA"
+  },
+  {
+    "name": "NEON LABORATORIES LTD"
+  },
+  {
+    "name": "MANKIND"
+  },
+  {
+    "name": "OTHER"
+  },
+  {
+    "name": "JMS CO., LTD."
+  },
+  {
+    "name": "MEDLEY PHARMA GENERIC"
+  },
+  {
+    "name": "MEDIKIT EASTERN LTD"
+  },
+  {
+    "name": "WINGS PHARMACEUTICALS PVT"
+  },
+  {
+    "name": "AMAZING RESEARCH LAB LTD"
+  },
+  {
+    "name": "POLYMED SURGICAL"
+  },
+  {
+    "name": "BIOSURGE HEALTHCARE INDIA PVT LTD"
+  },
+  {
+    "name": "CLASSIC HEALTHCARE"
+  },
+  {
+    "name": "SURGICAL"
+  },
+  {
+    "name": "RUSHMAN"
+  },
+  {
+    "name": "INFUTEC HEALTHCARE LTD."
+  },
+  {
+    "name": "ETHILON"
+  },
+  {
+    "name": "RANBAXY LAB LTD"
+  },
+  {
+    "name": "KNOLL HEALTHCARE PVT LTD"
+  },
+  {
+    "name": "CADILA PHARMACEUTICALS"
+  },
+  {
+    "name": "WARNER PHARMA"
+  },
+  {
+    "name": "PATANJALI AURVED LTD"
+  },
+  {
+    "name": "SUBEX PHARMA"
+  },
+  {
+    "name": "UNISURGE INDUSTREAS"
+  },
+  {
+    "name": "SAMARTH PHARMA PVT LTD"
+  },
+  {
+    "name": "TRUGUT"
+  },
+  {
+    "name": "HEALTHIUM"
+  },
+  {
+    "name": "UNIVERSAL LIFE SCIENCE"
+  },
+  {
+    "name": "ALCON LABORTORIES"
+  },
+  {
+    "name": "PIRAMAL HEALTHCARE"
+  },
+  {
+    "name": "MEDITOP CORPORATION"
+  },
+  {
+    "name": "RUSCH STEILE"
+  },
+  {
+    "name": "UNI - SAN"
+  },
+  {
+    "name": "ALPHA THERAPEUTICS PVT LTD"
+  },
+  {
+    "name": "BIO-MED HEALTHCARE PVT. LTD."
+  },
+  {
+    "name": "3M"
+  },
+  {
+    "name": "SANGAM HEALTHCARE PRODUCTS"
+  },
+  {
+    "name": "MEDTECH"
+  },
+  {
+    "name": "GERMAN REMEDIES"
+  },
+  {
+    "name": "TARUN PHARMACEUTICALS"
+  },
+  {
+    "name": "HERO ECO"
+  },
+  {
+    "name": "LIFE-LINE"
+  },
+  {
+    "name": "ZYDUS CADILA"
+  },
+  {
+    "name": "POINT OF CARE"
+  },
+  {
+    "name": "EMAMI LIMITED"
+  },
+  {
+    "name": "THE ZANDU PHARMA"
+  },
+  {
+    "name": "PROCTER & GAMBLE HEALTH CARE"
+  },
+  {
+    "name": "NICHOLAS PIRAMAL INDIA"
+  }
 ]

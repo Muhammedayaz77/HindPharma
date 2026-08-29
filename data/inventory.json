@@ -1,0 +1,4545 @@
+[
+  {
+    "id": "INV00001",
+    "product_id": "P00001",
+    "current_stock": 12,
+    "batch": "UNIVERSAL",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00002",
+    "product_id": "P00002",
+    "current_stock": 6,
+    "batch": "UNIVERSAL",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00003",
+    "product_id": "P00003",
+    "current_stock": 9,
+    "batch": "UNIVERSAL",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00004",
+    "product_id": "P00004",
+    "current_stock": 7,
+    "batch": "UNIVERSAL",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00005",
+    "product_id": "P00005",
+    "current_stock": 10,
+    "batch": "HBJ0014",
+    "expiry": "01-Jun-25"
+  },
+  {
+    "id": "INV00006",
+    "product_id": "P00006",
+    "current_stock": 20,
+    "batch": "UD2T-221035",
+    "expiry": "01-Sep-24"
+  },
+  {
+    "id": "INV00007",
+    "product_id": "P00007",
+    "current_stock": 20,
+    "batch": "ACAP01",
+    "expiry": "01-Apr-26"
+  },
+  {
+    "id": "INV00008",
+    "product_id": "P00008",
+    "current_stock": 40,
+    "batch": "PT22454",
+    "expiry": "01-Nov-24"
+  },
+  {
+    "id": "INV00009",
+    "product_id": "P00009",
+    "current_stock": 40,
+    "batch": "MT23214",
+    "expiry": "01-Jul-25"
+  },
+  {
+    "id": "INV00010",
+    "product_id": "P00010",
+    "current_stock": 18,
+    "batch": "PT22470",
+    "expiry": "01-Nov-24"
+  },
+  {
+    "id": "INV00011",
+    "product_id": "P00011",
+    "current_stock": 77,
+    "batch": "AT-048123",
+    "expiry": "01-Oct-25"
+  },
+  {
+    "id": "INV00012",
+    "product_id": "P00012",
+    "current_stock": 27,
+    "batch": "ACZ-23007",
+    "expiry": "01-Jan-25"
+  },
+  {
+    "id": "INV00013",
+    "product_id": "P00013",
+    "current_stock": 70,
+    "batch": "AT-035923",
+    "expiry": "01-Jul-25"
+  },
+  {
+    "id": "INV00014",
+    "product_id": "P00014",
+    "current_stock": 7,
+    "batch": "4142012",
+    "expiry": "01-Sep-24"
+  },
+  {
+    "id": "INV00015",
+    "product_id": "P00015",
+    "current_stock": 20,
+    "batch": "GD30626A",
+    "expiry": "01-May-25"
+  },
+  {
+    "id": "INV00016",
+    "product_id": "P00016",
+    "current_stock": 45,
+    "batch": "2H20975",
+    "expiry": "01-Jul-24"
+  },
+  {
+    "id": "INV00017",
+    "product_id": "P00017",
+    "current_stock": 79,
+    "batch": "2469",
+    "expiry": "01-Jun-24"
+  },
+  {
+    "id": "INV00018",
+    "product_id": "P00018",
+    "current_stock": 144,
+    "batch": "2570",
+    "expiry": "01-Jun-25"
+  },
+  {
+    "id": "INV00019",
+    "product_id": "P00019",
+    "current_stock": 686,
+    "batch": "2593",
+    "expiry": "01-Sep-25"
+  },
+  {
+    "id": "INV00020",
+    "product_id": "P00020",
+    "current_stock": 26,
+    "batch": "2671",
+    "expiry": "01-Jul-26"
+  },
+  {
+    "id": "INV00021",
+    "product_id": "P00021",
+    "current_stock": 1,
+    "batch": "2576",
+    "expiry": "01-Jul-25"
+  },
+  {
+    "id": "INV00022",
+    "product_id": "P00022",
+    "current_stock": 11,
+    "batch": "2667",
+    "expiry": "01-Jul-26"
+  },
+  {
+    "id": "INV00023",
+    "product_id": "P00023",
+    "current_stock": 12,
+    "batch": "2670",
+    "expiry": "01-Jul-26"
+  },
+  {
+    "id": "INV00024",
+    "product_id": "P00024",
+    "current_stock": 2,
+    "batch": "G221126MLB",
+    "expiry": "01-Oct-25"
+  },
+  {
+    "id": "INV00025",
+    "product_id": "P00025",
+    "current_stock": 11,
+    "batch": "02",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00026",
+    "product_id": "P00026",
+    "current_stock": 48,
+    "batch": "FCEL111",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00027",
+    "product_id": "P00027",
+    "current_stock": 5,
+    "batch": "02",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00028",
+    "product_id": "P00028",
+    "current_stock": 12,
+    "batch": "FCEL029",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00029",
+    "product_id": "P00029",
+    "current_stock": 16,
+    "batch": "FCEL110",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00030",
+    "product_id": "P00030",
+    "current_stock": 64,
+    "batch": "FCEL112",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00031",
+    "product_id": "P00031",
+    "current_stock": 9,
+    "batch": "FCEL027",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00032",
+    "product_id": "P00032",
+    "current_stock": 36,
+    "batch": "DCEL027",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00033",
+    "product_id": "P00033",
+    "current_stock": 10,
+    "batch": "FCEL026",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00034",
+    "product_id": "P00034",
+    "current_stock": 46,
+    "batch": "FCEL028",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00035",
+    "product_id": "P00035",
+    "current_stock": 2,
+    "batch": "G220712MLB",
+    "expiry": "01-Jun-25"
+  },
+  {
+    "id": "INV00036",
+    "product_id": "P00036",
+    "current_stock": 7,
+    "batch": "G220629MMB",
+    "expiry": "01-May-25"
+  },
+  {
+    "id": "INV00037",
+    "product_id": "P00037",
+    "current_stock": 2,
+    "batch": "G220425MXB",
+    "expiry": "01-Mar-25"
+  },
+  {
+    "id": "INV00038",
+    "product_id": "P00038",
+    "current_stock": 15,
+    "batch": "PPKAJ27",
+    "expiry": "01-Sep-24"
+  },
+  {
+    "id": "INV00039",
+    "product_id": "P00039",
+    "current_stock": 3,
+    "batch": "T3033",
+    "expiry": "01-Jan-25"
+  },
+  {
+    "id": "INV00040",
+    "product_id": "P00040",
+    "current_stock": 22,
+    "batch": "AST203058MB",
+    "expiry": "01-Feb-25"
+  },
+  {
+    "id": "INV00041",
+    "product_id": "P00041",
+    "current_stock": 32,
+    "batch": "BGT22236MD",
+    "expiry": "01-Sep-24"
+  },
+  {
+    "id": "INV00042",
+    "product_id": "P00042",
+    "current_stock": 20,
+    "batch": "ALRXA008",
+    "expiry": "01-Apr-25"
+  },
+  {
+    "id": "INV00043",
+    "product_id": "P00043",
+    "current_stock": 1,
+    "batch": "ALK222006SR",
+    "expiry": "01-Mar-24"
+  },
+  {
+    "id": "INV00044",
+    "product_id": "P00044",
+    "current_stock": 5,
+    "batch": "22230335",
+    "expiry": "01-Oct-24"
+  },
+  {
+    "id": "INV00045",
+    "product_id": "P00045",
+    "current_stock": 1,
+    "batch": "21230277",
+    "expiry": "01-Jun-23"
+  },
+  {
+    "id": "INV00046",
+    "product_id": "P00046",
+    "current_stock": 14,
+    "batch": "ALFC074D",
+    "expiry": "01-May-25"
+  },
+  {
+    "id": "INV00047",
+    "product_id": "P00047",
+    "current_stock": 13,
+    "batch": "22281243",
+    "expiry": "01-Apr-24"
+  },
+  {
+    "id": "INV00048",
+    "product_id": "P00048",
+    "current_stock": 30,
+    "batch": "23280121",
+    "expiry": "01-Dec-24"
+  },
+  {
+    "id": "INV00049",
+    "product_id": "P00049",
+    "current_stock": 27,
+    "batch": "ALS23004ED",
+    "expiry": "01-Dec-24"
+  },
+  {
+    "id": "INV00050",
+    "product_id": "P00050",
+    "current_stock": 22,
+    "batch": "23280012",
+    "expiry": "01-Dec-24"
+  },
+  {
+    "id": "INV00051",
+    "product_id": "P00051",
+    "current_stock": 36,
+    "batch": "22283451",
+    "expiry": "01-Nov-24"
+  },
+  {
+    "id": "INV00052",
+    "product_id": "P00052",
+    "current_stock": 4,
+    "batch": "23280409",
+    "expiry": "01-Dec-24"
+  },
+  {
+    "id": "INV00053",
+    "product_id": "P00053",
+    "current_stock": 6,
+    "batch": "AQC2308B",
+    "expiry": "01-Feb-25"
+  },
+  {
+    "id": "INV00054",
+    "product_id": "P00054",
+    "current_stock": 7,
+    "batch": "C111196",
+    "expiry": "01-Aug-24"
+  },
+  {
+    "id": "INV00055",
+    "product_id": "P00055",
+    "current_stock": 8,
+    "batch": "AQJ0001",
+    "expiry": "01-Dec-24"
+  },
+  {
+    "id": "INV00056",
+    "product_id": "P00056",
+    "current_stock": 20,
+    "batch": "MFJ0426",
+    "expiry": "01-Jul-25"
+  },
+  {
+    "id": "INV00057",
+    "product_id": "P00057",
+    "current_stock": 73,
+    "batch": "MFJ0471",
+    "expiry": "01-Jul-25"
+  },
+  {
+    "id": "INV00058",
+    "product_id": "P00058",
+    "current_stock": 3,
+    "batch": "MFJ0251",
+    "expiry": "01-Nov-24"
+  },
+  {
+    "id": "INV00059",
+    "product_id": "P00059",
+    "current_stock": 25,
+    "batch": "MFJ0539",
+    "expiry": "01-Apr-25"
+  },
+  {
+    "id": "INV00060",
+    "product_id": "P00060",
+    "current_stock": 7,
+    "batch": "AHLH23034",
+    "expiry": "01-Jun-25"
+  },
+  {
+    "id": "INV00061",
+    "product_id": "P00061",
+    "current_stock": 5,
+    "batch": "AILH23005",
+    "expiry": "01-Jan-25"
+  },
+  {
+    "id": "INV00062",
+    "product_id": "P00062",
+    "current_stock": 7,
+    "batch": "AKLH23007",
+    "expiry": "01-May-25"
+  },
+  {
+    "id": "INV00063",
+    "product_id": "P00063",
+    "current_stock": 1,
+    "batch": "ALLH23017",
+    "expiry": "01-Jun-25"
+  },
+  {
+    "id": "INV00064",
+    "product_id": "P00064",
+    "current_stock": 2,
+    "batch": "1072915",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00065",
+    "product_id": "P00065",
+    "current_stock": 1,
+    "batch": "122",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00066",
+    "product_id": "P00066",
+    "current_stock": 2,
+    "batch": "1073409",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00067",
+    "product_id": "P00067",
+    "current_stock": 4,
+    "batch": "1079092",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00068",
+    "product_id": "P00068",
+    "current_stock": 3,
+    "batch": "0001087793",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00069",
+    "product_id": "P00069",
+    "current_stock": 5,
+    "batch": "1090620",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00070",
+    "product_id": "P00070",
+    "current_stock": 20,
+    "batch": "2306070A",
+    "expiry": "01-May-25"
+  },
+  {
+    "id": "INV00071",
+    "product_id": "P00071",
+    "current_stock": 15,
+    "batch": "HCL2220",
+    "expiry": "01-Jul-24"
+  },
+  {
+    "id": "INV00072",
+    "product_id": "P00072",
+    "current_stock": 1,
+    "batch": "0710292",
+    "expiry": "01-Jul-24"
+  },
+  {
+    "id": "INV00073",
+    "product_id": "P00073",
+    "current_stock": 7,
+    "batch": "O720131",
+    "expiry": "01-Sep-25"
+  },
+  {
+    "id": "INV00074",
+    "product_id": "P00074",
+    "current_stock": 1,
+    "batch": "0730053",
+    "expiry": "01-Mar-26"
+  },
+  {
+    "id": "INV00075",
+    "product_id": "P00075",
+    "current_stock": 3,
+    "batch": "JWWAD006",
+    "expiry": "01-Feb-25"
+  },
+  {
+    "id": "INV00076",
+    "product_id": "P00076",
+    "current_stock": 5,
+    "batch": "AT-041022",
+    "expiry": "01-Jun-24"
+  },
+  {
+    "id": "INV00077",
+    "product_id": "P00077",
+    "current_stock": 3,
+    "batch": "0720008",
+    "expiry": "01-Dec-24"
+  },
+  {
+    "id": "INV00078",
+    "product_id": "P00078",
+    "current_stock": 2,
+    "batch": "B12222016",
+    "expiry": "01-Feb-24"
+  },
+  {
+    "id": "INV00079",
+    "product_id": "P00079",
+    "current_stock": 1,
+    "batch": "B12223011",
+    "expiry": "01-Feb-25"
+  },
+  {
+    "id": "INV00080",
+    "product_id": "P00080",
+    "current_stock": 576,
+    "batch": "01",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00081",
+    "product_id": "P00081",
+    "current_stock": 360,
+    "batch": "01",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00082",
+    "product_id": "P00082",
+    "current_stock": 1,
+    "batch": null,
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00083",
+    "product_id": "P00083",
+    "current_stock": 1,
+    "batch": null,
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00084",
+    "product_id": "P00084",
+    "current_stock": 9,
+    "batch": "HP003",
+    "expiry": "01-Apr-25"
+  },
+  {
+    "id": "INV00085",
+    "product_id": "P00085",
+    "current_stock": 490,
+    "batch": "007",
+    "expiry": "01-Sep-25"
+  },
+  {
+    "id": "INV00086",
+    "product_id": "P00086",
+    "current_stock": 20,
+    "batch": "2199500",
+    "expiry": "01-Jul-27"
+  },
+  {
+    "id": "INV00087",
+    "product_id": "P00087",
+    "current_stock": 5,
+    "batch": "1256439",
+    "expiry": "01-Jun-26"
+  },
+  {
+    "id": "INV00088",
+    "product_id": "P00088",
+    "current_stock": 87,
+    "batch": "1278609",
+    "expiry": "01-Jun-26"
+  },
+  {
+    "id": "INV00089",
+    "product_id": "P00089",
+    "current_stock": 2,
+    "batch": "QA23020",
+    "expiry": "01-Jul-24"
+  },
+  {
+    "id": "INV00090",
+    "product_id": "P00090",
+    "current_stock": 77,
+    "batch": "T8P34",
+    "expiry": "01-Aug-24"
+  },
+  {
+    "id": "INV00091",
+    "product_id": "P00091",
+    "current_stock": 2,
+    "batch": "241207",
+    "expiry": "01-Jul-25"
+  },
+  {
+    "id": "INV00092",
+    "product_id": "P00092",
+    "current_stock": 190,
+    "batch": "250223",
+    "expiry": "01-Jan-28"
+  },
+  {
+    "id": "INV00093",
+    "product_id": "P00093",
+    "current_stock": 76,
+    "batch": "170522",
+    "expiry": "01-Apr-27"
+  },
+  {
+    "id": "INV00094",
+    "product_id": "P00094",
+    "current_stock": 100,
+    "batch": "041122",
+    "expiry": "01-Oct-27"
+  },
+  {
+    "id": "INV00095",
+    "product_id": "P00095",
+    "current_stock": 95,
+    "batch": "170622",
+    "expiry": "01-May-27"
+  },
+  {
+    "id": "INV00096",
+    "product_id": "P00096",
+    "current_stock": 45,
+    "batch": "180622",
+    "expiry": "01-May-27"
+  },
+  {
+    "id": "INV00097",
+    "product_id": "P00097",
+    "current_stock": 82,
+    "batch": null,
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00098",
+    "product_id": "P00098",
+    "current_stock": 9,
+    "batch": "BG006",
+    "expiry": "01-Mar-24"
+  },
+  {
+    "id": "INV00099",
+    "product_id": "P00099",
+    "current_stock": 72,
+    "batch": "LT2201",
+    "expiry": "01-May-24"
+  },
+  {
+    "id": "INV00100",
+    "product_id": "P00100",
+    "current_stock": 9,
+    "batch": "05",
+    "expiry": "01-Apr-25"
+  },
+  {
+    "id": "INV00101",
+    "product_id": "P00101",
+    "current_stock": 12,
+    "batch": "04",
+    "expiry": "01-Mar-25"
+  },
+  {
+    "id": "INV00102",
+    "product_id": "P00102",
+    "current_stock": 3,
+    "batch": null,
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00103",
+    "product_id": "P00103",
+    "current_stock": 15,
+    "batch": "K1090131",
+    "expiry": "01-Jan-25"
+  },
+  {
+    "id": "INV00104",
+    "product_id": "P00104",
+    "current_stock": 3,
+    "batch": "O2397",
+    "expiry": "01-Mar-24"
+  },
+  {
+    "id": "INV00105",
+    "product_id": "P00105",
+    "current_stock": 11,
+    "batch": "VIB1108",
+    "expiry": "01-Aug-26"
+  },
+  {
+    "id": "INV00106",
+    "product_id": "P00106",
+    "current_stock": 1,
+    "batch": "CFL-178-H",
+    "expiry": "01-Jan-25"
+  },
+  {
+    "id": "INV00107",
+    "product_id": "P00107",
+    "current_stock": 23,
+    "batch": "EPAE22038",
+    "expiry": "01-Nov-24"
+  },
+  {
+    "id": "INV00108",
+    "product_id": "P00108",
+    "current_stock": 23,
+    "batch": "165",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00109",
+    "product_id": "P00109",
+    "current_stock": 2,
+    "batch": "DLWH2161",
+    "expiry": "01-Jun-24"
+  },
+  {
+    "id": "INV00110",
+    "product_id": "P00110",
+    "current_stock": 40,
+    "batch": "K23697",
+    "expiry": "01-Oct-25"
+  },
+  {
+    "id": "INV00111",
+    "product_id": "P00111",
+    "current_stock": 60,
+    "batch": "L23713",
+    "expiry": "01-Nov-25"
+  },
+  {
+    "id": "INV00112",
+    "product_id": "P00112",
+    "current_stock": 2,
+    "batch": "UNIVERSAL",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00113",
+    "product_id": "P00113",
+    "current_stock": 1,
+    "batch": "1088180",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00114",
+    "product_id": "P00114",
+    "current_stock": 4,
+    "batch": "2",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00115",
+    "product_id": "P00115",
+    "current_stock": 1,
+    "batch": "AFB23004",
+    "expiry": "01-Dec-24"
+  },
+  {
+    "id": "INV00116",
+    "product_id": "P00116",
+    "current_stock": 1,
+    "batch": "AFB22989",
+    "expiry": "01-Apr-24"
+  },
+  {
+    "id": "INV00117",
+    "product_id": "P00117",
+    "current_stock": 2,
+    "batch": "GS22834",
+    "expiry": "01-Nov-24"
+  },
+  {
+    "id": "INV00118",
+    "product_id": "P00118",
+    "current_stock": 103,
+    "batch": "GST30071",
+    "expiry": "01-Dec-24"
+  },
+  {
+    "id": "INV00119",
+    "product_id": "P00119",
+    "current_stock": 37,
+    "batch": "AFB22C90",
+    "expiry": "01-Nov-24"
+  },
+  {
+    "id": "INV00120",
+    "product_id": "P00120",
+    "current_stock": 180,
+    "batch": "AFB23037",
+    "expiry": "01-Jun-25"
+  },
+  {
+    "id": "INV00121",
+    "product_id": "P00121",
+    "current_stock": 4,
+    "batch": "R3060177",
+    "expiry": "01-Sep-24"
+  },
+  {
+    "id": "INV00122",
+    "product_id": "P00122",
+    "current_stock": 20,
+    "batch": "STC22276",
+    "expiry": "01-Aug-24"
+  },
+  {
+    "id": "INV00123",
+    "product_id": "P00123",
+    "current_stock": 14,
+    "batch": "AFB22I33",
+    "expiry": "01-Aug-24"
+  },
+  {
+    "id": "INV00124",
+    "product_id": "P00124",
+    "current_stock": 3,
+    "batch": "CH2052",
+    "expiry": "01-Sep-24"
+  },
+  {
+    "id": "INV00125",
+    "product_id": "P00125",
+    "current_stock": 4,
+    "batch": "22B23",
+    "expiry": "01-May-24"
+  },
+  {
+    "id": "INV00126",
+    "product_id": "P00126",
+    "current_stock": 10,
+    "batch": "N0230111",
+    "expiry": "01-Oct-24"
+  },
+  {
+    "id": "INV00127",
+    "product_id": "P00127",
+    "current_stock": 1,
+    "batch": "C2069",
+    "expiry": "01-Jun-24"
+  },
+  {
+    "id": "INV00128",
+    "product_id": "P00128",
+    "current_stock": 1,
+    "batch": "C2084",
+    "expiry": "01-Jul-24"
+  },
+  {
+    "id": "INV00129",
+    "product_id": "P00129",
+    "current_stock": 1,
+    "batch": "22A57",
+    "expiry": "01-Oct-24"
+  },
+  {
+    "id": "INV00130",
+    "product_id": "P00130",
+    "current_stock": 20,
+    "batch": "C3099",
+    "expiry": "01-Jun-25"
+  },
+  {
+    "id": "INV00131",
+    "product_id": "P00131",
+    "current_stock": 3,
+    "batch": "22863",
+    "expiry": "01-Sep-24"
+  },
+  {
+    "id": "INV00132",
+    "product_id": "P00132",
+    "current_stock": 1,
+    "batch": "22908",
+    "expiry": "01-Oct-24"
+  },
+  {
+    "id": "INV00133",
+    "product_id": "P00133",
+    "current_stock": 8,
+    "batch": "C3002",
+    "expiry": "01-Dec-24"
+  },
+  {
+    "id": "INV00134",
+    "product_id": "P00134",
+    "current_stock": 5,
+    "batch": "22953",
+    "expiry": "01-Oct-24"
+  },
+  {
+    "id": "INV00135",
+    "product_id": "P00135",
+    "current_stock": 7,
+    "batch": "GS20814",
+    "expiry": "01-Mar-25"
+  },
+  {
+    "id": "INV00136",
+    "product_id": "P00136",
+    "current_stock": 1,
+    "batch": "GS0921",
+    "expiry": "01-Feb-25"
+  },
+  {
+    "id": "INV00137",
+    "product_id": "P00137",
+    "current_stock": 84,
+    "batch": "23ECP006",
+    "expiry": "01-Apr-25"
+  },
+  {
+    "id": "INV00138",
+    "product_id": "P00138",
+    "current_stock": 65,
+    "batch": "G7242022",
+    "expiry": "01-Jun-24"
+  },
+  {
+    "id": "INV00139",
+    "product_id": "P00139",
+    "current_stock": 5,
+    "batch": "EHA2303",
+    "expiry": "01-Mar-26"
+  },
+  {
+    "id": "INV00140",
+    "product_id": "P00140",
+    "current_stock": 2,
+    "batch": "D720159",
+    "expiry": "01-Apr-24"
+  },
+  {
+    "id": "INV00141",
+    "product_id": "P00141",
+    "current_stock": 12,
+    "batch": "G22419",
+    "expiry": "01-Jun-24"
+  },
+  {
+    "id": "INV00142",
+    "product_id": "P00142",
+    "current_stock": -2,
+    "batch": "C21008",
+    "expiry": "01-Aug-23"
+  },
+  {
+    "id": "INV00143",
+    "product_id": "P00143",
+    "current_stock": 17,
+    "batch": "DLPA3011",
+    "expiry": "01-May-25"
+  },
+  {
+    "id": "INV00144",
+    "product_id": "P00144",
+    "current_stock": 20,
+    "batch": "LS3068",
+    "expiry": "01-May-25"
+  },
+  {
+    "id": "INV00145",
+    "product_id": "P00145",
+    "current_stock": 1,
+    "batch": "C216",
+    "expiry": "01-Jul-24"
+  },
+  {
+    "id": "INV00146",
+    "product_id": "P00146",
+    "current_stock": 20,
+    "batch": "D123",
+    "expiry": "01-Mar-25"
+  },
+  {
+    "id": "INV00147",
+    "product_id": "P00147",
+    "current_stock": 34,
+    "batch": "MC-066",
+    "expiry": "01-Mar-24"
+  },
+  {
+    "id": "INV00148",
+    "product_id": "P00148",
+    "current_stock": 1,
+    "batch": "MCL-044",
+    "expiry": "01-Aug-24"
+  },
+  {
+    "id": "INV00149",
+    "product_id": "P00149",
+    "current_stock": 55,
+    "batch": "NCL-006",
+    "expiry": "01-Dec-24"
+  },
+  {
+    "id": "INV00150",
+    "product_id": "P00150",
+    "current_stock": 10,
+    "batch": "KC22554",
+    "expiry": "01-Jul-25"
+  },
+  {
+    "id": "INV00151",
+    "product_id": "P00151",
+    "current_stock": 6,
+    "batch": "KC22504",
+    "expiry": "01-Jul-25"
+  },
+  {
+    "id": "INV00152",
+    "product_id": "P00152",
+    "current_stock": 1,
+    "batch": "SE653",
+    "expiry": "01-Nov-24"
+  },
+  {
+    "id": "INV00153",
+    "product_id": "P00153",
+    "current_stock": 7,
+    "batch": "22L434",
+    "expiry": "01-Nov-24"
+  },
+  {
+    "id": "INV00154",
+    "product_id": "P00154",
+    "current_stock": 1,
+    "batch": "GS22348",
+    "expiry": "01-Sep-24"
+  },
+  {
+    "id": "INV00155",
+    "product_id": "P00155",
+    "current_stock": 242,
+    "batch": "M630256",
+    "expiry": "01-Apr-26"
+  },
+  {
+    "id": "INV00156",
+    "product_id": "P00156",
+    "current_stock": 25,
+    "batch": "PADCP50",
+    "expiry": "01-Apr-24"
+  },
+  {
+    "id": "INV00157",
+    "product_id": "P00157",
+    "current_stock": 5,
+    "batch": "06",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00158",
+    "product_id": "P00158",
+    "current_stock": 1,
+    "batch": "UNIVERSAL",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00159",
+    "product_id": "P00159",
+    "current_stock": 2,
+    "batch": "UNIVERSAL-1",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00160",
+    "product_id": "P00160",
+    "current_stock": 16,
+    "batch": "BF022/23",
+    "expiry": "01-May-26"
+  },
+  {
+    "id": "INV00161",
+    "product_id": "P00161",
+    "current_stock": 1,
+    "batch": "BF027/23",
+    "expiry": "01-Jun-26"
+  },
+  {
+    "id": "INV00162",
+    "product_id": "P00162",
+    "current_stock": 12,
+    "batch": "BF077/22",
+    "expiry": "01-Nov-25"
+  },
+  {
+    "id": "INV00163",
+    "product_id": "P00163",
+    "current_stock": 1,
+    "batch": "BF023-23",
+    "expiry": "01-May-26"
+  },
+  {
+    "id": "INV00164",
+    "product_id": "P00164",
+    "current_stock": 18,
+    "batch": "BF028/23",
+    "expiry": "01-Jun-26"
+  },
+  {
+    "id": "INV00165",
+    "product_id": "P00165",
+    "current_stock": 20,
+    "batch": "BF049/23",
+    "expiry": "01-Aug-26"
+  },
+  {
+    "id": "INV00166",
+    "product_id": "P00166",
+    "current_stock": 40,
+    "batch": "BF015/23",
+    "expiry": "01-May-26"
+  },
+  {
+    "id": "INV00167",
+    "product_id": "P00167",
+    "current_stock": 28,
+    "batch": "BF026/23",
+    "expiry": "01-May-26"
+  },
+  {
+    "id": "INV00168",
+    "product_id": "P00168",
+    "current_stock": 19,
+    "batch": "BF020/23",
+    "expiry": "01-May-25"
+  },
+  {
+    "id": "INV00169",
+    "product_id": "P00169",
+    "current_stock": 11,
+    "batch": "BF057/22",
+    "expiry": "01-Mar-25"
+  },
+  {
+    "id": "INV00170",
+    "product_id": "P00170",
+    "current_stock": 20,
+    "batch": "BF056/22",
+    "expiry": "01-Mar-25"
+  },
+  {
+    "id": "INV00171",
+    "product_id": "P00171",
+    "current_stock": 99,
+    "batch": "A210721",
+    "expiry": "01-Jun-24"
+  },
+  {
+    "id": "INV00172",
+    "product_id": "P00172",
+    "current_stock": 204,
+    "batch": "GP21001",
+    "expiry": "01-Jun-24"
+  },
+  {
+    "id": "INV00173",
+    "product_id": "P00173",
+    "current_stock": 13,
+    "batch": "1123021L",
+    "expiry": "01-Sep-26"
+  },
+  {
+    "id": "INV00174",
+    "product_id": "P00174",
+    "current_stock": 10,
+    "batch": "005",
+    "expiry": "01-Aug-26"
+  },
+  {
+    "id": "INV00175",
+    "product_id": "P00175",
+    "current_stock": 69,
+    "batch": null,
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00176",
+    "product_id": "P00176",
+    "current_stock": 72,
+    "batch": null,
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00177",
+    "product_id": "P00177",
+    "current_stock": 4,
+    "batch": "07",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00178",
+    "product_id": "P00178",
+    "current_stock": 16,
+    "batch": "42",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00179",
+    "product_id": "P00179",
+    "current_stock": 15,
+    "batch": "288",
+    "expiry": "01-Aug-25"
+  },
+  {
+    "id": "INV00180",
+    "product_id": "P00180",
+    "current_stock": 14,
+    "batch": "301",
+    "expiry": "01-Nov-25"
+  },
+  {
+    "id": "INV00181",
+    "product_id": "P00181",
+    "current_stock": 20,
+    "batch": "272",
+    "expiry": "01-Dec-25"
+  },
+  {
+    "id": "INV00182",
+    "product_id": "P00182",
+    "current_stock": 15,
+    "batch": "A087",
+    "expiry": "01-Sep-24"
+  },
+  {
+    "id": "INV00183",
+    "product_id": "P00183",
+    "current_stock": 2,
+    "batch": "08",
+    "expiry": "01-May-26"
+  },
+  {
+    "id": "INV00184",
+    "product_id": "P00184",
+    "current_stock": 4,
+    "batch": "A0130",
+    "expiry": "01-Jul-25"
+  },
+  {
+    "id": "INV00185",
+    "product_id": "P00185",
+    "current_stock": 1,
+    "batch": "A0200",
+    "expiry": "01-Jan-26"
+  },
+  {
+    "id": "INV00186",
+    "product_id": "P00186",
+    "current_stock": 13,
+    "batch": "A086",
+    "expiry": "01-Aug-24"
+  },
+  {
+    "id": "INV00187",
+    "product_id": "P00187",
+    "current_stock": 28,
+    "batch": "CCP02",
+    "expiry": "01-Jan-25"
+  },
+  {
+    "id": "INV00188",
+    "product_id": "P00188",
+    "current_stock": 15,
+    "batch": "22EAC008",
+    "expiry": "01-Apr-24"
+  },
+  {
+    "id": "INV00189",
+    "product_id": "P00189",
+    "current_stock": 9,
+    "batch": "22EA102",
+    "expiry": "01-Oct-24"
+  },
+  {
+    "id": "INV00190",
+    "product_id": "P00190",
+    "current_stock": 6,
+    "batch": "WIN22005",
+    "expiry": "01-Sep-24"
+  },
+  {
+    "id": "INV00191",
+    "product_id": "P00191",
+    "current_stock": 10,
+    "batch": "WIND22005",
+    "expiry": "01-Sep-24"
+  },
+  {
+    "id": "INV00192",
+    "product_id": "P00192",
+    "current_stock": 18,
+    "batch": "SAI23076",
+    "expiry": "01-Feb-25"
+  },
+  {
+    "id": "INV00193",
+    "product_id": "P00193",
+    "current_stock": 97,
+    "batch": "A24250S",
+    "expiry": "01-Dec-25"
+  },
+  {
+    "id": "INV00194",
+    "product_id": "P00194",
+    "current_stock": 1,
+    "batch": "D041",
+    "expiry": "01-Feb-24"
+  },
+  {
+    "id": "INV00195",
+    "product_id": "P00195",
+    "current_stock": 10,
+    "batch": "DLWG3051",
+    "expiry": "01-May-25"
+  },
+  {
+    "id": "INV00196",
+    "product_id": "P00196",
+    "current_stock": 2,
+    "batch": "DKP22016NF",
+    "expiry": "01-Jan-25"
+  },
+  {
+    "id": "INV00197",
+    "product_id": "P00197",
+    "current_stock": 4,
+    "batch": "HLI459D",
+    "expiry": "01-Mar-24"
+  },
+  {
+    "id": "INV00198",
+    "product_id": "P00198",
+    "current_stock": 70,
+    "batch": "CDDRI-003",
+    "expiry": "01-Nov-24"
+  },
+  {
+    "id": "INV00199",
+    "product_id": "P00199",
+    "current_stock": 8,
+    "batch": "PT22514A",
+    "expiry": "01-Dec-24"
+  },
+  {
+    "id": "INV00200",
+    "product_id": "P00200",
+    "current_stock": 30,
+    "batch": "PUFQ511",
+    "expiry": "01-Mar-25"
+  },
+  {
+    "id": "INV00201",
+    "product_id": "P00201",
+    "current_stock": 48,
+    "batch": "EPD2AA1023",
+    "expiry": "01-Nov-24"
+  },
+  {
+    "id": "INV00202",
+    "product_id": "P00202",
+    "current_stock": 1,
+    "batch": "GIF0002",
+    "expiry": "01-Jun-24"
+  },
+  {
+    "id": "INV00203",
+    "product_id": "P00203",
+    "current_stock": 10,
+    "batch": "MT100HC",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00204",
+    "product_id": "P00204",
+    "current_stock": 2,
+    "batch": "21080103",
+    "expiry": "01-Feb-26"
+  },
+  {
+    "id": "INV00205",
+    "product_id": "P00205",
+    "current_stock": 2,
+    "batch": "G220629",
+    "expiry": "01-May-25"
+  },
+  {
+    "id": "INV00206",
+    "product_id": "P00206",
+    "current_stock": 20,
+    "batch": "G230403P1A",
+    "expiry": "01-Mar-28"
+  },
+  {
+    "id": "INV00207",
+    "product_id": "P00207",
+    "current_stock": 841,
+    "batch": "245101NH1",
+    "expiry": "01-Sep-27"
+  },
+  {
+    "id": "INV00208",
+    "product_id": "P00208",
+    "current_stock": 80,
+    "batch": "3372.56SR1",
+    "expiry": "01-Aug-28"
+  },
+  {
+    "id": "INV00209",
+    "product_id": "P00209",
+    "current_stock": 216,
+    "batch": "246025NF1",
+    "expiry": "01-Oct-24"
+  },
+  {
+    "id": "INV00210",
+    "product_id": "P00210",
+    "current_stock": 8,
+    "batch": "236056JY2",
+    "expiry": "01-Aug-27"
+  },
+  {
+    "id": "INV00211",
+    "product_id": "P00211",
+    "current_stock": 1188,
+    "batch": "245055JN1",
+    "expiry": "01-Oct-27"
+  },
+  {
+    "id": "INV00212",
+    "product_id": "P00212",
+    "current_stock": 2,
+    "batch": "52154S",
+    "expiry": "01-Nov-26"
+  },
+  {
+    "id": "INV00213",
+    "product_id": "P00213",
+    "current_stock": 3,
+    "batch": "35112R",
+    "expiry": "01-Nov-26"
+  },
+  {
+    "id": "INV00214",
+    "product_id": "P00214",
+    "current_stock": 5,
+    "batch": "37243N",
+    "expiry": "01-Aug-27"
+  },
+  {
+    "id": "INV00215",
+    "product_id": "P00215",
+    "current_stock": 6,
+    "batch": "23EB350",
+    "expiry": "01-Jun-25"
+  },
+  {
+    "id": "INV00216",
+    "product_id": "P00216",
+    "current_stock": 5,
+    "batch": "23EB487",
+    "expiry": "01-Aug-25"
+  },
+  {
+    "id": "INV00217",
+    "product_id": "P00217",
+    "current_stock": 7,
+    "batch": "SA20305",
+    "expiry": "01-Dec-24"
+  },
+  {
+    "id": "INV00218",
+    "product_id": "P00218",
+    "current_stock": 4,
+    "batch": "GA072014",
+    "expiry": "01-Oct-25"
+  },
+  {
+    "id": "INV00219",
+    "product_id": "P00219",
+    "current_stock": 40,
+    "batch": "OYDT-001",
+    "expiry": "01-Dec-25"
+  },
+  {
+    "id": "INV00220",
+    "product_id": "P00220",
+    "current_stock": 10,
+    "batch": "LMT220757",
+    "expiry": "01-Oct-24"
+  },
+  {
+    "id": "INV00221",
+    "product_id": "P00221",
+    "current_stock": 1,
+    "batch": "OPS21007",
+    "expiry": "01-Sep-24"
+  },
+  {
+    "id": "INV00222",
+    "product_id": "P00222",
+    "current_stock": 1,
+    "batch": "DROK08",
+    "expiry": "01-May-26"
+  },
+  {
+    "id": "INV00223",
+    "product_id": "P00223",
+    "current_stock": 3,
+    "batch": "PADGE16",
+    "expiry": "01-Apr-24"
+  },
+  {
+    "id": "INV00224",
+    "product_id": "P00224",
+    "current_stock": 60,
+    "batch": "NTUT-009",
+    "expiry": "01-Sep-25"
+  },
+  {
+    "id": "INV00225",
+    "product_id": "P00225",
+    "current_stock": 1,
+    "batch": "AT22070A",
+    "expiry": "01-Feb-24"
+  },
+  {
+    "id": "INV00226",
+    "product_id": "P00226",
+    "current_stock": 88,
+    "batch": "K1060124",
+    "expiry": "01-Dec-24"
+  },
+  {
+    "id": "INV00227",
+    "product_id": "P00227",
+    "current_stock": 5,
+    "batch": "MFC10I2301",
+    "expiry": "01-Aug-25"
+  },
+  {
+    "id": "INV00228",
+    "product_id": "P00228",
+    "current_stock": 13,
+    "batch": "EDE-23039",
+    "expiry": "01-Jun-25"
+  },
+  {
+    "id": "INV00229",
+    "product_id": "P00229",
+    "current_stock": 114,
+    "batch": "EDE23063",
+    "expiry": "01-Jul-25"
+  },
+  {
+    "id": "INV00230",
+    "product_id": "P00230",
+    "current_stock": 7,
+    "batch": "1076509",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00231",
+    "product_id": "P00231",
+    "current_stock": 3,
+    "batch": "UNIVERSAL",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00232",
+    "product_id": "P00232",
+    "current_stock": 3,
+    "batch": "1081186",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00233",
+    "product_id": "P00233",
+    "current_stock": 4,
+    "batch": "UNIVERSAL",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00234",
+    "product_id": "P00234",
+    "current_stock": 10,
+    "batch": "DLPC2002",
+    "expiry": "01-Feb-24"
+  },
+  {
+    "id": "INV00235",
+    "product_id": "P00235",
+    "current_stock": 7,
+    "batch": "DLPD3196",
+    "expiry": "01-Jun-25"
+  },
+  {
+    "id": "INV00236",
+    "product_id": "P00236",
+    "current_stock": 49,
+    "batch": "EPWBD21064",
+    "expiry": "01-Apr-25"
+  },
+  {
+    "id": "INV00237",
+    "product_id": "P00237",
+    "current_stock": 28,
+    "batch": "2273",
+    "expiry": "01-Apr-24"
+  },
+  {
+    "id": "INV00238",
+    "product_id": "P00238",
+    "current_stock": 7,
+    "batch": "C3036",
+    "expiry": "01-Feb-25"
+  },
+  {
+    "id": "INV00239",
+    "product_id": "P00239",
+    "current_stock": 14,
+    "batch": "4062001",
+    "expiry": "01-Mar-25"
+  },
+  {
+    "id": "INV00240",
+    "product_id": "P00240",
+    "current_stock": 4,
+    "batch": "00112",
+    "expiry": "01-Nov-26"
+  },
+  {
+    "id": "INV00241",
+    "product_id": "P00241",
+    "current_stock": 2,
+    "batch": "0011",
+    "expiry": "01-Jan-27"
+  },
+  {
+    "id": "INV00242",
+    "product_id": "P00242",
+    "current_stock": 7,
+    "batch": "EPD6AD1005",
+    "expiry": "01-Jul-24"
+  },
+  {
+    "id": "INV00243",
+    "product_id": "P00243",
+    "current_stock": 6,
+    "batch": "RAF 106",
+    "expiry": "01-Jul-24"
+  },
+  {
+    "id": "INV00244",
+    "product_id": "P00244",
+    "current_stock": 8,
+    "batch": "EMT2301010",
+    "expiry": "01-Dec-24"
+  },
+  {
+    "id": "INV00245",
+    "product_id": "P00245",
+    "current_stock": 81,
+    "batch": "G220810647",
+    "expiry": "01-Jul-27"
+  },
+  {
+    "id": "INV00246",
+    "product_id": "P00246",
+    "current_stock": 80,
+    "batch": "G221010928",
+    "expiry": "01-Sep-27"
+  },
+  {
+    "id": "INV00247",
+    "product_id": "P00247",
+    "current_stock": 2,
+    "batch": "GF012020",
+    "expiry": "01-Jun-24"
+  },
+  {
+    "id": "INV00248",
+    "product_id": "P00248",
+    "current_stock": 3,
+    "batch": "GF013035",
+    "expiry": "01-Apr-25"
+  },
+  {
+    "id": "INV00249",
+    "product_id": "P00249",
+    "current_stock": 2,
+    "batch": "EGL20602",
+    "expiry": "01-May-24"
+  },
+  {
+    "id": "INV00250",
+    "product_id": "P00250",
+    "current_stock": 15,
+    "batch": "ABJ0021",
+    "expiry": "01-Jan-26"
+  },
+  {
+    "id": "INV00251",
+    "product_id": "P00251",
+    "current_stock": 2,
+    "batch": "GRM21F148",
+    "expiry": "01-May-25"
+  },
+  {
+    "id": "INV00252",
+    "product_id": "P00252",
+    "current_stock": 3,
+    "batch": "AMG0413",
+    "expiry": "01-Aug-24"
+  },
+  {
+    "id": "INV00253",
+    "product_id": "P00253",
+    "current_stock": 39,
+    "batch": "P121811",
+    "expiry": "01-Nov-25"
+  },
+  {
+    "id": "INV00254",
+    "product_id": "P00254",
+    "current_stock": 35,
+    "batch": "LH21287",
+    "expiry": "01-Dec-24"
+  },
+  {
+    "id": "INV00255",
+    "product_id": "P00255",
+    "current_stock": 8,
+    "batch": "G2110737",
+    "expiry": "01-Sep-27"
+  },
+  {
+    "id": "INV00256",
+    "product_id": "P00256",
+    "current_stock": 8,
+    "batch": "G221010840",
+    "expiry": "01-Sep-27"
+  },
+  {
+    "id": "INV00257",
+    "product_id": "P00257",
+    "current_stock": 3,
+    "batch": "G21072571",
+    "expiry": "01-Jun-26"
+  },
+  {
+    "id": "INV00258",
+    "product_id": "P00258",
+    "current_stock": 38,
+    "batch": "I2623",
+    "expiry": "01-Sep-24"
+  },
+  {
+    "id": "INV00259",
+    "product_id": "P00259",
+    "current_stock": 20,
+    "batch": "I2612",
+    "expiry": "01-Sep-24"
+  },
+  {
+    "id": "INV00260",
+    "product_id": "P00260",
+    "current_stock": 40,
+    "batch": "P121039",
+    "expiry": "01-Apr-25"
+  },
+  {
+    "id": "INV00261",
+    "product_id": "P00261",
+    "current_stock": 5,
+    "batch": "NGNO-013",
+    "expiry": "01-Sep-24"
+  },
+  {
+    "id": "INV00262",
+    "product_id": "P00262",
+    "current_stock": 5,
+    "batch": "MGEI-026",
+    "expiry": "01-Jul-24"
+  },
+  {
+    "id": "INV00263",
+    "product_id": "P00263",
+    "current_stock": 2,
+    "batch": "E2202788",
+    "expiry": "01-Jul-25"
+  },
+  {
+    "id": "INV00264",
+    "product_id": "P00264",
+    "current_stock": 7,
+    "batch": "007",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00265",
+    "product_id": "P00265",
+    "current_stock": 23,
+    "batch": "AHG137",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00266",
+    "product_id": "P00266",
+    "current_stock": 42,
+    "batch": "UNI-01",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00267",
+    "product_id": "P00267",
+    "current_stock": 18,
+    "batch": "AKHI30638",
+    "expiry": "01-Apr-25"
+  },
+  {
+    "id": "INV00268",
+    "product_id": "P00268",
+    "current_stock": 52,
+    "batch": "LT-13",
+    "expiry": "01-Mar-24"
+  },
+  {
+    "id": "INV00269",
+    "product_id": "P00269",
+    "current_stock": 1,
+    "batch": "03",
+    "expiry": "01-Jul-24"
+  },
+  {
+    "id": "INV00270",
+    "product_id": "P00270",
+    "current_stock": 2,
+    "batch": "56001074",
+    "expiry": "01-May-25"
+  },
+  {
+    "id": "INV00271",
+    "product_id": "P00271",
+    "current_stock": 31,
+    "batch": "O-227010",
+    "expiry": "01-Jun-24"
+  },
+  {
+    "id": "INV00272",
+    "product_id": "P00272",
+    "current_stock": 2,
+    "batch": "SMART",
+    "expiry": "01-Aug-26"
+  },
+  {
+    "id": "INV00273",
+    "product_id": "P00273",
+    "current_stock": 1,
+    "batch": "CLASSIC",
+    "expiry": "01-Jul-26"
+  },
+  {
+    "id": "INV00274",
+    "product_id": "P00274",
+    "current_stock": 31,
+    "batch": "1234",
+    "expiry": "01-Dec-30"
+  },
+  {
+    "id": "INV00275",
+    "product_id": "P00275",
+    "current_stock": 60,
+    "batch": "ALT220251",
+    "expiry": "01-Feb-25"
+  },
+  {
+    "id": "INV00276",
+    "product_id": "P00276",
+    "current_stock": 6,
+    "batch": "5362200250",
+    "expiry": "01-Jun-27"
+  },
+  {
+    "id": "INV00277",
+    "product_id": "P00277",
+    "current_stock": 45,
+    "batch": "TMR-221317",
+    "expiry": "01-Jun-24"
+  },
+  {
+    "id": "INV00278",
+    "product_id": "P00278",
+    "current_stock": 5,
+    "batch": "TMR-221319",
+    "expiry": "01-Jun-24"
+  },
+  {
+    "id": "INV00279",
+    "product_id": "P00279",
+    "current_stock": 3,
+    "batch": "231421",
+    "expiry": "01-Jun-25"
+  },
+  {
+    "id": "INV00280",
+    "product_id": "P00280",
+    "current_stock": 2,
+    "batch": "237413",
+    "expiry": "01-Aug-25"
+  },
+  {
+    "id": "INV00281",
+    "product_id": "P00281",
+    "current_stock": 16,
+    "batch": "307411",
+    "expiry": "01-Jan-26"
+  },
+  {
+    "id": "INV00282",
+    "product_id": "P00282",
+    "current_stock": 50,
+    "batch": "335451",
+    "expiry": "01-Aug-26"
+  },
+  {
+    "id": "INV00283",
+    "product_id": "P00283",
+    "current_stock": 21,
+    "batch": "224123",
+    "expiry": "01-May-25"
+  },
+  {
+    "id": "INV00284",
+    "product_id": "P00284",
+    "current_stock": 250,
+    "batch": "227117",
+    "expiry": "01-May-25"
+  },
+  {
+    "id": "INV00285",
+    "product_id": "P00285",
+    "current_stock": 250,
+    "batch": "236116",
+    "expiry": "01-Jul-25"
+  },
+  {
+    "id": "INV00286",
+    "product_id": "P00286",
+    "current_stock": 1,
+    "batch": "01",
+    "expiry": "01-Mar-25"
+  },
+  {
+    "id": "INV00287",
+    "product_id": "P00287",
+    "current_stock": 8,
+    "batch": "NHNL-010",
+    "expiry": "01-Jan-25"
+  },
+  {
+    "id": "INV00288",
+    "product_id": "P00288",
+    "current_stock": 1,
+    "batch": "NHSL-012",
+    "expiry": "01-Aug-25"
+  },
+  {
+    "id": "INV00289",
+    "product_id": "P00289",
+    "current_stock": 7,
+    "batch": "NHSL-015",
+    "expiry": "01-Nov-25"
+  },
+  {
+    "id": "INV00290",
+    "product_id": "P00290",
+    "current_stock": 659,
+    "batch": "AQH0093",
+    "expiry": "01-Aug-24"
+  },
+  {
+    "id": "INV00291",
+    "product_id": "P00291",
+    "current_stock": 13,
+    "batch": "47",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00292",
+    "product_id": "P00292",
+    "current_stock": 3,
+    "batch": "44",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00293",
+    "product_id": "P00293",
+    "current_stock": 1,
+    "batch": "36",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00294",
+    "product_id": "P00294",
+    "current_stock": 23,
+    "batch": "10",
+    "expiry": "01-Mar-24"
+  },
+  {
+    "id": "INV00295",
+    "product_id": "P00295",
+    "current_stock": 120,
+    "batch": "SAI22292",
+    "expiry": "01-Nov-24"
+  },
+  {
+    "id": "INV00296",
+    "product_id": "P00296",
+    "current_stock": 5,
+    "batch": "2012004",
+    "expiry": "01-Aug-24"
+  },
+  {
+    "id": "INV00297",
+    "product_id": "P00297",
+    "current_stock": 3,
+    "batch": "2112002",
+    "expiry": "01-Dec-24"
+  },
+  {
+    "id": "INV00298",
+    "product_id": "P00298",
+    "current_stock": 1,
+    "batch": "MDG271K",
+    "expiry": "01-Oct-24"
+  },
+  {
+    "id": "INV00299",
+    "product_id": "P00299",
+    "current_stock": 1,
+    "batch": null,
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00300",
+    "product_id": "P00300",
+    "current_stock": 199,
+    "batch": "072303G04",
+    "expiry": "01-Jun-28"
+  },
+  {
+    "id": "INV00301",
+    "product_id": "P00301",
+    "current_stock": 3,
+    "batch": "T-2207032",
+    "expiry": "01-Jun-24"
+  },
+  {
+    "id": "INV00302",
+    "product_id": "P00302",
+    "current_stock": 6,
+    "batch": "ZDT220695",
+    "expiry": "01-May-24"
+  },
+  {
+    "id": "INV00303",
+    "product_id": "P00303",
+    "current_stock": 52,
+    "batch": "2D12301-13",
+    "expiry": "01-Apr-25"
+  },
+  {
+    "id": "INV00304",
+    "product_id": "P00304",
+    "current_stock": 10,
+    "batch": "EFT-052302",
+    "expiry": "01-Apr-25"
+  },
+  {
+    "id": "INV00305",
+    "product_id": "P00305",
+    "current_stock": 57,
+    "batch": "IPL221246",
+    "expiry": "01-Sep-24"
+  },
+  {
+    "id": "INV00306",
+    "product_id": "P00306",
+    "current_stock": 1,
+    "batch": "INP-037",
+    "expiry": "01-Jun-24"
+  },
+  {
+    "id": "INV00307",
+    "product_id": "P00307",
+    "current_stock": 8,
+    "batch": "INP-045",
+    "expiry": "01-Oct-24"
+  },
+  {
+    "id": "INV00308",
+    "product_id": "P00308",
+    "current_stock": 54,
+    "batch": "IT125",
+    "expiry": "01-Jul-24"
+  },
+  {
+    "id": "INV00309",
+    "product_id": "P00309",
+    "current_stock": 9,
+    "batch": "ITM-101",
+    "expiry": "01-Apr-25"
+  },
+  {
+    "id": "INV00310",
+    "product_id": "P00310",
+    "current_stock": 2,
+    "batch": "6062007",
+    "expiry": "01-Oct-24"
+  },
+  {
+    "id": "INV00311",
+    "product_id": "P00311",
+    "current_stock": 8,
+    "batch": "DLTX2011",
+    "expiry": "01-May-24"
+  },
+  {
+    "id": "INV00312",
+    "product_id": "P00312",
+    "current_stock": 1,
+    "batch": "IRD23005",
+    "expiry": "01-Sep-25"
+  },
+  {
+    "id": "INV00313",
+    "product_id": "P00313",
+    "current_stock": 5,
+    "batch": "IVPR23005",
+    "expiry": "01-May-26"
+  },
+  {
+    "id": "INV00314",
+    "product_id": "P00314",
+    "current_stock": 30,
+    "batch": "A-2254",
+    "expiry": "01-Jun-25"
+  },
+  {
+    "id": "INV00315",
+    "product_id": "P00315",
+    "current_stock": 15,
+    "batch": "G221220621",
+    "expiry": "01-Nov-27"
+  },
+  {
+    "id": "INV00316",
+    "product_id": "P00316",
+    "current_stock": 5,
+    "batch": "G230520884",
+    "expiry": "01-Apr-28"
+  },
+  {
+    "id": "INV00317",
+    "product_id": "P00317",
+    "current_stock": 2,
+    "batch": "H438",
+    "expiry": "01-Aug-24"
+  },
+  {
+    "id": "INV00318",
+    "product_id": "P00318",
+    "current_stock": 4,
+    "batch": "MLCCEF06",
+    "expiry": "01-Feb-24"
+  },
+  {
+    "id": "INV00319",
+    "product_id": "P00319",
+    "current_stock": 3,
+    "batch": "KLS22012S",
+    "expiry": "01-Mar-24"
+  },
+  {
+    "id": "INV00320",
+    "product_id": "P00320",
+    "current_stock": 3,
+    "batch": "KP008",
+    "expiry": "01-Aug-25"
+  },
+  {
+    "id": "INV00321",
+    "product_id": "P00321",
+    "current_stock": 3,
+    "batch": "ML22036",
+    "expiry": "01-Apr-24"
+  },
+  {
+    "id": "INV00322",
+    "product_id": "P00322",
+    "current_stock": 3,
+    "batch": "LS2002",
+    "expiry": "01-Nov-24"
+  },
+  {
+    "id": "INV00323",
+    "product_id": "P00323",
+    "current_stock": 5,
+    "batch": "4452003",
+    "expiry": "01-Mar-24"
+  },
+  {
+    "id": "INV00324",
+    "product_id": "P00324",
+    "current_stock": 2,
+    "batch": "N23125",
+    "expiry": "01-Aug-25"
+  },
+  {
+    "id": "INV00325",
+    "product_id": "P00325",
+    "current_stock": 4,
+    "batch": "008",
+    "expiry": "01-Oct-24"
+  },
+  {
+    "id": "INV00326",
+    "product_id": "P00326",
+    "current_stock": 4,
+    "batch": "0001086775",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00327",
+    "product_id": "P00327",
+    "current_stock": 17,
+    "batch": "1091866",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00328",
+    "product_id": "P00328",
+    "current_stock": 5,
+    "batch": "1092323",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00329",
+    "product_id": "P00329",
+    "current_stock": 3,
+    "batch": "UNIVERSAL",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00330",
+    "product_id": "P00330",
+    "current_stock": 5,
+    "batch": "0001062558",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00331",
+    "product_id": "P00331",
+    "current_stock": 1,
+    "batch": "1088137",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00332",
+    "product_id": "P00332",
+    "current_stock": 104,
+    "batch": "01",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00333",
+    "product_id": "P00333",
+    "current_stock": 30,
+    "batch": "LFT22003MB",
+    "expiry": "01-Aug-24"
+  },
+  {
+    "id": "INV00334",
+    "product_id": "P00334",
+    "current_stock": 3,
+    "batch": "LHM22004TP",
+    "expiry": "01-Feb-24"
+  },
+  {
+    "id": "INV00335",
+    "product_id": "P00335",
+    "current_stock": 50,
+    "batch": "LHM23001TP",
+    "expiry": "01-Jan-25"
+  },
+  {
+    "id": "INV00336",
+    "product_id": "P00336",
+    "current_stock": 16,
+    "batch": "LHS22002ED",
+    "expiry": "01-Jun-24"
+  },
+  {
+    "id": "INV00337",
+    "product_id": "P00337",
+    "current_stock": 20,
+    "batch": "LHT23024RH",
+    "expiry": "01-May-26"
+  },
+  {
+    "id": "INV00338",
+    "product_id": "P00338",
+    "current_stock": 47,
+    "batch": "DRR-041",
+    "expiry": "01-Mar-24"
+  },
+  {
+    "id": "INV00339",
+    "product_id": "P00339",
+    "current_stock": 3,
+    "batch": "UNI",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00340",
+    "product_id": "P00340",
+    "current_stock": 101,
+    "batch": "123",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00341",
+    "product_id": "P00341",
+    "current_stock": 3,
+    "batch": "21060399",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00342",
+    "product_id": "P00342",
+    "current_stock": 3,
+    "batch": "UD2T230584",
+    "expiry": "01-Mar-25"
+  },
+  {
+    "id": "INV00343",
+    "product_id": "P00343",
+    "current_stock": 52,
+    "batch": "LDO23014",
+    "expiry": "01-May-25"
+  },
+  {
+    "id": "INV00344",
+    "product_id": "P00344",
+    "current_stock": 1,
+    "batch": "T0041",
+    "expiry": "01-Jun-24"
+  },
+  {
+    "id": "INV00345",
+    "product_id": "P00345",
+    "current_stock": 1,
+    "batch": "418",
+    "expiry": "01-Jun-25"
+  },
+  {
+    "id": "INV00346",
+    "product_id": "P00346",
+    "current_stock": 99,
+    "batch": "431",
+    "expiry": "01-Feb-26"
+  },
+  {
+    "id": "INV00347",
+    "product_id": "P00347",
+    "current_stock": 90,
+    "batch": "428",
+    "expiry": "01-Dec-25"
+  },
+  {
+    "id": "INV00348",
+    "product_id": "P00348",
+    "current_stock": 10,
+    "batch": "KM144152",
+    "expiry": "01-May-25"
+  },
+  {
+    "id": "INV00349",
+    "product_id": "P00349",
+    "current_stock": 1,
+    "batch": "L0575",
+    "expiry": "01-Jun-24"
+  },
+  {
+    "id": "INV00350",
+    "product_id": "P00350",
+    "current_stock": 10,
+    "batch": "S643",
+    "expiry": "01-Jun-25"
+  },
+  {
+    "id": "INV00351",
+    "product_id": "P00351",
+    "current_stock": 10,
+    "batch": "STC21527",
+    "expiry": "01-Nov-24"
+  },
+  {
+    "id": "INV00352",
+    "product_id": "P00352",
+    "current_stock": 9,
+    "batch": "STC22120",
+    "expiry": "01-May-25"
+  },
+  {
+    "id": "INV00353",
+    "product_id": "P00353",
+    "current_stock": 3,
+    "batch": "1073459",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00354",
+    "product_id": "P00354",
+    "current_stock": 5,
+    "batch": "001088574",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00355",
+    "product_id": "P00355",
+    "current_stock": 5,
+    "batch": "1080106",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00356",
+    "product_id": "P00356",
+    "current_stock": 5,
+    "batch": "1001067676",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00357",
+    "product_id": "P00357",
+    "current_stock": 5,
+    "batch": "0001083339",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00358",
+    "product_id": "P00358",
+    "current_stock": 1,
+    "batch": "UNIVERSAL",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00359",
+    "product_id": "P00359",
+    "current_stock": 3,
+    "batch": "UNIVERSAL",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00360",
+    "product_id": "P00360",
+    "current_stock": 40,
+    "batch": "J23161S",
+    "expiry": "01-Sep-25"
+  },
+  {
+    "id": "INV00361",
+    "product_id": "P00361",
+    "current_stock": 3,
+    "batch": "G23288",
+    "expiry": "01-Jun-25"
+  },
+  {
+    "id": "INV00362",
+    "product_id": "P00362",
+    "current_stock": 20,
+    "batch": "L23215S",
+    "expiry": "01-Nov-25"
+  },
+  {
+    "id": "INV00363",
+    "product_id": "P00363",
+    "current_stock": 20,
+    "batch": "DLUT3007",
+    "expiry": "01-Jun-25"
+  },
+  {
+    "id": "INV00364",
+    "product_id": "P00364",
+    "current_stock": 14,
+    "batch": "LSS22045",
+    "expiry": "01-Mar-24"
+  },
+  {
+    "id": "INV00365",
+    "product_id": "P00365",
+    "current_stock": 2,
+    "batch": "MLD-003",
+    "expiry": "01-Feb-24"
+  },
+  {
+    "id": "INV00366",
+    "product_id": "P00366",
+    "current_stock": 7,
+    "batch": "LP042203",
+    "expiry": "01-Mar-24"
+  },
+  {
+    "id": "INV00367",
+    "product_id": "P00367",
+    "current_stock": 3,
+    "batch": "21185AM-HN",
+    "expiry": "01-Aug-24"
+  },
+  {
+    "id": "INV00368",
+    "product_id": "P00368",
+    "current_stock": 8,
+    "batch": "21211AM-HN",
+    "expiry": "01-Aug-24"
+  },
+  {
+    "id": "INV00369",
+    "product_id": "P00369",
+    "current_stock": 40,
+    "batch": "22015AM-HN",
+    "expiry": "01-Apr-25"
+  },
+  {
+    "id": "INV00370",
+    "product_id": "P00370",
+    "current_stock": 8,
+    "batch": "SLT21352",
+    "expiry": "01-Oct-24"
+  },
+  {
+    "id": "INV00371",
+    "product_id": "P00371",
+    "current_stock": 60,
+    "batch": "SLT21422",
+    "expiry": "01-Nov-24"
+  },
+  {
+    "id": "INV00372",
+    "product_id": "P00372",
+    "current_stock": 15,
+    "batch": "SLT22003",
+    "expiry": "01-Dec-24"
+  },
+  {
+    "id": "INV00373",
+    "product_id": "P00373",
+    "current_stock": 30,
+    "batch": "511",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00374",
+    "product_id": "P00374",
+    "current_stock": 4,
+    "batch": "PP88",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00375",
+    "product_id": "P00375",
+    "current_stock": 4,
+    "batch": null,
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00376",
+    "product_id": "P00376",
+    "current_stock": 281,
+    "batch": null,
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00377",
+    "product_id": "P00377",
+    "current_stock": 16,
+    "batch": "LYC22009ED",
+    "expiry": "01-Apr-24"
+  },
+  {
+    "id": "INV00378",
+    "product_id": "P00378",
+    "current_stock": 2,
+    "batch": "FHVAM015",
+    "expiry": "01-Aug-24"
+  },
+  {
+    "id": "INV00379",
+    "product_id": "P00379",
+    "current_stock": 5,
+    "batch": "FHVAN005",
+    "expiry": "01-Oct-24"
+  },
+  {
+    "id": "INV00380",
+    "product_id": "P00380",
+    "current_stock": 8,
+    "batch": "I7EIU076",
+    "expiry": "01-Aug-24"
+  },
+  {
+    "id": "INV00381",
+    "product_id": "P00381",
+    "current_stock": 3,
+    "batch": "GDEIU65",
+    "expiry": "01-Aug-24"
+  },
+  {
+    "id": "INV00382",
+    "product_id": "P00382",
+    "current_stock": 470,
+    "batch": null,
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00383",
+    "product_id": "P00383",
+    "current_stock": 9,
+    "batch": "MXR23002GJ",
+    "expiry": "01-Jun-25"
+  },
+  {
+    "id": "INV00384",
+    "product_id": "P00384",
+    "current_stock": 54,
+    "batch": "MTV0475",
+    "expiry": "01-Feb-25"
+  },
+  {
+    "id": "INV00385",
+    "product_id": "P00385",
+    "current_stock": 9,
+    "batch": "2022004",
+    "expiry": "01-Feb-26"
+  },
+  {
+    "id": "INV00386",
+    "product_id": "P00386",
+    "current_stock": 8,
+    "batch": "2022004",
+    "expiry": "01-Feb-26"
+  },
+  {
+    "id": "INV00387",
+    "product_id": "P00387",
+    "current_stock": 2,
+    "batch": "VHL2208013",
+    "expiry": "01-Jul-24"
+  },
+  {
+    "id": "INV00388",
+    "product_id": "P00388",
+    "current_stock": 1,
+    "batch": "21J1294",
+    "expiry": "01-Aug-26"
+  },
+  {
+    "id": "INV00389",
+    "product_id": "P00389",
+    "current_stock": 6,
+    "batch": "2280390",
+    "expiry": "01-Jan-27"
+  },
+  {
+    "id": "INV00390",
+    "product_id": "P00390",
+    "current_stock": 100,
+    "batch": "22E1121",
+    "expiry": "01-Apr-27"
+  },
+  {
+    "id": "INV00391",
+    "product_id": "P00391",
+    "current_stock": 40,
+    "batch": "22C0568",
+    "expiry": "01-Feb-27"
+  },
+  {
+    "id": "INV00392",
+    "product_id": "P00392",
+    "current_stock": 6,
+    "batch": "MCE-398",
+    "expiry": "01-Sep-25"
+  },
+  {
+    "id": "INV00393",
+    "product_id": "P00393",
+    "current_stock": 1,
+    "batch": "155",
+    "expiry": "01-Sep-25"
+  },
+  {
+    "id": "INV00394",
+    "product_id": "P00394",
+    "current_stock": 18,
+    "batch": "T11182",
+    "expiry": "01-Jul-25"
+  },
+  {
+    "id": "INV00395",
+    "product_id": "P00395",
+    "current_stock": 5,
+    "batch": "LPS-220322",
+    "expiry": "01-Oct-24"
+  },
+  {
+    "id": "INV00396",
+    "product_id": "P00396",
+    "current_stock": 14,
+    "batch": "LPS-220322",
+    "expiry": "01-Oct-24"
+  },
+  {
+    "id": "INV00397",
+    "product_id": "P00397",
+    "current_stock": 72,
+    "batch": "TMR-220980",
+    "expiry": "01-Apr-25"
+  },
+  {
+    "id": "INV00398",
+    "product_id": "P00398",
+    "current_stock": 1,
+    "batch": "FHVAM015",
+    "expiry": "01-Aug-24"
+  },
+  {
+    "id": "INV00399",
+    "product_id": "P00399",
+    "current_stock": 12,
+    "batch": "H23093S",
+    "expiry": "01-Jul-25"
+  },
+  {
+    "id": "INV00400",
+    "product_id": "P00400",
+    "current_stock": 32,
+    "batch": "23EMT0624",
+    "expiry": "01-Apr-25"
+  },
+  {
+    "id": "INV00401",
+    "product_id": "P00401",
+    "current_stock": 3,
+    "batch": "MA0822002",
+    "expiry": "01-Mar-24"
+  },
+  {
+    "id": "INV00402",
+    "product_id": "P00402",
+    "current_stock": 2,
+    "batch": "O2598",
+    "expiry": "01-Apr-25"
+  },
+  {
+    "id": "INV00403",
+    "product_id": "P00403",
+    "current_stock": 25,
+    "batch": "4018923A",
+    "expiry": "01-Dec-27"
+  },
+  {
+    "id": "INV00404",
+    "product_id": "P00404",
+    "current_stock": 20,
+    "batch": "G230220626",
+    "expiry": "01-Jan-28"
+  },
+  {
+    "id": "INV00405",
+    "product_id": "P00405",
+    "current_stock": 7,
+    "batch": "BH-008",
+    "expiry": "01-May-25"
+  },
+  {
+    "id": "INV00406",
+    "product_id": "P00406",
+    "current_stock": 5,
+    "batch": "4552002",
+    "expiry": "01-Jun-24"
+  },
+  {
+    "id": "INV00407",
+    "product_id": "P00407",
+    "current_stock": 4,
+    "batch": "MKD22007",
+    "expiry": "01-Aug-24"
+  },
+  {
+    "id": "INV00408",
+    "product_id": "P00408",
+    "current_stock": 1,
+    "batch": "N410154",
+    "expiry": "01-Mar-24"
+  },
+  {
+    "id": "INV00409",
+    "product_id": "P00409",
+    "current_stock": 3,
+    "batch": "E22173/",
+    "expiry": "01-Apr-24"
+  },
+  {
+    "id": "INV00410",
+    "product_id": "P00410",
+    "current_stock": 24,
+    "batch": "F22308",
+    "expiry": "01-May-24"
+  },
+  {
+    "id": "INV00411",
+    "product_id": "P00411",
+    "current_stock": 29,
+    "batch": "EPBV23001",
+    "expiry": "01-Dec-24"
+  },
+  {
+    "id": "INV00412",
+    "product_id": "P00412",
+    "current_stock": 1,
+    "batch": "EPA8AA3004",
+    "expiry": "01-Dec-24"
+  },
+  {
+    "id": "INV00413",
+    "product_id": "P00413",
+    "current_stock": 10,
+    "batch": "AFB23K25",
+    "expiry": "01-Apr-25"
+  },
+  {
+    "id": "INV00414",
+    "product_id": "P00414",
+    "current_stock": 8,
+    "batch": "NMXO-020",
+    "expiry": "01-Jul-25"
+  },
+  {
+    "id": "INV00415",
+    "product_id": "P00415",
+    "current_stock": 10,
+    "batch": "NMDO-030",
+    "expiry": "01-Jul-25"
+  },
+  {
+    "id": "INV00416",
+    "product_id": "P00416",
+    "current_stock": 40,
+    "batch": "NHIT-002",
+    "expiry": "01-Sep-25"
+  },
+  {
+    "id": "INV00417",
+    "product_id": "P00417",
+    "current_stock": 1,
+    "batch": "697",
+    "expiry": "01-Mar-25"
+  },
+  {
+    "id": "INV00418",
+    "product_id": "P00418",
+    "current_stock": 1,
+    "batch": "MO05",
+    "expiry": "01-Jul-24"
+  },
+  {
+    "id": "INV00419",
+    "product_id": "P00419",
+    "current_stock": 8,
+    "batch": "158",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00420",
+    "product_id": "P00420",
+    "current_stock": 1,
+    "batch": "163",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00421",
+    "product_id": "P00421",
+    "current_stock": 10,
+    "batch": "IMRD314",
+    "expiry": "01-Sep-24"
+  },
+  {
+    "id": "INV00422",
+    "product_id": "P00422",
+    "current_stock": 50,
+    "batch": "IMRH367",
+    "expiry": "01-Jan-25"
+  },
+  {
+    "id": "INV00423",
+    "product_id": "P00423",
+    "current_stock": 2,
+    "batch": "MORFLO NEW",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00424",
+    "product_id": "P00424",
+    "current_stock": 14,
+    "batch": "CI2007",
+    "expiry": "01-May-24"
+  },
+  {
+    "id": "INV00425",
+    "product_id": "P00425",
+    "current_stock": 24,
+    "batch": "NSC20924",
+    "expiry": "01-Aug-25"
+  },
+  {
+    "id": "INV00426",
+    "product_id": "P00426",
+    "current_stock": 6,
+    "batch": "VNS20303",
+    "expiry": "01-Feb-24"
+  },
+  {
+    "id": "INV00427",
+    "product_id": "P00427",
+    "current_stock": 3,
+    "batch": "NNTT-101",
+    "expiry": "01-May-26"
+  },
+  {
+    "id": "INV00428",
+    "product_id": "P00428",
+    "current_stock": 95,
+    "batch": "NNTT-013",
+    "expiry": "01-Dec-25"
+  },
+  {
+    "id": "INV00429",
+    "product_id": "P00429",
+    "current_stock": 3,
+    "batch": "05",
+    "expiry": "01-Aug-25"
+  },
+  {
+    "id": "INV00430",
+    "product_id": "P00430",
+    "current_stock": 12,
+    "batch": "03",
+    "expiry": "01-Feb-25"
+  },
+  {
+    "id": "INV00431",
+    "product_id": "P00431",
+    "current_stock": 288,
+    "batch": "22F1465",
+    "expiry": "01-May-27"
+  },
+  {
+    "id": "INV00432",
+    "product_id": "P00432",
+    "current_stock": 1,
+    "batch": "22F1464",
+    "expiry": "01-May-27"
+  },
+  {
+    "id": "INV00433",
+    "product_id": "P00433",
+    "current_stock": 200,
+    "batch": "22L2476",
+    "expiry": "01-Oct-27"
+  },
+  {
+    "id": "INV00434",
+    "product_id": "P00434",
+    "current_stock": 19,
+    "batch": "22D0982",
+    "expiry": "01-Mar-27"
+  },
+  {
+    "id": "INV00435",
+    "product_id": "P00435",
+    "current_stock": 98,
+    "batch": "3165222F",
+    "expiry": "01-May-27"
+  },
+  {
+    "id": "INV00436",
+    "product_id": "P00436",
+    "current_stock": 2,
+    "batch": "J22815",
+    "expiry": "01-Sep-24"
+  },
+  {
+    "id": "INV00437",
+    "product_id": "P00437",
+    "current_stock": 3,
+    "batch": "C110401",
+    "expiry": "01-Mar-24"
+  },
+  {
+    "id": "INV00438",
+    "product_id": "P00438",
+    "current_stock": 20,
+    "batch": "MNTT-125",
+    "expiry": "01-Jul-25"
+  },
+  {
+    "id": "INV00439",
+    "product_id": "P00439",
+    "current_stock": 37,
+    "batch": "LNBT-008",
+    "expiry": "01-Mar-24"
+  },
+  {
+    "id": "INV00440",
+    "product_id": "P00440",
+    "current_stock": 1,
+    "batch": "GL2539",
+    "expiry": "01-May-24"
+  },
+  {
+    "id": "INV00441",
+    "product_id": "P00441",
+    "current_stock": 6,
+    "batch": "GL2636",
+    "expiry": "01-May-24"
+  },
+  {
+    "id": "INV00442",
+    "product_id": "P00442",
+    "current_stock": 10,
+    "batch": "GL2693",
+    "expiry": "01-Jun-24"
+  },
+  {
+    "id": "INV00443",
+    "product_id": "P00443",
+    "current_stock": 23,
+    "batch": "O320011",
+    "expiry": "01-Dec-24"
+  },
+  {
+    "id": "INV00444",
+    "product_id": "P00444",
+    "current_stock": 13,
+    "batch": "GS22907",
+    "expiry": "01-Nov-25"
+  },
+  {
+    "id": "INV00445",
+    "product_id": "P00445",
+    "current_stock": 3,
+    "batch": "P120331",
+    "expiry": "01-Jan-25"
+  },
+  {
+    "id": "INV00446",
+    "product_id": "P00446",
+    "current_stock": 93,
+    "batch": "P131239",
+    "expiry": "01-Sep-26"
+  },
+  {
+    "id": "INV00447",
+    "product_id": "P00447",
+    "current_stock": 200,
+    "batch": "R120610",
+    "expiry": "01-May-25"
+  },
+  {
+    "id": "INV00448",
+    "product_id": "P00448",
+    "current_stock": 123,
+    "batch": "STP21133",
+    "expiry": "01-Oct-24"
+  },
+  {
+    "id": "INV00449",
+    "product_id": "P00449",
+    "current_stock": 86,
+    "batch": "O320023",
+    "expiry": "01-Jan-25"
+  },
+  {
+    "id": "INV00450",
+    "product_id": "P00450",
+    "current_stock": 5,
+    "batch": "MT225629",
+    "expiry": "01-Nov-24"
+  },
+  {
+    "id": "INV00451",
+    "product_id": "P00451",
+    "current_stock": 6,
+    "batch": "B02022040",
+    "expiry": "01-Aug-24"
+  },
+  {
+    "id": "INV00452",
+    "product_id": "P00452",
+    "current_stock": 81,
+    "batch": "B520288",
+    "expiry": "01-Feb-25"
+  },
+  {
+    "id": "INV00453",
+    "product_id": "P00453",
+    "current_stock": 19,
+    "batch": "B511471",
+    "expiry": "01-Oct-24"
+  },
+  {
+    "id": "INV00454",
+    "product_id": "P00454",
+    "current_stock": 5,
+    "batch": "23EC767",
+    "expiry": "01-May-25"
+  },
+  {
+    "id": "INV00455",
+    "product_id": "P00455",
+    "current_stock": 1,
+    "batch": "VA3010620",
+    "expiry": "01-Oct-25"
+  },
+  {
+    "id": "INV00456",
+    "product_id": "P00456",
+    "current_stock": 1,
+    "batch": "1C91903",
+    "expiry": "01-Sep-24"
+  },
+  {
+    "id": "INV00457",
+    "product_id": "P00457",
+    "current_stock": 45,
+    "batch": "SG0921",
+    "expiry": "01-Aug-26"
+  },
+  {
+    "id": "INV00458",
+    "product_id": "P00458",
+    "current_stock": 14,
+    "batch": "052021",
+    "expiry": "01-Apr-26"
+  },
+  {
+    "id": "INV00459",
+    "product_id": "P00459",
+    "current_stock": 30,
+    "batch": "042021",
+    "expiry": "01-Mar-26"
+  },
+  {
+    "id": "INV00460",
+    "product_id": "P00460",
+    "current_stock": 3,
+    "batch": "V2046",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00461",
+    "product_id": "P00461",
+    "current_stock": 2,
+    "batch": "V1128",
+    "expiry": "01-Nov-26"
+  },
+  {
+    "id": "INV00462",
+    "product_id": "P00462",
+    "current_stock": 2,
+    "batch": "V2008",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00463",
+    "product_id": "P00463",
+    "current_stock": 10,
+    "batch": "V2012",
+    "expiry": "01-Jul-27"
+  },
+  {
+    "id": "INV00464",
+    "product_id": "P00464",
+    "current_stock": 6,
+    "batch": "V2011",
+    "expiry": "01-Sep-27"
+  },
+  {
+    "id": "INV00465",
+    "product_id": "P00465",
+    "current_stock": 17,
+    "batch": "LCA0130",
+    "expiry": "01-Jul-25"
+  },
+  {
+    "id": "INV00466",
+    "product_id": "P00466",
+    "current_stock": 3,
+    "batch": "LCA0126",
+    "expiry": "01-Jun-25"
+  },
+  {
+    "id": "INV00467",
+    "product_id": "P00467",
+    "current_stock": 2,
+    "batch": "LCA0140",
+    "expiry": "01-Jul-25"
+  },
+  {
+    "id": "INV00468",
+    "product_id": "P00468",
+    "current_stock": 1,
+    "batch": "GS21531",
+    "expiry": "01-May-24"
+  },
+  {
+    "id": "INV00469",
+    "product_id": "P00469",
+    "current_stock": 10,
+    "batch": "OLBH22004",
+    "expiry": "01-Apr-24"
+  },
+  {
+    "id": "INV00470",
+    "product_id": "P00470",
+    "current_stock": 4,
+    "batch": "STC22052",
+    "expiry": "01-Feb-24"
+  },
+  {
+    "id": "INV00471",
+    "product_id": "P00471",
+    "current_stock": 18,
+    "batch": "STC22179",
+    "expiry": "01-Jul-24"
+  },
+  {
+    "id": "INV00472",
+    "product_id": "P00472",
+    "current_stock": 75,
+    "batch": "2381109",
+    "expiry": "01-Mar-25"
+  },
+  {
+    "id": "INV00473",
+    "product_id": "P00473",
+    "current_stock": 19,
+    "batch": "23230260",
+    "expiry": "01-Sep-25"
+  },
+  {
+    "id": "INV00474",
+    "product_id": "P00474",
+    "current_stock": 6,
+    "batch": "OMT23047SD",
+    "expiry": "01-Mar-25"
+  },
+  {
+    "id": "INV00475",
+    "product_id": "P00475",
+    "current_stock": 20,
+    "batch": "KO20337",
+    "expiry": "01-Apr-24"
+  },
+  {
+    "id": "INV00476",
+    "product_id": "P00476",
+    "current_stock": 63,
+    "batch": "B0139",
+    "expiry": "01-Dec-24"
+  },
+  {
+    "id": "INV00477",
+    "product_id": "P00477",
+    "current_stock": 10,
+    "batch": "B0341",
+    "expiry": "01-Jun-25"
+  },
+  {
+    "id": "INV00478",
+    "product_id": "P00478",
+    "current_stock": 28,
+    "batch": "O2799",
+    "expiry": "01-Jun-24"
+  },
+  {
+    "id": "INV00479",
+    "product_id": "P00479",
+    "current_stock": 7,
+    "batch": "I2388",
+    "expiry": "01-May-24"
+  },
+  {
+    "id": "INV00480",
+    "product_id": "P00480",
+    "current_stock": 18,
+    "batch": "I2593",
+    "expiry": "01-Aug-24"
+  },
+  {
+    "id": "INV00481",
+    "product_id": "P00481",
+    "current_stock": 2,
+    "batch": "B0154",
+    "expiry": "01-Dec-24"
+  },
+  {
+    "id": "INV00482",
+    "product_id": "P00482",
+    "current_stock": 4,
+    "batch": "OMG23050",
+    "expiry": "01-May-25"
+  },
+  {
+    "id": "INV00483",
+    "product_id": "P00483",
+    "current_stock": 5,
+    "batch": "OMG23057",
+    "expiry": "01-May-25"
+  },
+  {
+    "id": "INV00484",
+    "product_id": "P00484",
+    "current_stock": 3,
+    "batch": "OMG23041",
+    "expiry": "01-Mar-25"
+  },
+  {
+    "id": "INV00485",
+    "product_id": "P00485",
+    "current_stock": 79,
+    "batch": "COG2002",
+    "expiry": "01-Mar-24"
+  },
+  {
+    "id": "INV00486",
+    "product_id": "P00486",
+    "current_stock": 4,
+    "batch": "RV23011",
+    "expiry": "01-Mar-25"
+  },
+  {
+    "id": "INV00487",
+    "product_id": "P00487",
+    "current_stock": 7,
+    "batch": "63V",
+    "expiry": "01-May-24"
+  },
+  {
+    "id": "INV00488",
+    "product_id": "P00488",
+    "current_stock": 1,
+    "batch": "2301017",
+    "expiry": "01-Jan-26"
+  },
+  {
+    "id": "INV00489",
+    "product_id": "P00489",
+    "current_stock": 74,
+    "batch": "2109016",
+    "expiry": "01-Sep-24"
+  },
+  {
+    "id": "INV00490",
+    "product_id": "P00490",
+    "current_stock": 2,
+    "batch": "2204019",
+    "expiry": "01-Apr-25"
+  },
+  {
+    "id": "INV00491",
+    "product_id": "P00491",
+    "current_stock": 7,
+    "batch": "E16JE21005",
+    "expiry": "01-Sep-24"
+  },
+  {
+    "id": "INV00492",
+    "product_id": "P00492",
+    "current_stock": 49,
+    "batch": "APIP231477",
+    "expiry": "01-Mar-25"
+  },
+  {
+    "id": "INV00493",
+    "product_id": "P00493",
+    "current_stock": 120,
+    "batch": "APIP231763",
+    "expiry": "01-May-25"
+  },
+  {
+    "id": "INV00494",
+    "product_id": "P00494",
+    "current_stock": 129,
+    "batch": "APIP231614",
+    "expiry": "01-Apr-25"
+  },
+  {
+    "id": "INV00495",
+    "product_id": "P00495",
+    "current_stock": 180,
+    "batch": "CPO240145",
+    "expiry": "01-Jun-25"
+  },
+  {
+    "id": "INV00496",
+    "product_id": "P00496",
+    "current_stock": 210,
+    "batch": "ACVT23465",
+    "expiry": "01-Feb-26"
+  },
+  {
+    "id": "INV00497",
+    "product_id": "P00497",
+    "current_stock": 60,
+    "batch": "ACF23008",
+    "expiry": "01-Feb-26"
+  },
+  {
+    "id": "INV00498",
+    "product_id": "P00498",
+    "current_stock": 4,
+    "batch": "2115128K",
+    "expiry": "01-Aug-26"
+  },
+  {
+    "id": "INV00499",
+    "product_id": "P00499",
+    "current_stock": 15,
+    "batch": "G220940589",
+    "expiry": "01-Aug-27"
+  },
+  {
+    "id": "INV00500",
+    "product_id": "P00500",
+    "current_stock": 1,
+    "batch": "PFT22009MB",
+    "expiry": "01-Apr-24"
+  },
+  {
+    "id": "INV00501",
+    "product_id": "P00501",
+    "current_stock": 1,
+    "batch": "MD22K10",
+    "expiry": "01-Oct-24"
+  },
+  {
+    "id": "INV00502",
+    "product_id": "P00502",
+    "current_stock": 2,
+    "batch": "PNS230738",
+    "expiry": "01-Jun-25"
+  },
+  {
+    "id": "INV00503",
+    "product_id": "P00503",
+    "current_stock": 8,
+    "batch": "PSN230526",
+    "expiry": "01-Apr-25"
+  },
+  {
+    "id": "INV00504",
+    "product_id": "P00504",
+    "current_stock": 20,
+    "batch": "PNS230848",
+    "expiry": "01-Jul-25"
+  },
+  {
+    "id": "INV00505",
+    "product_id": "P00505",
+    "current_stock": 4,
+    "batch": "AFB23001",
+    "expiry": "01-Dec-24"
+  },
+  {
+    "id": "INV00506",
+    "product_id": "P00506",
+    "current_stock": 7,
+    "batch": "PSR230311",
+    "expiry": "01-Feb-25"
+  },
+  {
+    "id": "INV00507",
+    "product_id": "P00507",
+    "current_stock": 20,
+    "batch": "AFB23K95",
+    "expiry": "01-Apr-25"
+  },
+  {
+    "id": "INV00508",
+    "product_id": "P00508",
+    "current_stock": 9,
+    "batch": "GS21229",
+    "expiry": "01-Apr-24"
+  },
+  {
+    "id": "INV00509",
+    "product_id": "P00509",
+    "current_stock": 20,
+    "batch": "GSL30348",
+    "expiry": "01-Apr-25"
+  },
+  {
+    "id": "INV00510",
+    "product_id": "P00510",
+    "current_stock": 1,
+    "batch": "CPL30172",
+    "expiry": "01-Mar-25"
+  },
+  {
+    "id": "INV00511",
+    "product_id": "P00511",
+    "current_stock": 2,
+    "batch": "CP20511",
+    "expiry": "01-Mar-25"
+  },
+  {
+    "id": "INV00512",
+    "product_id": "P00512",
+    "current_stock": 50,
+    "batch": "STC23005",
+    "expiry": "01-Dec-25"
+  },
+  {
+    "id": "INV00513",
+    "product_id": "P00513",
+    "current_stock": 1,
+    "batch": "PDK10",
+    "expiry": "01-Mar-24"
+  },
+  {
+    "id": "INV00514",
+    "product_id": "P00514",
+    "current_stock": 22,
+    "batch": "G230320867",
+    "expiry": "01-Feb-28"
+  },
+  {
+    "id": "INV00515",
+    "product_id": "P00515",
+    "current_stock": 1,
+    "batch": "PL2313ES",
+    "expiry": "01-Sep-25"
+  },
+  {
+    "id": "INV00516",
+    "product_id": "P00516",
+    "current_stock": 5,
+    "batch": "PST-114",
+    "expiry": "01-Nov-25"
+  },
+  {
+    "id": "INV00517",
+    "product_id": "P00517",
+    "current_stock": 8,
+    "batch": "PNA23054",
+    "expiry": "01-Mar-25"
+  },
+  {
+    "id": "INV00518",
+    "product_id": "P00518",
+    "current_stock": 1,
+    "batch": "ALH0181",
+    "expiry": "01-Mar-24"
+  },
+  {
+    "id": "INV00519",
+    "product_id": "P00519",
+    "current_stock": 15,
+    "batch": "ALH0327",
+    "expiry": "01-Oct-24"
+  },
+  {
+    "id": "INV00520",
+    "product_id": "P00520",
+    "current_stock": 14,
+    "batch": "LDA22057",
+    "expiry": "01-Apr-25"
+  },
+  {
+    "id": "INV00521",
+    "product_id": "P00521",
+    "current_stock": 4,
+    "batch": "DLPI2007",
+    "expiry": "01-Mar-24"
+  },
+  {
+    "id": "INV00522",
+    "product_id": "P00522",
+    "current_stock": 41,
+    "batch": "N420028",
+    "expiry": "01-Dec-24"
+  },
+  {
+    "id": "INV00523",
+    "product_id": "P00523",
+    "current_stock": 40,
+    "batch": "N420129",
+    "expiry": "01-Feb-25"
+  },
+  {
+    "id": "INV00524",
+    "product_id": "P00524",
+    "current_stock": 3,
+    "batch": "UNI/23/01",
+    "expiry": "01-Jan-27"
+  },
+  {
+    "id": "INV00525",
+    "product_id": "P00525",
+    "current_stock": 24,
+    "batch": "04",
+    "expiry": "01-Nov-24"
+  },
+  {
+    "id": "INV00526",
+    "product_id": "P00526",
+    "current_stock": 123,
+    "batch": "PMT23071MB",
+    "expiry": "01-Mar-25"
+  },
+  {
+    "id": "INV00527",
+    "product_id": "P00527",
+    "current_stock": 5,
+    "batch": "EGT21041",
+    "expiry": "01-Sep-25"
+  },
+  {
+    "id": "INV00528",
+    "product_id": "P00528",
+    "current_stock": 5,
+    "batch": "PBQB/41",
+    "expiry": "01-Feb-25"
+  },
+  {
+    "id": "INV00529",
+    "product_id": "P00529",
+    "current_stock": 7,
+    "batch": "5682003",
+    "expiry": "01-May-24"
+  },
+  {
+    "id": "INV00530",
+    "product_id": "P00530",
+    "current_stock": 6,
+    "batch": "PPK22034NP",
+    "expiry": "01-Aug-25"
+  },
+  {
+    "id": "INV00531",
+    "product_id": "P00531",
+    "current_stock": 1,
+    "batch": "H00H1006",
+    "expiry": "01-Jun-24"
+  },
+  {
+    "id": "INV00532",
+    "product_id": "P00532",
+    "current_stock": 1,
+    "batch": "IPT22047",
+    "expiry": "01-May-25"
+  },
+  {
+    "id": "INV00533",
+    "product_id": "P00533",
+    "current_stock": 1,
+    "batch": "IPT23047",
+    "expiry": "01-Mar-25"
+  },
+  {
+    "id": "INV00534",
+    "product_id": "P00534",
+    "current_stock": 1,
+    "batch": "IPTK23019",
+    "expiry": "01-Mar-25"
+  },
+  {
+    "id": "INV00535",
+    "product_id": "P00535",
+    "current_stock": 118,
+    "batch": "EMA741",
+    "expiry": "01-Aug-24"
+  },
+  {
+    "id": "INV00536",
+    "product_id": "P00536",
+    "current_stock": 3,
+    "batch": "QMOT23001S",
+    "expiry": "01-Jan-25"
+  },
+  {
+    "id": "INV00537",
+    "product_id": "P00537",
+    "current_stock": 10,
+    "batch": "PAI23062",
+    "expiry": "01-Dec-24"
+  },
+  {
+    "id": "INV00538",
+    "product_id": "P00538",
+    "current_stock": 65,
+    "batch": "M22108",
+    "expiry": "01-Apr-24"
+  },
+  {
+    "id": "INV00539",
+    "product_id": "P00539",
+    "current_stock": 85,
+    "batch": "M22163",
+    "expiry": "01-Jul-24"
+  },
+  {
+    "id": "INV00540",
+    "product_id": "P00540",
+    "current_stock": 2,
+    "batch": "ML22087",
+    "expiry": "01-Aug-24"
+  },
+  {
+    "id": "INV00541",
+    "product_id": "P00541",
+    "current_stock": 7,
+    "batch": "E720242",
+    "expiry": "01-Feb-25"
+  },
+  {
+    "id": "INV00542",
+    "product_id": "P00542",
+    "current_stock": 5,
+    "batch": "EPCL22026",
+    "expiry": "01-Sep-24"
+  },
+  {
+    "id": "INV00543",
+    "product_id": "P00543",
+    "current_stock": 36,
+    "batch": "RBZ33018",
+    "expiry": "01-Feb-25"
+  },
+  {
+    "id": "INV00544",
+    "product_id": "P00544",
+    "current_stock": 1,
+    "batch": "SLC23065",
+    "expiry": "01-Feb-25"
+  },
+  {
+    "id": "INV00545",
+    "product_id": "P00545",
+    "current_stock": 1,
+    "batch": "SLC23106",
+    "expiry": "01-May-25"
+  },
+  {
+    "id": "INV00546",
+    "product_id": "P00546",
+    "current_stock": 2,
+    "batch": "CPL20268",
+    "expiry": "01-Sep-24"
+  },
+  {
+    "id": "INV00547",
+    "product_id": "P00547",
+    "current_stock": 264,
+    "batch": "G9463",
+    "expiry": "01-Aug-26"
+  },
+  {
+    "id": "INV00548",
+    "product_id": "P00548",
+    "current_stock": 22,
+    "batch": "G21082244",
+    "expiry": "01-Jul-26"
+  },
+  {
+    "id": "INV00549",
+    "product_id": "P00549",
+    "current_stock": 14,
+    "batch": "G21082372",
+    "expiry": "01-Jul-26"
+  },
+  {
+    "id": "INV00550",
+    "product_id": "P00550",
+    "current_stock": 7,
+    "batch": "G220610626",
+    "expiry": "01-May-27"
+  },
+  {
+    "id": "INV00551",
+    "product_id": "P00551",
+    "current_stock": 1,
+    "batch": "RL03",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00552",
+    "product_id": "P00552",
+    "current_stock": 1,
+    "batch": "65",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00553",
+    "product_id": "P00553",
+    "current_stock": 131,
+    "batch": "01",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00554",
+    "product_id": "P00554",
+    "current_stock": 117,
+    "batch": "01",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00555",
+    "product_id": "P00555",
+    "current_stock": 30,
+    "batch": "RXKT22011S",
+    "expiry": "01-Aug-24"
+  },
+  {
+    "id": "INV00556",
+    "product_id": "P00556",
+    "current_stock": 3,
+    "batch": null,
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00557",
+    "product_id": "P00557",
+    "current_stock": 20,
+    "batch": "CAL5201",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00558",
+    "product_id": "P00558",
+    "current_stock": 11,
+    "batch": "ERO2122",
+    "expiry": "01-Feb-25"
+  },
+  {
+    "id": "INV00559",
+    "product_id": "P00559",
+    "current_stock": 2,
+    "batch": "CT22198B",
+    "expiry": "01-Mar-24"
+  },
+  {
+    "id": "INV00560",
+    "product_id": "P00560",
+    "current_stock": 9,
+    "batch": "SAC01F22",
+    "expiry": "01-May-24"
+  },
+  {
+    "id": "INV00561",
+    "product_id": "P00561",
+    "current_stock": 17,
+    "batch": "E22987",
+    "expiry": "01-Sep-24"
+  },
+  {
+    "id": "INV00562",
+    "product_id": "P00562",
+    "current_stock": 3,
+    "batch": "F22330",
+    "expiry": "01-May-24"
+  },
+  {
+    "id": "INV00563",
+    "product_id": "P00563",
+    "current_stock": 47,
+    "batch": "K22883",
+    "expiry": "01-Oct-24"
+  },
+  {
+    "id": "INV00564",
+    "product_id": "P00564",
+    "current_stock": 60,
+    "batch": "K23682",
+    "expiry": "01-Oct-25"
+  },
+  {
+    "id": "INV00565",
+    "product_id": "P00565",
+    "current_stock": 1,
+    "batch": "A220564",
+    "expiry": "01-Jun-27"
+  },
+  {
+    "id": "INV00566",
+    "product_id": "P00566",
+    "current_stock": 7,
+    "batch": "A220688",
+    "expiry": "01-Aug-27"
+  },
+  {
+    "id": "INV00567",
+    "product_id": "P00567",
+    "current_stock": 32,
+    "batch": "A220750",
+    "expiry": "01-Sep-27"
+  },
+  {
+    "id": "INV00568",
+    "product_id": "P00568",
+    "current_stock": 2,
+    "batch": "B220558",
+    "expiry": "01-Sep-27"
+  },
+  {
+    "id": "INV00569",
+    "product_id": "P00569",
+    "current_stock": 15,
+    "batch": "I22661",
+    "expiry": "01-Aug-24"
+  },
+  {
+    "id": "INV00570",
+    "product_id": "P00570",
+    "current_stock": 31,
+    "batch": "SE-08",
+    "expiry": "01-Mar-25"
+  },
+  {
+    "id": "INV00571",
+    "product_id": "P00571",
+    "current_stock": 3,
+    "batch": "SCT-135",
+    "expiry": "01-Apr-25"
+  },
+  {
+    "id": "INV00572",
+    "product_id": "P00572",
+    "current_stock": 1,
+    "batch": "SBB22005",
+    "expiry": "01-Jun-25"
+  },
+  {
+    "id": "INV00573",
+    "product_id": "P00573",
+    "current_stock": 1,
+    "batch": "G520706",
+    "expiry": "01-Feb-25"
+  },
+  {
+    "id": "INV00574",
+    "product_id": "P00574",
+    "current_stock": 20,
+    "batch": "GS22281",
+    "expiry": "01-Aug-25"
+  },
+  {
+    "id": "INV00575",
+    "product_id": "P00575",
+    "current_stock": 40,
+    "batch": "2D12S",
+    "expiry": "01-Mar-27"
+  },
+  {
+    "id": "INV00576",
+    "product_id": "P00576",
+    "current_stock": 39,
+    "batch": "2F20S",
+    "expiry": "01-May-27"
+  },
+  {
+    "id": "INV00577",
+    "product_id": "P00577",
+    "current_stock": 1,
+    "batch": "90180012",
+    "expiry": "01-Dec-24"
+  },
+  {
+    "id": "INV00578",
+    "product_id": "P00578",
+    "current_stock": 1,
+    "batch": "SONIC",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00579",
+    "product_id": "P00579",
+    "current_stock": 4,
+    "batch": "013",
+    "expiry": "01-Mar-27"
+  },
+  {
+    "id": "INV00580",
+    "product_id": "P00580",
+    "current_stock": 1,
+    "batch": "277",
+    "expiry": "01-Dec-25"
+  },
+  {
+    "id": "INV00581",
+    "product_id": "P00581",
+    "current_stock": 5,
+    "batch": "116A",
+    "expiry": "01-Aug-25"
+  },
+  {
+    "id": "INV00582",
+    "product_id": "P00582",
+    "current_stock": 7,
+    "batch": "ST2302",
+    "expiry": "01-Jun-25"
+  },
+  {
+    "id": "INV00583",
+    "product_id": "P00583",
+    "current_stock": 1,
+    "batch": "B.111",
+    "expiry": "01-Nov-24"
+  },
+  {
+    "id": "INV00584",
+    "product_id": "P00584",
+    "current_stock": 1,
+    "batch": "N430187",
+    "expiry": "01-Mar-26"
+  },
+  {
+    "id": "INV00585",
+    "product_id": "P00585",
+    "current_stock": 11,
+    "batch": "STD060",
+    "expiry": "01-Feb-25"
+  },
+  {
+    "id": "INV00586",
+    "product_id": "P00586",
+    "current_stock": 11,
+    "batch": "SPC015",
+    "expiry": "01-Jul-24"
+  },
+  {
+    "id": "INV00587",
+    "product_id": "P00587",
+    "current_stock": 1,
+    "batch": "SUP22007SD",
+    "expiry": "01-Jul-24"
+  },
+  {
+    "id": "INV00588",
+    "product_id": "P00588",
+    "current_stock": 2,
+    "batch": "SMP22024SD",
+    "expiry": "01-Sep-25"
+  },
+  {
+    "id": "INV00589",
+    "product_id": "P00589",
+    "current_stock": 2,
+    "batch": "SOP22024SD",
+    "expiry": "01-Aug-24"
+  },
+  {
+    "id": "INV00590",
+    "product_id": "P00590",
+    "current_stock": 85,
+    "batch": "PT22631",
+    "expiry": "01-Feb-25"
+  },
+  {
+    "id": "INV00591",
+    "product_id": "P00591",
+    "current_stock": 27,
+    "batch": "BUFFAN CAP",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00592",
+    "product_id": "P00592",
+    "current_stock": 8,
+    "batch": "DLMP3001",
+    "expiry": "01-Dec-24"
+  },
+  {
+    "id": "INV00593",
+    "product_id": "P00593",
+    "current_stock": 12,
+    "batch": "016AD21",
+    "expiry": "01-Sep-24"
+  },
+  {
+    "id": "INV00594",
+    "product_id": "P00594",
+    "current_stock": 1,
+    "batch": "HCL2290",
+    "expiry": "01-Oct-24"
+  },
+  {
+    "id": "INV00595",
+    "product_id": "P00595",
+    "current_stock": 7,
+    "batch": "UNIVERSAL",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00596",
+    "product_id": "P00596",
+    "current_stock": 5,
+    "batch": "UNIVERSAL-01",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00597",
+    "product_id": "P00597",
+    "current_stock": 11,
+    "batch": "133",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00598",
+    "product_id": "P00598",
+    "current_stock": 1,
+    "batch": "NTDO-001",
+    "expiry": "01-Jun-24"
+  },
+  {
+    "id": "INV00599",
+    "product_id": "P00599",
+    "current_stock": 10,
+    "batch": "AL-05",
+    "expiry": "01-Nov-24"
+  },
+  {
+    "id": "INV00600",
+    "product_id": "P00600",
+    "current_stock": 11,
+    "batch": "R09221132",
+    "expiry": "01-Aug-27"
+  },
+  {
+    "id": "INV00601",
+    "product_id": "P00601",
+    "current_stock": 1,
+    "batch": "C210564",
+    "expiry": "01-Aug-26"
+  },
+  {
+    "id": "INV00602",
+    "product_id": "P00602",
+    "current_stock": 19,
+    "batch": "HMM0146",
+    "expiry": "01-Nov-24"
+  },
+  {
+    "id": "INV00603",
+    "product_id": "P00603",
+    "current_stock": 13,
+    "batch": "HMH0135",
+    "expiry": "01-Oct-24"
+  },
+  {
+    "id": "INV00604",
+    "product_id": "P00604",
+    "current_stock": 7,
+    "batch": "66",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00605",
+    "product_id": "P00605",
+    "current_stock": 12,
+    "batch": "56",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00606",
+    "product_id": "P00606",
+    "current_stock": 2,
+    "batch": "UNIVERSAL",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00607",
+    "product_id": "P00607",
+    "current_stock": 3,
+    "batch": "UNIVERSAL 01",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00608",
+    "product_id": "P00608",
+    "current_stock": 15,
+    "batch": "NUKT-022",
+    "expiry": "01-Jun-25"
+  },
+  {
+    "id": "INV00609",
+    "product_id": "P00609",
+    "current_stock": 16,
+    "batch": "EUMC002",
+    "expiry": "01-Aug-26"
+  },
+  {
+    "id": "INV00610",
+    "product_id": "P00610",
+    "current_stock": 10,
+    "batch": "G230250055",
+    "expiry": "01-Jan-27"
+  },
+  {
+    "id": "INV00611",
+    "product_id": "P00611",
+    "current_stock": 6,
+    "batch": "22A1002",
+    "expiry": "01-Dec-25"
+  },
+  {
+    "id": "INV00612",
+    "product_id": "P00612",
+    "current_stock": 7,
+    "batch": "5632005",
+    "expiry": "01-May-24"
+  },
+  {
+    "id": "INV00613",
+    "product_id": "P00613",
+    "current_stock": 6,
+    "batch": "HANDYVAP",
+    "expiry": "01-Dec-24"
+  },
+  {
+    "id": "INV00614",
+    "product_id": "P00614",
+    "current_stock": 13,
+    "batch": "AE0221022",
+    "expiry": "01-Aug-24"
+  },
+  {
+    "id": "INV00615",
+    "product_id": "P00615",
+    "current_stock": 6,
+    "batch": "GVD0292",
+    "expiry": "01-May-25"
+  },
+  {
+    "id": "INV00616",
+    "product_id": "P00616",
+    "current_stock": 18,
+    "batch": "533",
+    "expiry": "01-Sep-24"
+  },
+  {
+    "id": "INV00617",
+    "product_id": "P00617",
+    "current_stock": 15,
+    "batch": "GL2346",
+    "expiry": "01-Apr-24"
+  },
+  {
+    "id": "INV00618",
+    "product_id": "P00618",
+    "current_stock": 4,
+    "batch": "VLDT22001",
+    "expiry": "01-Jul-24"
+  },
+  {
+    "id": "INV00619",
+    "product_id": "P00619",
+    "current_stock": 3,
+    "batch": "LIVAD003",
+    "expiry": "01-Feb-24"
+  },
+  {
+    "id": "INV00620",
+    "product_id": "P00620",
+    "current_stock": 1,
+    "batch": "HPVAJ019",
+    "expiry": "01-Apr-24"
+  },
+  {
+    "id": "INV00621",
+    "product_id": "P00621",
+    "current_stock": 1,
+    "batch": "HPWAJ005",
+    "expiry": "01-Dec-24"
+  },
+  {
+    "id": "INV00622",
+    "product_id": "P00622",
+    "current_stock": 4,
+    "batch": "HPWAJ019",
+    "expiry": "01-Mar-25"
+  },
+  {
+    "id": "INV00623",
+    "product_id": "P00623",
+    "current_stock": 40,
+    "batch": "HPWAJ038",
+    "expiry": "01-Jul-25"
+  },
+  {
+    "id": "INV00624",
+    "product_id": "P00624",
+    "current_stock": 1,
+    "batch": "HERO",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00625",
+    "product_id": "P00625",
+    "current_stock": 2,
+    "batch": "WATER..",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00626",
+    "product_id": "P00626",
+    "current_stock": 65,
+    "batch": "WDH0105",
+    "expiry": "01-Jul-24"
+  },
+  {
+    "id": "INV00627",
+    "product_id": "P00627",
+    "current_stock": 10,
+    "batch": "WED0212",
+    "expiry": "01-Mar-25"
+  },
+  {
+    "id": "INV00628",
+    "product_id": "P00628",
+    "current_stock": 50,
+    "batch": "WFA0208",
+    "expiry": "01-Dec-25"
+  },
+  {
+    "id": "INV00629",
+    "product_id": "P00629",
+    "current_stock": 90,
+    "batch": "WDH0105",
+    "expiry": "01-Jul-24"
+  },
+  {
+    "id": "INV00630",
+    "product_id": "P00630",
+    "current_stock": 1,
+    "batch": "IND WHEEL CH",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00631",
+    "product_id": "P00631",
+    "current_stock": 1,
+    "batch": "F22294",
+    "expiry": "01-May-24"
+  },
+  {
+    "id": "INV00632",
+    "product_id": "P00632",
+    "current_stock": 8,
+    "batch": "1084780",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00633",
+    "product_id": "P00633",
+    "current_stock": 2,
+    "batch": "PPKBU05",
+    "expiry": "01-Aug-24"
+  },
+  {
+    "id": "INV00634",
+    "product_id": "P00634",
+    "current_stock": 9,
+    "batch": "717",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00635",
+    "product_id": "P00635",
+    "current_stock": 56,
+    "batch": "711",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00636",
+    "product_id": "P00636",
+    "current_stock": 4,
+    "batch": "736",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00637",
+    "product_id": "P00637",
+    "current_stock": 12,
+    "batch": "746",
+    "expiry": "01-Oct-24"
+  },
+  {
+    "id": "INV00638",
+    "product_id": "P00638",
+    "current_stock": 11,
+    "batch": "738",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00639",
+    "product_id": "P00639",
+    "current_stock": 65,
+    "batch": "712",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00640",
+    "product_id": "P00640",
+    "current_stock": 13,
+    "batch": "KP0194",
+    "expiry": "01-Aug-24"
+  },
+  {
+    "id": "INV00641",
+    "product_id": "P00641",
+    "current_stock": 1,
+    "batch": "CP0121",
+    "expiry": "- -"
+  },
+  {
+    "id": "INV00642",
+    "product_id": "P00642",
+    "current_stock": 15,
+    "batch": "KP0083",
+    "expiry": "01-Jun-24"
+  },
+  {
+    "id": "INV00643",
+    "product_id": "P00643",
+    "current_stock": 5,
+    "batch": "ZEG21004S",
+    "expiry": "01-Apr-24"
+  },
+  {
+    "id": "INV00644",
+    "product_id": "P00644",
+    "current_stock": 2,
+    "batch": "INF-22K002",
+    "expiry": "01-Apr-24"
+  },
+  {
+    "id": "INV00645",
+    "product_id": "P00645",
+    "current_stock": 4,
+    "batch": "INF-22K008",
+    "expiry": "01-Nov-24"
+  },
+  {
+    "id": "INV00646",
+    "product_id": "P00646",
+    "current_stock": 4,
+    "batch": "INF-23F003",
+    "expiry": "01-Nov-24"
+  },
+  {
+    "id": "INV00647",
+    "product_id": "P00647",
+    "current_stock": 4,
+    "batch": "INF23F002",
+    "expiry": "01-Dec-24"
+  },
+  {
+    "id": "INV00648",
+    "product_id": "P00648",
+    "current_stock": 8,
+    "batch": "RQLAB19",
+    "expiry": "01-Apr-24"
+  },
+  {
+    "id": "INV00649",
+    "product_id": "P00649",
+    "current_stock": 2,
+    "batch": "233122",
+    "expiry": "01-Oct-25"
+  }
+]
