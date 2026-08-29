@@ -2,12 +2,24 @@ const HomeViewModel = {
     paymentVpa: 'HINDPHARMA2022@SBI',
     paymentName: 'Hind Pharma',
     fssaiNumber: '21521233001380',
+    sessionDurationMs: 12 * 60 * 60 * 1000,
 
     initialize() {
+        this.validateSession();
         this.setupPaymentQrCode();
         this.setupPdfDownload();
         this.setupFssaiCopy();
         this.setupAdminDashboardButton();
+    },
+
+    validateSession() {
+        const loginTime = Number(localStorage.getItem('hindPharmaLoginTime') || 0);
+        if (loginTime && Date.now() - loginTime >= this.sessionDurationMs) {
+            localStorage.removeItem('hindPharmaUser');
+            localStorage.removeItem('hindPharmaRole');
+            localStorage.removeItem('hindPharmaToken');
+            localStorage.removeItem('hindPharmaLoginTime');
+        }
     },
 
     paymentPayload() {
@@ -24,8 +36,8 @@ const HomeViewModel = {
     setupAdminDashboardButton() {
         const adminSection = document.getElementById('adminDashboardSection');
         if (!adminSection) return;
-        const role = sessionStorage.getItem('hindPharmaRole');
-        const token = sessionStorage.getItem('hindPharmaToken');
+        const role = localStorage.getItem('hindPharmaRole');
+        const token = localStorage.getItem('hindPharmaToken');
         adminSection.hidden = !(role === 'admin' && token);
     },
 
