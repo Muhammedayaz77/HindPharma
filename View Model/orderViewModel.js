@@ -1,4 +1,4 @@
-import { TempSessionService } from '../temp/temp_file_sessionService.js?v=20260830-4';
+import { TempSessionService } from '../temp/temp_file_sessionService.js?v=20260830-6';
 
 const session = TempSessionService.requireLogin();
 if (!session) throw new Error('Login required.');
@@ -11,6 +11,6 @@ document.getElementById('medical').textContent = 'Medical: ' + (localStorage.get
 const esc = value => String(value ?? '').replace(/[&<>\'\"]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','\"':'&quot;'}[char]));
 function render(){list.innerHTML=order.length?order.map((item,index)=>`<div class="item"><span>${index+1}. ${esc(item.name)}</span><span class="qty"><button data-action="minus" data-index="${index}">−</button>${item.quantity}<button data-action="plus" data-index="${index}">+</button><button class="remove" data-action="remove" data-index="${index}">×</button></span></div>`).join(''):'<p>Your order is empty.</p>';document.getElementById('next').disabled=!order.length}
 function save(){localStorage.setItem('hindPharmaOrder',JSON.stringify(order));render()}
-list.addEventListener('click',event=>{const button=event.target.closest('button[data-index]');if(!button)return;const index=Number(button.dataset.index);if(button.dataset.action==='minus')order[index].quantity=Math.max(1,order[index].quantity-1);if(button.dataset.action==='plus')order[index].quantity+=1;if(button.dataset.action==='remove')order.splice(index,1);save()});
-document.getElementById('next').onclick=()=>location.href='final-order.html';
+list.addEventListener('click',event=>{const button=event.target.closest('button[data-index]');if(!button||button.disabled)return;button.disabled=true;const index=Number(button.dataset.index);if(button.dataset.action==='minus')order[index].quantity=Math.max(1,order[index].quantity-1);if(button.dataset.action==='plus')order[index].quantity+=1;if(button.dataset.action==='remove')order.splice(index,1);save()});
+let finalOpening=false;document.getElementById('next').onclick=()=>{if(finalOpening||document.getElementById('next').disabled)return;finalOpening=true;const button=document.getElementById('next');button.disabled=true;button.textContent='OPENING…';location.href='final-order.html'};
 render();TempSessionService.startExpiryWatcher(()=>location.replace('login.html'));
