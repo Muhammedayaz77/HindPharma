@@ -1,20 +1,22 @@
-import { ApiAuthDataSource } from './authDataSource.js';
-import { AuthViewModel } from './authViewModel.js';
+import { TempAuthDataSource } from '../temp/temp_file_authDataSource.js';
+import { TempDataService } from '../temp/temp_file_dataService.js';
 
 const form = document.getElementById('form');
 const error = document.getElementById('error');
-const apiBaseUrl = window.HIND_PHARMA_API_URL || '';
+const dataService = new TempDataService();
+const authDataSource = new TempAuthDataSource(dataService);
 
 form.addEventListener('submit', async event => {
   event.preventDefault();
   error.textContent = '';
-  if (!apiBaseUrl) {
-    error.textContent = 'Login service is not configured yet.';
-    return;
-  }
   try {
-    const viewModel = new AuthViewModel(new ApiAuthDataSource(apiBaseUrl));
-    const user = await viewModel.login(document.getElementById('username').value, document.getElementById('password').value);
+    const user = await authDataSource.login(
+      document.getElementById('username').value.trim(),
+      document.getElementById('password').value
+    );
+    sessionStorage.setItem('hindPharmaUser', user.username);
+    sessionStorage.setItem('hindPharmaRole', user.role);
+    sessionStorage.setItem('hindPharmaToken', user.token);
     location.href = user.role === 'admin' ? 'admin.html' : 'medical.html';
   } catch (loginError) {
     error.textContent = loginError.message;
