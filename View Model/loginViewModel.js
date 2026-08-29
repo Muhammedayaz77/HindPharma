@@ -1,16 +1,13 @@
-import { TempAuthDataSource } from '../temp/temp_file_authDataSource.js';
-import { TempDataService } from '../temp/temp_file_dataService.js';
-import { TempSessionService } from '../temp/temp_file_sessionService.js';
+import { TempAuthDataSource } from '../temp/temp_file_authDataSource.js?v=20260830-4';
+import { TempDataService } from '../temp/temp_file_dataService.js?v=20260830-4';
+import { TempSessionService } from '../temp/temp_file_sessionService.js?v=20260830-4';
 
 const form = document.getElementById('form');
 const error = document.getElementById('error');
 const dataService = new TempDataService();
 const authDataSource = new TempAuthDataSource(dataService);
 
-// A valid existing session should never ask the user to log in again.
-if (TempSessionService.isLoggedIn()) {
-  location.replace('index.html');
-}
+if (TempSessionService.isLoggedIn()) location.replace('index.html');
 
 form.addEventListener('submit', async event => {
   event.preventDefault();
