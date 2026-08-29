@@ -1,14 +1,13 @@
-import { JsonProductDataSource, ApiProductDataSource } from './dataSource.js';
+import { LocalFirstProductDataSource } from './dataSource.js';
 import { ProductViewModel } from './productViewModel.js';
-import { TempSessionService } from '../temp/temp_file_sessionService.js?v=20260830-6';
+import { TempSessionService } from '../temp/temp_file_sessionService.js?v=20260830-7';
 
 const session = TempSessionService.requireLogin();
 if (!session) throw new Error('Login required.');
 const medical = localStorage.getItem('hindPharmaMedical');
 if (!medical) location.replace('medical.html');
 const DEFAULT_IMAGE = '../Assets/Images/hind-pharma-default.svg';
-const useApi = false;
-const dataSource = useApi ? new ApiProductDataSource(window.HIND_PHARMA_API_URL || '') : new JsonProductDataSource('../data/products.json');
+const dataSource = new LocalFirstProductDataSource('../data/products.json');
 const viewModel = new ProductViewModel(dataSource);
 let filtered = [], order = JSON.parse(localStorage.getItem('hindPharmaOrder') || '[]'), selected = null;
 const grid = document.getElementById('grid'), search = document.getElementById('search'), count = document.getElementById('count'), modal = document.getElementById('modal'), qty = document.getElementById('qty');
