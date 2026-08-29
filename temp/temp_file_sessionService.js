@@ -1,5 +1,6 @@
 const SESSION_DURATION_MS = 12 * 60 * 60 * 1000;
-const SESSION_KEYS = ['hindPharmaUser', 'hindPharmaRole', 'hindPharmaToken', 'hindPharmaLoginTime', 'hindPharmaLoginAt'];
+const SESSION_VERSION = '2';
+const SESSION_KEYS = ['hindPharmaUser', 'hindPharmaRole', 'hindPharmaToken', 'hindPharmaLoginTime', 'hindPharmaLoginAt', 'hindPharmaSessionVersion'];
 
 export const TempSessionService = {
   save(user) {
@@ -8,6 +9,7 @@ export const TempSessionService = {
     localStorage.setItem('hindPharmaRole', user.role || 'user');
     localStorage.setItem('hindPharmaToken', user.token);
     localStorage.setItem('hindPharmaLoginTime', String(loginTime));
+    localStorage.setItem('hindPharmaSessionVersion', SESSION_VERSION);
     localStorage.removeItem('hindPharmaLoginAt');
     sessionStorage.clear();
   },
@@ -17,11 +19,16 @@ export const TempSessionService = {
     const username = localStorage.getItem('hindPharmaUser');
     const role = localStorage.getItem('hindPharmaRole');
     const loginTime = Number(localStorage.getItem('hindPharmaLoginTime') || 0);
-    if (!token || !username || !loginTime || Date.now() - loginTime >= SESSION_DURATION_MS) {
+    const version = localStorage.getItem('hindPharmaSessionVersion');
+    const validVersion = version === SESSION_VERSION;
+    const validRole = role === 'admin' || role === 'user';
+    const validTime = loginTime > 0 && Date.now() - loginTime < SESSION_DURATION_MS;
+
+    if (!token || !username || !validRole || !validVersion || !validTime) {
       this.clear();
       return null;
     }
-    return { token, username, role: role || 'user', loginTime };
+    return { token, username, role, loginTime };
   },
 
   isLoggedIn() { return Boolean(this.get()); },
@@ -41,7 +48,18 @@ export const TempSessionService = {
     return session;
   },
 
+  requireAdmin() {
+    const session = this.get();
+    if (!session || session.role !== 'admin') {
+      location.replace('login.html');
+      return null;
+    }
+    return session;
+  },
+
   startExpiryWatcher(onExpire) {
-    return setInterval(() => { if (!this.get() && typeof onExpire === 'function') onExpire(); }, 60000);
+    return setInterval(() => {
+      if (!this.get() && typeof onExpire === 'function') onExpire();
+    }, 60000);
   }
 };
