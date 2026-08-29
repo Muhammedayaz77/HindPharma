@@ -36,9 +36,13 @@ const HomeViewModel = {
     setupAdminDashboardButton() {
         const adminSection = document.getElementById('adminDashboardSection');
         if (!adminSection) return;
-        const role = localStorage.getItem('hindPharmaRole');
+
         const token = localStorage.getItem('hindPharmaToken');
-        adminSection.hidden = !(role === 'admin' && token);
+        const role = localStorage.getItem('hindPharmaRole');
+        const loginTime = Number(localStorage.getItem('hindPharmaLoginTime') || 0);
+        const validSession = Boolean(token && loginTime && Date.now() - loginTime < this.sessionDurationMs);
+
+        adminSection.hidden = !(validSession && role === 'admin');
     },
 
     setupFssaiCopy() {
