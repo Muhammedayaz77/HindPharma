@@ -1,12 +1,8 @@
-import { TempDataService } from '../temp/temp_file_dataService.js';
-import { TempSessionService } from '../temp/temp_file_sessionService.js';
+import { TempDataService } from '../temp/temp_file_dataService.js?v=20260830-4';
+import { TempSessionService } from '../temp/temp_file_sessionService.js?v=20260830-4';
 
-const session = TempSessionService.get();
-if (!session || session.role !== 'admin') {
-  TempSessionService.clear();
-  location.replace('login.html');
-  throw new Error('Admin login required.');
-}
+const session = TempSessionService.requireAdmin();
+if (!session) throw new Error('Admin login required.');
 const dataService = new TempDataService();
 document.getElementById('adminName').textContent = `Signed in as ${session.username}`;
 document.getElementById('logoutButton').addEventListener('click', () => { TempSessionService.clear(); location.replace('login.html'); });
@@ -20,4 +16,5 @@ document.getElementById('productForm').addEventListener('submit',async event=>{e
 document.getElementById('refreshUsers').addEventListener('click',loadUsers);
 function escapeHtml(value){return String(value??'').replace(/[&<>\"]/g,character=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[character]));}
 function formatDate(value){if(!value)return '—';const date=new Date(value);return Number.isNaN(date.getTime())?String(value):date.toLocaleDateString();}
-loadUsers();loadCounts();TempSessionService.startExpiryWatcher(()=>location.replace('login.html'));
+TempSessionService.startExpiryWatcher(()=>location.replace('login.html'));
+loadUsers();loadCounts();
