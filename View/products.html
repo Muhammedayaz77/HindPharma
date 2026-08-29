@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Hind Pharma product catalogue">
+<title>Products | Hind Pharma</title>
+<link rel="stylesheet" href="../View Model/products.css">
+</head>
+<body>
+<header class="header"><div class="container nav"><a class="back" href="../medical.html">← Medical</a><div class="brand">HIND PHARMA</div><button class="cart" id="cartBtn">Order (0)</button></div></header>
+<main class="container"><section class="hero"><div class="eyebrow">Product Catalogue</div><h1>Select Products</h1><p id="intro">Search the product name, company or formula and tap anywhere on a product card to select it.</p><div class="search"><span>⌕</span><input id="search" type="search" placeholder="Search product..." autocomplete="off"></div><div class="toolbar"><div class="count" id="count">Loading products...</div></div></section><section class="grid" id="grid"></section></main>
+<div class="modal" id="modal"><div class="sheet"><h2 id="modalTitle">Add Product</h2><p id="modalInfo">Add a product to this order.</p><div class="qty"><button id="minus" type="button">−</button><input id="qty" type="number" min="1" value="1"><button id="plus" type="button">+</button></div><div class="actions"><button class="cancel" id="cancel" type="button">Cancel</button><button class="add" id="add" type="button">Add to Order</button></div></div></div>
+<script type="module" src="../View Model/productPageViewModel.js"></script>
+</body>
+</html>
