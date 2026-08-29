@@ -1,6 +1,6 @@
 import { JsonProductDataSource, ApiProductDataSource } from './dataSource.js';
 import { ProductViewModel } from './productViewModel.js';
-import { TempSessionService } from '../temp/temp_file_sessionService.js';
+import { TempSessionService } from '../temp/temp_file_sessionService.js?v=20260830-4';
 
 const session = TempSessionService.requireLogin();
 if (!session) throw new Error('Login required.');
