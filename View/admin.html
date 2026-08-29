@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Hind Pharma admin dashboard">
 <title>Hind Pharma | Admin</title>
-<link rel="stylesheet" href="../View Model/admin.css?v=20260830-4">
+<link rel="stylesheet" href="../View Model/admin.css?v=20260830-5">
 </head>
 <body>
 <header class="topbar"><div class="wrap nav"><div><div class="brand">HIND PHARMA</div><div class="subtitle">ADMINISTRATION</div></div><div class="navActions"><a class="btn ghost" href="index.html">HOME</a><span id="adminName" class="adminName"></span><button id="logoutButton" class="btn ghost" type="button">LOGOUT</button></div></div></header>
@@ -17,8 +17,12 @@
 <article class="card panel"><div class="panelHeader"><div><div class="eyebrow">ACCESS</div><h2>Create User</h2></div><span class="icon">+</span></div><form id="userForm" class="formGrid"><label>Username<input id="newUsername" required maxlength="80" autocomplete="off"></label><label>Password<input id="newPassword" required minlength="8" type="password" autocomplete="new-password"></label><label>Role<select id="newRole"><option value="user">Normal User</option><option value="admin">Admin</option></select></label><button class="btn primary" type="submit">CREATE USER</button><p class="message" id="userMessage"></p></form></article>
 <article class="card panel wide"><div class="panelHeader"><div><div class="eyebrow">CATALOG</div><h2>Add Product</h2></div><span class="icon">+</span></div><form id="productForm" class="formGrid productGrid"><label>Product Name<input id="productName" required maxlength="200"></label><label>Product Code<input id="productCode" maxlength="80"></label><label>Unit<input id="productUnit" maxlength="80" placeholder="Tablet / Box / Bottle"></label><label>MRP<input id="productMrp" type="number" min="0" step="0.01"></label><label>Formula<input id="productFormula" maxlength="250"></label><label>Company<input id="productCompany" maxlength="150"></label><label>Product ID <span class="optional">optional</span><input id="productId" maxlength="80" placeholder="Auto-generated if empty"></label><div class="submitCell"><button class="btn primary" type="submit">ADD PRODUCT</button><p class="message" id="productMessage"></p></div></form></article>
 </section>
-<section class="card panel usersPanel"><div class="panelHeader"><div><div class="eyebrow">ACCOUNT MANAGEMENT</div><h2>Users</h2></div><button id="refreshUsers" class="btn ghost dark" type="button">REFRESH</button></div><div class="tableWrap"><table><thead><tr><th>Username</th><th>Role</th><th>Status</th><th>Created</th></tr></thead><tbody id="usersTable"><tr><td colspan="4">Loading…</td></tr></tbody></table></div></section>
+<section class="managementGrid">
+<section class="card panel managePanel"><div class="panelHeader"><div><div class="eyebrow">CUSTOMER MANAGEMENT</div><h2>Medical Entries</h2></div><button id="refreshMedicals" class="btn ghost dark" type="button">REFRESH</button></div><div class="tableWrap"><table><thead><tr><th>Medical</th><th>Area</th><th>Action</th></tr></thead><tbody id="medicalsTable"><tr><td colspan="3">Loading…</td></tr></tbody></table></div><p class="message" id="medicalDeleteMessage"></p></section>
+<section class="card panel managePanel"><div class="panelHeader"><div><div class="eyebrow">CATALOG MANAGEMENT</div><h2>Product Entries</h2></div><button id="refreshProducts" class="btn ghost dark" type="button">REFRESH</button></div><div class="tableWrap"><table><thead><tr><th>Product</th><th>Code</th><th>Action</th></tr></thead><tbody id="productsTable"><tr><td colspan="3">Loading…</td></tr></tbody></table></div><p class="message" id="productDeleteMessage"></p></section>
+</section>
+<section class="card panel usersPanel"><div class="panelHeader"><div><div class="eyebrow">ACCOUNT MANAGEMENT</div><h2>Users</h2></div><button id="refreshUsers" class="btn ghost dark" type="button">REFRESH</button></div><div class="tableWrap"><table><thead><tr><th>Username</th><th>Role</th><th>Status</th><th>Created</th><th>Action</th></tr></thead><tbody id="usersTable"><tr><td colspan="5">Loading…</td></tr></tbody></table></div><p class="message" id="userDeleteMessage"></p></section>
 </main>
-<script type="module" src="../View Model/adminViewModel.js?v=20260830-4"></script>
+<script type="module" src="../View Model/adminViewModel.js?v=20260830-5"></script>
 </body>
 </html>
