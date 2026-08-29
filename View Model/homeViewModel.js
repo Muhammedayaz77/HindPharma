@@ -1,15 +1,18 @@
-import { TempSessionService } from '../temp/temp_file_sessionService.js';
+import { TempSessionService } from '../temp/temp_file_sessionService.js?v=20260830-4';
 
 const HomeViewModel = {
     paymentVpa: 'HINDPHARMA2022@SBI',
     paymentName: 'Hind Pharma',
 
     initialize() {
+        const adminSection = document.getElementById('adminDashboardSection');
+        if (adminSection) adminSection.hidden = true;
         const session = TempSessionService.get();
         this.setupLoginState(session);
         this.setupPaymentQrCode();
         this.setupPdfDownload();
         this.setupAdminDashboardButton(session);
+        TempSessionService.startExpiryWatcher(() => location.reload());
     },
 
     setupLoginState(session) {
@@ -38,9 +41,18 @@ const HomeViewModel = {
 
     setupAdminDashboardButton(session) {
         const adminSection = document.getElementById('adminDashboardSection');
+        const adminLink = adminSection?.querySelector('.adminButton');
+        const isAdmin = Boolean(session && session.role === 'admin');
         if (!adminSection) return;
-        // The dashboard is visible only while a current 12-hour admin session exists.
-        adminSection.hidden = !(session && session.role === 'admin');
+        adminSection.hidden = !isAdmin;
+        if (adminLink) {
+            adminLink.onclick = event => {
+                if (!TempSessionService.isAdmin()) {
+                    event.preventDefault();
+                    adminSection.hidden = true;
+                }
+            };
+        }
     },
 
     paymentPayload() {
