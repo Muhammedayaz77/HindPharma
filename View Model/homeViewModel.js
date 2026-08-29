@@ -1,12 +1,10 @@
-import { TempSessionService } from '../temp/temp_file_sessionService.js?v=20260830-4';
+import { TempSessionService } from '../temp/temp_file_sessionService.js?v=20260830-5';
 
 const HomeViewModel = {
     paymentVpa: 'HINDPHARMA2022@SBI',
     paymentName: 'Hind Pharma',
 
     initialize() {
-        const adminSection = document.getElementById('adminDashboardSection');
-        if (adminSection) adminSection.hidden = true;
         const session = TempSessionService.get();
         this.setupLoginState(session);
         this.setupPaymentQrCode();
@@ -40,19 +38,17 @@ const HomeViewModel = {
     },
 
     setupAdminDashboardButton(session) {
-        const adminSection = document.getElementById('adminDashboardSection');
-        const adminLink = adminSection?.querySelector('.adminButton');
-        const isAdmin = Boolean(session && session.role === 'admin');
-        if (!adminSection) return;
-        adminSection.hidden = !isAdmin;
-        if (adminLink) {
-            adminLink.onclick = event => {
-                if (!TempSessionService.isAdmin()) {
-                    event.preventDefault();
-                    adminSection.hidden = true;
-                }
-            };
-        }
+        const isAdmin = Boolean(session && session.role === 'admin' && session.token);
+        if (!isAdmin) return;
+
+        const main = document.querySelector('main.wrap');
+        const qrCard = document.querySelector('.qrCard');
+        if (!main || !qrCard) return;
+
+        const adminSection = document.createElement('section');
+        adminSection.className = 'card adminDashboardCard';
+        adminSection.innerHTML = '<div><div class="eyebrow">ADMIN ACCESS</div><h2>Admin Dashboard</h2><p>Manage medicals, users and products.</p></div><a class="btn adminButton" href="admin.html">OPEN ADMIN DASHBOARD →</a>';
+        main.insertBefore(adminSection, qrCard);
     },
 
     paymentPayload() {
