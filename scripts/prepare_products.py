@@ -2,14 +2,11 @@ import json
 from pathlib import Path
 
 SOURCE_FILE = Path("OLD_HindPharmaDataFile")
-OUTPUT_FILE = Path("data/products.json")
+DATA_DIR = Path("data")
 
-# Web-verified formulas/compositions. Products not verified here remain blank.
 FORMULAS = {
     "ABIXIM 200 TAB 10": "Cefixime 200 mg",
     "ACEFILE-MR 10S": "Aceclofenac 100 mg + Chlorzoxazone 250 mg + Paracetamol 325 mg",
-    "AMROX LS DROPS 15ML": "Ambroxol 7.5 mg/ml + Guaifenesin 12.5 mg/ml + Levosalbutamol 0.25 mg/ml",
-    "AMROX LS JUNIOR SYP 60ML 60ML": "Ambroxol 15 mg + Guaifenesin 50 mg + Levosalbutamol 0.5 mg",
     "PANTOSEC 40MG TAB 10": "Pantoprazole 40 mg",
     "PANTOSEC D TAB 10": "Domperidone 10 mg + Pantoprazole 40 mg",
     "NIMUPAIN PLUS TAB (BROWN) 10": "Nimesulide 100 mg + Paracetamol 325 mg",
@@ -18,8 +15,6 @@ FORMULAS = {
     "FLUKA 150 CAP 1-CAP": "Fluconazole 150 mg",
     "NITRO-G 2.6 TAB 30S": "Nitroglycerin 2.6 mg",
     "NEOS CREAM (NEOMYCIN)10GM 10GM": "Neomycin",
-    "ZANDU  BALM (NEW)  8ML 8ML": "Mentha + Gaultheria + Eucalyptus + Trachyspermum ammi + Base q.s.",
-    "ZANDU  BALM 25ML 1*25ML": "Mentha + Gaultheria + Eucalyptus + Trachyspermum ammi + Base q.s.",
 }
 
 
@@ -33,35 +28,76 @@ def clean(value):
     return value
 
 
-def prepare_products():
+def write_json(name, records):
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    with (DATA_DIR / name).open("w", encoding="utf-8") as file:
+        json.dump(records, file, ensure_ascii=False, indent=2)
+
+
+def prepare_data():
     with SOURCE_FILE.open("r", encoding="utf-8") as file:
         records = json.load(file)
 
     products = []
+    inventory = []
+    suppliers = {}
+    companies = {}
+    purchases = []
+
     for index, record in enumerate(records, start=1):
-        raw_name = record.get("Product Name")
-        product_name = clean(raw_name)
+        product_name = clean(record.get("Product Name"))
         if not product_name:
             continue
 
+        product_id = f"P{index:05d}"
+        company = clean(record.get("Company"))
+        supplier = clean(record.get("Supplier"))
         mrp = record.get("M.R.P.")
         if mrp in (0, "0", "", None):
             mrp = None
 
         products.append({
-            "id": f"P{index:05d}",
+            "id": product_id,
+            "code": clean(record.get("Code")),
             "name": product_name,
+            "unit": clean(record.get("Unit")),
             "mrp": mrp,
-            "formula": FORMULAS.get(str(raw_name).strip()),
-            "company": clean(record.get("Company")),
+            "formula": FORMULAS.get(str(record.get("Product Name", "")).strip()),
+            "company": company,
         })
 
-    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
-    with OUTPUT_FILE.open("w", encoding="utf-8") as file:
-        json.dump(products, file, ensure_ascii=False, indent=2)
+        if company:
+            companies[company] = {"name": company}
+        if supplier:
+            suppliers[supplier] = {"name": supplier}
 
-    print(f"Prepared {len(products)} product records -> {OUTPUT_FILE}")
+        inventory.append({
+            "id": f"INV{index:05d}",
+            "product_id": product_id,
+            "current_stock": record.get("Current Stock", 0),
+            "batch": clean(record.get("Batch")),
+            "expiry": clean(record.get("EXP")),
+        })
+
+        purchases.append({
+            "id": f"PUR{index:05d}",
+            "product_id": product_id,
+            "supplier": supplier,
+            "cost_price": record.get("Cost Price"),
+            "purchase_price": record.get("Purchase Price"),
+            "sales_price": record.get("Sales Price"),
+            "received_date": clean(record.get("Rec.Date")),
+            "invoice_number": clean(record.get("Inv.No")),
+            "invoice_date": clean(record.get("Inv.Date")),
+        })
+
+    write_json("products.json", products)
+    write_json("companies.json", [{"name": value["name"]} for value in companies.values()])
+    write_json("suppliers.json", [{"name": value["name"]} for value in suppliers.values()])
+    write_json("inventory.json", inventory)
+    write_json("purchases.json", purchases)
+    print(f"Prepared {len(products)} products, {len(companies)} companies, {len(suppliers)} suppliers, {len(inventory)} inventory records and {len(purchases)} purchase records")
 
 
 if __name__ == "__main__":
-    prepare_products()
+    prepare_data()
