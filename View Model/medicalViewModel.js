@@ -1,5 +1,5 @@
 import { API_BASE_URL, USE_LOCAL_API } from '../API/apiConfig.js';
-import { TempSessionService } from '../temp/temp_file_sessionService.js?v=20260830-7';
+import { TempSessionService } from '../temp/temp_file_sessionService.js?v=20260830-8';
 
 const session = TempSessionService.requireLogin();
 if (!session) throw new Error('Login required.');
@@ -18,22 +18,23 @@ function render() {
   list.querySelectorAll('.medical').forEach(button => button.addEventListener('click', () => choose(matches[Number(button.dataset.index)]), {once:true}));
 }
 function choose(medical) {
+  if (!medical) return;
   const display = medical.area ? `${medical.name} (${medical.area})` : medical.name;
   localStorage.setItem('hindPharmaMedical', display);
   localStorage.removeItem('hindPharmaOrder');
   location.href = 'products.html';
 }
 async function loadMedicals() {
-  if (USE_LOCAL_API) {
-    try {
-      const response = await fetch(`${API_BASE_URL}/medicals`, {cache:'no-store'});
-      if (response.ok) { medicals = await response.json(); render(); return; }
-    } catch (_) {}
-  }
   try {
-    const response = await fetch('../data/medicals.json', {cache:'no-store'});
-    if (!response.ok) throw new Error();
-    medicals = await response.json();
+    if (USE_LOCAL_API) {
+      const response = await fetch(`${API_BASE_URL}/medicals`, {cache:'no-store'});
+      if (!response.ok) throw new Error();
+      medicals = await response.json();
+    } else {
+      const response = await fetch('../data/medicals.json', {cache:'no-store'});
+      if (!response.ok) throw new Error();
+      medicals = await response.json();
+    }
     render();
   } catch (_) { list.innerHTML = '<div class="empty">Medical list could not be loaded.</div>'; }
 }
