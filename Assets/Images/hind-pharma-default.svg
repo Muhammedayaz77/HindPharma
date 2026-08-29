@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-label="Hind Pharma default product image">
+<rect width="320" height="320" rx="56" fill="#eef8f4"/>
+<circle cx="160" cy="128" r="72" fill="none" stroke="#167b68" stroke-width="12"/>
+<path d="M145 80h30v33h33v30h-33v33h-30v-33h-33v-30h33z" fill="#167b68"/>
+<path d="M213 169c34 3 47 25 49 48-27 3-51-6-62-25 2-9 6-17 13-23z" fill="#4cae83"/>
+<text x="160" y="246" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="30" font-weight="800" fill="#167b68">HIND</text>
+<text x="160" y="278" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="800" fill="#167b68">PHARMA</text>
+</svg>
