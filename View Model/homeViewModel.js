@@ -1,10 +1,12 @@
 const HomeViewModel = {
     paymentVpa: 'HINDPHARMA2022@SBI',
     paymentName: 'Hind Pharma',
+    fssaiNumber: '21521233001380',
 
     initialize() {
         this.setupPaymentQrCode();
         this.setupPdfDownload();
+        this.setupFssaiCopy();
     },
 
     paymentPayload() {
@@ -27,6 +29,41 @@ const HomeViewModel = {
         const button = document.getElementById('downloadQr');
         if (!button) return;
         button.addEventListener('click', () => this.downloadPaymentQrPdf());
+    },
+
+    setupFssaiCopy() {
+        const card = document.getElementById('fssaiCard');
+        if (!card) return;
+        const copy = () => this.copyFssaiNumber();
+        card.addEventListener('click', copy);
+        card.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                copy();
+            }
+        });
+    },
+
+    async copyFssaiNumber() {
+        try {
+            if (navigator.clipboard?.writeText) {
+                await navigator.clipboard.writeText(this.fssaiNumber);
+            } else {
+                const helper = document.getElementById('fssaiCopyValue');
+                helper.focus();
+                helper.select();
+                document.execCommand('copy');
+                helper.blur();
+            }
+            const hint = document.getElementById('fssaiHint');
+            if (hint) {
+                hint.textContent = 'FSSAI number copied';
+                window.setTimeout(() => { hint.textContent = 'Tap to select & copy'; }, 1600);
+            }
+        } catch (error) {
+            const hint = document.getElementById('fssaiHint');
+            if (hint) hint.textContent = 'Tap and hold to copy';
+        }
     },
 
     downloadPaymentQrPdf() {
