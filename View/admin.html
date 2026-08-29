@@ -15,13 +15,12 @@
   </div>
 </header>
 <main class="wrap adminPage">
-  <section class="welcome card"><div><div class="eyebrow">CONTROL CENTER</div><h1>Admin Dashboard</h1><p>Manage medicals, users and products, and review orders.</p></div><div class="roleBadge">ADMIN</div></section>
+  <section class="welcome card"><div><div class="eyebrow">CONTROL CENTER</div><h1>Admin Dashboard</h1><p>Manage medicals, users and products. Use Home for regular ordering and product work.</p></div><div class="roleBadge">ADMIN</div></section>
   <section class="stats">
     <div class="stat card"><span>USERS</span><strong id="userCount">—</strong></div>
     <div class="stat card"><span>MEDICALS</span><strong id="medicalCount">—</strong></div>
     <div class="stat card"><span>PRODUCTS</span><strong id="productCount">—</strong></div>
   </section>
-  <section class="quickActions card"><div><div class="eyebrow">ADMIN TOOLS</div><h2>Browse Website</h2><p>Admin can open the same medical and product flow as a normal user.</p></div><div class="quickButtons"><a class="btn primary" href="medical.html">VIEW MEDICALS</a><a class="btn secondary" href="order.html">VIEW ORDER</a></div></section>
   <section class="grid">
     <article class="card panel"><div class="panelHeader"><div><div class="eyebrow">CUSTOMERS</div><h2>Add Medical</h2></div><span class="icon">+</span></div><form id="medicalForm" class="formGrid"><label>Medical Name<input id="medicalName" required maxlength="150" placeholder="e.g. City Medical Store"></label><label>Area<input id="medicalArea" maxlength="150" placeholder="e.g. Nanded"></label><button class="btn primary" type="submit">ADD MEDICAL</button><p class="message" id="medicalMessage"></p></form></article>
     <article class="card panel"><div class="panelHeader"><div><div class="eyebrow">ACCESS</div><h2>Create User</h2></div><span class="icon">+</span></div><form id="userForm" class="formGrid"><label>Username<input id="newUsername" required maxlength="80" autocomplete="off"></label><label>Password<input id="newPassword" required minlength="8" type="password" autocomplete="new-password"></label><label>Role<select id="newRole"><option value="user">Normal User</option><option value="admin">Admin</option></select></label><button class="btn primary" type="submit">CREATE USER</button><p class="message" id="userMessage"></p></form></article>
