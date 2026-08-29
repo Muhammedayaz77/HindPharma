@@ -5,6 +5,14 @@ const form = document.getElementById('form');
 const error = document.getElementById('error');
 const dataService = new TempDataService();
 const authDataSource = new TempAuthDataSource(dataService);
+const SESSION_DURATION_MS = 12 * 60 * 60 * 1000;
+
+function saveLoginSession(user) {
+  localStorage.setItem('hindPharmaUser', user.username);
+  localStorage.setItem('hindPharmaRole', user.role);
+  localStorage.setItem('hindPharmaToken', user.token);
+  localStorage.setItem('hindPharmaLoginTime', String(Date.now()));
+}
 
 form.addEventListener('submit', async event => {
   event.preventDefault();
@@ -14,11 +22,18 @@ form.addEventListener('submit', async event => {
       document.getElementById('username').value.trim(),
       document.getElementById('password').value
     );
-    sessionStorage.setItem('hindPharmaUser', user.username);
-    sessionStorage.setItem('hindPharmaRole', user.role);
-    sessionStorage.setItem('hindPharmaToken', user.token);
-    location.href = user.role === 'admin' ? 'admin.html' : 'medical.html';
+    saveLoginSession(user);
+    location.href = 'index.html';
   } catch (loginError) {
     error.textContent = loginError.message;
   }
 });
+
+// Remove only an expired 12-hour session. Closing/reopening the browser does not log the user out.
+const loginTime = Number(localStorage.getItem('hindPharmaLoginTime') || 0);
+if (loginTime && Date.now() - loginTime >= SESSION_DURATION_MS) {
+  localStorage.removeItem('hindPharmaUser');
+  localStorage.removeItem('hindPharmaRole');
+  localStorage.removeItem('hindPharmaToken');
+  localStorage.removeItem('hindPharmaLoginTime');
+}
