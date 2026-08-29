@@ -1,0 +1,12 @@
+[
+  {
+    "username":"HindPharma",
+    "password_hash":"REPLACE_WITH_ARGON2_OR_BCRYPT_HASH",
+    "is_active":true
+  },
+  {
+    "username":"Ayaz",
+    "password_hash":"REPLACE_WITH_ARGON2_OR_BCRYPT_HASH",
+    "is_active":true
+  }
+]
