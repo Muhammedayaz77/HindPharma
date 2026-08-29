@@ -1,4543 +1,5841 @@
 [
   {
     "id": "P00001",
+    "code": "09995",
     "name": "ABDOMINAL BELT(TYNOR)[L] 1 L",
+    "unit": "PCS",
     "mrp": 690,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00002",
+    "code": "09994",
     "name": "ABDOMINAL BELT(TYNOR)[M] 1 MEDIUM",
+    "unit": "PCS",
     "mrp": 690,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00003",
+    "code": "09993",
     "name": "ABDOMINAL BELT(TYNOR)[S] 1 SMALL",
+    "unit": "PCS",
     "mrp": 690,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00004",
+    "code": "09996",
     "name": "ABDOMINAL BELT(TYNOR)[XL] 1 XL",
+    "unit": "PCS",
     "mrp": 800,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00005",
+    "code": "ABT-8611",
     "name": "ABIXIM 200 TAB 10",
+    "unit": "Pcs",
     "mrp": 109.42,
     "formula": "Cefixime 200 mg",
     "company": "ABBOTT HEALTHCARE PVT. LTD."
   },
   {
     "id": "P00006",
+    "code": "BUL-0141",
     "name": "ACEFILE-MR 10S",
+    "unit": "PCS",
     "mrp": 93,
     "formula": "Aceclofenac 100 mg + Chlorzoxazone 250 mg + Paracetamol 325 mg",
     "company": "AJANTA PHARMA LTD"
   },
   {
     "id": "P00007",
+    "code": "L&T9050",
     "name": "ACELYC P TAB (ALU) 20*10",
+    "unit": "20Pc",
     "mrp": 100,
     "formula": null,
     "company": "L&T'S"
   },
   {
     "id": "P00008",
+    "code": "L&T9049",
     "name": "ACELYC P TAB (BLISTER) 10",
+    "unit": "20Pc",
     "mrp": 80,
     "formula": null,
     "company": "L&T'S"
   },
   {
     "id": "P00009",
+    "code": "L&T9049",
     "name": "ACELYC P TAB (BLISTER) 10",
+    "unit": "20Pc",
     "mrp": 80,
     "formula": null,
     "company": "L&T'S"
   },
   {
     "id": "P00010",
+    "code": "10251",
     "name": "ACELYC-SP TAB (ALU) 10",
+    "unit": "20Pc",
     "mrp": 120,
     "formula": null,
     "company": "LORDCENT & TORRENT HEALTHCARE"
   },
   {
     "id": "P00011",
+    "code": "LUP-6969",
     "name": "ACEMIZ MR TAB 10-ALU",
+    "unit": "20PC",
     "mrp": 109.4,
     "formula": null,
     "company": "LUPIN GENERIC"
   },
   {
     "id": "P00012",
+    "code": "02709",
     "name": "ACEMIZ PLUS TAB 10-ALU",
+    "unit": "20PC",
     "mrp": 108.9,
     "formula": null,
     "company": "LUPIN GENERIC"
   },
   {
     "id": "P00013",
+    "code": "LUP-09073",
     "name": "ACEMIZ S TAB 10",
+    "unit": "20PC",
     "mrp": 126.95,
     "formula": null,
     "company": "LUPIN GENERIC"
   },
   {
     "id": "P00014",
+    "code": "00401",
     "name": "ACIMOL-FORTE TAB 10",
+    "unit": "10PC",
     "mrp": 75,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00015",
+    "code": "A227",
     "name": "ACLOMET XL 25 TAB 10S",
+    "unit": "PCS",
     "mrp": 42,
     "formula": null,
     "company": "AJANTA PHARMA LTD"
   },
   {
     "id": "P00016",
+    "code": "ACU-0113",
     "name": "ACUPARA IV 100ML 100ML",
+    "unit": "PCS",
     "mrp": 590,
     "formula": null,
     "company": "ACULIFE HEALTHCARE PVT. LTD."
   },
   {
     "id": "P00017",
+    "code": "9064",
     "name": "ADHESIVE TAPE 0.5 INCH 1.25CM*1MT",
+    "unit": "144P",
     "mrp": 17,
     "formula": null,
     "company": "STICKWELL INDUSTRIES"
   },
   {
     "id": "P00018",
+    "code": "9064",
     "name": "ADHESIVE TAPE 0.5 INCH 1.25CM*1MT",
+    "unit": "144P",
     "mrp": 17,
     "formula": null,
     "company": "STICKWELL INDUSTRIES"
   },
   {
     "id": "P00019",
+    "code": "9045",
     "name": "ADHESIVE TAPE 1 INCH 2.5CMX1MT",
+    "unit": "96Pc",
     "mrp": 22,
     "formula": null,
     "company": "STICKWELL INDUSTRIES"
   },
   {
     "id": "P00020",
+    "code": "A00203",
     "name": "ADHESIVE TAPE 2.5X5MTR 2.5*5MTR",
+    "unit": "PCS",
     "mrp": 88.5,
     "formula": null,
     "company": "STICKWELL INDUSTRIES"
   },
   {
     "id": "P00021",
+    "code": "10004",
     "name": "ADHESIVE TAPE 5CM*5MTR 2 INCH",
+    "unit": "PCS",
     "mrp": 127,
     "formula": null,
     "company": "STICKWELL INDUSTRIES"
   },
   {
     "id": "P00022",
+    "code": "10004",
     "name": "ADHESIVE TAPE 5CM*5MTR 2 INCH",
+    "unit": "PCS",
     "mrp": 155,
     "formula": null,
     "company": "STICKWELL INDUSTRIES"
   },
   {
     "id": "P00023",
+    "code": "9328",
     "name": "ADHESIVE TAPE 7.5CM*5M 3 INCH",
+    "unit": "12Pc",
     "mrp": 218,
     "formula": null,
     "company": "STICKWELL INDUSTRIES"
   },
   {
     "id": "P00024",
+    "code": "A00214",
     "name": "ADULT DAIPER L (ROMSONS) L",
+    "unit": "PCS",
     "mrp": 585,
     "formula": null,
     "company": "ROMSONS"
   },
   {
     "id": "P00025",
+    "code": "AD248",
     "name": "ADULT DIAPER(ELDURO)-L L 16",
+    "unit": "PCS",
     "mrp": 599,
     "formula": null,
     "company": "FAMILYCARE CONSUMER PVT LTD_MH"
   },
   {
     "id": "P00026",
+    "code": "AD248",
     "name": "ADULT DIAPER(ELDURO)-L L 16",
+    "unit": "PCS",
     "mrp": 599,
     "formula": null,
     "company": "FAMILYCARE CONSUMER PVT LTD_MH"
   },
   {
     "id": "P00027",
+    "code": "AD247",
     "name": "ADULT DIAPER(ELDURO)-M-PREMIUM M",
+    "unit": "PCS",
     "mrp": 549,
     "formula": null,
     "company": "FAMILYCARE CONSUMER PVT LTD_MH"
   },
   {
     "id": "P00028",
+    "code": "AD247",
     "name": "ADULT DIAPER(ELDURO)-M-PREMIUM M",
+    "unit": "PCS",
     "mrp": 549,
     "formula": null,
     "company": "FAMILYCARE CONSUMER PVT LTD_MH"
   },
   {
     "id": "P00029",
+    "code": "AD247",
     "name": "ADULT DIAPER(ELDURO)-M-PREMIUM M",
+    "unit": "PCS",
     "mrp": 549,
     "formula": null,
     "company": "FAMILYCARE CONSUMER PVT LTD_MH"
   },
   {
     "id": "P00030",
+    "code": "AD249",
     "name": "ADULT DIAPER(ELDURO)-XL XL",
+    "unit": "PCS",
     "mrp": 649,
     "formula": null,
     "company": "FAMILYCARE CONSUMER PVT LTD_MH"
   },
   {
     "id": "P00031",
+    "code": "A251",
     "name": "ADULT DIAPER(ELDURO-PANTS)-L L",
+    "unit": "PCS",
     "mrp": 650,
     "formula": null,
     "company": "FAMILYCARE CONSUMER PVT LTD_MH"
   },
   {
     "id": "P00032",
+    "code": "A251",
     "name": "ADULT DIAPER(ELDURO-PANTS)-L L",
+    "unit": "PCS",
     "mrp": 650,
     "formula": null,
     "company": "FAMILYCARE CONSUMER PVT LTD_MH"
   },
   {
     "id": "P00033",
+    "code": "A250",
     "name": "ADULT DIAPER(ELDURO-PANTS)-M M",
+    "unit": "PCS",
     "mrp": 600,
     "formula": null,
     "company": "FAMILYCARE CONSUMER PVT LTD_MH"
   },
   {
     "id": "P00034",
+    "code": "AD252",
     "name": "ADULT DIAPER(ELDURO-PANTS)-XL XL",
+    "unit": "PCS",
     "mrp": 700,
     "formula": null,
     "company": "FAMILYCARE CONSUMER PVT LTD_MH"
   },
   {
     "id": "P00035",
+    "code": "A00236",
     "name": "ADULT DIPER L(ROM) LARGE",
+    "unit": "PCS",
     "mrp": 585,
     "formula": null,
     "company": "ROMSONS"
   },
   {
     "id": "P00036",
+    "code": "A028",
     "name": "ADULT DIPER M (ROMSONS) M",
+    "unit": "10 P",
     "mrp": 585,
     "formula": null,
     "company": "ROMSONS"
   },
   {
     "id": "P00037",
+    "code": "A029",
     "name": "ADULT DIPER XL (ROMSONS) XL",
+    "unit": "10 P",
     "mrp": 585,
     "formula": null,
     "company": "ROMSONS"
   },
   {
     "id": "P00038",
+    "code": "AJA-217",
     "name": "AJAPRIDE 2MG TAB 10",
+    "unit": "PCS",
     "mrp": 67.91,
     "formula": null,
     "company": "AJANTA PHARMA LTD"
   },
   {
     "id": "P00039",
+    "code": "AJ-0099",
     "name": "AJATRAX 25MG TAB 10*15",
+    "unit": "PCS",
     "mrp": 82,
     "formula": null,
     "company": "AJANTA PHARMA LTD"
   },
   {
     "id": "P00040",
+    "code": "AL9123",
     "name": "ALDIGESIC SP TAB 20*10",
+    "unit": "20Pc",
     "mrp": 120,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00041",
+    "code": "AL-0067",
     "name": "ALDIGESIC-P (BOX) 60*15",
+    "unit": "PCS",
     "mrp": 110,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00042",
+    "code": "10849",
     "name": "ALEREX-10 TAB 15",
+    "unit": "20PC",
     "mrp": 33,
     "formula": null,
     "company": "MICRO LABS LTD"
   },
   {
     "id": "P00043",
+    "code": "A094",
     "name": "ALKAKEM + LIQ 100ML",
+    "unit": "PCS",
     "mrp": 78,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00044",
+    "code": "2566",
     "name": "ALKOF + COUGH SYP 100ML 100ML",
+    "unit": "36Pc",
     "mrp": 60,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00045",
+    "code": "3233",
     "name": "ALKOF + COUGH SYP 60ML 60ML",
+    "unit": "49Pc",
     "mrp": 31,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00046",
+    "code": "AK873",
     "name": "ALKOF COFGEL CAP 20*10",
+    "unit": "20Pc",
     "mrp": 53,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00047",
+    "code": "AL-08911",
     "name": "ALKOF DX SYP 100ML 100ML",
+    "unit": "36Pc",
     "mrp": 110,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00048",
+    "code": "AL-08911",
     "name": "ALKOF DX SYP 100ML 100ML",
+    "unit": "36Pc",
     "mrp": 120,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00049",
+    "code": "AL-10620",
     "name": "ALKOF LS SYP 100ML 100ML",
+    "unit": "Pcs",
     "mrp": 108,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00050",
+    "code": "AL-3784",
     "name": "ALKOF ORANGE SYP 100ML 100ML",
+    "unit": "36Pc",
     "mrp": 93,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00051",
+    "code": "AL-4466",
     "name": "ALKOF ORANGE SYP 60ML 60ML",
+    "unit": "49Pc",
     "mrp": 63,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00052",
+    "code": "3324",
     "name": "ALMOX 500MG CAP 10",
+    "unit": "20Pc",
     "mrp": 120.4,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00053",
+    "code": "KBP-0021",
     "name": "AMBROKEL LS SYP 100ML",
+    "unit": "PCS",
     "mrp": 95,
     "formula": null,
     "company": "KELVIN BIOPHARMA"
   },
   {
     "id": "P00054",
+    "code": "02317",
     "name": "AMLIP 10 TAB 10",
+    "unit": "20PC",
     "mrp": 56.89,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00055",
+    "code": "02210",
     "name": "AMOXYCLAV 1.2GM INJ 1.2GM",
+    "unit": "10PC",
     "mrp": 140.49,
     "formula": null,
     "company": "ABBOTT HEALTHCARE PVT. LTD."
   },
   {
     "id": "P00056",
+    "code": "ABT-10728",
     "name": "AMOXYCLAV 375 TAB 10",
+    "unit": "Pcs",
     "mrp": 392.61,
     "formula": null,
     "company": "ABBOTT HEALTHCARE PVT. LTD."
   },
   {
     "id": "P00057",
+    "code": "ABT-108671",
     "name": "AMOXYCLAV 625 (10S) TAB 10S",
+    "unit": "10Pc",
     "mrp": 204.84,
     "formula": null,
     "company": "ABBOTT HEALTHCARE PVT. LTD."
   },
   {
     "id": "P00058",
+    "code": "ABT-10430",
     "name": "AMOXYCLAV DS SUSP 30ML",
+    "unit": "25Pc",
     "mrp": 67.53,
     "formula": null,
     "company": "ABBOTT HEALTHCARE PVT. LTD."
   },
   {
     "id": "P00059",
+    "code": "ABT-10430",
     "name": "AMOXYCLAV DS SUSP 30ML",
+    "unit": "25Pc",
     "mrp": 67.53,
     "formula": null,
     "company": "ABBOTT HEALTHCARE PVT. LTD."
   },
   {
     "id": "P00060",
+    "code": "MAN-0171",
     "name": "AMROX 100ML 100ML",
+    "unit": "PCS",
     "mrp": 100,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00061",
+    "code": "A129",
     "name": "AMROX JUNIOR SYP 60ML",
+    "unit": "PCS",
     "mrp": 75,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00062",
+    "code": "02261",
     "name": "AMROX LS DROPS 15ML",
+    "unit": "20PC",
     "mrp": 70,
-    "formula": "Ambroxol 7.5 mg/ml + Guaifenesin 12.5 mg/ml + Levosalbutamol 0.25 mg/ml",
+    "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00063",
+    "code": "A096",
     "name": "AMROX LS JUNIOR SYP 60ML 60ML",
+    "unit": "PCS",
     "mrp": 75,
-    "formula": "Ambroxol 15 mg + Guaifenesin 50 mg + Levosalbutamol 0.5 mg",
+    "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00064",
+    "code": "02536",
     "name": "ANKLE BINDER L(TYNOR) L",
+    "unit": "PCS",
     "mrp": 340,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00065",
+    "code": "02536",
     "name": "ANKLE BINDER L(TYNOR) L",
+    "unit": "PCS",
     "mrp": 305,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00066",
+    "code": "A051",
     "name": "ANKLE BINDER M(TYNOR) M",
+    "unit": "PCS",
     "mrp": 340,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00067",
+    "code": "A055",
     "name": "ANKLE BINDER XL(TYNOR) XL",
+    "unit": "PCS",
     "mrp": 340,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00068",
+    "code": "A130",
     "name": "ANKLE BLINDER S (TYNOR) 1",
+    "unit": "PCS",
     "mrp": 340,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00069",
+    "code": "A130",
     "name": "ANKLE BLINDER S (TYNOR) 1",
+    "unit": "PCS",
     "mrp": 340,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00070",
+    "code": "AJ-0135",
     "name": "APNICID TAB 10",
+    "unit": "PCS",
     "mrp": 145,
     "formula": null,
     "company": "AJANTA PHARMA LTD"
   },
   {
     "id": "P00071",
+    "code": "A229",
     "name": "ATORSTIN 40MG 10",
+    "unit": "PCS",
     "mrp": 239.9,
     "formula": null,
     "company": "AJANTA PHARMA LTD"
   },
   {
     "id": "P00072",
+    "code": "10626",
     "name": "AZICIP 250 TAB 6",
+    "unit": "20Pc",
     "mrp": 71.09,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00073",
+    "code": "10626",
     "name": "AZICIP 250 TAB 6",
+    "unit": "20Pc",
     "mrp": 71.09,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00074",
+    "code": "10856",
     "name": "AZICIP 500 TAB 3",
+    "unit": "20PC",
     "mrp": 79.43,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00075",
+    "code": "MPLP-0166",
     "name": "AZIKIND 200 SX SUSP 30ML",
+    "unit": "PCS",
     "mrp": 102.14,
     "formula": null,
     "company": "M P I ETHICAL PVT"
   },
   {
     "id": "P00076",
+    "code": "A031",
     "name": "AZIMRIN 500 1*3",
+    "unit": "PCS",
     "mrp": 79.3,
     "formula": null,
     "company": "ERIS PHARMA"
   },
   {
     "id": "P00077",
+    "code": "9657",
     "name": "AZIPRO 500 TAB 3-MONO",
+    "unit": "20Pc",
     "mrp": 71.33,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00078",
+    "code": "9621",
     "name": "B-COLEX CAP 10",
+    "unit": "10PC",
     "mrp": 55,
     "formula": null,
     "company": "TORQUE PHARMACITICULS PVT LTD"
   },
   {
     "id": "P00079",
+    "code": "9621",
     "name": "B-COLEX CAP 10",
+    "unit": "10PC",
     "mrp": 60,
     "formula": null,
     "company": "TORQUE PHARMACITICULS PVT LTD"
   },
   {
     "id": "P00080",
+    "code": "FC-0080",
     "name": "BABY DAIPER BUMTUM-L 1 L",
+    "unit": "PCS",
     "mrp": null,
     "formula": null,
     "company": "FAMILYCARE CONSUMER PVT LTD_MH"
   },
   {
     "id": "P00081",
+    "code": "A242",
     "name": "BABY DIAPER BUMTUM-M 1-M",
+    "unit": "PCS",
     "mrp": 11,
     "formula": null,
     "company": "FAMILYCARE CONSUMER PVT LTD_MH"
   },
   {
     "id": "P00082",
+    "code": "A243",
     "name": "BABY DIAPER BUMTUM-S 42-S",
+    "unit": "PCS",
     "mrp": 399,
     "formula": null,
     "company": "FAMILYCARE CONSUMER PVT LTD_MH"
   },
   {
     "id": "P00083",
+    "code": "A246",
     "name": "BABY DIAPER BUMTUM-XL 24-XL",
+    "unit": "PACK",
     "mrp": 399,
     "formula": null,
     "company": "FAMILYCARE CONSUMER PVT LTD_MH"
   },
   {
     "id": "P00084",
+    "code": "3603",
     "name": "BAJAR-RANGI LEP 10GMS",
+    "unit": "Pcs",
     "mrp": 30,
     "formula": null,
     "company": "RAPPLE HEALTHCARE"
   },
   {
     "id": "P00085",
+    "code": "3603",
     "name": "BAJAR-RANGI LEP 10GMS",
+    "unit": "Pcs",
     "mrp": 30,
     "formula": null,
     "company": "RAPPLE HEALTHCARE"
   },
   {
     "id": "P00086",
+    "code": "01093",
     "name": "BD INSULIN SYRINGES 1 ML",
+    "unit": "10PC",
     "mrp": 10.3,
     "formula": null,
     "company": "BD"
   },
   {
     "id": "P00087",
+    "code": "10009",
     "name": "BD PEN NEEDLE 32G 5*1",
+    "unit": "PCS",
     "mrp": 88,
     "formula": null,
     "company": "BD"
   },
   {
     "id": "P00088",
+    "code": "10009",
     "name": "BD PEN NEEDLE 32G 5*1",
+    "unit": "PCS",
     "mrp": 88,
     "formula": null,
     "company": "BD"
   },
   {
     "id": "P00089",
+    "code": "BES-0134",
     "name": "BESTIZYME DROPS 15ML",
+    "unit": "PCS",
     "mrp": 65.8,
     "formula": null,
     "company": "BESTOCHEM FORMULATION LTD"
   },
   {
     "id": "P00090",
+    "code": "10005",
     "name": "BETLYSONE (3*10S) 3*10",
+    "unit": "PCS",
     "mrp": 13.2,
     "formula": null,
     "company": "LORDCENT & TORRENT HEALTHCARE"
   },
   {
     "id": "P00091",
+    "code": "02345",
     "name": "BIPSONS PLAST 4\" X 1 4INCH",
+    "unit": "5PCS",
     "mrp": 475,
     "formula": null,
     "company": "BIPSON SURGICALS PVT LTD"
   },
   {
     "id": "P00092",
+    "code": "A086",
     "name": "BLADE GLASS VAN (HMD) NO.15",
+    "unit": "PCS",
     "mrp": 6,
     "formula": null,
     "company": "NIRAJ INDUSTRIES PVT LTD"
   },
   {
     "id": "P00093",
+    "code": "A00191",
     "name": "BLADE GLASS VAN (HMD) NO.20",
+    "unit": "PCS",
     "mrp": 6,
     "formula": null,
     "company": "NIRAJ INDUSTRIES PVT LTD"
   },
   {
     "id": "P00094",
+    "code": "A00191",
     "name": "BLADE GLASS VAN (HMD) NO.20",
+    "unit": "PCS",
     "mrp": 6,
     "formula": null,
     "company": "NIRAJ INDUSTRIES PVT LTD"
   },
   {
     "id": "P00095",
+    "code": "A00192",
     "name": "BLADE GLASS VAN (HMD) NO.23",
+    "unit": "PCS",
     "mrp": 6,
     "formula": null,
     "company": "NIRAJ INDUSTRIES PVT LTD"
   },
   {
     "id": "P00096",
+    "code": "A00193",
     "name": "BLADE GLASS VAN (HMD) NO.24",
+    "unit": "PCS",
     "mrp": 6.5,
     "formula": null,
     "company": "NIRAJ INDUSTRIES PVT LTD"
   },
   {
     "id": "P00097",
+    "code": "A00176",
     "name": "BLEAD NO22",
+    "unit": "PCS",
     "mrp": 5,
     "formula": null,
     "company": null
   },
   {
     "id": "P00098",
+    "code": "01188",
     "name": "BORAX GLYCERIN (AMAR) 10GM",
+    "unit": "12PC",
     "mrp": 15,
     "formula": null,
     "company": "AMAR PRODUCTS"
   },
   {
     "id": "P00099",
+    "code": "10827",
     "name": "BOREX GLYCERINE L&T 10GM",
+    "unit": "12PC",
     "mrp": 20,
     "formula": null,
     "company": "LORDCENT & TORRENT HEALTHCARE"
   },
   {
     "id": "P00100",
+    "code": "10062",
     "name": "BORIC ACID-400GM [AMAR] 400GM",
+    "unit": "Pcs",
     "mrp": 180,
     "formula": null,
     "company": "AMAR PRODUCTS"
   },
   {
     "id": "P00101",
+    "code": "10352",
     "name": "BORIC ACID-50GM [AMAR] 50GM",
+    "unit": "Pcs",
     "mrp": 40,
     "formula": null,
     "company": "AMAR PRODUCTS"
   },
   {
     "id": "P00102",
+    "code": "A00136",
     "name": "BP APPARATUS LC (DIMAND) 1S",
+    "unit": "PCS",
     "mrp": 2855,
     "formula": null,
     "company": null
   },
   {
     "id": "P00103",
+    "code": "9995",
     "name": "BUDESULES RESPULES 20*2ML",
+    "unit": "20Pc",
     "mrp": 26.46,
     "formula": null,
     "company": "MAY & BAKER"
   },
   {
     "id": "P00104",
+    "code": "533",
     "name": "BURNHEAL CREAM 15GM 15GM",
+    "unit": "20Pc",
     "mrp": 95,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00105",
+    "code": "5105",
     "name": "C-ONE 1GM INJ 1GM",
+    "unit": "20Pc",
     "mrp": 60.5,
     "formula": null,
     "company": "ABBOTT HEALTHCARE PVT. LTD."
   },
   {
     "id": "P00106",
+    "code": "02599",
     "name": "CALACARE LOTION 50ML 50ML",
+    "unit": "Pcs",
     "mrp": 44.5,
     "formula": null,
     "company": "INTAS PHARMA GENERIC"
   },
   {
     "id": "P00107",
+    "code": "8522",
     "name": "CALOSHELL 500 TAB 20*15",
+    "unit": "20Pc",
     "mrp": 104.35,
     "formula": null,
     "company": "EMCURE PHARMA LTD GENERIC"
   },
   {
     "id": "P00108",
+    "code": "02383",
     "name": "CASTER OIL 15ML 15ML",
+    "unit": "12Pc",
     "mrp": 10,
     "formula": null,
     "company": "YOGESH PHARMACY"
   },
   {
     "id": "P00109",
+    "code": "00421",
     "name": "CASTOR-NF CREAM 15GM",
+    "unit": "20",
     "mrp": 100,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00110",
+    "code": "UTL-872",
     "name": "CEBATE GM ACTIVE + 10GM 10GM",
+    "unit": "20Pc",
     "mrp": 25.35,
     "formula": null,
     "company": "UNIVERSAL TWIN LABS, GENERIC"
   },
   {
     "id": "P00111",
+    "code": "UTL-3176",
     "name": "CEBATE GM ACTIVE + 15GM 15GM",
+    "unit": "20Pc",
     "mrp": 35.75,
     "formula": null,
     "company": "UNIVERSAL TWIN LABS, GENERIC"
   },
   {
     "id": "P00112",
+    "code": "09987",
     "name": "CERVICAL COLLAR SOFT(TYNOR)XL 1 XL",
+    "unit": "PCS",
     "mrp": 330,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00113",
+    "code": "09985",
     "name": "CERVICAL COLLER SOFT(TYNOR)[M] 1 MEDIUM",
+    "unit": "PCS",
     "mrp": 280,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00114",
+    "code": "09984",
     "name": "CERVICAL COLLER SOFT(TYNOR)[S] SMALL",
+    "unit": "PCS",
     "mrp": 355,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00115",
+    "code": "CIP-9791",
     "name": "CETCIP L TAB 50*10",
+    "unit": "50Pc",
     "mrp": 67.1,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00116",
+    "code": "CIP-9791",
     "name": "CETCIP L TAB 50*10",
+    "unit": "50Pc",
     "mrp": 67.1,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00117",
+    "code": "10551",
     "name": "CHESTON COLD DS SUSP 60ML",
+    "unit": "Pcs",
     "mrp": 79.5,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00118",
+    "code": "8941",
     "name": "CHESTON COLD TAB (WHITE) 10",
+    "unit": "25Pc",
     "mrp": 46.75,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00119",
+    "code": "8942",
     "name": "CHESTON COLD TOTAL TAB 10",
+    "unit": "Pcs",
     "mrp": 77,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00120",
+    "code": "8942",
     "name": "CHESTON COLD TOTAL TAB 10",
+    "unit": "Pcs",
     "mrp": 77,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00121",
+    "code": "10008",
     "name": "CIPCADE IV 100 ML 100 ML",
+    "unit": "PCS",
     "mrp": 19.04,
     "formula": null,
     "company": "REALCADE LIFE SCIENCES PVT LTD"
   },
   {
     "id": "P00122",
+    "code": "3422",
     "name": "CIPCAL 250 TAB 30",
+    "unit": "20Pc",
     "mrp": 73,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00123",
+    "code": "496",
     "name": "CIPCAL 500 TAB 15",
+    "unit": "20Pc",
     "mrp": 86.5,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00124",
+    "code": "A00201",
     "name": "CIPLADINE CALAMINE LOTION 100 ML",
+    "unit": "PCS",
     "mrp": 90,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00125",
+    "code": "00336",
     "name": "CIPLADINE GARGLE 100ML",
+    "unit": "PCS",
     "mrp": 198.44,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00126",
+    "code": "00336",
     "name": "CIPLADINE GARGLE 100ML",
+    "unit": "PCS",
     "mrp": 198.44,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00127",
+    "code": "1737",
     "name": "CIPLADINE OINT 10GM 10GM",
+    "unit": "10Pc",
     "mrp": 29.04,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00128",
+    "code": "1737",
     "name": "CIPLADINE OINT 10GM 10GM",
+    "unit": "10Pc",
     "mrp": 29.04,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00129",
+    "code": "1737",
     "name": "CIPLADINE OINT 10GM 10GM",
+    "unit": "10Pc",
     "mrp": 29.04,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00130",
+    "code": "1737",
     "name": "CIPLADINE OINT 10GM 10GM",
+    "unit": "10Pc",
     "mrp": 31.94,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00131",
+    "code": "09490",
     "name": "CIPLADINE OINT 125GM 125GM",
+    "unit": "4Pcs",
     "mrp": 170,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00132",
+    "code": "08956",
     "name": "CIPLADINE OINT 15GM 15GM",
+    "unit": "30Pc",
     "mrp": 43.56,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00133",
+    "code": "CIPL2063",
     "name": "CIPLADINE OINT 20GM 20GM",
+    "unit": "20Pc",
     "mrp": 53.84,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00134",
+    "code": "10143",
     "name": "CIPLADINE SOLUTION 100ML",
+    "unit": "Pcs",
     "mrp": 48.16,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00135",
+    "code": "8958",
     "name": "CIPMOL 500 TAB 10",
+    "unit": "Pcs",
     "mrp": 11.09,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00136",
+    "code": "8959",
     "name": "CIPMOL 650 TAB 10",
+    "unit": "Pcs",
     "mrp": 22.84,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00137",
+    "code": "AL-0072",
     "name": "CIPROFLOXACIN IV 100",
+    "unit": "PCS",
     "mrp": 22.4,
     "formula": null,
     "company": "PENTAGON LABS LTD"
   },
   {
     "id": "P00138",
+    "code": "501",
     "name": "CIPZEN D TAB 10",
+    "unit": "Pcs",
     "mrp": 130,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00139",
+    "code": "10873",
     "name": "CITRALEM 100ML SYP 100 ML",
+    "unit": "Pcs",
     "mrp": 115.5,
     "formula": null,
     "company": "EMCURE PHARMA LTD GENERIC"
   },
   {
     "id": "P00140",
+    "code": "8901",
     "name": "CLEARWAX EAR DROPS 10ML",
+    "unit": "Pcs",
     "mrp": 73.15,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00141",
+    "code": "549",
     "name": "CLINCITOP GEL 20GM 20GM",
+    "unit": "20Pc",
     "mrp": 60.9,
     "formula": null,
     "company": "UNIVERSAL TWIN LABS, GENERIC"
   },
   {
     "id": "P00142",
+    "code": "9602",
     "name": "CLINDAKEM-A GEL 20GM",
+    "unit": "16Pc",
     "mrp": 150,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00143",
+    "code": "00423",
     "name": "CLINSOL GEL 15GM",
+    "unit": "20PC",
     "mrp": 85,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00144",
+    "code": "00422",
     "name": "CLINSOL SOAP 75GM",
+    "unit": "20PC",
     "mrp": 75,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00145",
+    "code": "10009",
     "name": "CLOBET-GM RC CREAM 10GM 10GM",
+    "unit": "20Pc",
     "mrp": 44,
     "formula": null,
     "company": "UNIVERSAL LIFE CARE"
   },
   {
     "id": "P00146",
+    "code": "10009",
     "name": "CLOBET-GM RC CREAM 10GM 10GM",
+    "unit": "20Pc",
     "mrp": 48,
     "formula": null,
     "company": "UNIVERSAL LIFE CARE"
   },
   {
     "id": "P00147",
+    "code": "531",
     "name": "CLOBETA GM 10GM 10",
+    "unit": "30Pc",
     "mrp": 67,
     "formula": null,
     "company": "LABORATE PHARMA"
   },
   {
     "id": "P00148",
+    "code": "01120",
     "name": "CLOBETA GM 20GM 20GM",
+    "unit": "30PC",
     "mrp": 111.75,
     "formula": null,
     "company": "LABORATE PHARMA"
   },
   {
     "id": "P00149",
+    "code": "01120",
     "name": "CLOBETA GM 20GM 20GM",
+    "unit": "30PC",
     "mrp": 111.75,
     "formula": null,
     "company": "LABORATE PHARMA"
   },
   {
     "id": "P00150",
+    "code": "3469",
     "name": "CLOCIP DUSTING POWDER 75GM 75GM",
+    "unit": "Pcs",
     "mrp": 79,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00151",
+    "code": "10479",
     "name": "CLOCIP DUSTING POWEDER 100GM 100GM",
+    "unit": "Pcs",
     "mrp": 119,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00152",
+    "code": "4558",
     "name": "CLOZOTIC EAR DROP 5ML",
+    "unit": "Pcs",
     "mrp": 60,
     "formula": null,
     "company": "UNIVERSAL TWIN LABS, GENERIC"
   },
   {
     "id": "P00153",
+    "code": "A266",
     "name": "COFFCENT DX SYP 100ML",
+    "unit": "PCS",
     "mrp": 130,
     "formula": null,
     "company": "L&T'S"
   },
   {
     "id": "P00154",
+    "code": "3684",
     "name": "COFQ TABLET 10",
+    "unit": "20Pc",
     "mrp": 36.85,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00155",
+    "code": "C-0100",
     "name": "COFSILS ORANGE JAR 24 PCS PCS 24",
+    "unit": "PCS",
     "mrp": 33,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00156",
+    "code": "8995",
     "name": "COLDTHROW AM TAB 10",
+    "unit": "30Pc",
     "mrp": 55.9,
     "formula": null,
     "company": "GEM MANKIND"
   },
   {
     "id": "P00157",
+    "code": "09961",
     "name": "COMBINE DS PAD 10*10 1",
+    "unit": "50PC",
     "mrp": 60,
     "formula": null,
     "company": "NAVKAR HEALTH CARE"
   },
   {
     "id": "P00158",
+    "code": "09988",
     "name": "COMMODE CHAIR (UNI)(TYNOR) 1PC",
+    "unit": "PCS",
     "mrp": 3950,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00159",
+    "code": "09988",
     "name": "COMMODE CHAIR (UNI)(TYNOR) 1PC",
+    "unit": "PCS",
     "mrp": 4655,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00160",
+    "code": "A042",
     "name": "CONDOM BIGFUN BUBBLE GUM 1*3",
+    "unit": "PCS",
     "mrp": 30,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00161",
+    "code": "A041",
     "name": "CONDOM BIGFUN BUTTERSCOTH 1*3",
+    "unit": "PCS",
     "mrp": 30,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00162",
+    "code": "A041",
     "name": "CONDOM BIGFUN BUTTERSCOTH 1*3",
+    "unit": "PCS",
     "mrp": 30,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00163",
+    "code": "A040",
     "name": "CONDOM BIGFUN CHOCOLATE 1*3",
+    "unit": "PCS",
     "mrp": 30,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00164",
+    "code": "A040",
     "name": "CONDOM BIGFUN CHOCOLATE 1*3",
+    "unit": "PCS",
     "mrp": 30,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00165",
+    "code": "A040",
     "name": "CONDOM BIGFUN CHOCOLATE 1*3",
+    "unit": "PCS",
     "mrp": 30,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00166",
+    "code": "A043",
     "name": "CONDOM BIGFUN EXTRATIME 1*3",
+    "unit": "PCS",
     "mrp": 30,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00167",
+    "code": "A236",
     "name": "CONDOM BIGFUN MOGRA 1*3",
+    "unit": "PCS",
     "mrp": 30,
     "formula": null,
     "company": "CIPLA LTD"
   },
   {
     "id": "P00168",
+    "code": "LD-0043",
     "name": "CONDOM BIGFUN STRAWBERRY 1*3",
+    "unit": "PCS",
     "mrp": 30,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00169",
+    "code": "A044",
     "name": "CONDOM BIGFUN ULTRA THIN 1*3",
+    "unit": "PCS",
     "mrp": 30,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00170",
+    "code": "A044",
     "name": "CONDOM BIGFUN ULTRA THIN 1*3",
+    "unit": "PCS",
     "mrp": 30,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00171",
+    "code": "10027",
     "name": "CONDOMS DOTTED (ENJOY) 3 PCS",
+    "unit": "PCS",
     "mrp": 25,
     "formula": null,
     "company": "ANONDITA HEALTHCARE"
   },
   {
     "id": "P00172",
+    "code": "10028",
     "name": "CONDOMS PLAIN (HANY BUNNY) 3 PCS",
+    "unit": "PCS",
     "mrp": 25,
     "formula": null,
     "company": "AABHA CONTRACEPTIVES PVT. LTD."
   },
   {
     "id": "P00173",
+    "code": "A00182",
     "name": "CORD CLAMP 1",
+    "unit": "PCS",
     "mrp": 41,
     "formula": null,
     "company": "POLY MEDICURE LTD"
   },
   {
     "id": "P00174",
+    "code": "A00125",
     "name": "CORN CAPS ALLIED CARE(L&T) 4",
+    "unit": "PCS",
     "mrp": 40,
     "formula": null,
     "company": "L&T'S"
   },
   {
     "id": "P00175",
+    "code": "A00044",
     "name": "COTTON BANDAGE 2'' AMAR 5CM",
+    "unit": "15PC",
     "mrp": 100,
     "formula": null,
     "company": "SUDARSHAN SURGICALS"
   },
   {
     "id": "P00176",
+    "code": "A00045",
     "name": "COTTON BANDAGE 3'' (AMAR) 7.5CM",
+    "unit": "10PC",
     "mrp": 150,
     "formula": null,
     "company": "AMAR PRODUCTS"
   },
   {
     "id": "P00177",
+    "code": "A018",
     "name": "COTTON BANDAGE 4'' (SUDHA) 10CM*3M",
+    "unit": "PCS",
     "mrp": 200,
     "formula": null,
     "company": "SUDARSHAN SURGICALS"
   },
   {
     "id": "P00178",
+    "code": "A00047",
     "name": "COTTON BANDAGE 6'' (AMAR). 15CM",
+    "unit": "10PC",
     "mrp": 300,
     "formula": null,
     "company": "AMAR PRODUCTS"
   },
   {
     "id": "P00179",
+    "code": "A00169",
     "name": "COTTON WOOL (HAPPY) 100GM",
+    "unit": "PCS",
     "mrp": 95,
     "formula": null,
     "company": "HAPPY"
   },
   {
     "id": "P00180",
+    "code": "A00172",
     "name": "COTTON WOOL (HAPPY) 10GM",
+    "unit": "PCS",
     "mrp": 15,
     "formula": null,
     "company": "HAPPY"
   },
   {
     "id": "P00181",
+    "code": "A00170",
     "name": "COTTON WOOL (HAPPY) 50GM",
+    "unit": "PCS",
     "mrp": 65,
     "formula": null,
     "company": "HAPPY"
   },
   {
     "id": "P00182",
+    "code": "01172",
     "name": "COTTON WOOL 200GM (ANANT) 200GM",
+    "unit": "1PCS",
     "mrp": 240,
     "formula": null,
     "company": "ANANT SURGICALS"
   },
   {
     "id": "P00183",
+    "code": "10026",
     "name": "COTTON WOOL 20G (AMAR) 20GM",
+    "unit": "PCS",
     "mrp": 19,
     "formula": null,
     "company": "AMAR PRODUCTS"
   },
   {
     "id": "P00184",
+    "code": "01175",
     "name": "COTTON WOOL 20GM (ANANT) 20GM",
+    "unit": "15PC",
     "mrp": 25,
     "formula": null,
     "company": "ANANT SURGICALS"
   },
   {
     "id": "P00185",
+    "code": "01175",
     "name": "COTTON WOOL 20GM (ANANT) 20GM",
+    "unit": "15PC",
     "mrp": 25,
     "formula": null,
     "company": "ANANT SURGICALS"
   },
   {
     "id": "P00186",
+    "code": "01174",
     "name": "COTTON WOOL 50GM (ANANT) 50GM",
+    "unit": "12PC",
     "mrp": 50,
     "formula": null,
     "company": "ANANT SURGICALS"
   },
   {
     "id": "P00187",
+    "code": "9817",
     "name": "CYCLONPAR TAB 10",
+    "unit": "50Pc",
     "mrp": 20,
     "formula": null,
     "company": "L&T'S"
   },
   {
     "id": "P00188",
+    "code": "4176",
     "name": "D25 IV 100ML PENTAGON 100ML",
+    "unit": "PCS",
     "mrp": 21.28,
     "formula": null,
     "company": "PENTAGON LABS LTD"
   },
   {
     "id": "P00189",
+    "code": "A152",
     "name": "D5% 500ML PENTA 500ML",
+    "unit": "PCS",
     "mrp": 34.25,
     "formula": null,
     "company": "PENTAGON LABS LTD"
   },
   {
     "id": "P00190",
+    "code": "A128",
     "name": "DEFLAWOK TAB 10 ALU",
+    "unit": "PCS",
     "mrp": 191.4,
     "formula": null,
     "company": "WOCKHARDT LTD GENERIC"
   },
   {
     "id": "P00191",
+    "code": "A128",
     "name": "DEFLAWOK TAB 10 ALU",
+    "unit": "PCS",
     "mrp": 191.4,
     "formula": null,
     "company": "WOCKHARDT LTD GENERIC"
   },
   {
     "id": "P00192",
+    "code": "464",
     "name": "DELPAR TAB 10",
+    "unit": "20Pc",
     "mrp": 25,
     "formula": null,
     "company": "PAAM BIOTECH PVT LTD"
   },
   {
     "id": "P00193",
+    "code": "7246",
     "name": "DERMI 5 + CREAM 15GM",
+    "unit": "20Pc",
     "mrp": 54.45,
     "formula": null,
     "company": "UNIVERSAL TWIN LABS, GENERIC"
   },
   {
     "id": "P00194",
+    "code": "A047",
     "name": "DERMICENT-5 15GM",
+    "unit": "PCS",
     "mrp": 110,
     "formula": null,
     "company": "LORDCENT & TORRENT HEALTHCARE"
   },
   {
     "id": "P00195",
+    "code": "00418",
     "name": "DERMIFORD CREAM 15GM",
+    "unit": "20PC",
     "mrp": 100,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00196",
+    "code": "ALL-00291",
     "name": "DERMIKEM POWDER 75GM",
+    "unit": "PCS",
     "mrp": 85,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00197",
+    "code": "02464",
     "name": "DEXADER INJ 30ML 30ML",
+    "unit": "10PC",
     "mrp": 60,
     "formula": null,
     "company": "ELDER PHARMACEUTICALS LTD"
   },
   {
     "id": "P00198",
+    "code": "00228",
     "name": "DEXALAB 2ML INJ 2ML",
+    "unit": "50PC",
     "mrp": 11.58,
     "formula": null,
     "company": "LABORATE PHARMA"
   },
   {
     "id": "P00199",
+    "code": "A158",
     "name": "DEZORT-6 TAB 10",
+    "unit": "PCS",
     "mrp": 165,
     "formula": null,
     "company": "PANTACHEM"
   },
   {
     "id": "P00200",
+    "code": "A048",
     "name": "DICLO PLUS 10*20",
+    "unit": "PCS",
     "mrp": 24.2,
     "formula": null,
     "company": "PLENTEOUS PHARMACEUTICALS LTD"
   },
   {
     "id": "P00201",
+    "code": "10872",
     "name": "DICLOMOVE - P TAB 10",
+    "unit": "20PC",
     "mrp": 66.7,
     "formula": null,
     "company": "EMCURE PHARMA LTD GENERIC"
   },
   {
     "id": "P00202",
+    "code": "00292",
     "name": "DIGI THERM (DIGI THERMOMETER) 1",
+    "unit": "10PC",
     "mrp": 229.5,
     "formula": null,
     "company": "ZYDUS HEALTHCARE"
   },
   {
     "id": "P00203",
+    "code": "A045",
     "name": "DIGITAL THERMOMETER (DR.MORPHE 1",
+    "unit": "PCS",
     "mrp": 170,
     "formula": null,
     "company": "DR MOREPEN"
   },
   {
     "id": "P00204",
+    "code": "10042",
     "name": "DIGITAL THERMOMETER AERO AERO",
+    "unit": "PCS",
     "mrp": 135,
     "formula": null,
     "company": "HEMANTH SURGICAL INDUSTRIES LTD"
   },
   {
     "id": "P00205",
+    "code": "ROM-00177",
     "name": "DIGNITY UNDERPAD (ROM) 1",
+    "unit": "PCS",
     "mrp": 145,
     "formula": null,
     "company": "ROMSONS"
   },
   {
     "id": "P00206",
+    "code": "ROM-00177",
     "name": "DIGNITY UNDERPAD (ROM) 1",
+    "unit": "PCS",
     "mrp": 145,
     "formula": null,
     "company": "ROMSONS"
   },
   {
     "id": "P00207",
+    "code": "01745",
     "name": "DISPOVAN 10ML 10ML",
+    "unit": "50Pc",
     "mrp": 11,
     "formula": null,
     "company": "HINDUSTAN SYRINGES &MEDICAL"
   },
   {
     "id": "P00208",
+    "code": "212",
     "name": "DISPOVAN 2.5ML 2.5ML",
+    "unit": "100P",
     "mrp": 7.7,
     "formula": null,
     "company": "HINDUSTAN SYRINGES &MEDICAL"
   },
   {
     "id": "P00209",
+    "code": "8916",
     "name": "DISPOVAN 2ML 2ML",
+    "unit": "Pcs",
     "mrp": 4.95,
     "formula": null,
     "company": "HINDUSTAN SYRINGES &MEDICAL"
   },
   {
     "id": "P00210",
+    "code": "213",
     "name": "DISPOVAN 5ML 5ML",
+    "unit": "100P",
     "mrp": 8.5,
     "formula": null,
     "company": "HINDUSTAN SYRINGES &MEDICAL"
   },
   {
     "id": "P00211",
+    "code": "213",
     "name": "DISPOVAN 5ML 5ML",
+    "unit": "100P",
     "mrp": 8.5,
     "formula": null,
     "company": "HINDUSTAN SYRINGES &MEDICAL"
   },
   {
     "id": "P00212",
+    "code": "1168",
     "name": "DISPOVAN NEEDLE NO 22 1*100",
+    "unit": "1Pcs",
     "mrp": 200,
     "formula": null,
     "company": "HINDUSTAN SYRINGES &MEDICAL"
   },
   {
     "id": "P00213",
+    "code": "1169",
     "name": "DISPOVAN NEEDLE NO 23 1*100",
+    "unit": "1Pcs",
     "mrp": 200,
     "formula": null,
     "company": "HINDUSTAN SYRINGES &MEDICAL"
   },
   {
     "id": "P00214",
+    "code": "1170",
     "name": "DISPOVAN NEEDLE NO 24 1*100",
+    "unit": "1Pcs",
     "mrp": 200,
     "formula": null,
     "company": "HINDUSTAN SYRINGES &MEDICAL"
   },
   {
     "id": "P00215",
+    "code": "PEN-014",
     "name": "DNS 500ML (PENTAGON) 500ML",
+    "unit": "PCS",
     "mrp": 42.8,
     "formula": null,
     "company": "PENTAGON LABS LTD"
   },
   {
     "id": "P00216",
+    "code": "PEN-014",
     "name": "DNS 500ML (PENTAGON) 500ML",
+    "unit": "PCS",
     "mrp": 42.8,
     "formula": null,
     "company": "PENTAGON LABS LTD"
   },
   {
     "id": "P00217",
+    "code": "3137",
     "name": "DOMCET TABLET 10",
+    "unit": "Pcs",
     "mrp": 48,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00218",
+    "code": "10292",
     "name": "DOXOCIP TAB 10",
+    "unit": "10PC",
     "mrp": 75,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00219",
+    "code": "LAB-A00066",
     "name": "DOXYLAB TAB 8",
+    "unit": "20PC",
     "mrp": 65.5,
     "formula": null,
     "company": "LABORATE PHARMA"
   },
   {
     "id": "P00220",
+    "code": "ROUS-0125",
     "name": "DOXYROS TAB",
+    "unit": "PCS",
     "mrp": 40,
     "formula": null,
     "company": "ROUSSEL"
   },
   {
     "id": "P00221",
+    "code": "A00162",
     "name": "DR. ORTHO SPRAY 75ML",
+    "unit": "PCS",
     "mrp": 165,
     "formula": null,
     "company": "DIVISA HERBALS PVT LTD"
   },
   {
     "id": "P00222",
+    "code": "A00189",
     "name": "DR.ORTHO GREY KNEE SUPPORT M",
+    "unit": "PCS",
     "mrp": 320,
     "formula": null,
     "company": "SANDOZ BUSINESS UNIT"
   },
   {
     "id": "P00223",
+    "code": "00120",
     "name": "DROTIZING-M TAB 10",
+    "unit": "PCS",
     "mrp": 90.2,
     "formula": null,
     "company": "GEM MANKIND"
   },
   {
     "id": "P00224",
+    "code": "LAB-9258",
     "name": "DSP TABLET 20*10",
+    "unit": "20B",
     "mrp": 87,
     "formula": null,
     "company": "LABORATE PHARMA"
   },
   {
     "id": "P00225",
+    "code": "A172",
     "name": "DUOBES 625 TAB 10S",
+    "unit": "PCS",
     "mrp": 201.57,
     "formula": null,
     "company": "AJANTA PHARMA LTD"
   },
   {
     "id": "P00226",
+    "code": "10155",
     "name": "DUOSULES RESPULES 20*2.5",
+    "unit": "20Pc",
     "mrp": 39.6,
     "formula": null,
     "company": "MAY & BAKER"
   },
   {
     "id": "P00227",
+    "code": "01180",
     "name": "E-ON 400 CAP 10",
+    "unit": "20PC",
     "mrp": 145,
     "formula": null,
     "company": "GEM MANKIND"
   },
   {
     "id": "P00228",
+    "code": "EAM-0122",
     "name": "ED PHENICOL 10S 10*10",
+    "unit": "PCS",
     "mrp": 55,
     "formula": null,
     "company": "EAMON DRUGS PVT. LDT."
   },
   {
     "id": "P00229",
+    "code": "EAM-0122",
     "name": "ED PHENICOL 10S 10*10",
+    "unit": "PCS",
     "mrp": 35,
     "formula": null,
     "company": "EAMON DRUGS PVT. LDT."
   },
   {
     "id": "P00230",
+    "code": "09990",
     "name": "ELBOW SUPPORT (TYNOR)[L] 1 LARGE",
+    "unit": "PCS",
     "mrp": 210,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00231",
+    "code": "10122",
     "name": "ELBOW SUPPORT (TYNOR)[M] 1 MEDIUM",
+    "unit": "PCS",
     "mrp": 190,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00232",
+    "code": "10122",
     "name": "ELBOW SUPPORT (TYNOR)[M] 1 MEDIUM",
+    "unit": "PCS",
     "mrp": 210,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00233",
+    "code": "09989",
     "name": "ELBOW SUPPORT (TYNOR)[S] 1 SMALL",
+    "unit": "PCS",
     "mrp": 190,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00234",
+    "code": "A106",
     "name": "ELOSONE CREAM 10GM",
+    "unit": "PCS",
     "mrp": 65,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00235",
+    "code": "02260",
     "name": "ELOSONE-HT CREAM 15GM",
+    "unit": "20PC",
     "mrp": 135,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00236",
+    "code": "283",
     "name": "EMSULIDE P TAB 10",
+    "unit": "30Pc",
     "mrp": 114.35,
     "formula": null,
     "company": "EMCURE PHARMA LTD GENERIC"
   },
   {
     "id": "P00237",
+    "code": "02414",
     "name": "ENEMA PHOSPHATES 1",
+    "unit": "12PC",
     "mrp": 50,
     "formula": null,
     "company": "BHARTIYA SURGICALS"
   },
   {
     "id": "P00238",
+    "code": "A053",
     "name": "ESOMIFOR DSR CAP 10",
+    "unit": "PCS",
     "mrp": 143,
     "formula": null,
     "company": "AJANTA PHARMA LTD"
   },
   {
     "id": "P00239",
+    "code": "A107",
     "name": "EVIMECTIN-A TAB",
+    "unit": "PCS",
     "mrp": 25,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00240",
+    "code": "10593",
     "name": "EXAMINATION GLOVES NULIFE L",
+    "unit": "BOX",
     "mrp": 999,
     "formula": null,
     "company": "NULIFE HEALTHCARE"
   },
   {
     "id": "P00241",
+    "code": "A00109",
     "name": "EXAMINATION GLOVES NULIFE M",
+    "unit": "BOX",
     "mrp": 999,
     "formula": null,
     "company": "NULIFE HEALTHCARE"
   },
   {
     "id": "P00242",
+    "code": "10308",
     "name": "EZECURE 500 TAB 3",
+    "unit": "20PC",
     "mrp": 71,
     "formula": null,
     "company": "EMCURE PHARMA LTD GENERIC"
   },
   {
     "id": "P00243",
+    "code": "A00160",
     "name": "FACE WASH R.M ALOVERA 50ML",
+    "unit": "PCS",
     "mrp": 56,
     "formula": null,
     "company": "DIVISA HERBALS PVT LTD"
   },
   {
     "id": "P00244",
+    "code": "EMC-10309",
     "name": "FACER P TAB 10",
+    "unit": "20PC",
     "mrp": 69.55,
     "formula": null,
     "company": "EMCURE PHARMA LTD GENERIC"
   },
   {
     "id": "P00245",
+    "code": "A059",
     "name": "FEEDING TUBE NO 07 1",
+    "unit": "PCS",
     "mrp": 61,
     "formula": null,
     "company": "ROMSONS"
   },
   {
     "id": "P00246",
+    "code": "02430",
     "name": "FEEDING TUBE NO.8 1",
+    "unit": "1PCS",
     "mrp": 61,
     "formula": null,
     "company": "ROMSONS"
   },
   {
     "id": "P00247",
+    "code": "8465",
     "name": "FERICIP XT TABLET 10",
+    "unit": "15Pc",
     "mrp": 122.65,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00248",
+    "code": "8465",
     "name": "FERICIP XT TABLET 10",
+    "unit": "15Pc",
     "mrp": 122.65,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00249",
+    "code": "A161",
     "name": "FERIM XT SYP 200ML",
+    "unit": "PCS",
     "mrp": 165,
     "formula": null,
     "company": "ELDER PHARMACEUTICALS LTD"
   },
   {
     "id": "P00250",
+    "code": "2710",
     "name": "FLAGYL IV 100ML 100ML",
+    "unit": "Pcs",
     "mrp": 21.28,
     "formula": null,
     "company": "ABBOTT INDIA LTD"
   },
   {
     "id": "P00251",
+    "code": "A00120",
     "name": "FLEXI MASK ADULT RAMSONS 1",
+    "unit": "PCS",
     "mrp": 275,
     "formula": null,
     "company": "ROMSONS"
   },
   {
     "id": "P00252",
+    "code": "10707",
     "name": "FLOXIP 500mg TAB 10",
+    "unit": "30Pc",
     "mrp": 40.89,
     "formula": null,
     "company": "ABBOTT HEALTHCARE PVT. LTD."
   },
   {
     "id": "P00253",
+    "code": "09371",
     "name": "FLUKA 150 CAP 1-CAP",
+    "unit": "50Pc",
     "mrp": 14.72,
     "formula": "Fluconazole 150 mg",
     "company": "CIPLA GX"
   },
   {
     "id": "P00254",
+    "code": "00411",
     "name": "FLUMET 150 TAB 1",
+    "unit": "40PC",
     "mrp": 13.24,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00255",
+    "code": "A124",
     "name": "FOLY TRAC NO.12 CATHETHER NO 12",
+    "unit": "PCS",
     "mrp": 180,
     "formula": null,
     "company": "ROMSONS"
   },
   {
     "id": "P00256",
+    "code": "02494",
     "name": "FOLY TRAC NO.14 CATHETHER 14NO",
+    "unit": "1PCS",
     "mrp": 180,
     "formula": null,
     "company": "ROMSONS"
   },
   {
     "id": "P00257",
+    "code": "02429",
     "name": "FOLY TRAC NO.16 CATHETHER 16NO",
+    "unit": "PCS",
     "mrp": 167,
     "formula": null,
     "company": "ROMSONS"
   },
   {
     "id": "P00258",
+    "code": "9470",
     "name": "FOURDERM CREAM 10GM 10GM",
+    "unit": "20Pc",
     "mrp": 97.5,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00259",
+    "code": "9541",
     "name": "FOURDERM CREAM 5GM 5GM",
+    "unit": "Pcs",
     "mrp": 56.65,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00260",
+    "code": "10308",
     "name": "FUNGICIP 200 TAB 1",
+    "unit": "50Pc",
     "mrp": 23.33,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00261",
+    "code": "9259",
     "name": "GENTALAB EYE/EAR DROPS 10ML",
+    "unit": "30Pc",
     "mrp": 64.29,
     "formula": null,
     "company": "LABORATE PHARMA"
   },
   {
     "id": "P00262",
+    "code": "10806",
     "name": "GENTALAB INJ 2ML 2ML",
+    "unit": "Pcs",
     "mrp": 10.45,
     "formula": null,
     "company": "LABORATE PHARMA"
   },
   {
     "id": "P00263",
+    "code": "2933",
     "name": "GLIMY 1MG TABLET 10",
+    "unit": "Pcs",
     "mrp": 62.07,
     "formula": null,
     "company": "DR REDDYS LABORATORIES"
   },
   {
     "id": "P00264",
+    "code": "10013",
     "name": "GLUCO ONE MONITOR 1",
+    "unit": "PCS",
     "mrp": 665,
     "formula": null,
     "company": "DR MOREPEN"
   },
   {
     "id": "P00265",
+    "code": "10013",
     "name": "GLUCO ONE MONITOR 1",
+    "unit": "PCS",
     "mrp": 665,
     "formula": null,
     "company": "DR MOREPEN"
   },
   {
     "id": "P00266",
+    "code": "02541",
     "name": "GLUCO STRIP 50'S 1",
+    "unit": "PCS",
     "mrp": 849,
     "formula": null,
     "company": "DR MOREPEN"
   },
   {
     "id": "P00267",
+    "code": "10014",
     "name": "GLUCO STRIPS-25'S 1",
+    "unit": "PCS",
     "mrp": 499,
     "formula": null,
     "company": "DR MOREPEN"
   },
   {
     "id": "P00268",
+    "code": "00351",
     "name": "GLUCOSE-D (L&T) (100GM) 100GM",
+    "unit": "12PC",
     "mrp": 35,
     "formula": null,
     "company": "LORDCENT & TORRENT HEALTHCARE"
   },
   {
     "id": "P00269",
+    "code": "9305",
     "name": "GLYCERIN 100GM 100GM",
+    "unit": "12Pc",
     "mrp": 75,
     "formula": null,
     "company": "SHARP CHEM INDIA"
   },
   {
     "id": "P00270",
+    "code": "269",
     "name": "GLYCOMET 500MG TABLET 10",
+    "unit": "Pcs",
     "mrp": 18.7,
     "formula": null,
     "company": "USV LIMITEDS"
   },
   {
     "id": "P00271",
+    "code": "8998",
     "name": "GRENORA GEL 10GM",
+    "unit": "30Pc",
     "mrp": 65,
     "formula": null,
     "company": "GEM MANKIND"
   },
   {
     "id": "P00272",
+    "code": "A085",
     "name": "HANDYNEB NEBULIZER (SMART)",
+    "unit": "PCS",
     "mrp": 1787,
     "formula": null,
     "company": "NULIFE HEALTHCARE"
   },
   {
     "id": "P00273",
+    "code": "06899",
     "name": "HANDYNEB NEBULIZER CLASSIC 1",
+    "unit": "12Pc",
     "mrp": 1468,
     "formula": null,
     "company": "NULIFE HEALTHCARE"
   },
   {
     "id": "P00274",
+    "code": "A00108",
     "name": "HAVE A NICE DAY",
+    "unit": "PCS",
     "mrp": 0.1,
     "formula": null,
     "company": "JOHNSON & JOHNSON"
   },
   {
     "id": "P00275",
+    "code": "EHP-0192",
     "name": "HEPUNGER 20*5*10",
+    "unit": "PCS",
     "mrp": 44.5,
     "formula": null,
     "company": "ERIS PHARMA"
   },
   {
     "id": "P00276",
+    "code": "A039",
     "name": "HILON (ETHILON) 3336 1",
+    "unit": "PCS",
     "mrp": 164,
     "formula": null,
     "company": "HILON"
   },
   {
     "id": "P00277",
+    "code": "A056",
     "name": "HISTEEZE-L TAB (BLUE) 50*10",
+    "unit": "10S",
     "mrp": 49.15,
     "formula": null,
     "company": "MICRO LABS LTD"
   },
   {
     "id": "P00278",
+    "code": "00295",
     "name": "HISTEEZE-L TAB (RED) 10",
+    "unit": "20PC",
     "mrp": 45.4,
     "formula": null,
     "company": "MICRO LABS LTD"
   },
   {
     "id": "P00279",
+    "code": "214",
     "name": "HMD SCALP VEIN SET 22 1",
+    "unit": "50Pc",
     "mrp": 16.5,
     "formula": null,
     "company": "HINDUSTAN SYRINGES &MEDICAL"
   },
   {
     "id": "P00280",
+    "code": "214",
     "name": "HMD SCALP VEIN SET 22 1",
+    "unit": "50Pc",
     "mrp": 16.5,
     "formula": null,
     "company": "HINDUSTAN SYRINGES &MEDICAL"
   },
   {
     "id": "P00281",
+    "code": "214",
     "name": "HMD SCALP VEIN SET 22 1",
+    "unit": "50Pc",
     "mrp": 18,
     "formula": null,
     "company": "HINDUSTAN SYRINGES &MEDICAL"
   },
   {
     "id": "P00282",
+    "code": "214",
     "name": "HMD SCALP VEIN SET 22 1",
+    "unit": "50Pc",
     "mrp": 19.8,
     "formula": null,
     "company": "HINDUSTAN SYRINGES &MEDICAL"
   },
   {
     "id": "P00283",
+    "code": "09503",
     "name": "HMD SCALP VEIN SET 23 1",
+    "unit": "50Pc",
     "mrp": 16.5,
     "formula": null,
     "company": "HINDUSTAN SYRINGES &MEDICAL"
   },
   {
     "id": "P00284",
+    "code": "09503",
     "name": "HMD SCALP VEIN SET 23 1",
+    "unit": "50Pc",
     "mrp": 16.5,
     "formula": null,
     "company": "HINDUSTAN SYRINGES &MEDICAL"
   },
   {
     "id": "P00285",
+    "code": "09503",
     "name": "HMD SCALP VEIN SET 23 1",
+    "unit": "50Pc",
     "mrp": 18,
     "formula": null,
     "company": "HINDUSTAN SYRINGES &MEDICAL"
   },
   {
     "id": "P00286",
+    "code": "10221",
     "name": "HOT WATER BAG 1S",
+    "unit": "Pcs",
     "mrp": 470,
     "formula": null,
     "company": "UNIGRIP"
   },
   {
     "id": "P00287",
+    "code": "LAB-00390",
     "name": "HUNGREE SYP [PINEAPPLE] 200ML",
+    "unit": "30PC",
     "mrp": 157,
     "formula": null,
     "company": "LABORATE PHARMA"
   },
   {
     "id": "P00288",
+    "code": "LAB-10205",
     "name": "HUNGREE SYP [SUN FLOWER] 200ML",
+    "unit": "5Pcs",
     "mrp": 160,
     "formula": null,
     "company": "LABORATE PHARMA"
   },
   {
     "id": "P00289",
+    "code": "LAB-10205",
     "name": "HUNGREE SYP [SUN FLOWER] 200ML",
+    "unit": "5Pcs",
     "mrp": 157,
     "formula": null,
     "company": "LABORATE PHARMA"
   },
   {
     "id": "P00290",
+    "code": "9542",
     "name": "HYDROCORT-100 INJ 1 VIAL",
+    "unit": "Pcs",
     "mrp": 45.33,
     "formula": null,
     "company": "ABBOTT HEALTHCARE PVT. LTD."
   },
   {
     "id": "P00291",
+    "code": "9941",
     "name": "HYDROGEN PEROXIDE 100ML 100ML",
+    "unit": "12Pc",
     "mrp": 30,
     "formula": null,
     "company": "ODEON PHARMA"
   },
   {
     "id": "P00292",
+    "code": "9941",
     "name": "HYDROGEN PEROXIDE 100ML 100ML",
+    "unit": "12Pc",
     "mrp": 30,
     "formula": null,
     "company": "ODEON PHARMA"
   },
   {
     "id": "P00293",
+    "code": "9941",
     "name": "HYDROGEN PEROXIDE 100ML 100ML",
+    "unit": "12Pc",
     "mrp": 30,
     "formula": null,
     "company": "ODEON PHARMA"
   },
   {
     "id": "P00294",
+    "code": "01185",
     "name": "HYDROGEN PEROXIDE 400ML 400ML",
+    "unit": "1PCS",
     "mrp": 55,
     "formula": null,
     "company": "ODEON PHARMA"
   },
   {
     "id": "P00295",
+    "code": "485",
     "name": "IBUCOMB TAB 20*10",
+    "unit": "20Pc",
     "mrp": 21.93,
     "formula": null,
     "company": "PAAM BIOTECH PVT LTD"
   },
   {
     "id": "P00296",
+    "code": "9302",
     "name": "IDEAL CREPE BANDAGE 15CM 15CMX4M",
+    "unit": "Pcs",
     "mrp": 300,
     "formula": null,
     "company": "BANGA INTERNATIONAL"
   },
   {
     "id": "P00297",
+    "code": "9672",
     "name": "IDEAL CREPE BANDAGE 8CM 8CM*4MTR",
+    "unit": "5Pcs",
     "mrp": 160,
     "formula": null,
     "company": "BANGA INTERNATIONAL"
   },
   {
     "id": "P00298",
+    "code": "AJ265",
     "name": "ILASTAR 100MG 10",
+    "unit": "PCS",
     "mrp": 240,
     "formula": null,
     "company": "AJANTA PHARMA LTD"
   },
   {
     "id": "P00299",
+    "code": "A00137",
     "name": "INFRARED THERMOMETER 1S",
+    "unit": "PCS",
     "mrp": 3800,
     "formula": null,
     "company": null
   },
   {
     "id": "P00300",
+    "code": "OCE-0188",
     "name": "INJECT 3ML SYR 1",
+    "unit": "PCS",
     "mrp": 7,
     "formula": null,
     "company": "STERISAFE HEATH CARE SOLUTIONS"
   },
   {
     "id": "P00301",
+    "code": "A00183",
     "name": "INTACOXIA - P 10",
+    "unit": "PCS",
     "mrp": 104,
     "formula": null,
     "company": "INTAS PHARMA LTD"
   },
   {
     "id": "P00302",
+    "code": "10730",
     "name": "INTACOXIA 60 TAB 10",
+    "unit": "20Pc",
     "mrp": 81,
     "formula": null,
     "company": "INTAS PHARMA GENERIC"
   },
   {
     "id": "P00303",
+    "code": "10730",
     "name": "INTACOXIA 60 TAB 10",
+    "unit": "20Pc",
     "mrp": 81,
     "formula": null,
     "company": "INTAS PHARMA GENERIC"
   },
   {
     "id": "P00304",
+    "code": "00337",
     "name": "INTACOXIA 90 TAB 10",
+    "unit": "20PC",
     "mrp": 109,
     "formula": null,
     "company": "INTAS PHARMA GENERIC"
   },
   {
     "id": "P00305",
+    "code": "6379",
     "name": "INTAGESIC MR TABLET 10",
+    "unit": "100P",
     "mrp": 103,
     "formula": null,
     "company": "INTAS PHARMA GENERIC"
   },
   {
     "id": "P00306",
+    "code": "A228",
     "name": "INTASPORIN POWDER 10",
+    "unit": "PCS",
     "mrp": 75.5,
     "formula": null,
     "company": "INTAS PHARMA LTD"
   },
   {
     "id": "P00307",
+    "code": "A228",
     "name": "INTASPORIN POWDER 10",
+    "unit": "PCS",
     "mrp": 75.5,
     "formula": null,
     "company": "INTAS PHARMA LTD"
   },
   {
     "id": "P00308",
+    "code": "09751",
     "name": "IODINE TINCTURE IP 15ML 15ML",
+    "unit": "12Pc",
     "mrp": 22,
     "formula": null,
     "company": "APEX LABS PVT LTD"
   },
   {
     "id": "P00309",
+    "code": "A00156",
     "name": "ITCHKU AYU MALHAM 12GM",
+    "unit": "PCS",
     "mrp": 35,
     "formula": null,
     "company": "DIVISA HERBALS PVT LTD"
   },
   {
     "id": "P00310",
+    "code": "02203",
     "name": "ITROSTRED 100 TAB 10",
+    "unit": "10PC",
     "mrp": 200,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00311",
+    "code": "A076",
     "name": "ITROSTRED OC CREAM 15GM",
+    "unit": "PCS",
     "mrp": 120,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00312",
+    "code": "MAN-0172",
     "name": "ITROSTRED-SB 130 10",
+    "unit": "PCS",
     "mrp": 250,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00313",
+    "code": "MOP-0156",
     "name": "IV SET (ONEPRICK) 1S",
+    "unit": "PCS",
     "mrp": 220,
     "formula": null,
     "company": "MOHINI SURGICALS PVT. LTD."
   },
   {
     "id": "P00314",
+    "code": "APEX-0160",
     "name": "IV SET APEX 50",
+    "unit": "PCS",
     "mrp": 125,
     "formula": null,
     "company": "APEX LABS PVT LTD"
   },
   {
     "id": "P00315",
+    "code": "A00238",
     "name": "IV SET R.M.S (ROMSONS) 25",
+    "unit": "PCS",
     "mrp": 176,
     "formula": null,
     "company": "ROMSONS"
   },
   {
     "id": "P00316",
+    "code": "A00238",
     "name": "IV SET R.M.S (ROMSONS) 25",
+    "unit": "PCS",
     "mrp": 176,
     "formula": null,
     "company": "ROMSONS"
   },
   {
     "id": "P00317",
+    "code": "09300",
     "name": "IV SET {HUTCH} 1",
+    "unit": "50Pc",
     "mrp": 90,
     "formula": null,
     "company": "HUTCH SURGICALS"
   },
   {
     "id": "P00318",
+    "code": "A00231",
     "name": "JOYCLAVE 625 TAB 10",
+    "unit": "PCS",
     "mrp": 197.9,
     "formula": null,
     "company": "AKUMENTIS HELTHCARE LTD"
   },
   {
     "id": "P00319",
+    "code": "9871",
     "name": "KEMLACTIN SYP (ORANGE) 200ML",
+    "unit": "Pcs",
     "mrp": 110,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00320",
+    "code": "A013",
     "name": "KETOCENT SOAP 75GM",
+    "unit": "PCS",
     "mrp": 120,
     "formula": null,
     "company": "L&T'S"
   },
   {
     "id": "P00321",
+    "code": "00257",
     "name": "KETODIS-DT TAB 15",
+    "unit": "20PC",
     "mrp": 100.95,
     "formula": null,
     "company": "MICRO LABS LTD"
   },
   {
     "id": "P00322",
+    "code": "00428",
     "name": "KETOFLY SOAP 75GM",
+    "unit": "20PC",
     "mrp": 110,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00323",
+    "code": "00402",
     "name": "KETOFORD DT TAB 10",
+    "unit": "20PC",
     "mrp": 60,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00324",
+    "code": "00338",
     "name": "KETOKEM SHAMPOO 2% 100ML",
+    "unit": "8PCS",
     "mrp": 215,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00325",
+    "code": "A00134",
     "name": "KIDOFRESH KID TOOTHPASTE 80GM",
+    "unit": "PCS",
     "mrp": 104,
     "formula": null,
     "company": "MATRIXX RAMEDIES LLP"
   },
   {
     "id": "P00326",
+    "code": "09147",
     "name": "KNEE CAP PAIR (TYNOR)[L] 1 LARGE",
+    "unit": "1Pcs",
     "mrp": 355,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00327",
+    "code": "09147",
     "name": "KNEE CAP PAIR (TYNOR)[L] 1 LARGE",
+    "unit": "1Pcs",
     "mrp": 355,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00328",
+    "code": "02287",
     "name": "KNEE CAP PAIR (TYNOR)[M] 1 MEDIUM",
+    "unit": "1Pcs",
     "mrp": 355,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00329",
+    "code": "09978",
     "name": "KNEE CAP PAIR (TYNOR)[S] 1 SMALL",
+    "unit": "PCS",
     "mrp": 325,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00330",
+    "code": "09978",
     "name": "KNEE CAP PAIR (TYNOR)[S] 1 SMALL",
+    "unit": "PCS",
     "mrp": 355,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00331",
+    "code": "02280",
     "name": "KNEE CAP PAIR (TYNOR)[XL] 1 XL",
+    "unit": "1PCS",
     "mrp": 355,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00332",
+    "code": "04896",
     "name": "KONEX DELUXE SOOTHER 1",
+    "unit": "20Pc",
     "mrp": 25,
     "formula": null,
     "company": "J.K FOOD PHARMACEUTICALS"
   },
   {
     "id": "P00333",
+    "code": "10174",
     "name": "L HIST MONT FX TAB 10",
+    "unit": "10Pc",
     "mrp": 210,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00334",
+    "code": "AL-9032",
     "name": "L HIST MONT SYP 30ML 30ML",
+    "unit": "50Pc",
     "mrp": 68,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00335",
+    "code": "AL-9032",
     "name": "L HIST MONT SYP 30ML 30ML",
+    "unit": "50Pc",
     "mrp": 104,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00336",
+    "code": "9958",
     "name": "L HIST SYP 30ML",
+    "unit": "50Pc",
     "mrp": 49,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00337",
+    "code": "AL-3220",
     "name": "L HIST TAB (ALU) 20*15",
+    "unit": "20Pc",
     "mrp": 80,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00338",
+    "code": "10270",
     "name": "LABODERM-OC CREAM 15GM",
+    "unit": "30Pc",
     "mrp": 114.24,
     "formula": null,
     "company": "LABORATE PHARMA"
   },
   {
     "id": "P00339",
+    "code": "9951",
     "name": "LADYFREE SANITARY PADS 1",
+    "unit": "Pcs",
     "mrp": 58,
     "formula": null,
     "company": "MODI MUNDI PHARMA"
   },
   {
     "id": "P00340",
+    "code": "9951",
     "name": "LADYFREE SANITARY PADS 1",
+    "unit": "Pcs",
     "mrp": 58,
     "formula": null,
     "company": "MODI MUNDI PHARMA"
   },
   {
     "id": "P00341",
+    "code": "A00166",
     "name": "LANCET AMBITECH 100",
+    "unit": "PCS",
     "mrp": 499,
     "formula": null,
     "company": "AMBI"
   },
   {
     "id": "P00342",
+    "code": "A181",
     "name": "LINOBENZ 600 10",
+    "unit": "PCS",
     "mrp": 408.61,
     "formula": null,
     "company": "AJANTA PHARMA LTD"
   },
   {
     "id": "P00343",
+    "code": "DAN-0161",
     "name": "LOMO-D TAB 10",
+    "unit": "PCS",
     "mrp": 25.42,
     "formula": null,
     "company": "DANISH HEALTH CARE"
   },
   {
     "id": "P00344",
+    "code": "9061",
     "name": "LOMOLOCK TAB 10",
+    "unit": "Pcs",
     "mrp": 10,
     "formula": null,
     "company": "RELIEF BIOTECH PVT LTD"
   },
   {
     "id": "P00345",
+    "code": "4956",
     "name": "LOOKMANE HAYAT TAIL AYU 25ML",
+    "unit": "Pcs",
     "mrp": 35,
     "formula": null,
     "company": "M U AMBRELIA"
   },
   {
     "id": "P00346",
+    "code": "4956",
     "name": "LOOKMANE HAYAT TAIL AYU 25ML",
+    "unit": "Pcs",
     "mrp": 35,
     "formula": null,
     "company": "M U AMBRELIA"
   },
   {
     "id": "P00347",
+    "code": "4641",
     "name": "LOOKMANE HAYAT TAIL AYU 50ML",
+    "unit": "Pcs",
     "mrp": 65,
     "formula": null,
     "company": "M U AMBRELIA"
   },
   {
     "id": "P00348",
+    "code": "8018",
     "name": "LOX 2% INJ 30ML",
+    "unit": "Pcs",
     "mrp": 35.98,
     "formula": null,
     "company": "NEON LABORATORIES LTD"
   },
   {
     "id": "P00349",
+    "code": "5145",
     "name": "LOX 2% JELLY 30GM",
+    "unit": "Pcs",
     "mrp": 39.3,
     "formula": null,
     "company": "NEON LABORATORIES LTD"
   },
   {
     "id": "P00350",
+    "code": "5145",
     "name": "LOX 2% JELLY 30GM",
+    "unit": "Pcs",
     "mrp": 39.3,
     "formula": null,
     "company": "NEON LABORATORIES LTD"
   },
   {
     "id": "P00351",
+    "code": "10549",
     "name": "LQUIN 250 TAB 10",
+    "unit": "10Pc",
     "mrp": 49.22,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00352",
+    "code": "10203",
     "name": "LQUIN 500 TAB 10",
+    "unit": "10Pc",
     "mrp": 100.24,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00353",
+    "code": "10242",
     "name": "LS BELT (OAC) LARGE 1",
+    "unit": "Pcs",
     "mrp": 685,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00354",
+    "code": "10242",
     "name": "LS BELT (OAC) LARGE 1",
+    "unit": "Pcs",
     "mrp": 685,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00355",
+    "code": "10244",
     "name": "LS BELT (OAC) MEDIUM 1",
+    "unit": "Pcs",
     "mrp": 685,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00356",
+    "code": "A131",
     "name": "LS BELT (OAC) SMALL 1",
+    "unit": "PCS",
     "mrp": 686,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00357",
+    "code": "10243",
     "name": "LS BELT (OAC) XL 1",
+    "unit": "Pcs",
     "mrp": 685,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00358",
+    "code": "10016",
     "name": "LS BELT(TYNOR)[L] LARGE",
+    "unit": "PCS",
     "mrp": 845,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00359",
+    "code": "10018",
     "name": "LS BELT(TYNOR)[XL] XL",
+    "unit": "PCS",
     "mrp": 1000,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00360",
+    "code": "UTL-10599",
     "name": "LULEE CREAM 15GM 15GM",
+    "unit": "20Pc",
     "mrp": 99.7,
     "formula": null,
     "company": "UNIVERSAL TWIN LABS, GENERIC"
   },
   {
     "id": "P00361",
+    "code": "UTL-00304",
     "name": "LULEE CREAM 30GM 30GM",
+    "unit": "10PC",
     "mrp": 154.5,
     "formula": null,
     "company": "UNIVERSAL TWIN LABS, GENERIC"
   },
   {
     "id": "P00362",
+    "code": "UTL-00304",
     "name": "LULEE CREAM 30GM 30GM",
+    "unit": "10PC",
     "mrp": 154.5,
     "formula": null,
     "company": "UNIVERSAL TWIN LABS, GENERIC"
   },
   {
     "id": "P00363",
+    "code": "00410",
     "name": "LULIFORD LOTION 15ML",
+    "unit": "1PCS",
     "mrp": 180,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00364",
+    "code": "A00224",
     "name": "LULIFORD SOAP 75G",
+    "unit": "PCS",
     "mrp": 150,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00365",
+    "code": "00281",
     "name": "LULIGARD CREAM 10GM 10GM",
+    "unit": "5PCS",
     "mrp": 199.5,
     "formula": null,
     "company": "LABORATE PHARMA"
   },
   {
     "id": "P00366",
+    "code": "9106",
     "name": "LUPIHIST DM PLUS SYP 60ML 60ML",
+    "unit": "25Pc",
     "mrp": 48,
     "formula": null,
     "company": "LUPIN GENERIC"
   },
   {
     "id": "P00367",
+    "code": "5244",
     "name": "LUPISULIDE P TAB (AMBER) 10",
+    "unit": "20Pc",
     "mrp": 54.4,
     "formula": null,
     "company": "LUPIN GENERIC"
   },
   {
     "id": "P00368",
+    "code": "5244",
     "name": "LUPISULIDE P TAB (AMBER) 10",
+    "unit": "20Pc",
     "mrp": 54.4,
     "formula": null,
     "company": "LUPIN GENERIC"
   },
   {
     "id": "P00369",
+    "code": "5244",
     "name": "LUPISULIDE P TAB (AMBER) 10",
+    "unit": "20Pc",
     "mrp": 54.4,
     "formula": null,
     "company": "LUPIN GENERIC"
   },
   {
     "id": "P00370",
+    "code": "9096",
     "name": "LUPISULIDE P TAB (CLEAR) 10",
+    "unit": "20Pc",
     "mrp": 54.4,
     "formula": null,
     "company": "LUPIN GENERIC"
   },
   {
     "id": "P00371",
+    "code": "9096",
     "name": "LUPISULIDE P TAB (CLEAR) 10",
+    "unit": "20Pc",
     "mrp": 54.4,
     "formula": null,
     "company": "LUPIN GENERIC"
   },
   {
     "id": "P00372",
+    "code": "526",
     "name": "LUPISULIDE P TAB (GOLDEN) 10",
+    "unit": "20Pc",
     "mrp": 54.4,
     "formula": null,
     "company": "LUPIN GENERIC"
   },
   {
     "id": "P00373",
+    "code": "01186",
     "name": "LUVI FEEDING BOTTLE (BIG) 250ML",
+    "unit": "6PCS",
     "mrp": 50,
     "formula": null,
     "company": "SHARP CHEM INDIA"
   },
   {
     "id": "P00374",
+    "code": "01187",
     "name": "LUVI FEEDING BOTTLE (SMALL) 125ML",
+    "unit": "6PCS",
     "mrp": 45,
     "formula": null,
     "company": "SHARP CHEM INDIA"
   },
   {
     "id": "P00375",
+    "code": "A00213",
     "name": "LUVI SILICONE NIPPLE 1",
+    "unit": "PCS",
     "mrp": 20,
     "formula": null,
     "company": "AMAR PRODUCTS"
   },
   {
     "id": "P00376",
+    "code": "A00212",
     "name": "LUVI SOOTHER 1",
+    "unit": "PCS",
     "mrp": 20,
     "formula": null,
     "company": "AMAR PRODUCTS"
   },
   {
     "id": "P00377",
+    "code": "9549",
     "name": "LYCOLYFE CAP 10-ALU",
+    "unit": "20Pc",
     "mrp": 160,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00378",
+    "code": "MAN-0107",
     "name": "MAGNAKOF-LS SYP 100ML 100ML",
+    "unit": "PCS",
     "mrp": 119.76,
     "formula": null,
     "company": "MANKIND"
   },
   {
     "id": "P00379",
+    "code": "02339",
     "name": "MAGNAKOF-LS SYP 60ML 60ML",
+    "unit": "24PC",
     "mrp": 65.34,
     "formula": null,
     "company": "MANKIND"
   },
   {
     "id": "P00380",
+    "code": "A00117",
     "name": "MANFORCE LITCHI 3",
+    "unit": "PCS",
     "mrp": 25,
     "formula": null,
     "company": "MANKIND"
   },
   {
     "id": "P00381",
+    "code": "7391",
     "name": "MANFORCE STRAWBERRY 3 PIECE",
+    "unit": "Pcs",
     "mrp": null,
     "formula": null,
     "company": "MANKIND"
   },
   {
     "id": "P00382",
+    "code": "00379",
     "name": "MASK 3 PLY 1s",
+    "unit": "50PC",
     "mrp": 7,
     "formula": null,
     "company": "OTHER"
   },
   {
     "id": "P00383",
+    "code": "9472",
     "name": "MAXIRICH CAP 10",
+    "unit": "30Pc",
     "mrp": 119,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00384",
+    "code": "A00197",
     "name": "MAYCET 6*10",
+    "unit": "PCS",
     "mrp": 18.59,
     "formula": null,
     "company": "MAY & BAKER"
   },
   {
     "id": "P00385",
+    "code": "10043",
     "name": "MEDI TAPE 320-50MM JMS 2 INCH",
+    "unit": "PCS",
     "mrp": 200,
     "formula": null,
     "company": "JMS CO., LTD."
   },
   {
     "id": "P00386",
+    "code": "10044",
     "name": "MEDI TAPE 330-75MM JMS 3 INCH",
+    "unit": "PCS",
     "mrp": 300,
     "formula": null,
     "company": "JMS CO., LTD."
   },
   {
     "id": "P00387",
+    "code": "09397",
     "name": "MEDICAINE GEL (MINT) 200ML",
+    "unit": "9Pcs",
     "mrp": 136.6,
     "formula": null,
     "company": "MEDLEY PHARMA GENERIC"
   },
   {
     "id": "P00388",
+    "code": "1644",
     "name": "MEDIFLON IV CANULA 20G 1*1",
+    "unit": "100P",
     "mrp": 177,
     "formula": null,
     "company": "MEDIKIT EASTERN LTD"
   },
   {
     "id": "P00389",
+    "code": "1644",
     "name": "MEDIFLON IV CANULA 20G 1*1",
+    "unit": "100P",
     "mrp": 177,
     "formula": null,
     "company": "MEDIKIT EASTERN LTD"
   },
   {
     "id": "P00390",
+    "code": "1644",
     "name": "MEDIFLON IV CANULA 20G 1*1",
+    "unit": "100P",
     "mrp": 177,
     "formula": null,
     "company": "MEDIKIT EASTERN LTD"
   },
   {
     "id": "P00391",
+    "code": "9950",
     "name": "MEDIFLON IV CANULA 22G 1",
+    "unit": "100P",
     "mrp": 177,
     "formula": null,
     "company": "MEDIKIT EASTERN LTD"
   },
   {
     "id": "P00392",
+    "code": "A099",
     "name": "MEDILICE CREAM WINGS 30GM",
+    "unit": "PCS",
     "mrp": 44,
     "formula": null,
     "company": "WINGS PHARMACEUTICALS PVT"
   },
   {
     "id": "P00393",
+    "code": "A024",
     "name": "MEDILICE LIQUID 20ML",
+    "unit": "PCS",
     "mrp": 60,
     "formula": null,
     "company": "RAPPLE HEALTHCARE"
   },
   {
     "id": "P00394",
+    "code": "00184",
     "name": "MEF-SPAS TAB 10",
+    "unit": "20PC",
     "mrp": 35,
     "formula": null,
     "company": "LORDCENT & TORRENT HEALTHCARE"
   },
   {
     "id": "P00395",
+    "code": "A00239",
     "name": "MEFENIC-P DS SYP 60ML",
+    "unit": "PCS",
     "mrp": 62,
     "formula": null,
     "company": "AMAZING RESEARCH LAB LTD"
   },
   {
     "id": "P00396",
+    "code": "00121",
     "name": "MEFNIC-P DS SYP 60ML",
+    "unit": "25PC",
     "mrp": 62,
     "formula": null,
     "company": "GEM MANKIND"
   },
   {
     "id": "P00397",
+    "code": "9364",
     "name": "MEFRIL SPAS TAB 10",
+    "unit": "30Pc",
     "mrp": 34.24,
     "formula": null,
     "company": "MICRO LABS LTD"
   },
   {
     "id": "P00398",
+    "code": "MK-0058",
     "name": "MEGNACOF-LS SYP 100ML 100ML",
+    "unit": "PCS",
     "mrp": 119.75,
     "formula": null,
     "company": "MANKIND"
   },
   {
     "id": "P00399",
+    "code": "UTL-7310",
     "name": "MELAMET CREAM 15GM 15GM",
+    "unit": "20Pc",
     "mrp": 85.2,
     "formula": null,
     "company": "UNIVERSAL TWIN LABS, GENERIC"
   },
   {
     "id": "P00400",
+    "code": "A117",
     "name": "METRO IV 100ML",
+    "unit": "PCS",
     "mrp": 24.64,
     "formula": null,
     "company": "PENTAGON LABS LTD"
   },
   {
     "id": "P00401",
+    "code": "02226",
     "name": "MICEF O 200 TAB 10",
+    "unit": "10PC",
     "mrp": 119.39,
     "formula": null,
     "company": "MICRO LABS LTD"
   },
   {
     "id": "P00402",
+    "code": "1871",
     "name": "MICOGEL CREAM 15GM",
+    "unit": "20Pc",
     "mrp": 24,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00403",
+    "code": "A008",
     "name": "MICRO IV SET(p) POLYMED 1S",
+    "unit": "PCS",
     "mrp": 167,
     "formula": null,
     "company": "POLYMED SURGICAL"
   },
   {
     "id": "P00404",
+    "code": "A210",
     "name": "MICROPERF IV SET (ROMSONS) 25",
+    "unit": "PCS",
     "mrp": 163,
     "formula": null,
     "company": "ROMSONS"
   },
   {
     "id": "P00405",
+    "code": "A133",
     "name": "MICROPOROUS TAP (MEDI TAPE) 1 INCH",
+    "unit": "PCS",
     "mrp": 82,
     "formula": null,
     "company": "BIOSURGE HEALTHCARE INDIA PVT LTD"
   },
   {
     "id": "P00406",
+    "code": "02507",
     "name": "MINOLAST KID TAB 10",
+    "unit": "10PC",
     "mrp": 80,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00407",
+    "code": "A185",
     "name": "MINOLAST-KID SYP 60ML",
+    "unit": "PCS",
     "mrp": 95,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00408",
+    "code": "532",
     "name": "MOBICAM DT TAB 10",
+    "unit": "50Pc",
     "mrp": 58.85,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00409",
+    "code": "10729",
     "name": "MOMIN-S CREAM 15GM 15GM",
+    "unit": "20Pc",
     "mrp": 66.3,
     "formula": null,
     "company": "UNIVERSAL TWIN LABS, GENERIC"
   },
   {
     "id": "P00410",
+    "code": "10729",
     "name": "MOMIN-S CREAM 15GM 15GM",
+    "unit": "20Pc",
     "mrp": 66.3,
     "formula": null,
     "company": "UNIVERSAL TWIN LABS, GENERIC"
   },
   {
     "id": "P00411",
+    "code": "10869",
     "name": "MONAST FX TAB 10",
+    "unit": "20s",
     "mrp": 212.3,
     "formula": null,
     "company": "EMCURE PHARMA LTD GENERIC"
   },
   {
     "id": "P00412",
+    "code": "EMC-9450",
     "name": "MONAST LC SUSP 30ML 30ML",
+    "unit": "Pcs",
     "mrp": 92.85,
     "formula": null,
     "company": "EMCURE PHARMA LTD GENERIC"
   },
   {
     "id": "P00413",
+    "code": "CIP-9143",
     "name": "MOVEXX SP TAB 10",
+    "unit": "Pcs",
     "mrp": 116.16,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00414",
+    "code": "10144",
     "name": "MOXI EYE DROPS 10ML",
+    "unit": "30Pc",
     "mrp": 160.5,
     "formula": null,
     "company": "LABORATE PHARMA"
   },
   {
     "id": "P00415",
+    "code": "000288",
     "name": "MOXI-D EYE DROPS 10ML",
+    "unit": "30PC",
     "mrp": 200.75,
     "formula": null,
     "company": "LABORATE PHARMA"
   },
   {
     "id": "P00416",
+    "code": "LAB-00268",
     "name": "MP-4 TAB 20*10",
+    "unit": "10B",
     "mrp": 100,
     "formula": null,
     "company": "LABORATE PHARMA"
   },
   {
     "id": "P00417",
+    "code": "00179",
     "name": "MULTICENT SYP 200ML",
+    "unit": "PC",
     "mrp": 150,
     "formula": null,
     "company": "LORDCENT & TORRENT HEALTHCARE"
   },
   {
     "id": "P00418",
+    "code": "01193",
     "name": "MUSTARD OIL (AMAR) 100ML 100ML",
+    "unit": "12PC",
     "mrp": 80,
     "formula": null,
     "company": "ODEON PHARMA"
   },
   {
     "id": "P00419",
+    "code": "04671",
     "name": "MUSTARD OIL 100ML 100ML",
+    "unit": "12Pc",
     "mrp": 80,
     "formula": null,
     "company": "YOGESH PHARMACY"
   },
   {
     "id": "P00420",
+    "code": "04670",
     "name": "MUSTARD OIL 50ML 50ML",
+    "unit": "12Pc",
     "mrp": 45,
     "formula": null,
     "company": "YOGESH PHARMACY"
   },
   {
     "id": "P00421",
+    "code": "A267",
     "name": "MVI MULTICENT AMP INJ 10ML",
+    "unit": "PCS",
     "mrp": 35,
     "formula": null,
     "company": "L&T'S"
   },
   {
     "id": "P00422",
+    "code": "A267",
     "name": "MVI MULTICENT AMP INJ 10ML",
+    "unit": "PCS",
     "mrp": 35,
     "formula": null,
     "company": "L&T'S"
   },
   {
     "id": "P00423",
+    "code": "A127",
     "name": "N 95 (TYNOR) 1",
+    "unit": "PCS",
     "mrp": 120,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00424",
+    "code": "A025",
     "name": "NASELIN INHALER 1S",
+    "unit": "12P",
     "mrp": 50,
     "formula": null,
     "company": "CIPLA LTD"
   },
   {
     "id": "P00425",
+    "code": "8906",
     "name": "NASELIN NASAL SPRAY 10ML",
+    "unit": "60Pc",
     "mrp": 84,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00426",
+    "code": "A00222",
     "name": "NASELIN SALINE SPRAY 20 ML",
+    "unit": "PCS",
     "mrp": 45,
     "formula": null,
     "company": "CLASSIC HEALTHCARE"
   },
   {
     "id": "P00427",
+    "code": "LAB-1136",
     "name": "NDS NFLOX TZ TAB 20*10",
+    "unit": "20Pc",
     "mrp": 132,
     "formula": null,
     "company": "LABORATE PHARMA"
   },
   {
     "id": "P00428",
+    "code": "LAB-1136",
     "name": "NDS NFLOX TZ TAB 20*10",
+    "unit": "20Pc",
     "mrp": 132,
     "formula": null,
     "company": "LABORATE PHARMA"
   },
   {
     "id": "P00429",
+    "code": "A021",
     "name": "NEEM OIL 100ML(AMAR) 100ML",
+    "unit": "12P",
     "mrp": 90,
     "formula": null,
     "company": "AMAR PRODUCTS"
   },
   {
     "id": "P00430",
+    "code": "A020",
     "name": "NEEM OIL 50ML(AMAR) 50ML",
+    "unit": "12P",
     "mrp": 50,
     "formula": null,
     "company": "AMAR PRODUCTS"
   },
   {
     "id": "P00431",
+    "code": "00768",
     "name": "NEOCAN IVC NO.24 1 PC`S",
+    "unit": "100P",
     "mrp": 185,
     "formula": null,
     "company": "MEDIKIT EASTERN LTD"
   },
   {
     "id": "P00432",
+    "code": "10079",
     "name": "NEOCAN IVC NO.26 1",
+    "unit": "Pcs",
     "mrp": 200,
     "formula": null,
     "company": "MEDIKIT EASTERN LTD"
   },
   {
     "id": "P00433",
+    "code": "10079",
     "name": "NEOCAN IVC NO.26 1",
+    "unit": "Pcs",
     "mrp": 200,
     "formula": null,
     "company": "MEDIKIT EASTERN LTD"
   },
   {
     "id": "P00434",
+    "code": "A00194",
     "name": "NEOCAN/ENFFANCIE IVC NO.26 1S",
+    "unit": "PCS",
     "mrp": 200,
     "formula": null,
     "company": "SURGICAL"
   },
   {
     "id": "P00435",
+    "code": "A00154",
     "name": "NEONOVO NO.26 POLYMED 26 NO",
+    "unit": "PCS",
     "mrp": 197,
     "formula": null,
     "company": "POLYMED SURGICAL"
   },
   {
     "id": "P00436",
+    "code": "7215",
     "name": "NEOS CREAM (NEOMYCIN)10GM 10GM",
+    "unit": "Pcs",
     "mrp": 18,
     "formula": "Neomycin",
     "company": "UNIVERSAL TWIN LABS, GENERIC"
   },
   {
     "id": "P00437",
+    "code": "9741",
     "name": "NEW OKACET TAB (ROUND) 10",
+    "unit": "50Pc",
     "mrp": 18.5,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00438",
+    "code": "9226",
     "name": "NFLOX TZ TAB 10",
+    "unit": "Pcs",
     "mrp": null,
     "formula": null,
     "company": "LABORATE PHARMA"
   },
   {
     "id": "P00439",
+    "code": "00392",
     "name": "NFLOX-B 400 TAB 10",
+    "unit": "25PC",
     "mrp": 70.48,
     "formula": null,
     "company": "LABORATE PHARMA"
   },
   {
     "id": "P00440",
+    "code": "6802",
     "name": "NICIP COLD & FLU TAB 10",
+    "unit": "30Pc",
     "mrp": 58,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00441",
+    "code": "6802",
     "name": "NICIP COLD & FLU TAB 10",
+    "unit": "30Pc",
     "mrp": 58,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00442",
+    "code": "6802",
     "name": "NICIP COLD & FLU TAB 10",
+    "unit": "30Pc",
     "mrp": 58,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00443",
+    "code": "9048",
     "name": "NICIP MD TAB 10",
+    "unit": "50Pc",
     "mrp": 60.5,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00444",
+    "code": "4465",
     "name": "NICIP MR TAB 10",
+    "unit": "20Pc",
     "mrp": 108.7,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00445",
+    "code": "CIP-00578",
     "name": "NICIP PLUS TAB 10",
+    "unit": "110B",
     "mrp": 65.1,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00446",
+    "code": "CIP-00578",
     "name": "NICIP PLUS TAB 10",
+    "unit": "110B",
     "mrp": 65.1,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00447",
+    "code": "00492",
     "name": "NICIP TAB 10",
+    "unit": "50Pc",
     "mrp": 43.45,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00448",
+    "code": "2216",
     "name": "NIMUPAIN PLUS TAB (BROWN) 10",
+    "unit": "50Pc",
     "mrp": 62,
     "formula": "Nimesulide 100 mg + Paracetamol 325 mg",
     "company": "CIPLA GX"
   },
   {
     "id": "P00449",
+    "code": "10265",
     "name": "NIMUPAIN TAB 10",
+    "unit": "60Pc",
     "mrp": 44,
     "formula": "Nimesulide 100 mg",
     "company": "CIPLA GX"
   },
   {
     "id": "P00450",
+    "code": "A257",
     "name": "NITRO-G 2.6 TAB 30S",
+    "unit": "PCS",
     "mrp": 174.8,
     "formula": "Nitroglycerin 2.6 mg",
     "company": "AJANTA PHARMA LTD"
   },
   {
     "id": "P00451",
+    "code": "09829",
     "name": "NO SCARS CREAM 20GM",
+    "unit": "12Pc",
     "mrp": 259,
     "formula": null,
     "company": "TORQUE PHARMACITICULS PVT LTD"
   },
   {
     "id": "P00452",
+    "code": "8978",
     "name": "NODARD TAB 15",
+    "unit": "50Pc",
     "mrp": 59.25,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00453",
+    "code": "8978",
     "name": "NODARD TAB 15",
+    "unit": "50Pc",
     "mrp": 59.25,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00454",
+    "code": "PAN-02408",
     "name": "NS 100ML (PENTAGON) 100ML",
+    "unit": "25PC",
     "mrp": 22.03,
     "formula": null,
     "company": "PENTAGON LABS LTD"
   },
   {
     "id": "P00455",
+    "code": "A169",
     "name": "NS 100ML [RUSHMAN] 100ML",
+    "unit": "PCS",
     "mrp": 19.65,
     "formula": null,
     "company": "RUSHMAN"
   },
   {
     "id": "P00456",
+    "code": "10590",
     "name": "NS 500ML [INFUTEC] 500ML",
+    "unit": "25Pc",
     "mrp": 31.42,
     "formula": null,
     "company": "INFUTEC HEALTHCARE LTD."
   },
   {
     "id": "P00457",
+    "code": "9806",
     "name": "NULIFE GLOVES NO 6.0 1-PAIR",
+    "unit": "Pcs",
     "mrp": 67,
     "formula": null,
     "company": "NULIFE HEALTHCARE"
   },
   {
     "id": "P00458",
+    "code": "5050",
     "name": "NULIFE GLOVES NO 6.5 1",
+    "unit": "Pcs",
     "mrp": 67,
     "formula": null,
     "company": "NULIFE HEALTHCARE"
   },
   {
     "id": "P00459",
+    "code": "9149",
     "name": "NULIFE GLOVES NO 7.0 1",
+    "unit": "Pcs",
     "mrp": 67,
     "formula": null,
     "company": "NULIFE HEALTHCARE"
   },
   {
     "id": "P00460",
+    "code": "A115",
     "name": "NW3328 (ETHELON 3-0) 3.0",
+    "unit": "PCS",
     "mrp": 238,
     "formula": null,
     "company": "JOHNSON & JOHNSON"
   },
   {
     "id": "P00461",
+    "code": "A00210",
     "name": "NW3328 MERSLIK-3.0 ETHELON 1",
+    "unit": "PCS",
     "mrp": 222,
     "formula": null,
     "company": "ETHILON"
   },
   {
     "id": "P00462",
+    "code": "9954",
     "name": "NW3336 (ETHILON 2-0) 1",
+    "unit": "Pcs",
     "mrp": 254,
     "formula": null,
     "company": "JOHNSON & JOHNSON"
   },
   {
     "id": "P00463",
+    "code": "A168",
     "name": "NW5003 MERSLIK 3-0 3-0",
+    "unit": "PCS",
     "mrp": 239,
     "formula": null,
     "company": "JOHNSON & JOHNSON"
   },
   {
     "id": "P00464",
+    "code": "A00149",
     "name": "NW5036 MERSILK-2.0 ETHICON 2.0",
+    "unit": "PCS",
     "mrp": 226,
     "formula": null,
     "company": "JOHNSON & JOHNSON"
   },
   {
     "id": "P00465",
+    "code": "594",
     "name": "OFRAMAX 1GM INJ 1GM",
+    "unit": "16Pc",
     "mrp": 69.86,
     "formula": null,
     "company": "RANBAXY LAB LTD"
   },
   {
     "id": "P00466",
+    "code": "2748",
     "name": "OFRAMAX FORTE 1.5GM INJ 1 VIAL",
+    "unit": "20Pc",
     "mrp": 219,
     "formula": null,
     "company": "RANBAXY LAB LTD"
   },
   {
     "id": "P00467",
+    "code": "2748",
     "name": "OFRAMAX FORTE 1.5GM INJ 1 VIAL",
+    "unit": "20Pc",
     "mrp": 219,
     "formula": null,
     "company": "RANBAXY LAB LTD"
   },
   {
     "id": "P00468",
+    "code": "8908",
     "name": "OKACET SYP 30ML",
+    "unit": "36Pc",
     "mrp": 19.82,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00469",
+    "code": "BUL-01",
     "name": "OLMO 40H 10S",
+    "unit": "PCS",
     "mrp": 241.5,
     "formula": null,
     "company": "KNOLL HEALTHCARE PVT LTD"
   },
   {
     "id": "P00470",
+    "code": "8981",
     "name": "OLOX OZ TAB 10",
+    "unit": "20Pc",
     "mrp": 128,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00471",
+    "code": "8981",
     "name": "OLOX OZ TAB 10",
+    "unit": "20Pc",
     "mrp": 140.8,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00472",
+    "code": "10369",
     "name": "OMEE CAP (20*20) 20",
+    "unit": "20Pc",
     "mrp": 64.29,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00473",
+    "code": "10475",
     "name": "OMEE D CAP (20*15) 15",
+    "unit": "20Pc",
     "mrp": 145,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00474",
+    "code": "AL-0063",
     "name": "OMEE-150 TAB(STRIP) 10*30",
+    "unit": "PCS",
     "mrp": 40.93,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00475",
+    "code": "9177",
     "name": "OMNICLAV 625 TAB 6",
+    "unit": "20PC",
     "mrp": 134,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00476",
+    "code": "1142",
     "name": "OMNIGEL 10GM 10GM",
+    "unit": "20Pc",
     "mrp": 59.4,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00477",
+    "code": "CIPL1151",
     "name": "OMNIGEL 20GM 20GM",
+    "unit": "20Pc",
     "mrp": 104.06,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00478",
+    "code": "1716",
     "name": "OMNIGEL 30GM 30GM",
+    "unit": "20PC",
     "mrp": 121,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00479",
+    "code": "8982",
     "name": "OMNIGEL 50GM 50GM",
+    "unit": "20Pc",
     "mrp": 162.8,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00480",
+    "code": "8982",
     "name": "OMNIGEL 50GM 50GM",
+    "unit": "20Pc",
     "mrp": 162.8,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00481",
+    "code": "09269",
     "name": "OMNIGEL 75GM 75GM",
+    "unit": "10Pc",
     "mrp": 231,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00482",
+    "code": "CIPL8983",
     "name": "OMNIGEL SPRAY 35GM 35GM",
+    "unit": "6Pcs",
     "mrp": 131.28,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00483",
+    "code": "CIPL8909",
     "name": "OMNIGEL SPRAY 55GM 55GM",
+    "unit": "6Pcs",
     "mrp": 217.8,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00484",
+    "code": "CIPL01091",
     "name": "OMNIGEL SPRAY 75GM 75GM",
+    "unit": "6PCS",
     "mrp": 248.05,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00485",
+    "code": "A083",
     "name": "OMNIGEL TAB 50 SR",
+    "unit": "PCS",
     "mrp": 23.63,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00486",
+    "code": "00370",
     "name": "ONVIN MD 4 TAB 10",
+    "unit": "20PC",
     "mrp": 57.46,
     "formula": null,
     "company": "CADILA PHARMACEUTICALS"
   },
   {
     "id": "P00487",
+    "code": "A00164",
     "name": "OPTIMA CANNULA FIXATOR 1",
+    "unit": "PCS",
     "mrp": 60,
     "formula": null,
     "company": "BANGA INTERNATIONAL"
   },
   {
     "id": "P00488",
+    "code": "8922",
     "name": "OPTIMA CREPE BANDAGE 10CM 4 INCH",
+    "unit": "Pcs",
     "mrp": 160,
     "formula": null,
     "company": "BANGA INTERNATIONAL"
   },
   {
     "id": "P00489",
+    "code": "8923",
     "name": "OPTIMA CREPE BANDAGE 15CM 6 INCH",
+    "unit": "Pcs",
     "mrp": 240,
     "formula": null,
     "company": "BANGA INTERNATIONAL"
   },
   {
     "id": "P00490",
+    "code": "871",
     "name": "OPTIMA CREPE BANDAGE 5CM 2 INCH",
+    "unit": "Pcs",
     "mrp": 80,
     "formula": null,
     "company": "BANGA INTERNATIONAL"
   },
   {
     "id": "P00491",
+    "code": "299",
     "name": "OROFER SYRUP 150ML",
+    "unit": "Pcs",
     "mrp": 163.45,
     "formula": null,
     "company": "EMCURE PHARMA LTD GENERIC"
   },
   {
     "id": "P00492",
+    "code": "09356",
     "name": "ORS APPLE LIQUID (CIPLA) 200ML",
+    "unit": "30Pc",
     "mrp": 29.4,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00493",
+    "code": "09356",
     "name": "ORS APPLE LIQUID (CIPLA) 200ML",
+    "unit": "30Pc",
     "mrp": 31.5,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00494",
+    "code": "9373",
     "name": "ORS ORANGE LIQUID (CIPLA) 200ML",
+    "unit": "30Pc",
     "mrp": 31.5,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00495",
+    "code": "9373",
     "name": "ORS ORANGE LIQUID (CIPLA) 200ML",
+    "unit": "30Pc",
     "mrp": 31.5,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00496",
+    "code": "647",
     "name": "ORS POWDER (ORANGE) 21GM 21GM",
+    "unit": "30PC",
     "mrp": 21.82,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00497",
+    "code": "CIPL06888",
     "name": "ORS POWDER (ORANGE) 4.2GM 4.2GM",
+    "unit": "20Pc",
     "mrp": 4.31,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00498",
+    "code": "A009",
     "name": "OXY CANN(PD) POLYMED 1S",
+    "unit": "PCS",
     "mrp": 217,
     "formula": null,
     "company": "POLYMED SURGICAL"
   },
   {
     "id": "P00499",
+    "code": "A032",
     "name": "OXY SET NEONATEL INFANT",
+    "unit": "PCS",
     "mrp": 252,
     "formula": null,
     "company": "ROMSONS"
   },
   {
     "id": "P00500",
+    "code": "00313",
     "name": "P40 TAB 10",
+    "unit": "20PC",
     "mrp": 130,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00501",
+    "code": "10010",
     "name": "PANTAROZ IV INJ 1 VAIL",
+    "unit": "PCS",
     "mrp": 55.34,
     "formula": null,
     "company": "WARNER PHARMA"
   },
   {
     "id": "P00502",
+    "code": "CIP-1449",
     "name": "PANTOSEC 40MG TAB 10",
+    "unit": "20Pc",
     "mrp": 143.56,
     "formula": "Pantoprazole 40 mg",
     "company": "CIPLA GX"
   },
   {
     "id": "P00503",
+    "code": "CIP-1449",
     "name": "PANTOSEC 40MG TAB 10",
+    "unit": "20Pc",
     "mrp": 143.56,
     "formula": "Pantoprazole 40 mg",
     "company": "CIPLA GX"
   },
   {
     "id": "P00504",
+    "code": "CIP-1449",
     "name": "PANTOSEC 40MG TAB 10",
+    "unit": "20Pc",
     "mrp": 143.56,
     "formula": "Pantoprazole 40 mg",
     "company": "CIPLA GX"
   },
   {
     "id": "P00505",
+    "code": "CIP-8938",
     "name": "PANTOSEC D TAB 10",
+    "unit": "20Pc",
     "mrp": 149,
     "formula": "Domperidone 10 mg + Pantoprazole 40 mg",
     "company": "CIPLA GX"
   },
   {
     "id": "P00506",
+    "code": "CIP-8938",
     "name": "PANTOSEC D TAB 10",
+    "unit": "20Pc",
     "mrp": 137.94,
     "formula": "Domperidone 10 mg + Pantoprazole 40 mg",
     "company": "CIPLA GX"
   },
   {
     "id": "P00507",
+    "code": "CIP-8938",
     "name": "PANTOSEC D TAB 10",
+    "unit": "20Pc",
     "mrp": 163.9,
     "formula": "Domperidone 10 mg + Pantoprazole 40 mg",
     "company": "CIPLA GX"
   },
   {
     "id": "P00508",
+    "code": "6665",
     "name": "PARACIP 125MG SYP 60ML",
+    "unit": "20Pc",
     "mrp": 24.92,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00509",
+    "code": "6665",
     "name": "PARACIP 125MG SYP 60ML",
+    "unit": "20Pc",
     "mrp": 22.5,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00510",
+    "code": "8985",
     "name": "PARACIP 250MG SUSP 60ML",
+    "unit": "25Pc",
     "mrp": 45.02,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00511",
+    "code": "8939",
     "name": "PARACIP 650 TAB 10",
+    "unit": "Pcs",
     "mrp": 22.84,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00512",
+    "code": "8939",
     "name": "PARACIP 650 TAB 10",
+    "unit": "Pcs",
     "mrp": 22.84,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00513",
+    "code": "A00129",
     "name": "PATANJALI DANT KANTI 20GM",
+    "unit": "PCS",
     "mrp": null,
     "formula": null,
     "company": "PATANJALI AURVED LTD"
   },
   {
     "id": "P00514",
+    "code": "A005",
     "name": "PEDIADRIP PLUSS(ROMSONS) 1S",
+    "unit": "PCS",
     "mrp": 280,
     "formula": null,
     "company": "ROMSONS"
   },
   {
     "id": "P00515",
+    "code": "10616",
     "name": "PERMETRON LOTION 50ML",
+    "unit": "12Pc",
     "mrp": 55.44,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00516",
+    "code": "A036",
     "name": "PETSAFA TAB 30 TAB",
+    "unit": "PCS",
     "mrp": 98,
     "formula": null,
     "company": "SUBEX PHARMA"
   },
   {
     "id": "P00517",
+    "code": "10661",
     "name": "PHENSEDYL DX SYP 100ML 100ML",
+    "unit": "Pcs",
     "mrp": 127.38,
     "formula": null,
     "company": "ABBOTT HEALTHCARE PVT. LTD."
   },
   {
     "id": "P00518",
+    "code": "10660",
     "name": "PHENSEDYL DX SYP 60ML 60ML",
+    "unit": "Pcs",
     "mrp": 69.47,
     "formula": null,
     "company": "ABBOTT HEALTHCARE PVT. LTD."
   },
   {
     "id": "P00519",
+    "code": "10660",
     "name": "PHENSEDYL DX SYP 60ML 60ML",
+    "unit": "Pcs",
     "mrp": 69.47,
     "formula": null,
     "company": "ABBOTT HEALTHCARE PVT. LTD."
   },
   {
     "id": "P00520",
+    "code": "A026",
     "name": "PILOGO CAP 10",
+    "unit": "10P",
     "mrp": 85,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00521",
+    "code": "00427",
     "name": "PILOGO CREAM 20GM",
+    "unit": "20PC",
     "mrp": 85,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00522",
+    "code": "7942",
     "name": "PIROX 20DT TAB 10",
+    "unit": "Pcs",
     "mrp": 71,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00523",
+    "code": "7942",
     "name": "PIROX 20DT TAB 10",
+    "unit": "Pcs",
     "mrp": 71,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00524",
+    "code": "A159",
     "name": "POLY PLAIN DRAPE 100*150CM 100*150",
+    "unit": "PCS",
     "mrp": 105,
     "formula": null,
     "company": "UNISURGE INDUSTREAS"
   },
   {
     "id": "P00525",
+    "code": "A00003",
     "name": "POTTASIUM PERMANGANATE 20GM",
+    "unit": "12PC",
     "mrp": 30,
     "formula": null,
     "company": "SHARP CHEM INDIA"
   },
   {
     "id": "P00526",
+    "code": "AL-0065",
     "name": "POWERFLAM MR TAB(BOX) 100*10",
+    "unit": "PCS",
     "mrp": 105,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00527",
+    "code": "A004",
     "name": "PREDCORTIL 5 TAB 10",
+    "unit": "PCS",
     "mrp": 21.26,
     "formula": null,
     "company": "ABBOTT HEALTHCARE PVT. LTD."
   },
   {
     "id": "P00528",
+    "code": "LF-0090",
     "name": "PREGABANYL-NTM TAB TP-3",
+    "unit": "PCS",
     "mrp": 195,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00529",
+    "code": "A146",
     "name": "PREGABNYL-75 CAP TP-2",
+    "unit": "PCS",
     "mrp": 90,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00530",
+    "code": "9681",
     "name": "PREGAKEM CARD 1S",
+    "unit": "20Pc",
     "mrp": 70,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00531",
+    "code": "A046",
     "name": "PREGNANCY KIT (DR.MORPHEN) 1",
+    "unit": "PCS",
     "mrp": 55,
     "formula": null,
     "company": "DR MOREPEN"
   },
   {
     "id": "P00532",
+    "code": "A253",
     "name": "PROTITAS PLASTIC JAR 220 GM",
+    "unit": "PCS",
     "mrp": 479,
     "formula": null,
     "company": "INTAS PHARMA GENERIC"
   },
   {
     "id": "P00533",
+    "code": "A253",
     "name": "PROTITAS PLASTIC JAR 220 GM",
+    "unit": "PCS",
     "mrp": 523,
     "formula": null,
     "company": "INTAS PHARMA GENERIC"
   },
   {
     "id": "P00534",
+    "code": "02514",
     "name": "PROTITAS POWDER K/P 220",
+    "unit": "PCS",
     "mrp": 476,
     "formula": null,
     "company": "INTAS PHARMA GENERIC"
   },
   {
     "id": "P00535",
+    "code": "9062",
     "name": "PUDINA CAP (L&T) 10",
+    "unit": "50Pc",
     "mrp": 20,
     "formula": null,
     "company": "LORDCENT & TORRENT HEALTHCARE"
   },
   {
     "id": "P00536",
+    "code": "9551",
     "name": "QMAX OZ TAB 20*10",
+    "unit": "20Pc",
     "mrp": 157,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00537",
+    "code": "SAM-0169",
     "name": "RANISAM INJ 2ML 2ML",
+    "unit": "PCS",
     "mrp": 6.02,
     "formula": null,
     "company": "SAMARTH PHARMA PVT LTD"
   },
   {
     "id": "P00538",
+    "code": "9322",
     "name": "RAPID GEL 10GM 10GM",
+    "unit": "16Pc",
     "mrp": 36.6,
     "formula": null,
     "company": "MICRO LABS LTD"
   },
   {
     "id": "P00539",
+    "code": "6664",
     "name": "RAPID GEL 30GM 30GM",
+    "unit": "16Pc",
     "mrp": 103,
     "formula": null,
     "company": "MICRO LABS LTD"
   },
   {
     "id": "P00540",
+    "code": "4976",
     "name": "RAPID HOT GEL 30GM",
+    "unit": "16Pc",
     "mrp": 106.95,
     "formula": null,
     "company": "MICRO LABS LTD"
   },
   {
     "id": "P00541",
+    "code": "09309",
     "name": "REACTIN 100 SR TAB 10",
+    "unit": "30Pc",
     "mrp": 61.5,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00542",
+    "code": "9388",
     "name": "REBEZ 20 TAB 10-ALU",
+    "unit": "25Pc",
     "mrp": 91.45,
     "formula": null,
     "company": "EMCURE PHARMA LTD GENERIC"
   },
   {
     "id": "P00543",
+    "code": "09389",
     "name": "REBEZ DSR CAP 10-ALU",
+    "unit": "20PC",
     "mrp": 172.1,
     "formula": null,
     "company": "EMCURE PHARMA LTD GENERIC"
   },
   {
     "id": "P00544",
+    "code": "9475",
     "name": "REXCOF DX 100ML SYP 100ML",
+    "unit": "Pcs",
     "mrp": 116.55,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00545",
+    "code": "9475",
     "name": "REXCOF DX 100ML SYP 100ML",
+    "unit": "Pcs",
     "mrp": 128.2,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00546",
+    "code": "000124",
     "name": "REXCOF DX 60ML SYP 60ML",
+    "unit": "20PC",
     "mrp": 70,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00547",
+    "code": "02486",
     "name": "ROMOJET 5ML 5ML",
+    "unit": "100P",
     "mrp": 7,
     "formula": null,
     "company": "ROMSONS"
   },
   {
     "id": "P00548",
+    "code": "02432",
     "name": "ROMOLENE NO.14 (ROM) 1",
+    "unit": "1PCS",
     "mrp": 72,
     "formula": null,
     "company": "ROMSONS"
   },
   {
     "id": "P00549",
+    "code": "02431",
     "name": "ROMOLENE NO.16 (ROM) NO 16",
+    "unit": "1PCS",
     "mrp": 72,
     "formula": null,
     "company": "ROMSONS"
   },
   {
     "id": "P00550",
+    "code": "A125",
     "name": "ROMOLENE NO.18 (ROM) NO 18",
+    "unit": "PCS",
     "mrp": 66,
     "formula": null,
     "company": "ROMSONS"
   },
   {
     "id": "P00551",
+    "code": "A00004",
     "name": "ROSE WATER 100ML 100ML",
+    "unit": "12PC",
     "mrp": 50,
     "formula": null,
     "company": "SHARP CHEM INDIA"
   },
   {
     "id": "P00552",
+    "code": "A00004",
     "name": "ROSE WATER 100ML 100ML",
+    "unit": "12PC",
     "mrp": 25,
     "formula": null,
     "company": "SHARP CHEM INDIA"
   },
   {
     "id": "P00553",
+    "code": "A00004",
     "name": "ROSE WATER 100ML 100ML",
+    "unit": "12PC",
     "mrp": 25,
     "formula": null,
     "company": "SHARP CHEM INDIA"
   },
   {
     "id": "P00554",
+    "code": "A00005",
     "name": "ROSE WATER 50ML 50ML",
+    "unit": "12PC",
     "mrp": 12,
     "formula": null,
     "company": "SHARP CHEM INDIA"
   },
   {
     "id": "P00555",
+    "code": "9360",
     "name": "ROXIKEM 150 TAB 10",
+    "unit": "Pcs",
     "mrp": 115,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00556",
+    "code": "A126",
     "name": "RUBBER CATHETHER",
+    "unit": "PCS",
     "mrp": 40,
     "formula": null,
     "company": null
   },
   {
     "id": "P00557",
+    "code": "A00112",
     "name": "SANITIZER WIPES 1",
+    "unit": "10PC",
     "mrp": 60,
     "formula": null,
     "company": "OTHER"
   },
   {
     "id": "P00558",
+    "code": "A156",
     "name": "SATISPAZ SUSP 60ML 60ML",
+    "unit": "PCS",
     "mrp": 98.05,
     "formula": null,
     "company": "ERIS PHARMA"
   },
   {
     "id": "P00559",
+    "code": "AJ-0124",
     "name": "SENTIUM 500 TAB 6S",
+    "unit": "PCS",
     "mrp": 530,
     "formula": null,
     "company": "AJANTA PHARMA LTD"
   },
   {
     "id": "P00560",
+    "code": "AJ-0019",
     "name": "SITAPRIL 100MG TAB 10",
+    "unit": "PCS",
     "mrp": 180,
     "formula": null,
     "company": "AJANTA PHARMA LTD"
   },
   {
     "id": "P00561",
+    "code": "06594",
     "name": "SKINSHINE CREAM 15GM 15GM",
+    "unit": "24Pc",
     "mrp": 149,
     "formula": null,
     "company": "CADILA PHARMACEUTICALS"
   },
   {
     "id": "P00562",
+    "code": "9378",
     "name": "SMILOGEL-CT 10GM 10GM",
+    "unit": "20Pc",
     "mrp": 36.15,
     "formula": null,
     "company": "UNIVERSAL TWIN LABS, GENERIC"
   },
   {
     "id": "P00563",
+    "code": "9378",
     "name": "SMILOGEL-CT 10GM 10GM",
+    "unit": "20Pc",
     "mrp": 36.15,
     "formula": null,
     "company": "UNIVERSAL TWIN LABS, GENERIC"
   },
   {
     "id": "P00564",
+    "code": "UTL-03225",
     "name": "SMILOGEL-LAMI 10GM 10GM",
+    "unit": "20Pc",
     "mrp": 35.25,
     "formula": null,
     "company": "UNIVERSAL TWIN LABS, GENERIC"
   },
   {
     "id": "P00565",
+    "code": "A00207",
     "name": "SN4237T TRUGUT 3-0 1",
+    "unit": "PCS",
     "mrp": 160,
     "formula": null,
     "company": "TRUGUT"
   },
   {
     "id": "P00566",
+    "code": "A00207",
     "name": "SN4237T TRUGUT 3-0 1",
+    "unit": "PCS",
     "mrp": 160,
     "formula": null,
     "company": "TRUGUT"
   },
   {
     "id": "P00567",
+    "code": "A164",
     "name": "SN4259T TRUGUT 1.0 1",
+    "unit": "PCS",
     "mrp": 249,
     "formula": null,
     "company": "HEALTHIUM"
   },
   {
     "id": "P00568",
+    "code": "A261",
     "name": "SN5333T TRUGUT 2.0 1",
+    "unit": "PCS",
     "mrp": 156,
     "formula": null,
     "company": "TRUGUT"
   },
   {
     "id": "P00569",
+    "code": "9527",
     "name": "SOFRAXINE CREAM 15GM 15GM",
+    "unit": "Pcs",
     "mrp": 22.5,
     "formula": null,
     "company": "UNIVERSAL TWIN LABS, GENERIC"
   },
   {
     "id": "P00570",
+    "code": "07421",
     "name": "SOLEARWAX EAR DROP 10ML",
+    "unit": "25Pc",
     "mrp": 75,
     "formula": null,
     "company": "UNIVERSAL LIFE SCIENCE"
   },
   {
     "id": "P00571",
+    "code": "10021",
     "name": "SOMEE COLD N FLU TAB 10'S",
+    "unit": "PCS",
     "mrp": 65,
     "formula": null,
     "company": "ALCON LABORTORIES"
   },
   {
     "id": "P00572",
+    "code": "1000",
     "name": "SORBITRATE 10 TAB 50",
+    "unit": "Pcs",
     "mrp": 45.28,
     "formula": null,
     "company": "PIRAMAL HEALTHCARE"
   },
   {
     "id": "P00573",
+    "code": "8664",
     "name": "SPASMONIL TABLETS 10",
+    "unit": "Pcs",
     "mrp": 26.4,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00574",
+    "code": "8664",
     "name": "SPASMONIL TABLETS 10",
+    "unit": "Pcs",
     "mrp": 26.4,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00575",
+    "code": "A012",
     "name": "SPINAL NEEDLE NO.23 (TOP) 1S",
+    "unit": "PCS",
     "mrp": 138.5,
     "formula": null,
     "company": "MEDITOP CORPORATION"
   },
   {
     "id": "P00576",
+    "code": "9957",
     "name": "SPINAL NEEDLE NO.25 (TOP) 1",
+    "unit": "Pcs",
     "mrp": 152,
     "formula": null,
     "company": "MEDITOP CORPORATION"
   },
   {
     "id": "P00577",
+    "code": "A00216",
     "name": "STETHOSCOP ENBEE (DUAL HEAD) 1",
+    "unit": "PCS",
     "mrp": 2100,
     "formula": null,
     "company": "RUSCH STEILE"
   },
   {
     "id": "P00578",
+    "code": "A00165",
     "name": "STETHOSCOPE ENBEE(DELUX) 1S",
+    "unit": "PCS",
     "mrp": 599,
     "formula": null,
     "company": "SURGICAL"
   },
   {
     "id": "P00579",
+    "code": "10015",
     "name": "STICK-AID 100",
+    "unit": "Pcs",
     "mrp": 200,
     "formula": null,
     "company": "LORDCENT & TORRENT HEALTHCARE"
   },
   {
     "id": "P00580",
+    "code": "9047",
     "name": "STICKOBAND (PLASTIC JAR) 1",
+    "unit": "Pcs",
     "mrp": 200,
     "formula": null,
     "company": "STICKWELL INDUSTRIES"
   },
   {
     "id": "P00581",
+    "code": "9327",
     "name": "STICKOBAND WASHPROOF 100 PIECE",
+    "unit": "Pcs",
     "mrp": 250,
     "formula": null,
     "company": "STICKWELL INDUSTRIES"
   },
   {
     "id": "P00582",
+    "code": "L&T10016",
     "name": "STOOD 5000 SPRAY 15GM",
+    "unit": "Pcs",
     "mrp": 195,
     "formula": null,
     "company": "LORDCENT & TORRENT HEALTHCARE"
   },
   {
     "id": "P00583",
+    "code": "05904",
     "name": "STUD 5000 SPRAY 20GMS",
+    "unit": "12Pc",
     "mrp": 175,
     "formula": null,
     "company": "UNIVERSAL LIFE SCIENCE"
   },
   {
     "id": "P00584",
+    "code": "1988",
     "name": "SUHAGRA 100 TAB 4",
+    "unit": "20Pc",
     "mrp": 221.2,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00585",
+    "code": "AL-6844",
     "name": "SUMO GEL 30GM 30GM",
+    "unit": "20Pc",
     "mrp": 115,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00586",
+    "code": "10528",
     "name": "SUMO GEL [15GM] 15GM",
+    "unit": "20Pc",
     "mrp": 66,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00587",
+    "code": "10708",
     "name": "SUMO SPRAY 20GM 20GM",
+    "unit": "6Pcs",
     "mrp": 90,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00588",
+    "code": "10709",
     "name": "SUMO SPRAY 35GM 35GM",
+    "unit": "6Pcs",
     "mrp": 125,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00589",
+    "code": "10710",
     "name": "SUMO SPRAY 55GM 55GM",
+    "unit": "6Pcs",
     "mrp": 195,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00590",
+    "code": "A00027",
     "name": "SUMU TAB (GOLDEN) 10",
+    "unit": "20PC",
     "mrp": 55,
     "formula": null,
     "company": "LORDCENT & TORRENT HEALTHCARE"
   },
   {
     "id": "P00591",
+    "code": "A038",
     "name": "SURGICAL CAP 1",
+    "unit": "PCS",
     "mrp": 22,
     "formula": null,
     "company": "UNI - SAN"
   },
   {
     "id": "P00592",
+    "code": "A00226",
     "name": "T-MUCE OINT 5GM 5GM",
+    "unit": "PCS",
     "mrp": 115,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00593",
+    "code": "02506",
     "name": "TEFLO FIXATOR 1",
+    "unit": "100P",
     "mrp": 80,
     "formula": null,
     "company": "ALPHA THERAPEUTICS PVT LTD"
   },
   {
     "id": "P00594",
+    "code": "A188",
     "name": "TELTAN 40MG TAB 10",
+    "unit": "PCS",
     "mrp": 78.49,
     "formula": null,
     "company": "AJANTA PHARMA LTD"
   },
   {
     "id": "P00595",
+    "code": "09992",
     "name": "THUMB SPICA SPLINT (TYNOR) UNIVERSAL",
+    "unit": "PCS",
     "mrp": 250,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00596",
+    "code": "09992",
     "name": "THUMB SPICA SPLINT (TYNOR) UNIVERSAL",
+    "unit": "PCS",
     "mrp": 270,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00597",
+    "code": "09929",
     "name": "TIL OIL 100ML 100ML",
+    "unit": "12Pc",
     "mrp": 80,
     "formula": null,
     "company": "YOGESH PHARMACY"
   },
   {
     "id": "P00598",
+    "code": "09585",
     "name": "TOBRA D EYE/EAR DROP 10ML 10ML",
+    "unit": "30Pc",
     "mrp": 57.5,
     "formula": null,
     "company": "LABORATE PHARMA"
   },
   {
     "id": "P00599",
+    "code": "A072",
     "name": "TRAMATAC INJ 2ML",
+    "unit": "PCS",
     "mrp": 26.05,
     "formula": null,
     "company": "BIO-MED HEALTHCARE PVT. LTD."
   },
   {
     "id": "P00600",
+    "code": "A033",
     "name": "TRANSPORE TAPE 1'' 3M",
+    "unit": "PCS",
     "mrp": 161,
     "formula": null,
     "company": "3M"
   },
   {
     "id": "P00601",
+    "code": "A00175",
     "name": "TRUGHT 4248 NO1 100CM 1",
+    "unit": "PCS",
     "mrp": 228.92,
     "formula": null,
     "company": null
   },
   {
     "id": "P00602",
+    "code": "10782",
     "name": "TRUSTYL-BR 100ML SYP 100ML",
+    "unit": "Pcs",
     "mrp": 97.35,
     "formula": null,
     "company": "ABBOTT HEALTHCARE PVT. LTD."
   },
   {
     "id": "P00603",
+    "code": "02588",
     "name": "TRUSTYL-BR 60ML SYP 60ML",
+    "unit": "Pcs",
     "mrp": 72.89,
     "formula": null,
     "company": "ABBOTT HEALTHCARE PVT. LTD."
   },
   {
     "id": "P00604",
+    "code": "7375",
     "name": "TURPENTINE OIL 100ML 100ML",
+    "unit": "12Pc",
     "mrp": 65,
     "formula": null,
     "company": "J.K FOOD PHARMACEUTICALS"
   },
   {
     "id": "P00605",
+    "code": "9745",
     "name": "TURPENTINE OIL 50ML 50ML",
+    "unit": "12Pc",
     "mrp": 35,
     "formula": null,
     "company": "J.K FOOD PHARMACEUTICALS"
   },
   {
     "id": "P00606",
+    "code": "09997",
     "name": "TYNOR WALKER INVALID RECIPROCA 1",
+    "unit": "PCS",
     "mrp": 3390,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00607",
+    "code": "09998",
     "name": "TYNOR WALKING STICK QUADRIPOD 1PS",
+    "unit": "PCS",
     "mrp": 1000,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00608",
+    "code": "LAB-10813",
     "name": "ULTRAKING TAB 10*1",
+    "unit": "10B",
     "mrp": 212.25,
     "formula": null,
     "company": "LABORATE PHARMA"
   },
   {
     "id": "P00609",
+    "code": "FC-0163",
     "name": "UNDER PADS (ELDURO)-L 1*10",
+    "unit": "PCS",
     "mrp": 1049,
     "formula": null,
     "company": "FAMILYCARE CONSUMER PVT LTD_MH"
   },
   {
     "id": "P00610",
+    "code": "02291",
     "name": "URINE BAG (ROMSONS) 1",
+    "unit": "1PCS",
     "mrp": 266,
     "formula": null,
     "company": "ROMSONS"
   },
   {
     "id": "P00611",
+    "code": "10045",
     "name": "URINE BAG (SAFTI) 1",
+    "unit": "PCS",
     "mrp": 225,
     "formula": null,
     "company": "SANGAM HEALTHCARE PRODUCTS"
   },
   {
     "id": "P00612",
+    "code": "A097",
     "name": "URSOLID 300 10",
+    "unit": "PCS",
     "mrp": 320,
     "formula": null,
     "company": "LEEFORD HEALTHCARE LTD."
   },
   {
     "id": "P00613",
+    "code": "100007",
     "name": "VAPORISER (MEDTECH) 1",
+    "unit": "PCS",
     "mrp": 450,
     "formula": null,
     "company": "MEDTECH"
   },
   {
     "id": "P00614",
+    "code": "8940",
     "name": "VERTIRON TAB 25",
+    "unit": "20Pc",
     "mrp": 96.5,
     "formula": "Cinnarizine 25 mg",
     "company": "CIPLA GX"
   },
   {
     "id": "P00615",
+    "code": "474",
     "name": "VIGORE 50 TAB 4",
+    "unit": "Pcs",
     "mrp": 77.7,
     "formula": null,
     "company": "GERMAN REMEDIES"
   },
   {
     "id": "P00616",
+    "code": "10316",
     "name": "VINRAL-Z ADVANCE POWDER (ORANG 105GM",
+    "unit": "PCS",
     "mrp": 75,
     "formula": null,
     "company": "TARUN PHARMACEUTICALS"
   },
   {
     "id": "P00617",
+    "code": "10465",
     "name": "VITOMIN D3 GRANULES 1SCH",
+    "unit": "80Pc",
     "mrp": 39.93,
     "formula": null,
     "company": "CIPLA GX"
   },
   {
     "id": "P00618",
+    "code": "A225",
     "name": "VOLTEND TRIO 0.2-500 MG TAB 10S",
+    "unit": "PCS",
     "mrp": 135,
     "formula": null,
     "company": "AJANTA PHARMA LTD"
   },
   {
     "id": "P00619",
+    "code": "10791",
     "name": "VOMIOVER SYP 30ML 30ML",
+    "unit": "Pcs",
     "mrp": 35.98,
     "formula": null,
     "company": "GEM MANKIND"
   },
   {
     "id": "P00620",
+    "code": "MAN-10862",
     "name": "VOMIOVER-MD 4 TAB 20*10",
+    "unit": "20Pc",
     "mrp": 55.56,
     "formula": null,
     "company": "GEM MANKIND"
   },
   {
     "id": "P00621",
+    "code": "MAN-10862",
     "name": "VOMIOVER-MD 4 TAB 20*10",
+    "unit": "20Pc",
     "mrp": 55.56,
     "formula": null,
     "company": "GEM MANKIND"
   },
   {
     "id": "P00622",
+    "code": "MAN-10862",
     "name": "VOMIOVER-MD 4 TAB 20*10",
+    "unit": "20Pc",
     "mrp": 51.29,
     "formula": null,
     "company": "GEM MANKIND"
   },
   {
     "id": "P00623",
+    "code": "MAN-10862",
     "name": "VOMIOVER-MD 4 TAB 20*10",
+    "unit": "20Pc",
     "mrp": 57.45,
     "formula": null,
     "company": "GEM MANKIND"
   },
   {
     "id": "P00624",
+    "code": "09982",
     "name": "WALKING STICK QUADRIPOD(HERO) 1",
+    "unit": "PCS",
     "mrp": 620,
     "formula": null,
     "company": "HERO ECO"
   },
   {
     "id": "P00625",
+    "code": "A155",
     "name": "WATER BED",
+    "unit": "PCS",
     "mrp": 3300,
     "formula": null,
     "company": "LIFE-LINE"
   },
   {
     "id": "P00626",
+    "code": "09669",
     "name": "WATER FOR INJ 5ML 5ML",
+    "unit": "50Pc",
     "mrp": 2.51,
     "formula": null,
     "company": "ZYDUS CADILA"
   },
   {
     "id": "P00627",
+    "code": "05106",
     "name": "WATER FOR INJ. 10ML 10ML",
+    "unit": "50Pc",
     "mrp": 2.88,
     "formula": null,
     "company": "ZYDUS CADILA"
   },
   {
     "id": "P00628",
+    "code": "05106",
     "name": "WATER FOR INJ. 10ML 10ML",
+    "unit": "50Pc",
     "mrp": 2.88,
     "formula": null,
     "company": "ZYDUS CADILA"
   },
   {
     "id": "P00629",
+    "code": "02305",
     "name": "WFI-5ML 5ML",
+    "unit": "50PC",
     "mrp": 2.51,
     "formula": null,
     "company": "LABORATE PHARMA"
   },
   {
     "id": "P00630",
+    "code": "A118",
     "name": "WHEEL CHAIR IND 1",
+    "unit": "PCS",
     "mrp": 0.01,
     "formula": null,
     "company": "POINT OF CARE"
   },
   {
     "id": "P00631",
+    "code": "02311",
     "name": "WINFIELD OINT. 10GM 10GM",
+    "unit": "20PC",
     "mrp": 24.9,
     "formula": null,
     "company": "UNIVERSAL TWIN LABS, GENERIC"
   },
   {
     "id": "P00632",
+    "code": "09999",
     "name": "WRIST BRACE WITH THUM(TYNOR) UNI",
+    "unit": "PCS",
     "mrp": 205,
     "formula": null,
     "company": "TYNOR ORTHOTICS"
   },
   {
     "id": "P00633",
+    "code": "AJ-0139",
     "name": "XITHROCIN XL 200 SUSP 30ML",
+    "unit": "PCS",
     "mrp": 114.91,
     "formula": null,
     "company": "AJANTA PHARMA LTD"
   },
   {
     "id": "P00634",
+    "code": "6199",
     "name": "YOGESH MADHU 100GM 100GM",
+    "unit": "12Pc",
     "mrp": 37.7,
     "formula": null,
     "company": "YOGESH PHARMACY"
   },
   {
     "id": "P00635",
+    "code": "01416",
     "name": "YOGESH MADHU 20GM 20GM",
+    "unit": "12Pc",
     "mrp": 10,
     "formula": null,
     "company": "YOGESH PHARMACY"
   },
   {
     "id": "P00636",
+    "code": "01416",
     "name": "YOGESH MADHU 20GM 20GM",
+    "unit": "12Pc",
     "mrp": 15,
     "formula": null,
     "company": "YOGESH PHARMACY"
   },
   {
     "id": "P00637",
+    "code": "01416",
     "name": "YOGESH MADHU 20GM 20GM",
+    "unit": "12Pc",
     "mrp": 15,
     "formula": null,
     "company": "YOGESH PHARMACY"
   },
   {
     "id": "P00638",
+    "code": "01113",
     "name": "YOGESH MADHU 250GM JAR 250GM",
+    "unit": "PCS",
     "mrp": 130,
     "formula": null,
     "company": "YOGESH PHARMACY"
   },
   {
     "id": "P00639",
+    "code": "06090",
     "name": "YOGESH MADHU 50GM 50GM",
+    "unit": "12Pc",
     "mrp": 35,
     "formula": null,
     "company": "YOGESH PHARMACY"
   },
   {
     "id": "P00640",
+    "code": "2030",
     "name": "ZANDU BALM (NEW) 8ML 8ML",
+    "unit": "Pcs",
     "mrp": 40,
-    "formula": "Mentha + Gaultheria + Eucalyptus + Trachyspermum ammi + Base q.s.",
+    "formula": null,
     "company": "EMAMI LIMITED"
   },
   {
     "id": "P00641",
+    "code": "1383",
     "name": "ZANDU BALM 25ML 1*25ML",
+    "unit": "Pcs",
     "mrp": 85,
-    "formula": "Mentha + Gaultheria + Eucalyptus + Trachyspermum ammi + Base q.s.",
+    "formula": null,
     "company": "THE ZANDU PHARMA"
   },
   {
     "id": "P00642",
+    "code": "A00116",
     "name": "ZANDU BALM RED U P 8ML",
+    "unit": "PCS",
     "mrp": 45,
     "formula": null,
     "company": "PROCTER & GAMBLE HEALTH CARE"
   },
   {
     "id": "P00643",
+    "code": "10711",
     "name": "ZENEGRA-100 TAB (BLUE) 4S",
+    "unit": "30Pc",
     "mrp": 175,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
   },
   {
     "id": "P00644",
+    "code": "6878",
     "name": "ZINKOMIN DROPS 15ML",
+    "unit": "Pcs",
     "mrp": 71,
     "formula": null,
     "company": "INTAS PHARMA GENERIC"
   },
   {
     "id": "P00645",
+    "code": "9459",
     "name": "ZINKOMIN SYP [200ML] 200ML",
+    "unit": "Pcs",
     "mrp": 120,
     "formula": null,
     "company": "INTAS PHARMA GENERIC"
   },
   {
     "id": "P00646",
+    "code": "9459",
     "name": "ZINKOMIN SYP [200ML] 200ML",
+    "unit": "Pcs",
     "mrp": 120,
     "formula": null,
     "company": "INTAS PHARMA GENERIC"
   },
   {
     "id": "P00647",
+    "code": "9459",
     "name": "ZINKOMIN SYP [200ML] 200ML",
+    "unit": "Pcs",
     "mrp": 120,
     "formula": null,
     "company": "INTAS PHARMA GENERIC"
   },
   {
     "id": "P00648",
+    "code": "410",
     "name": "ZINTAC 150 TAB (GOLD PACK) 50*20",
+    "unit": "Pcs",
     "mrp": 27.28,
     "formula": null,
     "company": "NICHOLAS PIRAMAL INDIA"
   },
   {
     "id": "P00649",
+    "code": "9324",
     "name": "ZUKAMIN PLUS DROPS 15ML",
+    "unit": "12Pc",
     "mrp": 45,
     "formula": null,
     "company": "ALKEM LAB GENERIC"
