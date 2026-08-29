@@ -1,0 +1,30 @@
+name: Prepare Product Data
+
+on:
+  push:
+    paths:
+      - 'OLD_HindPharmaDataFile'
+      - 'scripts/prepare_products.py'
+      - '.github/workflows/prepare-products.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare products.json
+        run: python scripts/prepare_products.py
+
+      - name: Commit generated product data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/products.json
+          git diff --cached --quiet || git commit -m "Generate product list data"
+          git push
