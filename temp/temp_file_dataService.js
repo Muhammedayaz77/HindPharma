@@ -16,16 +16,23 @@ export class TempDataService {
 
   writeOverlay(key, value) { localStorage.setItem(`${STORAGE_PREFIX}${key}`, JSON.stringify(value)); }
 
+  getDeleted(key) { return this.readOverlay(`deleted_${key}`); }
+  addDeleted(key, identity) { const deleted = this.getDeleted(key); if (!deleted.includes(identity)) { deleted.push(identity); this.writeOverlay(`deleted_${key}`, deleted); } }
+  identityForMedical(item) { return `${String(item.name || '').trim().toLowerCase()}|${String(item.area || '').trim().toLowerCase()}`; }
+  identityForProduct(item) { return String(item.id || item.code || item.name || '').trim().toLowerCase(); }
+  identityForUser(item) { return String(item.username || '').trim().toLowerCase(); }
+
   async getUsers() {
     const seedUsers = await this.readJson('users.json');
     const overlayUsers = this.readOverlay('users');
+    const deleted = this.getDeleted('users');
     const mergedUsers = [...seedUsers];
     for (const overlayUser of overlayUsers) {
       const index = mergedUsers.findIndex(user => user.username.toLowerCase() === overlayUser.username.toLowerCase());
       if (index >= 0) mergedUsers[index] = overlayUser;
       else mergedUsers.push(overlayUser);
     }
-    return mergedUsers;
+    return mergedUsers.filter(user => !deleted.includes(this.identityForUser(user)));
   }
 
   async authenticateUser(username, password) {
@@ -37,18 +44,25 @@ export class TempDataService {
     return { ...user, token: await this.createSessionToken(user) };
   }
 
-  async getMedicals() { return [...await this.readJson('medicals.json'), ...this.readOverlay('medicals')]; }
-  async getProducts() { return [...await this.readJson('products.json'), ...this.readOverlay('products')]; }
+  async getMedicals() {
+    const items = [...await this.readJson('medicals.json'), ...this.readOverlay('medicals')];
+    const deleted = this.getDeleted('medicals');
+    return items.filter(item => !deleted.includes(this.identityForMedical(item)));
+  }
 
-  async addMedical(medical) {
-    const medicals = this.readOverlay('medicals'); medicals.push(medical); this.writeOverlay('medicals', medicals); return medical;
+  async getProducts() {
+    const items = [...await this.readJson('products.json'), ...this.readOverlay('products')];
+    const deleted = this.getDeleted('products');
+    return items.filter(item => !deleted.includes(this.identityForProduct(item)));
   }
-  async addUser(user) {
-    const users = this.readOverlay('users'); users.push(user); this.writeOverlay('users', users); return user;
-  }
-  async addProduct(product) {
-    const products = this.readOverlay('products'); products.push(product); this.writeOverlay('products', products); return product;
-  }
+
+  async addMedical(medical) { const medicals = this.readOverlay('medicals'); medicals.push(medical); this.writeOverlay('medicals', medicals); return medical; }
+  async addUser(user) { const users = this.readOverlay('users'); users.push(user); this.writeOverlay('users', users); return user; }
+  async addProduct(product) { const products = this.readOverlay('products'); products.push(product); this.writeOverlay('products', products); return product; }
+
+  async deleteMedical(medical) { this.addDeleted('medicals', this.identityForMedical(medical)); return true; }
+  async deleteProduct(product) { this.addDeleted('products', this.identityForProduct(product)); return true; }
+  async deleteUser(user) { this.addDeleted('users', this.identityForUser(user)); return true; }
 
   async sha256(value) {
     const bytes = new TextEncoder().encode(value);
