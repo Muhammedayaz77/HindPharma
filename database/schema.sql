@@ -1,87 +1,121 @@
-CREATE TABLE IF NOT EXISTS companies (
-    id BIGSERIAL PRIMARY KEY,
-    name TEXT NOT NULL UNIQUE
-);
+-- Hind Pharma SQLite multi-tenant schema
+-- Source of truth: Backend/database.py
 
-CREATE TABLE IF NOT EXISTS products (
-    id TEXT PRIMARY KEY,
-    code TEXT,
+CREATE TABLE IF NOT EXISTS super_admins (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT NOT NULL UNIQUE,
+    password_hash TEXT NOT NULL,
     name TEXT NOT NULL,
-    unit TEXT,
-    mrp NUMERIC(12,2),
-    formula TEXT,
-    company_id BIGINT REFERENCES companies(id),
-    company TEXT,
-    is_active BOOLEAN NOT NULL DEFAULT TRUE,
-    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
-);
-CREATE INDEX IF NOT EXISTS idx_products_name ON products USING gin (to_tsvector('simple', name));
-CREATE INDEX IF NOT EXISTS idx_products_company ON products(company);
-
-CREATE TABLE IF NOT EXISTS suppliers (
-    id BIGSERIAL PRIMARY KEY,
-    name TEXT NOT NULL UNIQUE,
-    is_active BOOLEAN NOT NULL DEFAULT TRUE
+    is_active INTEGER NOT NULL DEFAULT 1,
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE IF NOT EXISTS inventory (
-    id TEXT PRIMARY KEY,
-    product_id TEXT NOT NULL REFERENCES products(id) ON DELETE CASCADE,
-    current_stock INTEGER NOT NULL DEFAULT 0,
-    batch TEXT,
-    expiry TEXT
-);
-CREATE INDEX IF NOT EXISTS idx_inventory_product_id ON inventory(product_id);
-
-CREATE TABLE IF NOT EXISTS purchases (
-    id TEXT PRIMARY KEY,
-    product_id TEXT NOT NULL REFERENCES products(id) ON DELETE CASCADE,
-    supplier_id BIGINT REFERENCES suppliers(id),
-    supplier TEXT,
-    cost_price NUMERIC(12,2),
-    purchase_price NUMERIC(12,2),
-    sales_price NUMERIC(12,2),
-    received_date TEXT,
-    invoice_number TEXT,
-    invoice_date TEXT
-);
-CREATE INDEX IF NOT EXISTS idx_purchases_product_id ON purchases(product_id);
-
-CREATE TABLE IF NOT EXISTS medical_names (
-    id BIGSERIAL PRIMARY KEY,
-    name TEXT NOT NULL UNIQUE,
-    area TEXT NOT NULL DEFAULT '',
-    is_active BOOLEAN NOT NULL DEFAULT TRUE
+CREATE TABLE IF NOT EXISTS admins (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT NOT NULL UNIQUE,
+    password_hash TEXT NOT NULL,
+    name TEXT,
+    business_name TEXT NOT NULL,
+    phone TEXT,
+    email TEXT,
+    address TEXT,
+    is_active INTEGER NOT NULL DEFAULT 1,
+    subscription_plan TEXT NOT NULL DEFAULT 'YEARLY',
+    subscription_start TEXT NOT NULL,
+    subscription_expiry TEXT NOT NULL,
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE IF NOT EXISTS users (
-    id BIGSERIAL PRIMARY KEY,
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    admin_id INTEGER NOT NULL,
     username TEXT NOT NULL UNIQUE,
     password_hash TEXT NOT NULL,
-    role TEXT NOT NULL DEFAULT 'user' CHECK (role IN ('admin', 'user')),
-    is_active BOOLEAN NOT NULL DEFAULT TRUE,
-    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    role TEXT NOT NULL CHECK(role IN ('manager','employee')),
+    name TEXT,
+    phone TEXT,
+    is_active INTEGER NOT NULL DEFAULT 1,
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY(admin_id) REFERENCES admins(id) ON DELETE CASCADE
 );
 
-CREATE TABLE IF NOT EXISTS categories (
-    id BIGSERIAL PRIMARY KEY,
-    name TEXT NOT NULL UNIQUE,
-    is_active BOOLEAN NOT NULL DEFAULT TRUE
+CREATE TABLE IF NOT EXISTS medicals (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    admin_id INTEGER NOT NULL,
+    name TEXT NOT NULL,
+    area TEXT,
+    is_active INTEGER NOT NULL DEFAULT 1,
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY(admin_id) REFERENCES admins(id) ON DELETE CASCADE,
+    UNIQUE(admin_id, name, area)
+);
+
+CREATE TABLE IF NOT EXISTS products (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    admin_id INTEGER NOT NULL,
+    product_id TEXT,
+    code TEXT,
+    name TEXT NOT NULL,
+    unit TEXT,
+    mrp REAL,
+    formula TEXT,
+    company TEXT,
+    image TEXT,
+    is_active INTEGER NOT NULL DEFAULT 1,
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY(admin_id) REFERENCES admins(id) ON DELETE CASCADE,
+    UNIQUE(admin_id, product_id)
 );
 
 CREATE TABLE IF NOT EXISTS orders (
-    id BIGSERIAL PRIMARY KEY,
-    medical_name_id BIGINT NOT NULL REFERENCES medical_names(id),
-    customer_note TEXT,
-    status TEXT NOT NULL DEFAULT 'prepared',
-    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    admin_id INTEGER NOT NULL,
+    medical_id INTEGER,
+    created_by INTEGER,
+    status TEXT NOT NULL DEFAULT 'pending',
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY(admin_id) REFERENCES admins(id) ON DELETE CASCADE,
+    FOREIGN KEY(medical_id) REFERENCES medicals(id) ON DELETE SET NULL,
+    FOREIGN KEY(created_by) REFERENCES users(id) ON DELETE SET NULL
 );
 
 CREATE TABLE IF NOT EXISTS order_items (
-    id BIGSERIAL PRIMARY KEY,
-    order_id BIGINT NOT NULL REFERENCES orders(id) ON DELETE CASCADE,
-    product_id TEXT NOT NULL REFERENCES products(id),
-    quantity INTEGER NOT NULL CHECK (quantity > 0)
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    order_id INTEGER NOT NULL,
+    product_id INTEGER NOT NULL,
+    quantity INTEGER NOT NULL CHECK(quantity > 0),
+    price REAL,
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY(order_id) REFERENCES orders(id) ON DELETE CASCADE,
+    FOREIGN KEY(product_id) REFERENCES products(id) ON DELETE RESTRICT
 );
-CREATE INDEX IF NOT EXISTS idx_order_items_order_id ON order_items(order_id);
+
+CREATE TABLE IF NOT EXISTS audit_logs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    admin_id INTEGER,
+    user_id INTEGER,
+    actor_type TEXT NOT NULL,
+    action TEXT NOT NULL,
+    entity_type TEXT,
+    entity_id TEXT,
+    details TEXT,
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY(admin_id) REFERENCES admins(id) ON DELETE SET NULL,
+    FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE SET NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_users_admin_id ON users(admin_id);
+CREATE INDEX IF NOT EXISTS idx_medicals_admin_id ON medicals(admin_id);
+CREATE INDEX IF NOT EXISTS idx_products_admin_id ON products(admin_id);
+CREATE INDEX IF NOT EXISTS idx_products_name ON products(name);
+CREATE INDEX IF NOT EXISTS idx_products_code ON products(code);
+CREATE INDEX IF NOT EXISTS idx_orders_admin_id ON orders(admin_id);
+CREATE INDEX IF NOT EXISTS idx_orders_created_by ON orders(created_by);
+CREATE INDEX IF NOT EXISTS idx_audit_admin_id ON audit_logs(admin_id);
+CREATE INDEX IF NOT EXISTS idx_audit_created_at ON audit_logs(created_at);
