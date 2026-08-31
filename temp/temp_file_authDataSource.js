@@ -9,6 +9,27 @@ export class TempAuthDataSource {
     if (!username?.trim()) throw ErrorModel.usernameRequired();
     if (!password) throw ErrorModel.passwordRequired();
 
+    const normalizedUsername = username.trim().toLowerCase();
+    const accounts = this.dataService.getAccounts();
+    const account = accounts.find(item => item.username?.toLowerCase() === normalizedUsername);
+
+    if (account) {
+      if (account.is_active === false) throw ErrorModel.accountInactive();
+      if (account.password !== password) throw ErrorModel.invalidCredentials();
+      if (this.isExpired(account.subscription_expiry)) throw ErrorModel.subscriptionExpired();
+    } else {
+      const users = await this.dataService.getUsers();
+      const user = users.find(item => item.username?.toLowerCase() === normalizedUsername);
+
+      if (!user || Number(user.admin_id || 1) !== 1) throw ErrorModel.invalidCredentials();
+      if (user.is_active === false) throw ErrorModel.accountInactive();
+      if (password !== `${user.username}@123`) throw ErrorModel.invalidCredentials();
+
+      const admin = accounts.find(item => Number(item.admin_id) === Number(user.admin_id || 1));
+      if (admin?.is_active === false) throw ErrorModel.accountInactive();
+      if (this.isExpired(admin?.subscription_expiry)) throw ErrorModel.subscriptionExpired();
+    }
+
     const user = await this.dataService.authenticateUser(username, password);
     if (!user) throw ErrorModel.invalidCredentials();
 
@@ -22,5 +43,10 @@ export class TempAuthDataSource {
       subscription_expiry: user.subscription_expiry ?? null,
       token: user.token
     };
+  }
+
+  isExpired(expiry) {
+    if (!expiry) return false;
+    return new Date(`${expiry}T23:59:59`) < new Date();
   }
 }
