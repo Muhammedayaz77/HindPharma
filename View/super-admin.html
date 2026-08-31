@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hind Pharma | Super Admin</title>
+<link rel="stylesheet" href="../View Model/superAdmin.css?v=20260901-1">
+</head>
+<body>
+<header class="topbar"><div class="wrap nav"><div><div class="brand">HIND PHARMA</div><div class="subtitle">SUPER ADMIN</div></div><div class="navActions"><span id="adminName" class="adminName"></span><button id="logoutButton" class="btn ghost" type="button">LOGOUT</button></div></div></header>
+<main class="wrap page">
+<section class="welcome card"><div><div class="eyebrow">SYSTEM CONTROL</div><h1>Super Admin Dashboard</h1><p>Manage pharma owners, access status and subscriptions.</p></div><div class="roleBadge">SUPER ADMIN</div></section>
+<section class="stats"><div class="stat card"><span>ADMINS</span><strong id="adminCount">—</strong></div><div class="stat card"><span>ACTIVE</span><strong id="activeCount">—</strong></div><div class="stat card"><span>EXPIRING</span><strong id="expiringCount">—</strong></div></section>
+<section class="card formCard"><div class="eyebrow">CREATE ADMIN</div><h2>New pharma owner</h2><form id="createAdminForm" class="formGrid"><input id="username" required placeholder="Username"><input id="businessName" required placeholder="Business / Shop name"><input id="name" placeholder="Owner name"><input id="phone" placeholder="Phone"><input id="email" type="email" placeholder="Email"><input id="address" placeholder="Address"><button class="btn primary" type="submit">CREATE ADMIN</button></form><p id="message" class="message"></p></section>
+<section class="card"><div class="sectionHead"><div><div class="eyebrow">TENANTS</div><h2>Admin accounts</h2></div><button id="refreshButton" class="btn ghost" type="button">REFRESH</button></div><div class="tableWrap"><table><thead><tr><th>BUSINESS</th><th>USERNAME</th><th>SUBSCRIPTION</th><th>STATUS</th><th>ACTIONS</th></tr></thead><tbody id="adminTable"></tbody></table></div></section>
+</main>
+<script type="module" src="../View Model/superAdminViewModel.js?v=20260901-1"></script>
+</body>
+</html>
