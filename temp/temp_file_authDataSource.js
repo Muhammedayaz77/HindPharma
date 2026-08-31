@@ -15,15 +15,17 @@ export class TempAuthDataSource {
 
     if (account) {
       if (account.is_active === false) throw ErrorModel.accountInactive();
-      if (account.password !== password) throw ErrorModel.invalidCredentials();
-      if (this.isExpired(account.subscription_expiry)) throw ErrorModel.subscriptionExpired();
+      if (account.password !== password) throw ErrorModel.passwordWrong();
+      if (account.role !== 'super_admin' && this.isExpired(account.subscription_expiry)) {
+        throw ErrorModel.subscriptionExpired();
+      }
     } else {
       const users = await this.dataService.getUsers();
       const user = users.find(item => item.username?.toLowerCase() === normalizedUsername);
 
-      if (!user || Number(user.admin_id || 1) !== 1) throw ErrorModel.invalidCredentials();
+      if (!user || Number(user.admin_id || 1) !== 1) throw ErrorModel.usernameWrong();
       if (user.is_active === false) throw ErrorModel.accountInactive();
-      if (password !== `${user.username}@123`) throw ErrorModel.invalidCredentials();
+      if (password !== `${user.username}@123`) throw ErrorModel.passwordWrong();
 
       const admin = accounts.find(item => Number(item.admin_id) === Number(user.admin_id || 1));
       if (admin?.is_active === false) throw ErrorModel.accountInactive();
@@ -31,7 +33,7 @@ export class TempAuthDataSource {
     }
 
     const user = await this.dataService.authenticateUser(username, password);
-    if (!user) throw ErrorModel.invalidCredentials();
+    if (!user) throw ErrorModel.passwordWrong();
 
     return {
       id: user.id,
