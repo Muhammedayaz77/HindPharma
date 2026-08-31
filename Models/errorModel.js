@@ -13,6 +13,14 @@ export class ErrorModel extends Error {
     return new ErrorModel('AUTH_PASSWORD_REQUIRED', 'Please enter your password.');
   }
 
+  static usernameWrong() {
+    return new ErrorModel('AUTH_USERNAME_WRONG', 'Username is wrong. Please check your username.');
+  }
+
+  static passwordWrong() {
+    return new ErrorModel('AUTH_PASSWORD_WRONG', 'Password is wrong. Please check your password.');
+  }
+
   static invalidCredentials() {
     return new ErrorModel('AUTH_INVALID_CREDENTIALS', 'The username or password is incorrect.');
   }
