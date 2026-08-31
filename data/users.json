@@ -2,15 +2,9 @@
   {
     "id": "USR001",
     "username": "HindPharma",
-    "password_hash": "e5307b57be3a54dbbcd50ca5b5630825228df6a75bc56258cee010602ab274db",
-    "role": "user",
-    "is_active": true
-  },
-  {
-    "id": "USR002",
-    "username": "Ayaz",
-    "password_hash": "354ce34454cf7023efc856c03d037ec2f5876f8f183d0a25a6cdb306f43ad215",
-    "role": "admin",
+    "password_hash": "470f4343e30ad2cdfb79b7293d05e14b2d3bb532e9e16600b6df57f24331a7fd",
+    "role": "manager",
+    "admin_id": 1,
     "is_active": true
   }
 ]
