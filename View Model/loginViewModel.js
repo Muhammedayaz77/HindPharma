@@ -1,6 +1,6 @@
-import { TempAuthDataSource } from '../temp/temp_file_authDataSource.js?v=20260901-1';
-import { TempDataService } from '../temp/temp_file_dataService.js?v=20260901-1';
-import { TempSessionService } from '../temp/temp_file_sessionService.js?v=20260901-1';
+import { TempAuthDataSource } from '../temp/temp_file_authDataSource.js?v=20260901-2';
+import { TempDataService } from '../temp/temp_file_dataService.js?v=20260901-2';
+import { TempSessionService } from '../temp/temp_file_sessionService.js?v=20260901-2';
 
 const form = document.getElementById('form');
 const error = document.getElementById('error');
