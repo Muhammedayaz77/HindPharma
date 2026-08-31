@@ -1,17 +1,54 @@
+from datetime import date, datetime
 from typing import Optional
-from fastapi import FastAPI, HTTPException
+
+from fastapi import Depends, FastAPI, Header, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
+
 from database import get_connection, initialize_database
-from migrate_json_to_sqlite import migrate
+
+try:
+    from Helper.auth import create_token, verify_token
+    from Helper.password import hash_password, verify_password
+except ModuleNotFoundError:
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+    from Helper.auth import create_token, verify_token
+    from Helper.password import hash_password, verify_password
 
 initialize_database()
-app = FastAPI(title='Hind Pharma Local API', version='1.1.0')
+app = FastAPI(title='Hind Pharma Local API', version='2.0.0')
 app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_credentials=False, allow_methods=['*'], allow_headers=['*'])
+
+ROLES = {'super_admin', 'admin', 'manager', 'employee'}
+
+
+class LoginInput(BaseModel):
+    username: str
+    password: str
+
+
+class AdminInput(BaseModel):
+    username: str
+    business_name: str
+    name: Optional[str] = None
+    phone: Optional[str] = None
+    email: Optional[str] = None
+    address: Optional[str] = None
+
+
+class UserInput(BaseModel):
+    username: str
+    role: str = Field(pattern='^(manager|employee)$')
+    name: Optional[str] = None
+    phone: Optional[str] = None
+
 
 class MedicalInput(BaseModel):
     name: str
     area: Optional[str] = None
+
 
 class ProductInput(BaseModel):
     product_id: Optional[str] = None
@@ -23,128 +60,362 @@ class ProductInput(BaseModel):
     company: Optional[str] = None
     image: Optional[str] = None
 
-class UserInput(BaseModel):
-    username: str
-    password_hash: str
-    role: str = 'user'
 
 class OrderItemInput(BaseModel):
     product_id: int
     quantity: int
+    price: Optional[float] = None
+
 
 class OrderInput(BaseModel):
     medical_id: Optional[int] = None
-    created_by: int
     items: list[OrderItemInput]
+
+
+def _principal(authorization: Optional[str] = Header(default=None)):
+    if not authorization or not authorization.lower().startswith('bearer '):
+        raise HTTPException(401, 'Authentication required')
+    try:
+        return verify_token(authorization.split(' ', 1)[1].strip())
+    except ValueError as exc:
+        raise HTTPException(401, str(exc)) from exc
+
+
+def _require(principal, *roles):
+    if principal.get('role') not in roles:
+        raise HTTPException(403, 'You do not have permission for this action')
+
+
+def _admin_id(principal) -> int:
+    value = principal.get('admin_id')
+    if principal.get('role') == 'admin':
+        value = principal.get('id')
+    if not value:
+        raise HTTPException(403, 'Business account is required')
+    return int(value)
+
+
+def _check_subscription(admin_id: int):
+    with get_connection() as db:
+        admin = db.execute('SELECT is_active, subscription_expiry FROM admins WHERE id=?', (admin_id,)).fetchone()
+    if not admin or not admin['is_active']:
+        raise HTTPException(403, 'This admin account is inactive')
+    if date.fromisoformat(admin['subscription_expiry']) < date.today():
+        raise HTTPException(403, 'Subscription expired. Please renew the subscription.')
+
+
+def _audit(db, principal, action, entity_type=None, entity_id=None, details=None, admin_id=None):
+    actor_type = principal.get('role', 'unknown')
+    user_id = principal.get('id') if actor_type in {'manager', 'employee'} else None
+    db.execute(
+        '''INSERT INTO audit_logs(admin_id,user_id,actor_type,action,entity_type,entity_id,details)
+           VALUES(?,?,?,?,?,?,?)''',
+        (admin_id, user_id, actor_type, action, entity_type, str(entity_id) if entity_id is not None else None, details),
+    )
+
 
 @app.get('/api/health')
 def health():
-    return {'status': 'ok', 'database': 'sqlite'}
+    return {'status': 'ok', 'database': 'sqlite', 'version': '2.0.0'}
 
-@app.get('/api/medicals')
-def medicals(search: str = ''):
-    pattern = f'%{search.strip()}%'
+
+@app.post('/api/login')
+@app.post('/login')
+def login(item: LoginInput):
+    username = item.username.strip()
     with get_connection() as db:
-        rows = db.execute('SELECT * FROM medicals WHERE is_active=1 AND (name LIKE ? OR area LIKE ?) ORDER BY name', (pattern, pattern)).fetchall()
-        return [dict(row) for row in rows]
+        super_admin = db.execute('SELECT * FROM super_admins WHERE lower(username)=lower(?)', (username,)).fetchone()
+        if super_admin and super_admin['is_active'] and verify_password(item.password, super_admin['password_hash']):
+            return {'id': super_admin['id'], 'username': super_admin['username'], 'role': 'super_admin', 'admin_id': None,
+                    'token': create_token(super_admin['id'], super_admin['username'], 'super_admin')}
 
-@app.post('/api/medicals')
-def add_medical(item: MedicalInput):
-    name = item.name.strip()
-    if not name: raise HTTPException(400, 'Medical name is required')
+        admin = db.execute('SELECT * FROM admins WHERE lower(username)=lower(?)', (username,)).fetchone()
+        if admin and admin['is_active'] and date.fromisoformat(admin['subscription_expiry']) >= date.today() and verify_password(item.password, admin['password_hash']):
+            return {'id': admin['id'], 'username': admin['username'], 'role': 'admin', 'admin_id': admin['id'],
+                    'business_name': admin['business_name'], 'subscription_expiry': admin['subscription_expiry'],
+                    'token': create_token(admin['id'], admin['username'], 'admin', admin['id'])}
+
+        user = db.execute('SELECT u.*,a.business_name,a.is_active AS admin_active,a.subscription_expiry FROM users u JOIN admins a ON a.id=u.admin_id WHERE lower(u.username)=lower(?)', (username,)).fetchone()
+        if user and user['is_active'] and user['admin_active'] and date.fromisoformat(user['subscription_expiry']) >= date.today() and verify_password(item.password, user['password_hash']):
+            return {'id': user['id'], 'username': user['username'], 'role': user['role'], 'admin_id': user['admin_id'],
+                    'business_name': user['business_name'], 'subscription_expiry': user['subscription_expiry'],
+                    'token': create_token(user['id'], user['username'], user['role'], user['admin_id'])}
+    raise HTTPException(401, 'Invalid username or password')
+
+
+@app.get('/api/me')
+def me(principal=Depends(_principal)):
+    if principal['role'] != 'super_admin':
+        _check_subscription(_admin_id(principal))
+    return principal
+
+
+@app.get('/api/subscription-warning')
+def subscription_warning(principal=Depends(_principal)):
+    if principal['role'] == 'super_admin':
+        return {'show': False, 'days_remaining': None}
+    admin_id = _admin_id(principal)
+    with get_connection() as db:
+        row = db.execute('SELECT subscription_expiry FROM admins WHERE id=?', (admin_id,)).fetchone()
+    expiry = date.fromisoformat(row['subscription_expiry'])
+    days = (expiry - date.today()).days
+    return {'show': 0 <= days <= 30, 'days_remaining': days, 'expiry': expiry.isoformat()}
+
+
+# ---------------- Super Admin ----------------
+@app.get('/api/super-admin/dashboard')
+def super_dashboard(principal=Depends(_principal)):
+    _require(principal, 'super_admin')
+    with get_connection() as db:
+        admins = db.execute('SELECT id,username,name,business_name,is_active,subscription_plan,subscription_start,subscription_expiry FROM admins ORDER BY business_name').fetchall()
+    return {'admins': [dict(row) for row in admins], 'count': len(admins)}
+
+
+@app.post('/api/admins')
+def create_admin(item: AdminInput, principal=Depends(_principal)):
+    _require(principal, 'super_admin')
+    username = item.username.strip()
+    business = item.business_name.strip()
+    if not username or not business:
+        raise HTTPException(400, 'Username and business name are required')
+    today = date.today()
     try:
-        with get_connection() as db:
-            cursor = db.execute('INSERT INTO medicals(name,area) VALUES(?,?)', (name, item.area))
-            return dict(db.execute('SELECT * FROM medicals WHERE id=?', (cursor.lastrowid,)).fetchone())
-    except Exception:
-        raise HTTPException(409, 'Medical already exists')
-
-@app.delete('/api/medicals/{medical_id}')
-def delete_medical(medical_id: int):
-    with get_connection() as db:
-        cursor = db.execute('UPDATE medicals SET is_active=0,updated_at=CURRENT_TIMESTAMP WHERE id=? AND is_active=1', (medical_id,))
-        if cursor.rowcount == 0: raise HTTPException(404, 'Medical not found')
-    return {'status':'ok'}
-
-@app.get('/api/products')
-def products(search: str = ''):
-    pattern = f'%{search.strip()}%'
-    with get_connection() as db:
-        rows = db.execute('''SELECT * FROM products WHERE is_active=1 AND (name LIKE ? OR code LIKE ? OR product_id LIKE ? OR company LIKE ? OR formula LIKE ?) ORDER BY name''', (pattern, pattern, pattern, pattern, pattern)).fetchall()
-        return [dict(row) for row in rows]
-
-@app.post('/api/products')
-def add_product(item: ProductInput):
+        next_year = today.replace(year=today.year + 1)
+    except ValueError:
+        next_year = today.replace(year=today.year + 1, day=28)
     with get_connection() as db:
         try:
-            cursor = db.execute('''INSERT INTO products(product_id,code,name,unit,mrp,formula,company,image) VALUES(?,?,?,?,?,?,?,?)''', tuple(item.model_dump().values()))
+            cursor = db.execute('''INSERT INTO admins(username,password_hash,name,business_name,phone,email,address,subscription_plan,subscription_start,subscription_expiry)
+                                  VALUES(?,?,?,?,?,?,?,?,?,?)''',
+                                (username, hash_password(f'{username}@123'), item.name, business, item.phone, item.email, item.address, 'YEARLY', today.isoformat(), next_year.isoformat()))
+            admin_id = cursor.lastrowid
+            _audit(db, principal, 'CREATE_ADMIN', 'admin', admin_id, business, admin_id)
+        except Exception as exc:
+            raise HTTPException(409, 'Admin username already exists') from exc
+    return {'status': 'ok', 'id': admin_id, 'username': username, 'password_reset_rule': f'{username}@123'}
+
+
+@app.delete('/api/admins/{admin_id}')
+def delete_admin(admin_id: int, principal=Depends(_principal)):
+    _require(principal, 'super_admin')
+    with get_connection() as db:
+        admin = db.execute('SELECT id,business_name FROM admins WHERE id=?', (admin_id,)).fetchone()
+        if not admin: raise HTTPException(404, 'Admin not found')
+        _audit(db, principal, 'DELETE_ADMIN', 'admin', admin_id, admin['business_name'], admin_id)
+        db.execute('DELETE FROM admins WHERE id=?', (admin_id,))
+    return {'status': 'ok'}
+
+
+@app.patch('/api/admins/{admin_id}/status')
+def set_admin_status(admin_id: int, active: bool, principal=Depends(_principal)):
+    _require(principal, 'super_admin')
+    with get_connection() as db:
+        if not db.execute('SELECT 1 FROM admins WHERE id=?', (admin_id,)).fetchone(): raise HTTPException(404, 'Admin not found')
+        db.execute('UPDATE admins SET is_active=?,updated_at=CURRENT_TIMESTAMP WHERE id=?', (int(active), admin_id))
+        _audit(db, principal, 'ACTIVATE_ADMIN' if active else 'DEACTIVATE_ADMIN', 'admin', admin_id, None, admin_id)
+    return {'status': 'ok', 'is_active': active}
+
+
+@app.post('/api/admins/{admin_id}/reset-password')
+def reset_admin_password(admin_id: int, principal=Depends(_principal)):
+    _require(principal, 'super_admin')
+    with get_connection() as db:
+        admin = db.execute('SELECT username FROM admins WHERE id=?', (admin_id,)).fetchone()
+        if not admin: raise HTTPException(404, 'Admin not found')
+        db.execute('UPDATE admins SET password_hash=?,updated_at=CURRENT_TIMESTAMP WHERE id=?', (hash_password(f"{admin['username']}@123"), admin_id))
+        _audit(db, principal, 'RESET_ADMIN_PASSWORD', 'admin', admin_id, None, admin_id)
+    return {'status': 'ok', 'message': 'Password reset to username@123'}
+
+
+# ---------------- Tenant resources ----------------
+@app.get('/api/users')
+def users(principal=Depends(_principal)):
+    _require(principal, 'admin', 'manager')
+    admin_id = _admin_id(principal); _check_subscription(admin_id)
+    with get_connection() as db:
+        rows = db.execute('SELECT id,username,role,name,phone,is_active,created_at,updated_at FROM users WHERE admin_id=? ORDER BY username', (admin_id,)).fetchall()
+    return [dict(row) for row in rows]
+
+
+@app.post('/api/users')
+def add_user(item: UserInput, principal=Depends(_principal)):
+    _require(principal, 'admin', 'manager')
+    admin_id = _admin_id(principal); _check_subscription(admin_id)
+    with get_connection() as db:
+        # Manager may create employees only.
+        if principal['role'] == 'manager' and item.role != 'employee':
+            raise HTTPException(403, 'Manager can create employees only')
+        try:
+            cursor = db.execute('''INSERT INTO users(admin_id,username,password_hash,role,name,phone)
+                                  VALUES(?,?,?,?,?,?)''',
+                                (admin_id, item.username.strip(), hash_password(f'{item.username.strip()}@123'), item.role, item.name, item.phone))
+            _audit(db, principal, 'CREATE_USER', 'user', cursor.lastrowid, item.role, admin_id)
+            return dict(db.execute('SELECT id,username,role,name,phone,is_active,created_at,updated_at FROM users WHERE id=?', (cursor.lastrowid,)).fetchone())
+        except Exception as exc:
+            raise HTTPException(409, 'Username already exists') from exc
+
+
+@app.delete('/api/users/{user_id}')
+def delete_user(user_id: int, principal=Depends(_principal)):
+    _require(principal, 'admin')
+    admin_id = _admin_id(principal); _check_subscription(admin_id)
+    with get_connection() as db:
+        row = db.execute('SELECT username,role FROM users WHERE id=? AND admin_id=?', (user_id, admin_id)).fetchone()
+        if not row: raise HTTPException(404, 'User not found')
+        _audit(db, principal, 'DELETE_USER', 'user', user_id, row['role'], admin_id)
+        db.execute('DELETE FROM users WHERE id=? AND admin_id=?', (user_id, admin_id))
+    return {'status': 'ok'}
+
+
+@app.post('/api/users/{user_id}/reset-password')
+def reset_user_password(user_id: int, principal=Depends(_principal)):
+    _require(principal, 'admin')
+    admin_id = _admin_id(principal); _check_subscription(admin_id)
+    with get_connection() as db:
+        row = db.execute('SELECT username FROM users WHERE id=? AND admin_id=?', (user_id, admin_id)).fetchone()
+        if not row: raise HTTPException(404, 'User not found')
+        db.execute('UPDATE users SET password_hash=?,updated_at=CURRENT_TIMESTAMP WHERE id=?', (hash_password(f"{row['username']}@123"), user_id))
+        _audit(db, principal, 'RESET_USER_PASSWORD', 'user', user_id, None, admin_id)
+    return {'status': 'ok'}
+
+
+@app.get('/api/medicals')
+def medicals(search: str = '', principal=Depends(_principal)):
+    _require(principal, 'admin', 'manager')
+    admin_id = _admin_id(principal); _check_subscription(admin_id)
+    pattern = f'%{search.strip()}%'
+    with get_connection() as db:
+        rows = db.execute('SELECT * FROM medicals WHERE admin_id=? AND is_active=1 AND (name LIKE ? OR area LIKE ?) ORDER BY name', (admin_id, pattern, pattern)).fetchall()
+    return [dict(row) for row in rows]
+
+
+@app.post('/api/medicals')
+def add_medical(item: MedicalInput, principal=Depends(_principal)):
+    _require(principal, 'admin', 'manager')
+    admin_id = _admin_id(principal); _check_subscription(admin_id)
+    name = item.name.strip()
+    if not name: raise HTTPException(400, 'Medical name is required')
+    with get_connection() as db:
+        try:
+            cursor = db.execute('INSERT INTO medicals(admin_id,name,area) VALUES(?,?,?)', (admin_id, name, item.area))
+            return dict(db.execute('SELECT * FROM medicals WHERE id=?', (cursor.lastrowid,)).fetchone())
+        except Exception as exc:
+            raise HTTPException(409, 'Medical already exists') from exc
+
+
+@app.put('/api/medicals/{medical_id}')
+def edit_medical(medical_id: int, item: MedicalInput, principal=Depends(_principal)):
+    _require(principal, 'admin', 'manager')
+    admin_id = _admin_id(principal); _check_subscription(admin_id)
+    with get_connection() as db:
+        cursor = db.execute('UPDATE medicals SET name=?,area=?,updated_at=CURRENT_TIMESTAMP WHERE id=? AND admin_id=? AND is_active=1', (item.name.strip(), item.area, medical_id, admin_id))
+        if cursor.rowcount == 0: raise HTTPException(404, 'Medical not found')
+    return {'status': 'ok'}
+
+
+@app.delete('/api/medicals/{medical_id}')
+def delete_medical(medical_id: int, principal=Depends(_principal)):
+    _require(principal, 'admin')
+    admin_id = _admin_id(principal); _check_subscription(admin_id)
+    with get_connection() as db:
+        row = db.execute('SELECT name FROM medicals WHERE id=? AND admin_id=?', (medical_id, admin_id)).fetchone()
+        if not row: raise HTTPException(404, 'Medical not found')
+        db.execute('DELETE FROM medicals WHERE id=? AND admin_id=?', (medical_id, admin_id))
+    return {'status': 'ok'}
+
+
+@app.get('/api/products')
+def products(search: str = '', principal=Depends(_principal)):
+    _require(principal, 'admin', 'manager')
+    admin_id = _admin_id(principal); _check_subscription(admin_id)
+    pattern = f'%{search.strip()}%'
+    with get_connection() as db:
+        rows = db.execute('''SELECT * FROM products WHERE admin_id=? AND is_active=1 AND
+          (name LIKE ? OR code LIKE ? OR product_id LIKE ? OR company LIKE ? OR formula LIKE ?) ORDER BY name''',
+          (admin_id, pattern, pattern, pattern, pattern, pattern)).fetchall()
+    return [dict(row) for row in rows]
+
+
+@app.post('/api/products')
+def add_product(item: ProductInput, principal=Depends(_principal)):
+    _require(principal, 'admin', 'manager')
+    admin_id = _admin_id(principal); _check_subscription(admin_id)
+    with get_connection() as db:
+        try:
+            cursor = db.execute('''INSERT INTO products(admin_id,product_id,code,name,unit,mrp,formula,company,image)
+                                  VALUES(?,?,?,?,?,?,?,?,?)''',
+                                (admin_id, item.product_id, item.code, item.name.strip(), item.unit, item.mrp, item.formula, item.company, item.image))
             return dict(db.execute('SELECT * FROM products WHERE id=?', (cursor.lastrowid,)).fetchone())
-        except Exception:
-            raise HTTPException(409, 'Product with this ID already exists')
+        except Exception as exc:
+            raise HTTPException(409, 'Product with this ID already exists') from exc
+
+
+@app.put('/api/products/{product_id}')
+def edit_product(product_id: int, item: ProductInput, principal=Depends(_principal)):
+    _require(principal, 'admin', 'manager')
+    admin_id = _admin_id(principal); _check_subscription(admin_id)
+    with get_connection() as db:
+        cursor = db.execute('''UPDATE products SET product_id=?,code=?,name=?,unit=?,mrp=?,formula=?,company=?,image=?,updated_at=CURRENT_TIMESTAMP
+                               WHERE id=? AND admin_id=? AND is_active=1''',
+                            (item.product_id, item.code, item.name.strip(), item.unit, item.mrp, item.formula, item.company, item.image, product_id, admin_id))
+        if cursor.rowcount == 0: raise HTTPException(404, 'Product not found')
+    return {'status': 'ok'}
+
 
 @app.post('/api/products/bulk')
-def add_products(items: list[ProductInput]):
+def add_products(items: list[ProductInput], principal=Depends(_principal)):
+    _require(principal, 'admin', 'manager')
+    admin_id = _admin_id(principal); _check_subscription(admin_id)
     with get_connection() as db:
         for item in items:
             try:
-                db.execute('''INSERT INTO products(product_id,code,name,unit,mrp,formula,company,image) VALUES(?,?,?,?,?,?,?,?)''', tuple(item.model_dump().values()))
-            except Exception as error:
-                raise HTTPException(409, f'Bulk import failed for product: {item.name}') from error
-    return {'status':'ok', 'count':len(items)}
+                db.execute('''INSERT INTO products(admin_id,product_id,code,name,unit,mrp,formula,company,image)
+                              VALUES(?,?,?,?,?,?,?,?,?)''',
+                           (admin_id, item.product_id, item.code, item.name.strip(), item.unit, item.mrp, item.formula, item.company, item.image))
+            except Exception as exc:
+                raise HTTPException(409, f'Bulk import failed for product: {item.name}') from exc
+    return {'status': 'ok', 'count': len(items)}
+
 
 @app.delete('/api/products/{product_id}')
-def delete_product(product_id: int):
+def delete_product(product_id: int, principal=Depends(_principal)):
+    _require(principal, 'admin')
+    admin_id = _admin_id(principal); _check_subscription(admin_id)
     with get_connection() as db:
-        cursor = db.execute('UPDATE products SET is_active=0,updated_at=CURRENT_TIMESTAMP WHERE id=? AND is_active=1', (product_id,))
-        if cursor.rowcount == 0: raise HTTPException(404, 'Product not found')
-    return {'status':'ok'}
+        if not db.execute('SELECT 1 FROM products WHERE id=? AND admin_id=?', (product_id, admin_id)).fetchone(): raise HTTPException(404, 'Product not found')
+        db.execute('DELETE FROM products WHERE id=? AND admin_id=?', (product_id, admin_id))
+    return {'status': 'ok'}
 
-@app.get('/api/users')
-def users():
-    with get_connection() as db:
-        rows = db.execute('SELECT id,username,role,is_active,created_at,updated_at FROM users ORDER BY username').fetchall()
-        return [dict(row) for row in rows]
 
-@app.post('/api/users')
-def add_user(item: UserInput):
-    if item.role not in ('admin','user'): raise HTTPException(400, 'Invalid role')
-    with get_connection() as db:
-        try:
-            cursor = db.execute('INSERT INTO users(username,password_hash,role) VALUES(?,?,?)', (item.username.strip(), item.password_hash, item.role))
-            return dict(db.execute('SELECT id,username,role,is_active,created_at,updated_at FROM users WHERE id=?', (cursor.lastrowid,)).fetchone())
-        except Exception:
-            raise HTTPException(409, 'Username already exists')
-
-@app.delete('/api/users/{user_id}')
-def delete_user(user_id: int):
-    with get_connection() as db:
-        cursor = db.execute('UPDATE users SET is_active=0,updated_at=CURRENT_TIMESTAMP WHERE id=? AND is_active=1', (user_id,))
-        if cursor.rowcount == 0: raise HTTPException(404, 'User not found')
-    return {'status':'ok'}
-
+# ---------------- Orders: all tenant roles can work with orders ----------------
 @app.post('/api/orders')
-def create_order(order: OrderInput):
+def create_order(order: OrderInput, principal=Depends(_principal)):
+    _require(principal, 'admin', 'manager', 'employee')
+    admin_id = _admin_id(principal); _check_subscription(admin_id)
     if not order.items: raise HTTPException(400, 'Order must contain at least one product')
     with get_connection() as db:
-        cursor = db.execute('INSERT INTO orders(medical_id,created_by) VALUES(?,?)', (order.medical_id, order.created_by))
+        if order.medical_id is not None and not db.execute('SELECT 1 FROM medicals WHERE id=? AND admin_id=? AND is_active=1', (order.medical_id, admin_id)).fetchone():
+            raise HTTPException(400, 'Medical does not belong to this business')
+        cursor = db.execute('INSERT INTO orders(admin_id,medical_id,created_by) VALUES(?,?,?)', (admin_id, order.medical_id, principal['id']))
         order_id = cursor.lastrowid
         for item in order.items:
             if item.quantity < 1: raise HTTPException(400, 'Quantity must be at least 1')
-            db.execute('INSERT INTO order_items(order_id,product_id,quantity) VALUES(?,?,?)', (order_id, item.product_id, item.quantity))
-    return {'status':'ok','order_id':order_id}
+            product = db.execute('SELECT mrp FROM products WHERE id=? AND admin_id=? AND is_active=1', (item.product_id, admin_id)).fetchone()
+            if not product: raise HTTPException(400, 'Product does not belong to this business')
+            db.execute('INSERT INTO order_items(order_id,product_id,quantity,price) VALUES(?,?,?,?)', (order_id, item.product_id, item.quantity, item.price if item.price is not None else product['mrp']))
+    return {'status': 'ok', 'order_id': order_id}
+
 
 @app.get('/api/orders')
-def get_orders():
+def get_orders(principal=Depends(_principal)):
+    _require(principal, 'admin', 'manager', 'employee')
+    admin_id = _admin_id(principal); _check_subscription(admin_id)
     with get_connection() as db:
-        orders = [dict(row) for row in db.execute('SELECT * FROM orders ORDER BY id DESC').fetchall()]
+        orders = [dict(row) for row in db.execute('SELECT * FROM orders WHERE admin_id=? ORDER BY id DESC', (admin_id,)).fetchall()]
         for order in orders:
             order['items'] = [dict(row) for row in db.execute('SELECT * FROM order_items WHERE order_id=?', (order['id'],)).fetchall()]
-        return orders
+    return orders
 
-@app.post('/api/admin/migrate')
-def run_migration():
-    migrate()
-    return {'status': 'ok', 'message': 'JSON backup migrated to SQLite'}
 
 if __name__ == '__main__':
     import uvicorn
