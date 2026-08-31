@@ -23,7 +23,9 @@ export class TempDataService {
     catch (_) { return []; }
   }
 
-  writeOverlay(key, value) { localStorage.setItem(`${STORAGE_PREFIX}${key}`, JSON.stringify(value)); }
+  writeOverlay(key, value) {
+    localStorage.setItem(`${STORAGE_PREFIX}${key}`, JSON.stringify(value));
+  }
 
   static defaultAccounts() {
     const start = new Date().toISOString().slice(0, 10);
@@ -36,11 +38,23 @@ export class TempDataService {
   }
 
   getAccounts() {
+    const defaults = TempDataService.defaultAccounts();
     const saved = this.readOverlay('accounts');
-    if (saved.length) return saved;
-    const accounts = TempDataService.defaultAccounts();
-    this.writeOverlay('accounts', accounts);
-    return accounts;
+    const merged = [...saved];
+
+    // Keep system accounts aligned with the final seed credentials and roles.
+    // Other accounts created later by the UI remain untouched.
+    for (const account of defaults) {
+      const index = merged.findIndex(item => item.username?.toLowerCase() === account.username.toLowerCase());
+      if (index >= 0) {
+        merged[index] = { ...merged[index], ...account };
+      } else {
+        merged.push(account);
+      }
+    }
+
+    this.writeOverlay('accounts', merged);
+    return merged;
   }
 
   saveAccounts(accounts) { this.writeOverlay('accounts', accounts); }
@@ -63,16 +77,27 @@ export class TempDataService {
   }
 
   async authenticateUser(username, password) {
+    const normalizedUsername = username.trim().toLowerCase();
     const accounts = this.getAccounts();
-    const account = accounts.find(item => item.username.toLowerCase() === username.trim().toLowerCase());
-    if (account && account.is_active !== false && account.password === password) return this._sessionUser(account);
+    const account = accounts.find(item => item.username.toLowerCase() === normalizedUsername);
+    if (account && account.is_active !== false && account.password === password) {
+      return this._sessionUser(account);
+    }
 
     const users = await this.getUsers();
-    const user = users.find(item => item.username.toLowerCase() === username.trim().toLowerCase());
-    if (!user || user.is_active === false || user.admin_id !== 1) return null;
+    const user = users.find(item => item.username.toLowerCase() === normalizedUsername);
+    if (!user || user.is_active === false || Number(user.admin_id || 1) !== 1) return null;
+
     const expected = `${user.username}@123`;
     if (password !== expected) return null;
-    return this._sessionUser({ ...user, password: expected, role: user.role || 'employee', admin_id: user.admin_id || 1, business_name: 'Hind Pharma' });
+
+    return this._sessionUser({
+      ...user,
+      password: expected,
+      role: user.role || 'employee',
+      admin_id: user.admin_id || 1,
+      business_name: 'Hind Pharma'
+    });
   }
 
   _sessionUser(user) {
@@ -107,16 +132,17 @@ export class TempDataService {
   async deleteProduct(product) { this.addDeleted('products', this.identityForProduct(product)); return true; }
   async deleteUser(user) { this.addDeleted('users', this.identityForUser(user)); return true; }
 
-  addDeleted(key, identity) { const deleted = this.readOverlay(`deleted_${key}`); if (!deleted.includes(identity)) { deleted.push(identity); this.writeOverlay(`deleted_${key}`, deleted); } }
+  addDeleted(key, identity) {
+    const deleted = this.readOverlay(`deleted_${key}`);
+    if (!deleted.includes(identity)) {
+      deleted.push(identity);
+      this.writeOverlay(`deleted_${key}`, deleted);
+    }
+  }
+
   identityForMedical(item) { return `${String(item.name || '').trim().toLowerCase()}|${String(item.area || '').trim().toLowerCase()}`; }
   identityForProduct(item) { return String(item.id || item.code || item.name || '').trim().toLowerCase(); }
   identityForUser(item) { return String(item.username || '').trim().toLowerCase(); }
-
-  async sha256(value) {
-    const bytes = new TextEncoder().encode(value);
-    const hashBuffer = await crypto.subtle.digest('SHA-256', bytes);
-    return [...new Uint8Array(hashBuffer)].map(byte => byte.toString(16).padStart(2, '0')).join('');
-  }
 
   createSessionToken(user) { return `temp-${user.username}-${user.role}-${Date.now()}`; }
 }
