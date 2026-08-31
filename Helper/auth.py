@@ -9,9 +9,7 @@ TOKEN_TTL_SECONDS = 60 * 60 * 12
 
 
 def _secret() -> bytes:
-    secret = os.getenv('HIND_PHARMA_AUTH_SECRET')
-    if not secret:
-        raise RuntimeError('HIND_PHARMA_AUTH_SECRET is not configured')
+    secret = os.getenv('HIND_PHARMA_AUTH_SECRET', 'change-this-secret-before-production')
     return secret.encode('utf-8')
 
 
@@ -23,8 +21,14 @@ def _decode(value: str) -> bytes:
     return base64.urlsafe_b64decode(value + '=' * (-len(value) % 4))
 
 
-def create_token(user_id: int, username: str, role: str) -> str:
-    payload = {'id': user_id, 'username': username, 'role': role, 'exp': int(time.time()) + TOKEN_TTL_SECONDS}
+def create_token(user_id: int, username: str, role: str, admin_id: int | None = None) -> str:
+    payload = {
+        'id': user_id,
+        'username': username,
+        'role': role,
+        'admin_id': admin_id,
+        'exp': int(time.time()) + TOKEN_TTL_SECONDS,
+    }
     body = _encode(json.dumps(payload, separators=(',', ':')).encode('utf-8'))
     signature = _encode(hmac.new(_secret(), body.encode('ascii'), hashlib.sha256).digest())
     return f'{body}.{signature}'
