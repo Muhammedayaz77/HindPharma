@@ -1,4 +1,4 @@
-import { TempSessionService } from '../temp/temp_file_sessionService.js?v=20260830-5';
+import { TempSessionService } from '../temp/temp_file_sessionService.js?v=20260901-3';
 
 const HomeViewModel = {
     paymentVpa: 'HINDPHARMA2022@SBI',
@@ -6,60 +6,31 @@ const HomeViewModel = {
 
     initialize() {
         const session = TempSessionService.get();
-        this.setupLoginState(session);
+        if (session) {
+            const destination = session.role === 'super_admin' ? 'super-admin.html' : session.role === 'admin' ? 'admin.html' : session.role === 'manager' ? 'manager.html' : 'employee.html';
+            location.replace(destination);
+            return;
+        }
+        this.setupLoginState();
         this.setupPaymentQrCode();
         this.setupPdfDownload();
-        this.setupAdminDashboardButton(session);
-        TempSessionService.startExpiryWatcher(() => location.reload());
     },
 
-    setupLoginState(session) {
+    setupLoginState() {
         const navLogin = document.getElementById('homeLogin');
         const productLogin = document.getElementById('homeProductButton');
         if (!navLogin || !productLogin) return;
-
-        if (session) {
-            navLogin.textContent = 'LOGOUT';
-            navLogin.href = '#';
-            navLogin.onclick = event => {
-                event.preventDefault();
-                TempSessionService.clear();
-                location.reload();
-            };
-            productLogin.textContent = 'CONTINUE TO MEDICALS →';
-            productLogin.href = 'medical.html';
-        } else {
-            navLogin.textContent = 'LOGIN';
-            navLogin.href = 'login.html';
-            navLogin.onclick = null;
-            productLogin.textContent = 'LOGIN TO VIEW PRODUCTS →';
-            productLogin.href = 'login.html';
-        }
-    },
-
-    setupAdminDashboardButton(session) {
-        const isAdmin = Boolean(session && session.role === 'admin' && session.token);
-        if (!isAdmin) return;
-
-        const main = document.querySelector('main.wrap');
-        const qrCard = document.querySelector('.qrCard');
-        if (!main || !qrCard) return;
-
-        const adminSection = document.createElement('section');
-        adminSection.className = 'card adminDashboardCard';
-        adminSection.innerHTML = '<div><div class="eyebrow">ADMIN ACCESS</div><h2>Admin Dashboard</h2><p>Manage medicals, users and products.</p></div><a class="btn adminButton" href="admin.html">OPEN ADMIN DASHBOARD →</a>';
-        main.insertBefore(adminSection, qrCard);
-    },
-
-    paymentPayload() {
-        return `upi://pay?pa=${encodeURIComponent(this.paymentVpa)}&pn=${encodeURIComponent(this.paymentName)}&cu=INR`;
+        navLogin.textContent = 'LOGIN';
+        navLogin.href = 'login.html';
+        productLogin.textContent = 'LOGIN TO VIEW PRODUCTS →';
+        productLogin.href = 'login.html';
     },
 
     setupPaymentQrCode() {
         const qrElement = document.getElementById('hindPharmaQr');
         if (!qrElement || typeof QRCode === 'undefined') return;
         qrElement.innerHTML = '';
-        new QRCode(qrElement, { text: this.paymentPayload(), width: 240, height: 240, correctLevel: QRCode.CorrectLevel.H });
+        new QRCode(qrElement, { text: `upi://pay?pa=${encodeURIComponent(this.paymentVpa)}&pn=${encodeURIComponent(this.paymentName)}&cu=INR`, width: 240, height: 240, correctLevel: QRCode.CorrectLevel.H });
     },
 
     setupPdfDownload() {
