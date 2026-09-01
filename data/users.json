@@ -6,5 +6,29 @@
     "role": "manager",
     "admin_id": 1,
     "is_active": true
+  },
+  {
+    "id": "EMP001",
+    "username": "aman",
+    "name": "Aman",
+    "role": "employee",
+    "admin_id": 1,
+    "is_active": true
+  },
+  {
+    "id": "EMP002",
+    "username": "rafe",
+    "name": "Rafe",
+    "role": "employee",
+    "admin_id": 1,
+    "is_active": true
+  },
+  {
+    "id": "EMP003",
+    "username": "furkhan",
+    "name": "Furkhan",
+    "role": "employee",
+    "admin_id": 1,
+    "is_active": true
   }
 ]
