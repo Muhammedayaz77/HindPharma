@@ -1,5 +1,5 @@
 const SESSION_DURATION_MS = 12 * 60 * 60 * 1000;
-const SESSION_VERSION = '4';
+const SESSION_VERSION = '5';
 const SESSION_KEYS = ['hindPharmaUser','hindPharmaRole','hindPharmaToken','hindPharmaLoginTime','hindPharmaLoginAt','hindPharmaSessionVersion','hindPharmaAdminId','hindPharmaBusinessName','hindPharmaSubscriptionExpiry'];
 const VALID_ROLES = ['super_admin','admin','manager','employee'];
 export const TempSessionService={
@@ -8,6 +8,6 @@ get(){const token=localStorage.getItem('hindPharmaToken'),username=localStorage.
 isLoggedIn(){return Boolean(this.get())},hasRole(...roles){const s=this.get();return Boolean(s&&roles.includes(s.role))},isSuperAdmin(){return this.hasRole('super_admin')},isAdmin(){return this.hasRole('admin')},isManager(){return this.hasRole('manager')},isEmployee(){return this.hasRole('employee')},canManageCatalog(){return this.hasRole('admin','manager')},canDelete(){return this.hasRole('admin')},canManageUsers(){return this.hasRole('admin','manager')},canViewDashboard(){return this.hasRole('super_admin','admin','manager')},canWorkOrders(){return this.hasRole('admin','manager','employee')},
 clear(){SESSION_KEYS.forEach(key=>localStorage.removeItem(key));sessionStorage.clear()},
 requireLogin(){const s=this.get();if(!s){location.replace('login.html');return null}return s},
-requireRole(...roles){const s=this.get();if(!s||!roles.includes(s.role)){location.replace(roles.includes('super_admin')?'super-admin-login.html':'login.html');return null}return s},
+requireRole(...roles){const s=this.get();if(!s||!roles.includes(s.role)){location.replace(roles.includes('super_admin')?'htg-super-admin-login.html':'login.html');return null}return s},
 startExpiryWatcher(onExpire){return setInterval(()=>{if(!this.get()&&typeof onExpire==='function')onExpire()},60000)}
 };
