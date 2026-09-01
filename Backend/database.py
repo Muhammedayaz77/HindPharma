@@ -65,7 +65,6 @@ def _migrate_legacy_users(connection):
         )
     """)
     for row in legacy_rows:
-        # The former Admin account is now the Hind Pharma tenant owner.
         if str(row['role']).lower() == 'admin':
             continue
         role = 'manager' if str(row['username']).lower() == 'hindpharma' else 'employee'
@@ -125,6 +124,7 @@ def _create_schema(connection):
             admin_id INTEGER NOT NULL,
             name TEXT NOT NULL,
             area TEXT,
+            phone TEXT,
             is_active INTEGER NOT NULL DEFAULT 1,
             created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
             updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -170,6 +170,21 @@ def _create_schema(connection):
             FOREIGN KEY(order_id) REFERENCES orders(id) ON DELETE CASCADE,
             FOREIGN KEY(product_id) REFERENCES products(id) ON DELETE RESTRICT
         );
+        CREATE TABLE IF NOT EXISTS calling_logs (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            admin_id INTEGER NOT NULL,
+            medical_id INTEGER NOT NULL,
+            employee_id INTEGER NOT NULL,
+            called_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            is_call INTEGER NOT NULL DEFAULT 1 CHECK(is_call IN (0,1)),
+            is_pick INTEGER,
+            is_not_pick INTEGER,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY(admin_id) REFERENCES admins(id) ON DELETE CASCADE,
+            FOREIGN KEY(medical_id) REFERENCES medicals(id) ON DELETE CASCADE,
+            FOREIGN KEY(employee_id) REFERENCES users(id) ON DELETE CASCADE,
+            CHECK ((is_pick IS NULL AND is_not_pick IS NULL) OR ((is_pick IN (0,1)) AND (is_not_pick IN (0,1)) AND (is_pick + is_not_pick = 1)))
+        );
         CREATE TABLE IF NOT EXISTS audit_logs (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             admin_id INTEGER,
@@ -190,6 +205,8 @@ def _ensure_tenant_columns(connection):
     for table in ('medicals','products','orders'):
         if _table_exists(connection, table) and 'admin_id' not in _table_columns(connection, table):
             connection.execute(f"ALTER TABLE {table} ADD COLUMN admin_id INTEGER")
+    if _table_exists(connection, 'medicals') and 'phone' not in _table_columns(connection, 'medicals'):
+        connection.execute("ALTER TABLE medicals ADD COLUMN phone TEXT")
     connection.execute("UPDATE medicals SET admin_id=1 WHERE admin_id IS NULL")
     connection.execute("UPDATE products SET admin_id=1 WHERE admin_id IS NULL")
     connection.execute("UPDATE orders SET admin_id=1 WHERE admin_id IS NULL")
@@ -211,7 +228,6 @@ def _seed_accounts(connection):
 
 
 def _migrate_existing_data(connection):
-    # All existing Hind Pharma records belong to tenant 1.
     _ensure_tenant_columns(connection)
     connection.execute("UPDATE medicals SET admin_id=1 WHERE admin_id IS NULL")
     connection.execute("UPDATE products SET admin_id=1 WHERE admin_id IS NULL")
@@ -234,6 +250,10 @@ def initialize_database():
             CREATE INDEX IF NOT EXISTS idx_products_code ON products(code);
             CREATE INDEX IF NOT EXISTS idx_orders_admin_id ON orders(admin_id);
             CREATE INDEX IF NOT EXISTS idx_orders_created_by ON orders(created_by);
+            CREATE INDEX IF NOT EXISTS idx_calling_logs_admin_id ON calling_logs(admin_id);
+            CREATE INDEX IF NOT EXISTS idx_calling_logs_employee_id ON calling_logs(employee_id);
+            CREATE INDEX IF NOT EXISTS idx_calling_logs_medical_id ON calling_logs(medical_id);
+            CREATE INDEX IF NOT EXISTS idx_calling_logs_called_at ON calling_logs(called_at);
             CREATE INDEX IF NOT EXISTS idx_audit_admin_id ON audit_logs(admin_id);
             CREATE INDEX IF NOT EXISTS idx_audit_created_at ON audit_logs(created_at);
         """)
