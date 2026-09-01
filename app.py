@@ -1,14 +1,9 @@
-"""Compatibility entry point for the Hind Pharma SQLite API.
-
-The application implementation lives in Backend/main.py. Keeping this small
-entry point preserves existing local launch commands without maintaining a
-second API implementation.
-"""
-
+"""Hind Pharma SQLite API entry point."""
 from Backend.main import app
+from Backend.tenant_routes import register as register_tenant_routes
 
+register_tenant_routes(app)
 __all__ = ['app']
-
 
 if __name__ == '__main__':
     import uvicorn
