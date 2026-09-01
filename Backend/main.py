@@ -18,10 +18,11 @@ except ModuleNotFoundError:
     from Helper.password import hash_password, verify_password
 
 initialize_database()
-app = FastAPI(title='Hind Pharma Local API', version='2.0.0')
+app = FastAPI(title='Hind Pharma Local API', version='2.1.0')
 app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_credentials=False, allow_methods=['*'], allow_headers=['*'])
 
 ROLES = {'super_admin', 'admin', 'manager', 'employee'}
+CALL_COOLDOWN_SECONDS = 10
 
 
 class LoginInput(BaseModel):
@@ -48,6 +49,7 @@ class UserInput(BaseModel):
 class MedicalInput(BaseModel):
     name: str
     area: Optional[str] = None
+    phone: Optional[str] = None
 
 
 class ProductInput(BaseModel):
@@ -70,6 +72,10 @@ class OrderItemInput(BaseModel):
 class OrderInput(BaseModel):
     medical_id: Optional[int] = None
     items: list[OrderItemInput]
+
+
+class CallingStatusInput(BaseModel):
+    is_pick: Optional[bool] = None
 
 
 def _principal(authorization: Optional[str] = Header(default=None)):
@@ -116,7 +122,7 @@ def _audit(db, principal, action, entity_type=None, entity_id=None, details=None
 
 @app.get('/api/health')
 def health():
-    return {'status': 'ok', 'database': 'sqlite', 'version': '2.0.0'}
+    return {'status': 'ok', 'database': 'sqlite', 'version': '2.1.0'}
 
 
 @app.post('/api/login')
@@ -174,8 +180,7 @@ def super_dashboard(principal=Depends(_principal)):
 @app.post('/api/admins')
 def create_admin(item: AdminInput, principal=Depends(_principal)):
     _require(principal, 'super_admin')
-    username = item.username.strip()
-    business = item.business_name.strip()
+    username = item.username.strip(); business = item.business_name.strip()
     if not username or not business:
         raise HTTPException(400, 'Username and business name are required')
     today = date.today()
@@ -227,7 +232,7 @@ def reset_admin_password(admin_id: int, principal=Depends(_principal)):
     return {'status': 'ok', 'message': 'Password reset to username@123'}
 
 
-# ---------------- Tenant resources ----------------
+# ---------------- Tenant users ----------------
 @app.get('/api/users')
 def users(principal=Depends(_principal)):
     _require(principal, 'admin', 'manager')
@@ -242,7 +247,6 @@ def add_user(item: UserInput, principal=Depends(_principal)):
     _require(principal, 'admin', 'manager')
     admin_id = _admin_id(principal); _check_subscription(admin_id)
     with get_connection() as db:
-        # Manager may create employees only.
         if principal['role'] == 'manager' and item.role != 'employee':
             raise HTTPException(403, 'Manager can create employees only')
         try:
@@ -279,9 +283,10 @@ def reset_user_password(user_id: int, principal=Depends(_principal)):
     return {'status': 'ok'}
 
 
+# ---------------- Medicals ----------------
 @app.get('/api/medicals')
 def medicals(search: str = '', principal=Depends(_principal)):
-    _require(principal, 'admin', 'manager')
+    _require(principal, 'admin', 'manager', 'employee')
     admin_id = _admin_id(principal); _check_subscription(admin_id)
     pattern = f'%{search.strip()}%'
     with get_connection() as db:
@@ -297,7 +302,7 @@ def add_medical(item: MedicalInput, principal=Depends(_principal)):
     if not name: raise HTTPException(400, 'Medical name is required')
     with get_connection() as db:
         try:
-            cursor = db.execute('INSERT INTO medicals(admin_id,name,area) VALUES(?,?,?)', (admin_id, name, item.area))
+            cursor = db.execute('INSERT INTO medicals(admin_id,name,area,phone) VALUES(?,?,?,?)', (admin_id, name, item.area, item.phone))
             return dict(db.execute('SELECT * FROM medicals WHERE id=?', (cursor.lastrowid,)).fetchone())
         except Exception as exc:
             raise HTTPException(409, 'Medical already exists') from exc
@@ -308,7 +313,7 @@ def edit_medical(medical_id: int, item: MedicalInput, principal=Depends(_princip
     _require(principal, 'admin', 'manager')
     admin_id = _admin_id(principal); _check_subscription(admin_id)
     with get_connection() as db:
-        cursor = db.execute('UPDATE medicals SET name=?,area=?,updated_at=CURRENT_TIMESTAMP WHERE id=? AND admin_id=? AND is_active=1', (item.name.strip(), item.area, medical_id, admin_id))
+        cursor = db.execute('UPDATE medicals SET name=?,area=?,phone=?,updated_at=CURRENT_TIMESTAMP WHERE id=? AND admin_id=? AND is_active=1', (item.name.strip(), item.area, item.phone, medical_id, admin_id))
         if cursor.rowcount == 0: raise HTTPException(404, 'Medical not found')
     return {'status': 'ok'}
 
@@ -324,9 +329,94 @@ def delete_medical(medical_id: int, principal=Depends(_principal)):
     return {'status': 'ok'}
 
 
+# ---------------- Daily Calling ----------------
+@app.get('/api/calling/today')
+def daily_calling_list(principal=Depends(_principal)):
+    _require(principal, 'admin', 'manager', 'employee')
+    admin_id = _admin_id(principal); _check_subscription(admin_id)
+    employee_id = principal['id'] if principal['role'] == 'employee' else None
+    today = date.today().isoformat()
+    with get_connection() as db:
+        if employee_id:
+            rows = db.execute('''
+                SELECT m.id,m.name,m.phone,m.area,
+                       CASE WHEN EXISTS (SELECT 1 FROM calling_logs c WHERE c.medical_id=m.id AND c.employee_id=? AND date(c.called_at)=?) THEN 1 ELSE 0 END AS is_call,
+                       (SELECT c.is_pick FROM calling_logs c WHERE c.medical_id=m.id AND c.employee_id=? AND date(c.called_at)=? ORDER BY c.id DESC LIMIT 1) AS is_pick,
+                       (SELECT c.is_not_pick FROM calling_logs c WHERE c.medical_id=m.id AND c.employee_id=? AND date(c.called_at)=? ORDER BY c.id DESC LIMIT 1) AS is_not_pick
+                FROM medicals m WHERE m.admin_id=? AND m.is_active=1 ORDER BY m.name
+            ''', (employee_id,today,employee_id,today,employee_id,today,admin_id)).fetchall()
+        else:
+            rows = db.execute('''
+                SELECT m.id,m.name,m.phone,m.area,
+                       CASE WHEN EXISTS (SELECT 1 FROM calling_logs c WHERE c.medical_id=m.id AND date(c.called_at)=?) THEN 1 ELSE 0 END AS is_call,
+                       (SELECT c.is_pick FROM calling_logs c WHERE c.medical_id=m.id AND date(c.called_at)=? ORDER BY c.id DESC LIMIT 1) AS is_pick,
+                       (SELECT c.is_not_pick FROM calling_logs c WHERE c.medical_id=m.id AND date(c.called_at)=? ORDER BY c.id DESC LIMIT 1) AS is_not_pick
+                FROM medicals m WHERE m.admin_id=? AND m.is_active=1 ORDER BY m.name
+            ''', (today,today,today,admin_id)).fetchall()
+    return [dict(row) for row in rows]
+
+
+@app.post('/api/calling/{medical_id}/call')
+def record_call_click(medical_id: int, principal=Depends(_principal)):
+    _require(principal, 'employee')
+    admin_id = _admin_id(principal); _check_subscription(admin_id)
+    employee_id = principal['id']
+    now = datetime.utcnow()
+    with get_connection() as db:
+        medical = db.execute('SELECT id,name,phone FROM medicals WHERE id=? AND admin_id=? AND is_active=1', (medical_id,admin_id)).fetchone()
+        if not medical:
+            raise HTTPException(404, 'Medical not found')
+        recent = db.execute('SELECT called_at FROM calling_logs WHERE employee_id=? ORDER BY id DESC LIMIT 1', (employee_id,)).fetchone()
+        if recent:
+            recent_at = datetime.fromisoformat(recent['called_at'].replace('Z',''))
+            seconds = (now - recent_at).total_seconds()
+            if seconds < CALL_COOLDOWN_SECONDS:
+                raise HTTPException(429, f'Please wait {max(1, int(CALL_COOLDOWN_SECONDS - seconds))} seconds before the next call.')
+        db.execute('''INSERT INTO calling_logs(admin_id,medical_id,employee_id,called_at,is_call,is_pick,is_not_pick)
+                      VALUES(?,?,?,?,1,NULL,NULL)''', (admin_id,medical_id,employee_id,now.isoformat(timespec='seconds'),'1'))
+    return {'status':'ok','medical_id':medical_id,'is_call':True,'cooldown_seconds':CALL_COOLDOWN_SECONDS}
+
+
+@app.patch('/api/calling/{medical_id}/status')
+def update_call_status(medical_id: int, item: CallingStatusInput, principal=Depends(_principal)):
+    _require(principal, 'employee')
+    admin_id = _admin_id(principal); employee_id = principal['id']; today = date.today().isoformat()
+    if item.is_pick is None:
+        raise HTTPException(400, 'Select Picked or Not Picked')
+    with get_connection() as db:
+        latest = db.execute('''SELECT id FROM calling_logs WHERE medical_id=? AND employee_id=? AND date(called_at)=? ORDER BY id DESC LIMIT 1''', (medical_id,employee_id,today)).fetchone()
+        if not latest:
+            raise HTTPException(400, 'Call the medical first')
+        db.execute('UPDATE calling_logs SET is_pick=?,is_not_pick=? WHERE id=?', (int(item.is_pick), int(not item.is_pick), latest['id']))
+    return {'status':'ok','is_pick':item.is_pick,'is_not_pick':not item.is_pick}
+
+
+@app.get('/api/admin/calling/report')
+def admin_calling_report(principal=Depends(_principal)):
+    _require(principal, 'admin')
+    admin_id = _admin_id(principal); _check_subscription(admin_id); today = date.today().isoformat()
+    with get_connection() as db:
+        rows = db.execute('''
+            SELECT m.id AS medical_id,m.name,m.phone,m.area,
+                   COUNT(c.id) AS call_count,
+                   MAX(c.called_at) AS last_called_at,
+                   MAX(CASE WHEN c.is_pick=1 THEN 1 ELSE 0 END) AS is_pick,
+                   MAX(CASE WHEN c.is_not_pick=1 THEN 1 ELSE 0 END) AS is_not_pick,
+                   u.username AS employee
+            FROM medicals m
+            LEFT JOIN calling_logs c ON c.medical_id=m.id AND c.admin_id=? AND date(c.called_at)=?
+            LEFT JOIN users u ON u.id=c.employee_id
+            WHERE m.admin_id=? AND m.is_active=1
+            GROUP BY m.id,m.name,m.phone,m.area,u.username
+            ORDER BY m.name,u.username
+        ''', (admin_id,today,admin_id)).fetchall()
+    return [dict(row) for row in rows]
+
+
+# ---------------- Products ----------------
 @app.get('/api/products')
 def products(search: str = '', principal=Depends(_principal)):
-    _require(principal, 'admin', 'manager')
+    _require(principal, 'admin', 'manager', 'employee')
     admin_id = _admin_id(principal); _check_subscription(admin_id)
     pattern = f'%{search.strip()}%'
     with get_connection() as db:
@@ -387,7 +477,7 @@ def delete_product(product_id: int, principal=Depends(_principal)):
     return {'status': 'ok'}
 
 
-# ---------------- Orders: all tenant roles can work with orders ----------------
+# ---------------- Orders ----------------
 @app.post('/api/orders')
 def create_order(order: OrderInput, principal=Depends(_principal)):
     _require(principal, 'admin', 'manager', 'employee')
