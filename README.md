@@ -2,19 +2,19 @@
 
 ## FINAL TESTING LINKS
 
-Use these links in this order. **Super Admin is a completely separate flow from all shop users.**
+Use these links in this order. **HTG Super Admin is a completely separate group-level flow from all Hind Pharma shop users.**
 
-### 1. Super Admin — separate system login
+### 1. HTG Super Admin — group-level system login
 
-**Login:** https://muhammedayaz77.github.io/HindPharma/View/super-admin-login.html
+**Login:** https://muhammedayaz77.github.io/HindPharma/View/htg-super-admin-login.html
 
-After successful login it opens the Super Admin Dashboard automatically.
+After successful login it opens the HTG Super Admin Dashboard automatically.
 
 - Username: `Muhammed`
 - Password: `Muhammed@123`
-- Dashboard: `https://muhammedayaz77.github.io/HindPharma/View/super-admin.html`
+- Dashboard: https://muhammedayaz77.github.io/HindPharma/View/htg-super-admin.html
 
-Super Admin never enters a shop Home through this flow.
+HTG Super Admin is the parent-level control role. It manages HTG business units/tenant shops and their business Admin accounts. It never enters a shop Home through this flow.
 
 ### 2. Hind Pharma — Shop Home
 
@@ -41,23 +41,31 @@ The India Medical Agency tenant has its own shop identity and logo. It must neve
 
 ## FINAL ROLE FLOW
 
-### Employee
+### HTG Super Admin
 
-`Shop Home → Daily Calling / Start Order → Logout`
+`HTG Super Admin Login → HTG Super Admin Dashboard`
+
+HTG Super Admin is above individual business Admins and is not a shop user.
+
+### Hind Pharma Admin
+
+`Hind Pharma Shop Home → Admin Dashboard → manage Hind Pharma business`
 
 ### Manager
 
 `Shop Home → Employee work + Manager Dashboard → Logout`
 
-### Admin
+### Employee
 
-`Shop Home → Employee work + Manager work + Admin Dashboard → Logout`
+`Shop Home → Daily Calling / Start Order → Logout`
 
-### Super Admin
+The hierarchy is:
 
-`Super Admin Login → Super Admin Dashboard`
+`HTG Super Admin → Business Admin → Manager → Employee`
 
-Super Admin is outside the shop-user flow.
+For Hind Pharma specifically:
+
+`HTG Super Admin → Hind Pharma Admin → Manager → Employee`
 
 ## FINAL ORDER FLOW
 
@@ -84,30 +92,30 @@ The shop URL is the tenant identity:
 
 The same Home UI is reused; separate HTML files are not created per shop. Tenant name, logo, users, medicals, products, orders and calling data must remain isolated by tenant/admin ID.
 
-## SUPER ADMIN SHOP CREATION
+## HTG SUPER ADMIN BUSINESS CREATION
 
-Super Admin can create a new shop application with:
+HTG Super Admin can create a new business/shop application with:
 
-- Shop name
+- Business/shop name
 - Subtitle
 - Address
 - Phone/email
 - DL 20B / DL 21B if available
 - FSSAI if available
 - GSTIN if applicable
-- Shop logo
+- Business logo
 - Barcode if applicable
 - UPI
-- Admin name
-- Admin username
+- Business Admin name
+- Business Admin username
 
-The application starts as `pending_payment`. **Admin generation happens only after payment confirmation.**
+The application starts as `pending_payment`. **Business Admin generation happens only after payment confirmation.**
 
 ## DATABASE
 
 SQLite is the final persistent database.
 
-Super Admin tables use the `superAdmin` prefix:
+HTG-level control tables use the `superAdmin` prefix:
 
 - `superAdminTenants`
 - `superAdminApplications`
@@ -115,6 +123,8 @@ Super Admin tables use the `superAdmin` prefix:
 - `superAdminActivityLogs`
 
 Operational tenant tables include `admins`, `users`, `medicals`, `products`, `orders`, `order_items`, `calling_logs` and `audit_logs`.
+
+`super_admin` remains the internal technical role identifier; its UI/business name is **HTG Super Admin**. `admin` is the business-level Admin role and is scoped to its tenant.
 
 ## GITHUB PAGES TESTING NOTE
 
