@@ -1,16 +1,11 @@
-const TENANT_KEY = 'hindPharmaTenants';
-const CURRENT_SHOP_KEY = 'hindPharmaCurrentShop';
-const DEFAULT_TENANT = { id:1, slug:'hind-pharma', business_name:'Hind Pharma', subtitle:'Surgical and Generic Medicine Distributor', address:'Shop No. 2, Tipu Sultan Road, Quadri Colony, Nanded-431604.', phone:'9028773301', email:'hindpharma07@gmail.com', dl_20b:'MH-NAN-20B-455829', dl_21b:'MH-NAN-21B-455830', fssai:'', gstin:'27BFSPA3240L1ZB', logo:'../Assets/Images/hind-pharma-default.svg', barcode:'', is_active:true };
-function read(){try{return JSON.parse(localStorage.getItem(TENANT_KEY)||'[]')}catch(_){return[]}}
-function write(items){localStorage.setItem(TENANT_KEY,JSON.stringify(items))}
-function slugify(value){return String(value||'').trim().toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'')||`shop-${Date.now()}`}
+const TENANT_KEY='hindPharmaTenants',CURRENT_SHOP_KEY='hindPharmaCurrentShop';
+const DEFAULT_TENANT={id:1,slug:'hind-pharma',business_name:'Hind Pharma',subtitle:'Surgical and Generic Medicine Distributor',address:'Shop No. 2, Tipu Sultan Road, Quadri Colony, Nanded-431604.',phone:'9028773301',email:'hindpharma07@gmail.com',dl_20b:'MH-NAN-20B-455829',dl_21b:'MH-NAN-21B-455830',fssai:'',gstin:'27BFSPA3240L1ZB',logo:'../Assets/Images/hind-pharma-default.svg',barcode:'',is_active:true};
+function read(){try{return JSON.parse(localStorage.getItem(TENANT_KEY)||'[]')}catch(_){return[]}}function write(items){localStorage.setItem(TENANT_KEY,JSON.stringify(items))}function slugify(v){return String(v||'').trim().toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'')||`shop-${Date.now()}`}
+function nextYear(){const d=new Date();d.setFullYear(d.getFullYear()+1);return d.toISOString().slice(0,10)}
 export const TenantService={
- ensureDefaults(){const tenants=read();if(!tenants.some(t=>Number(t.id)===1))tenants.unshift(DEFAULT_TENANT);write(tenants);return tenants},
- all(){return this.ensureDefaults()},
- findBySlug(slug){return this.all().find(t=>t.slug===String(slug||'').toLowerCase())||null},
- currentSlug(){const match=location.pathname.match(/\/shop\/([^/]+)/i);if(match)return match[1].toLowerCase();return new URLSearchParams(location.search).get('shop')?.toLowerCase()||localStorage.getItem(CURRENT_SHOP_KEY)||'hind-pharma'},
- current(){return this.findBySlug(this.currentSlug())||DEFAULT_TENANT},
- createApplication(data){const tenants=this.all();const slugBase=slugify(data.business_name);let slug=slugBase,n=2;while(tenants.some(t=>t.slug===slug))slug=`${slugBase}-${n++}`;const application={...data,slug,id:Math.max(0,...tenants.map(t=>Number(t.id)||0))+1,application_status:'pending_payment',payment_status:'pending',created_at:new Date().toISOString()};tenants.push(application);write(tenants);return application},
- markPaidAndActivate(id){const tenants=this.all();const tenant=tenants.find(t=>Number(t.id)===Number(id));if(!tenant)throw new Error('Shop application not found.');tenant.payment_status='paid';tenant.payment_id=`PAY-${Date.now()}`;tenant.payment_date=new Date().toISOString();tenant.application_status='active';tenant.is_active=true;tenant.admin_generated=true;tenant.admin_id=tenant.id;write(tenants);return tenant},
- save(tenant){const tenants=this.all();const index=tenants.findIndex(t=>Number(t.id)===Number(tenant.id));if(index>=0)tenants[index]=tenant;else tenants.push(tenant);write(tenants);return tenant}
+ ensureDefaults(){const t=read();if(!t.some(x=>Number(x.id)===1))t.unshift(DEFAULT_TENANT);write(t);return t},all(){return this.ensureDefaults()},findBySlug(slug){return this.all().find(t=>t.slug===String(slug||'').toLowerCase())||null},
+ currentSlug(){const m=location.pathname.match(/\/shop\/([^/]+)/i);if(m)return m[1].toLowerCase();return new URLSearchParams(location.search).get('shop')?.toLowerCase()||localStorage.getItem(CURRENT_SHOP_KEY)||'hind-pharma'},current(){return this.findBySlug(this.currentSlug())||DEFAULT_TENANT},
+ createApplication(data){const tenants=this.all();const base=slugify(data.business_name);let slug=base,n=2;while(tenants.some(t=>t.slug===slug))slug=`${base}-${n++}`;const app={...data,slug,id:Math.max(0,...tenants.map(t=>Number(t.id)||0))+1,subscription_start:new Date().toISOString().slice(0,10),subscription_expiry:nextYear(),application_status:'pending_payment',payment_status:'pending',is_active:false,created_at:new Date().toISOString()};tenants.push(app);write(tenants);return app},
+ markPaidAndActivate(id){const tenants=this.all(),tenant=tenants.find(t=>Number(t.id)===Number(id));if(!tenant)throw new Error('Shop application not found.');tenant.payment_status='paid';tenant.payment_id=`PAY-${Date.now()}`;tenant.payment_date=new Date().toISOString();tenant.application_status='active';tenant.is_active=true;tenant.admin_generated=true;tenant.admin_id=tenant.id;write(tenants);return tenant},
+ save(tenant){const tenants=this.all(),i=tenants.findIndex(t=>Number(t.id)===Number(tenant.id));if(i>=0)tenants[i]=tenant;else tenants.push(tenant);write(tenants);return tenant}
 };
