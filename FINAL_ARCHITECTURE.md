@@ -2,12 +2,20 @@
 
 This document is the locked workflow for the project.
 
-## Role hierarchy
+## HTG business hierarchy
 
-- Employee: employee work only.
-- Manager: all Employee work + Manager work.
-- Admin: all Manager and Employee work + Admin work.
-- Super Admin: tenant/shop and system management.
+**Hind Tech Group (HTG)** is the parent technology/business group.
+
+- HTG Super Admin: group-level control across HTG business units and tenant shops.
+- Business Admin: controls one specific HTG business/tenant.
+- Manager: all Employee work + Manager work within that business.
+- Employee: employee work only within that business.
+
+For the Hind Pharma tenant:
+
+`HTG Super Admin → Hind Pharma Admin → Manager → Employee`
+
+`super_admin` remains the internal technical role identifier, but the user-facing role name is **HTG Super Admin**. The `admin` role is the business-level Admin and is tenant-scoped.
 
 ## Common order flow
 
@@ -45,36 +53,36 @@ A single application serves multiple shops. Shop identity is represented by a sl
 
 No separate HTML page is generated for every shop. The Home is rendered from tenant data.
 
-## Super Admin
+## HTG Super Admin
 
-Super Admin works in a separate Super Admin Dashboard.
+HTG Super Admin works in a separate group-level dashboard and never enters a shop Home through the Super Admin flow.
 
-When creating a new shop, Super Admin collects:
+When creating a new HTG business/shop, HTG Super Admin collects:
 
-- Shop name
+- Business/shop name
 - Shop subtitle
 - Address
 - Phone/email
 - Drug Licence 20B/21B if available
 - FSSAI if available
 - GSTIN if applicable
-- Shop logo
+- Business/shop logo
 - Barcode if applicable
 - Shop UPI
-- Admin name/username
+- Business Admin name/username
 
-The application starts as `pending_payment`. A new Admin is generated only after payment is confirmed.
+The application starts as `pending_payment`. A new business Admin is generated only after payment is confirmed.
 
 ## SQLite tables
 
-Super Admin control tables use the `superAdmin` prefix:
+HTG Super Admin control tables use the `superAdmin` prefix:
 
 - `superAdminTenants`
 - `superAdminApplications`
 - `superAdminPayments`
 - `superAdminActivityLogs`
 
-Operational tenant tables remain separate (`admins`, `users`, `medicals`, `products`, `orders`, `calling_logs`) and are tenant-scoped.
+Operational tenant tables remain separate (`admins`, `users`, `medicals`, `products`, `orders`, `calling_logs`) and are tenant-scoped. The `admins` table represents business-level Admin accounts; it is not the HTG Super Admin account.
 
 ## Important deployment note
 
