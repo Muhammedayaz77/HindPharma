@@ -1,77 +1,24 @@
-import { TempDataService } from '../temp/temp_file_dataService.js?v=20260901-1';
-import { TempSessionService } from '../temp/temp_file_sessionService.js?v=20260901-1';
+import { TempDataService } from '../temp/temp_file_dataService.js?v=20260901-6';
+import { TempSessionService } from '../temp/temp_file_sessionService.js?v=20260901-6';
+import { TenantService } from './tenantService.js?v=20260901-1';
 
 const session = TempSessionService.requireRole('super_admin');
 if (!session) throw new Error('Super Admin login required.');
-
 const service = new TempDataService();
 const $ = id => document.getElementById(id);
 $('adminName').textContent = `Signed in as ${session.username}`;
-$('logoutButton').addEventListener('click', () => { TempSessionService.clear(); location.replace('login.html'); });
-
-function message(text, success = false) { $('message').textContent = text; $('message').style.color = success ? 'inherit' : ''; }
-function confirmPermanentDelete(name) {
-  return window.confirm(`Once deleted, this data can't be reverted.\n\nAre you sure you want to delete ${name}?`);
+$('logoutButton').onclick = () => { TempSessionService.clear(); location.replace('login.html'); };
+let pendingApplication = null;
+function message(text, success=false){$('message').textContent=text;$('message').style.color=success?'inherit':'';}
+function confirmPermanentDelete(name){return window.confirm(`Once deleted, this data can't be reverted.\n\nAre you sure you want to delete ${name}?`)}
+function render(){
+  const tenants=TenantService.all();
+  const active=tenants.filter(t=>t.is_active!==false&&t.application_status!=='pending_payment').length;
+  const expiring=tenants.filter(t=>t.subscription_expiry && service.getSubscriptionWarning(t)).length;
+  $('adminCount').textContent=tenants.length; $('activeCount').textContent=active; $('expiringCount').textContent=expiring;
+  $('adminTable').innerHTML=tenants.map(t=>{const warning=t.subscription_expiry?service.getSubscriptionWarning(t):null;return `<tr><td><strong>${t.business_name}</strong><br><small>/shop/${t.slug}</small></td><td>${t.admin_generated?t.username:'—'}</td><td>${t.subscription_expiry?(warning?`${warning.days} days left`:t.subscription_expiry):'—'}</td><td>${t.payment_status||'pending'}</td><td>${t.is_active===false?'INACTIVE':t.application_status==='pending_payment'?'PAYMENT PENDING':'ACTIVE'}</td><td class="actions">${t.application_status==='pending_payment'?`<button class="btn" data-action="pay" data-id="${t.id}">PAY & GENERATE</button>`:`<button class="btn" data-action="toggle" data-id="${t.id}">${t.is_active===false?'ACTIVATE':'DEACTIVATE'}</button><button class="btn danger" data-action="delete" data-id="${t.id}">DELETE</button>`}</td></tr>`}).join('')||'<tr><td colspan="6">No shops found.</td></tr>';
 }
-
-function render(accounts) {
-  const admins = accounts.filter(account => account.role === 'admin');
-  const active = admins.filter(account => account.is_active !== false).length;
-  const expiring = admins.filter(account => service.getSubscriptionWarning(account)).length;
-  $('adminCount').textContent = admins.length;
-  $('activeCount').textContent = active;
-  $('expiringCount').textContent = expiring;
-  $('adminTable').innerHTML = admins.map(admin => {
-    const warning = service.getSubscriptionWarning(admin);
-    return `<tr><td><strong>${admin.business_name}</strong></td><td>${admin.username}</td><td>${warning ? `<span class="warning">${warning.days} days left</span>` : admin.subscription_expiry}</td><td>${admin.is_active === false ? 'INACTIVE' : 'ACTIVE'}</td><td class="actions"><button class="btn" data-action="toggle" data-id="${admin.id}">${admin.is_active === false ? 'ACTIVATE' : 'DEACTIVATE'}</button><button class="btn" data-action="reset" data-id="${admin.id}">RESET PASSWORD</button><button class="btn danger" data-action="delete" data-id="${admin.id}">DELETE</button></td></tr>`;
-  }).join('') || '<tr><td colspan="5">No admin accounts found.</td></tr>';
-}
-
-function saveAndRender() { render(service.getAccounts()); }
-
-$('createAdminForm').addEventListener('submit', event => {
-  event.preventDefault();
-  const username = $('username').value.trim();
-  const businessName = $('businessName').value.trim();
-  if (!username || !businessName) return message('Username and business name are required.');
-  const accounts = service.getAccounts();
-  if (accounts.some(account => account.username.toLowerCase() === username.toLowerCase())) return message('Username already exists.');
-  const start = new Date().toISOString().slice(0, 10);
-  accounts.push({ id: `ADM-${Date.now()}`, username, password: `${username}@123`, role: 'admin', admin_id: accounts.filter(a => a.role === 'admin').length + 1, business_name: businessName, name: $('name').value.trim(), phone: $('phone').value.trim(), email: $('email').value.trim(), address: $('address').value.trim(), subscription_start: start, subscription_expiry: (() => { const d = new Date(); d.setFullYear(d.getFullYear() + 1); return d.toISOString().slice(0, 10); })(), is_active: true });
-  service.saveAccounts(accounts);
-  event.target.reset();
-  message(`Admin created. Initial password: ${username}@123`, true);
-  saveAndRender();
-});
-
-$('adminTable').addEventListener('click', event => {
-  const button = event.target.closest('[data-action]');
-  if (!button) return;
-  const id = button.dataset.id;
-  const accounts = service.getAccounts();
-  const admin = accounts.find(account => String(account.id) === String(id));
-  if (!admin) return;
-
-  if (button.dataset.action === 'toggle') {
-    admin.is_active = admin.is_active === false;
-    service.saveAccounts(accounts);
-    saveAndRender();
-    return;
-  }
-
-  if (button.dataset.action === 'reset') {
-    admin.password = `${admin.username}@123`;
-    service.saveAccounts(accounts);
-    message(`Password reset to ${admin.username}@123`, true);
-    return;
-  }
-
-  if (button.dataset.action === 'delete' && confirmPermanentDelete(admin.business_name)) {
-    service.saveAccounts(accounts.filter(account => account.id !== admin.id));
-    message('Admin deleted permanently.', true);
-    saveAndRender();
-  }
-});
-
-$('refreshButton').addEventListener('click', saveAndRender);
-saveAndRender();
+$('createAdminForm').addEventListener('submit',event=>{event.preventDefault();const username=$('username').value.trim(),businessName=$('businessName').value.trim();if(!username||!businessName)return message('Admin username and shop name are required.');if(TenantService.all().some(t=>String(t.username||'').toLowerCase()===username.toLowerCase()))return message('Admin username already exists.');pendingApplication=TenantService.createApplication({username,name:$('name').value.trim(),business_name:businessName,subtitle:$('subtitle').value.trim(),phone:$('phone').value.trim(),email:$('email').value.trim(),address:$('address').value.trim(),dl_20b:$('dl20b').value.trim(),dl_21b:$('dl21b').value.trim(),fssai:$('fssai').value.trim(),gstin:$('gstin').value.trim(),barcode:$('barcode').value.trim(),logo:$('logo').value.trim(),upi:$('upi').value.trim()});$('createAdminForm').reset();$('paymentStep').hidden=false;$('paymentMessage').textContent=`Application ${pendingApplication.id} created for ${pendingApplication.business_name}. Confirm payment to generate the Admin account.`;message('Application saved. Admin is NOT generated until payment is confirmed.');render();});
+$('paymentButton').onclick=()=>{if(!pendingApplication)return;const tenant=TenantService.markPaidAndActivate(pendingApplication.id);const accounts=service.getAccounts();accounts.push({id:`ADM-${tenant.id}`,username:tenant.username,password:`${tenant.username}@123`,role:'admin',admin_id:tenant.id,business_name:tenant.business_name,name:tenant.name,phone:tenant.phone,email:tenant.email,address:tenant.address,subscription_start:new Date().toISOString().slice(0,10),subscription_expiry:tenant.subscription_expiry||(()=>{const d=new Date();d.setFullYear(d.getFullYear()+1);return d.toISOString().slice(0,10)})(),is_active:true});service.saveAccounts(accounts);pendingApplication=null;$('paymentStep').hidden=true;message(`Payment recorded and Admin generated. Initial password: ${tenant.username}@123`,true);render();};
+$('adminTable').addEventListener('click',event=>{const button=event.target.closest('[data-action]');if(!button)return;const id=button.dataset.id;const tenant=TenantService.all().find(t=>String(t.id)===String(id));if(!tenant)return;if(button.dataset.action==='pay'){pendingApplication=tenant;$('paymentStep').hidden=false;$('paymentMessage').textContent=`Confirm payment for ${tenant.business_name}.`;return;}if(button.dataset.action==='toggle'){tenant.is_active=tenant.is_active===false;TenantService.save(tenant);const accounts=service.getAccounts();const a=accounts.find(x=>x.username?.toLowerCase()===tenant.username?.toLowerCase());if(a){a.is_active=tenant.is_active;service.saveAccounts(accounts)}render();return;}if(button.dataset.action==='delete'&&confirmPermanentDelete(tenant.business_name)){TenantService.save({...tenant,is_active:false,application_status:'deleted'});const accounts=service.getAccounts().filter(x=>x.username?.toLowerCase()!==tenant.username?.toLowerCase());service.saveAccounts(accounts);message('Shop deactivated/deleted from active tenant list.',true);render();}});
+$('refreshButton').onclick=render;render();
