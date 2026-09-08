@@ -37,6 +37,13 @@ function updateCart() {
   document.getElementById('cartBtn').textContent = `Order (${order.length})`;
 }
 
+function updateAddButton() {
+  const quantity = parseInt(qty.value, 10);
+  const canAdd = Number.isFinite(quantity) && quantity > 0;
+  addButton.disabled = !canAdd;
+  addButton.setAttribute('aria-disabled', String(!canAdd));
+}
+
 function render() {
   const cards = filtered.map((product, index) => `
     <button class="card" type="button" data-index="${index}" aria-label="Select ${esc(product.name || 'product')}">
@@ -104,6 +111,7 @@ function openProduct(index) {
   manualName.value = '';
   qty.value = 1;
   addButton.textContent = 'Add to Order';
+  updateAddButton();
   modal.classList.add('show');
 }
 
@@ -116,17 +124,26 @@ function openManualProduct() {
   manualName.value = search.value.trim();
   qty.value = 1;
   addButton.textContent = 'Add to Order';
+  updateAddButton();
   modal.classList.add('show');
   setTimeout(() => manualName.focus(), 0);
 }
 
 document.getElementById('minus').onclick = () => {
-  qty.value = Math.max(1, (+qty.value || 1) - 1);
+  qty.value = Math.max(0, (+qty.value || 0) - 1);
+  updateAddButton();
 };
 
 document.getElementById('plus').onclick = () => {
-  qty.value = (+qty.value || 1) + 1;
+  qty.value = Math.max(0, (+qty.value || 0)) + 1;
+  updateAddButton();
 };
+
+qty.addEventListener('input', () => {
+  const value = parseInt(qty.value, 10);
+  if (!Number.isFinite(value) || value < 0) qty.value = 0;
+  updateAddButton();
+});
 
 const quantityControls = [document.getElementById('minus'), document.getElementById('plus')];
 quantityControls.forEach(control => control.addEventListener('dblclick', event => event.preventDefault()));
@@ -140,7 +157,12 @@ let adding = false;
 addButton.onclick = () => {
   if (adding) return;
 
-  const quantity = Math.max(1, parseInt(qty.value, 10) || 1);
+  const quantity = parseInt(qty.value, 10);
+  if (!Number.isFinite(quantity) || quantity <= 0) {
+    updateAddButton();
+    return;
+  }
+
   let name;
   let key;
 
