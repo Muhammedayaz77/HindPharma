@@ -8,6 +8,7 @@ const medical = localStorage.getItem('hindPharmaMedical');
 if (!medical) location.replace('medical.html');
 
 const DEFAULT_IMAGE = '../Assets/Images/hind-pharma-default.svg';
+const UNITS = ['PIECE', 'BOX', 'CASE', 'STRIP', 'PACK', 'BOTTLE', 'TUBE', 'VIAL', 'OTHER'];
 const dataSource = new LocalFirstProductDataSource('../data/products.json');
 const viewModel = new ProductViewModel(dataSource);
 let filtered = [];
@@ -20,12 +21,13 @@ const search = document.getElementById('search');
 const count = document.getElementById('count');
 const modal = document.getElementById('modal');
 const qty = document.getElementById('qty');
+const unit = document.getElementById('unit');
 const manualName = document.getElementById('manualName');
 const modalTitle = document.getElementById('modalTitle');
 const modalInfo = document.getElementById('modalInfo');
 const addButton = document.getElementById('add');
 
-const esc = value => String(value ?? '').replace(/[&<>\'\"]/g, char => ({
+const esc = value => String(value ?? '').replace(/[&<>\\'\"]/g, char => ({
   '&': '&amp;',
   '<': '&lt;',
   '>': '&gt;',
@@ -110,6 +112,7 @@ function openProduct(index) {
   manualName.style.display = 'none';
   manualName.value = '';
   qty.value = 1;
+  unit.value = 'PIECE';
   addButton.textContent = 'Add to Order';
   updateAddButton();
   modal.classList.add('show');
@@ -123,6 +126,7 @@ function openManualProduct() {
   manualName.style.display = 'block';
   manualName.value = search.value.trim();
   qty.value = 1;
+  unit.value = 'PIECE';
   addButton.textContent = 'Add to Order';
   updateAddButton();
   modal.classList.add('show');
@@ -163,6 +167,7 @@ addButton.onclick = () => {
     return;
   }
 
+  const selectedUnit = UNITS.includes(unit.value) ? unit.value : 'PIECE';
   let name;
   let key;
 
@@ -172,11 +177,11 @@ addButton.onclick = () => {
       manualName.focus();
       return;
     }
-    key = `manual:${name.toLowerCase()}`;
+    key = `manual:${name.toLowerCase()}:${selectedUnit}`;
   } else {
     if (!selected) return;
     name = selected.name || 'Unnamed Product';
-    key = `product:${selected.id || name}`;
+    key = `product:${selected.id || name}:${selectedUnit}`;
   }
 
   adding = true;
@@ -189,6 +194,7 @@ addButton.onclick = () => {
     productId: manualMode ? null : selected.id,
     name,
     quantity,
+    unit: selectedUnit,
     temporary: manualMode
   });
 
