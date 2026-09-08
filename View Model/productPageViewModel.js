@@ -12,10 +12,11 @@ const UNITS = ['PIECE', 'BOX', 'CASE', 'STRIP', 'PACK', 'BOTTLE', 'TUBE', 'VIAL'
 const dataSource = new LocalFirstProductDataSource('../data/products.json');
 const viewModel = new ProductViewModel(dataSource);
 let filtered = [];
-let order = JSON.parse(localStorage.getItem('hindPharmaOrder') || '[]').map(item => ({
-  ...item,
-  unit: UNITS.includes(item.unit) ? item.unit : 'PIECE'
-}));
+let order = JSON.parse(localStorage.getItem('hindPharmaOrder') || '[]').map(item => {
+  const unit = UNITS.includes(item.unit) ? item.unit : 'PIECE';
+  const key = item.key && item.key.includes(`:${unit}`) ? item.key : `${item.key || `product:${item.productId || item.name || 'item'}`}:${unit}`;
+  return { ...item, unit, key };
+});
 let selected = null;
 let manualMode = false;
 
@@ -227,6 +228,7 @@ search.addEventListener('input', event => {
 });
 
 document.getElementById('intro').textContent = `Ordering for ${medical}. Tap anywhere on a product card to select it.`;
+localStorage.setItem('hindPharmaOrder', JSON.stringify(order));
 updateCart();
 loadProducts();
 TempSessionService.startExpiryWatcher(() => location.replace('login.html'));
