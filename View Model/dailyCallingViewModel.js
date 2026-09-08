@@ -28,6 +28,7 @@ function matchesFilter(log, filter) {
   const { called, picked } = statusFor(log);
   if (filter === 'called') return called;
   if (filter === 'not-called') return !called;
+  if (filter === 'pending') return picked === 'pending';
   if (filter === 'picked') return picked === 'picked';
   if (filter === 'not-picked') return picked === 'not-picked';
   return true;
@@ -47,7 +48,7 @@ async function render() {
       const log = lastCall(m.id);
       const picked = log?.is_pick === true ? 'Picked' : log?.is_pick === false ? 'Not Picked' : 'Pending';
       const called = Boolean(log?.is_call);
-      return `<article class="card callingRow"><div><strong>${m.name}</strong><div>${m.area || ''}</div><div class="callingStatus">${called ? '✓ Called' : 'Not Called'} · ${picked}</div></div><a class="btn primary callLink" data-id="${m.id}" data-phone="${m.phone || ''}" href="${m.phone ? `tel:${String(m.phone).replace(/[^0-9+]/g,'')}` : '#'}">${m.phone || 'No mobile number'}</a><div class="pickControls" data-medical="${m.id}" style="display:${called ? 'flex' : 'none'}"><label><input type="radio" name="pick-${m.id}" value="pick" ${log?.is_pick === true ? 'checked' : ''}> Picked</label><label><input type="radio" name="pick-${m.id}" value="not-pick" ${log?.is_pick === false ? 'checked' : ''}> Not Picked</label></div></article>`;
+      return `<article class="card callingRow"><div><strong>${m.name}</strong><div>${m.area || ''}</div><div class="callingStatus">Status: ${called ? 'Called' : 'Not Called'} · ${picked}</div></div><a class="btn primary callLink" data-id="${m.id}" data-phone="${m.phone || ''}" href="${m.phone ? `tel:${String(m.phone).replace(/[^0-9+]/g,'')}` : '#'}">${m.phone || 'No mobile number'}</a><div class="pickControls" data-medical="${m.id}" style="display:${called ? 'flex' : 'none'}"><label><input type="radio" name="pick-${m.id}" value="pick" ${log?.is_pick === true ? 'checked' : ''}> Picked</label><label><input type="radio" name="pick-${m.id}" value="not-pick" ${log?.is_pick === false ? 'checked' : ''}> Not Picked</label></div></article>`;
     }).join('');
     list.querySelectorAll('.callLink').forEach(link => link.addEventListener('click', event => {
       const medicalId = Number(link.dataset.id);
@@ -55,11 +56,13 @@ async function render() {
       if (!phone) { event.preventDefault(); return; }
       const recent = logs().filter(x => Number(x.employee_id) === Number(session.id) && Date.now() - new Date(x.called_at).getTime() < COOLDOWN_MS);
       if (recent.length) { event.preventDefault(); alert('Please wait 10 seconds before the next call.'); return; }
+      event.preventDefault();
       const now = new Date().toISOString();
       const items = logs();
       items.push({ id: `CALL-${Date.now()}`, tenant_id: tenant.id, admin_id: session.admin_id, medical_id: medicalId, employee_id: session.id, called_at: now, is_call: true, is_pick: null });
       save(items);
-      setTimeout(render, 0);
+      render();
+      setTimeout(() => { window.location.href = `tel:${String(phone).replace(/[^0-9+]/g,'')}`; }, 80);
     }));
     list.querySelectorAll('.pickControls input').forEach(input => input.addEventListener('change', event => {
       const medicalId = Number(event.target.closest('.pickControls').dataset.medical);
