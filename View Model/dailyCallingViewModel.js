@@ -18,16 +18,32 @@ function logs() {
   try { return JSON.parse(localStorage.getItem(key) || '[]'); } catch (_) { return []; }
 }
 function save(items) { localStorage.setItem(key, JSON.stringify(items)); }
-function today() { return new Date().toISOString().slice(0,10); }
 function lastCall(medicalId) { return logs().filter(x => Number(x.medical_id) === Number(medicalId)).sort((a,b) => new Date(b.called_at)-new Date(a.called_at))[0]; }
+function statusFor(log) {
+  const called = Boolean(log?.is_call);
+  const picked = log?.is_pick === true ? 'picked' : log?.is_pick === false ? 'not-picked' : 'pending';
+  return { called, picked };
+}
+function matchesFilter(log, filter) {
+  const { called, picked } = statusFor(log);
+  if (filter === 'called') return called;
+  if (filter === 'not-called') return !called;
+  if (filter === 'picked') return picked === 'picked';
+  if (filter === 'not-picked') return picked === 'not-picked';
+  return true;
+}
 
 async function render() {
   const list = $('callingList');
+  const filter = $('callingFilter').value;
   try {
     const medicals = await service.getMedicals();
     const tenantMedicals = medicals.filter(m => Number(m.admin_id || tenant.id) === Number(tenant.id));
+    const filteredMedicals = tenantMedicals.filter(m => matchesFilter(lastCall(m.id), filter));
+    $('callingCount').textContent = `${filteredMedicals.length} of ${tenantMedicals.length}`;
     if (!tenantMedicals.length) { list.innerHTML = '<p>No medicals are available for today.</p>'; return; }
-    list.innerHTML = tenantMedicals.map(m => {
+    if (!filteredMedicals.length) { list.innerHTML = '<p class="emptyFilter">No medicals match this filter.</p>'; return; }
+    list.innerHTML = filteredMedicals.map(m => {
       const log = lastCall(m.id);
       const picked = log?.is_pick === true ? 'Picked' : log?.is_pick === false ? 'Not Picked' : 'Pending';
       const called = Boolean(log?.is_call);
@@ -50,6 +66,7 @@ async function render() {
       const items = logs().map(item => Number(item.medical_id) === medicalId && String(item.employee_id) === String(session.id) && item.is_call ? {...item, is_pick: event.target.value === 'pick'} : item);
       save(items); render();
     }));
-  } catch (_) { list.innerHTML = '<p>Calling list could not be loaded.</p>'; }
+  } catch (_) { $('callingCount').textContent = ''; list.innerHTML = '<p>Calling list could not be loaded.</p>'; }
 }
+$('callingFilter').addEventListener('change', render);
 render();
