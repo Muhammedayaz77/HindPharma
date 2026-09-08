@@ -8,6 +8,7 @@ const tenant = TenantService.current();
 const service = new TempDataService();
 const COOLDOWN_MS = 10000;
 const key = `hindPharmaCalling_${tenant.id}`;
+const pendingCallKey = `hindPharmaPendingCall_${tenant.id}_${session.id}`;
 
 const $ = id => document.getElementById(id);
 $('shopName').textContent = tenant.business_name;
@@ -20,19 +21,42 @@ function logs() {
 function save(items) { localStorage.setItem(key, JSON.stringify(items)); }
 function lastCall(medicalId) { return logs().filter(x => Number(x.medical_id) === Number(medicalId)).sort((a,b) => new Date(b.called_at)-new Date(a.called_at))[0]; }
 function statusFor(log) {
-  const called = Boolean(log?.is_call);
-  const picked = log?.is_pick === true ? 'picked' : log?.is_pick === false ? 'not-picked' : 'pending';
+  if (!log) return { called: false, picked: 'not-called' };
+  const called = Boolean(log.is_call);
+  const picked = log.is_pick === true ? 'picked' : log.is_pick === false ? 'not-picked' : 'pending';
   return { called, picked };
 }
 function matchesFilter(log, filter) {
   const { called, picked } = statusFor(log);
   if (filter === 'called') return called;
-  if (filter === 'not-called') return !called;
-  if (filter === 'pending') return picked === 'pending';
+  if (filter === 'not-called') return !log || !called;
+  if (filter === 'pending') return called && picked === 'pending';
   if (filter === 'picked') return picked === 'picked';
   if (filter === 'not-picked') return picked === 'not-picked';
   return true;
 }
+
+function markPendingCallAsCalled() {
+  const pendingId = sessionStorage.getItem(pendingCallKey);
+  if (!pendingId) return false;
+  const items = logs();
+  const index = items.findIndex(item => item.id === pendingId && String(item.employee_id) === String(session.id));
+  if (index < 0) {
+    sessionStorage.removeItem(pendingCallKey);
+    return false;
+  }
+  if (!items[index].is_call) {
+    items[index] = { ...items[index], is_call: true, call_started_at: new Date().toISOString() };
+    save(items);
+  }
+  sessionStorage.removeItem(pendingCallKey);
+  return true;
+}
+
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'hidden') markPendingCallAsCalled();
+  if (document.visibilityState === 'visible') render();
+});
 
 async function render() {
   const list = $('callingList');
@@ -58,9 +82,11 @@ async function render() {
       if (recent.length) { event.preventDefault(); alert('Please wait 10 seconds before the next call.'); return; }
       event.preventDefault();
       const now = new Date().toISOString();
+      const callId = `CALL-${Date.now()}`;
       const items = logs();
-      items.push({ id: `CALL-${Date.now()}`, tenant_id: tenant.id, admin_id: session.admin_id, medical_id: medicalId, employee_id: session.id, called_at: now, is_call: true, is_pick: null });
+      items.push({ id: callId, tenant_id: tenant.id, admin_id: session.admin_id, medical_id: medicalId, employee_id: session.id, called_at: now, is_call: false, is_pick: null, pending_call: true });
       save(items);
+      sessionStorage.setItem(pendingCallKey, callId);
       render();
       setTimeout(() => { window.location.href = `tel:${String(phone).replace(/[^0-9+]/g,'')}`; }, 80);
     }));
