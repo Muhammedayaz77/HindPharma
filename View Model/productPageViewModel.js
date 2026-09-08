@@ -128,6 +128,9 @@ document.getElementById('plus').onclick = () => {
   qty.value = (+qty.value || 1) + 1;
 };
 
+const quantityControls = [document.getElementById('minus'), document.getElementById('plus')];
+quantityControls.forEach(control => control.addEventListener('dblclick', event => event.preventDefault()));
+
 document.getElementById('cancel').onclick = () => {
   modal.classList.remove('show');
   manualName.value = '';
