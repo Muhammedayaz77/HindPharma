@@ -7,7 +7,7 @@ document.getElementById('logout').onclick = () => { TempSessionService.clear(); 
 const order = JSON.parse(localStorage.getItem('hindPharmaOrder') || '[]');
 if (!order.length) location.replace('products.html');
 const medical = localStorage.getItem('hindPharmaMedical') || 'MEDICAL NAME';
-const text = `*#${medical}*\n\n` + order.map((item,index)=>`${index+1}. ${item.name} ----> ${item.quantity}`).join('\n');
+const text = `*#${medical}*\n\n` + order.map((item,index)=>`${index+1}. ${item.name} ----> ${item.quantity} ${item.unit || 'PIECE'}`).join('\n');
 document.getElementById('preview').textContent = text;
 document.getElementById('whatsapp').onclick = () => { window.location.href='https://wa.me/919028773301?text='+encodeURIComponent(text); };
 document.getElementById('new').onclick = () => { localStorage.removeItem('hindPharmaOrder'); localStorage.removeItem('hindPharmaMedical'); location.href='medical.html'; };
