@@ -5,11 +5,11 @@ if (!session) throw new Error('Login required.');
 document.getElementById('user').textContent = session.username;
 document.getElementById('logout').onclick = () => { TempSessionService.clear(); location.href='index.html'; };
 
-let order = JSON.parse(localStorage.getItem('hindPharmaOrder') || '[]');
+let order = JSON.parse(localStorage.getItem('hindPharmaOrder') || '[]').map(item => ({ ...item, unit: item.unit || 'PIECE' }));
 const list = document.getElementById('list');
 document.getElementById('medical').textContent = 'Medical: ' + (localStorage.getItem('hindPharmaMedical') || 'Not selected');
 const esc = value => String(value ?? '').replace(/[&<>\\'\"]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','\"':'&quot;'}[char]));
-function render(){list.innerHTML=order.length?order.map((item,index)=>`<div class="item"><span>${index+1}. ${esc(item.name)} <strong class="unit">${esc(item.unit || 'PIECE')}</strong></span><span class="qty"><button type="button" data-action="minus" data-index="${index}" aria-label="Decrease quantity">−</button>${item.quantity} ${esc(item.unit || 'PIECE')}<button type="button" data-action="plus" data-index="${index}" aria-label="Increase quantity">+</button><button type="button" class="remove" data-action="remove" data-index="${index}" aria-label="Remove item">×</button></span></div>`).join(''):'<p>Your order is empty.</p>';document.getElementById('next').disabled=!order.length}
+function render(){list.innerHTML=order.length?order.map((item,index)=>`<div class="item"><span>${index+1}. ${esc(item.name)}</span><span class="qty"><button type="button" data-action="minus" data-index="${index}" aria-label="Decrease quantity">−</button>${item.quantity} ${esc(item.unit)}<button type="button" data-action="plus" data-index="${index}" aria-label="Increase quantity">+</button><button type="button" class="remove" data-action="remove" data-index="${index}" aria-label="Remove item">×</button></span></div>`).join(''):'<p>Your order is empty.</p>';document.getElementById('next').disabled=!order.length}
 function save(){localStorage.setItem('hindPharmaOrder',JSON.stringify(order));render()}
 list.addEventListener('dblclick',event=>{if(event.target.closest('.qty button,.remove'))event.preventDefault()});
 list.addEventListener('click',event=>{const button=event.target.closest('button[data-index]');if(!button||button.disabled)return;button.disabled=true;const index=Number(button.dataset.index);if(button.dataset.action==='minus')order[index].quantity=Math.max(1,order[index].quantity-1);if(button.dataset.action==='plus')order[index].quantity+=1;if(button.dataset.action==='remove')order.splice(index,1);save()});
