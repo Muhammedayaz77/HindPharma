@@ -1,4 +1,20 @@
 import Foundation
 
-// Domain models will be added here as each web feature is ported.
-// Models remain iOS-specific and are not shared with Android or web code.
+struct SessionUser: Identifiable {
+    let id: String
+    let username: String
+    let role: String
+    let adminID: String?
+    let businessName: String?
+    let subscriptionExpiry: String?
+    let token: String
+
+    var roleDisplayName: String {
+        switch role {
+        case "super_admin": return "HTG Super Admin"
+        case "admin": return "Admin"
+        case "manager": return "Manager"
+        default: return "Employee"
+        }
+    }
+}
