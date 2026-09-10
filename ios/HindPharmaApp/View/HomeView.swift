@@ -37,7 +37,9 @@ private struct ShopHomeView: View {
                     ForEach(actions.filter { $0.1.contains(user.role) }, id: \.0) { action in
                         if action.0 == "Daily Calling" { NavigationLink(action.0) { DailyCallingView(user: user) } }
                         else if action.0 == "Medical List" { NavigationLink(action.0) { MedicalListView(user: user) } }
-                        else { NavigationLink(action.0) { ContentUnavailableView(action.0, systemImage: "square.grid.2x2", description: Text("Native feature route will be ported next.")) } }
+                        else if action.0 == "Products" { NavigationLink(action.0) { ProductListView(user: user) } }
+                        else { NavigationLink(action.0) { ContentUnavailableView(action.0, systemImage: "square.grid.2x2", description: Text("Native feature route will be ported next.")) }
+                        }
                     }
                 }
                 Section { Button("Logout", role: .destructive, action: viewModel.logout) }
