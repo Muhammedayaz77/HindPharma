@@ -19,12 +19,9 @@ Each Admin has a 1-year subscription. There is no grace period. A warning is sho
 
 ## Initial accounts
 
-- Super Admin: `Muhammed` / `Muhammed@123`
-- Hind Pharma Admin: `Ayaz` / `Ayaz@123`
-- Hind Pharma Manager: existing `HindPharma` user / `HindPharma@123`
-- India Medical Agency Admin: `riyaz` / `riyaz@123`
+Initial account passwords are intentionally not documented in repository files. Use the secure local test configuration or reset flow when credentials are required.
 
-Passwords are stored as hashes by the backend. Super Admin password reset for an Admin always restores `username@123`; no custom reset password is accepted.
+Passwords are stored as hashes by the backend. Super Admin password reset for an Admin restores the configured reset rule; no custom reset password is accepted.
 
 ## Deletion and audit
 
@@ -32,15 +29,16 @@ Business records are permanently deleted after a confirmation prompt. There is n
 
 ## Start
 
-From the repository root:
+Run the backend from this client directory:
 
 ```bash
-python Backend/start_local.py
+cd ios/Backend
+python start_local.py
 ```
 
 The API runs at `http://127.0.0.1:8000`.
 
-The SQLite database is generated locally as `Backend/hind_pharma.db`. JSON files under `data/` remain as backups/import sources.
+The SQLite database is generated locally inside this client's backend. JSON files under the client's `data/` directory remain as backups/import sources.
 
 ## Important
 
