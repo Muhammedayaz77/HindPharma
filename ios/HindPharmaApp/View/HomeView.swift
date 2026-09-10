@@ -36,14 +36,30 @@ private struct ShopHomeView: View {
                 Section("Home") {
                     ForEach(actions.filter { $0.1.contains(user.role) }, id: \.0) { action in
                         if action.0 == "Daily Calling" { NavigationLink(action.0) { DailyCallingView(user: user) } }
-                        else if action.0 == "Medical List" { NavigationLink(action.0) { MedicalListView(user: user) } }
-                        else if action.0 == "Products" { NavigationLink(action.0) { ProductListView(user: user) } }
-                        else { NavigationLink(action.0) { ContentUnavailableView(action.0, systemImage: "square.grid.2x2", description: Text("Native feature route will be ported next.")) }
-                        }
+                        else if action.0 == "Medical List" || action.0 == "Products" || action.0 == "Order" { NavigationLink(action.0) { NativeOrderFlowView(user: user) } }
+                        else { NavigationLink(action.0) { ContentUnavailableView(action.0, systemImage: "square.grid.2x2", description: Text("Native feature route will be ported next.")) } }
                     }
                 }
                 Section { Button("Logout", role: .destructive, action: viewModel.logout) }
             }.navigationTitle("Hind Pharma")
+        }
+    }
+}
+
+private struct NativeOrderFlowView: View {
+    let user: SessionUser
+    @State private var medical: SelectedMedical?
+    @State private var cart: [CartItem] = []
+    @State private var stage = 0
+    var body: some View {
+        Group {
+            if stage == 0 || medical == nil {
+                MedicalListView(user: user) { selected in medical = selected; stage = 1 }
+            } else if stage == 1 {
+                ProductListView(user: user, medical: medical!, onOrder: { items in cart = items; stage = 2 })
+            } else {
+                OrderView(user: user, medical: medical!, initialItems: cart, onBack: { stage = 1 }, onNewOrder: { cart = []; medical = nil; stage = 0 })
+            }
         }
     }
 }
