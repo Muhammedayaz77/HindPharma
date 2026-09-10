@@ -42,7 +42,6 @@ Use these links in this order. **HTG Super Admin is a completely separate group-
 After successful login it opens the HTG Super Admin Dashboard automatically.
 
 - Username: `Muhammed`
-- Password: `Muhammed@123`
 - Dashboard: https://muhammedayaz77.github.io/HindPharma/View/htg-super-admin.html
 
 HTG Super Admin is the parent-level control role. It manages HTG business units/tenant shops and their business Admin accounts. It never enters a shop Home through this flow.
@@ -52,11 +51,10 @@ HTG Super Admin is the parent-level control role. It manages HTG business units/
 **Shop Home:** https://muhammedayaz77.github.io/HindPharma/shop/hind-pharma
 
 - Admin username: `Ayaz`
-- Admin password: `Ayaz@123`
 - Employees:
-  - Aman — `aman` / `aman@123`
-  - Rafe — `rafe` / `rafe@123`
-  - Furkhan — `furkhan` / `furkhan@123`
+  - Aman — `aman`
+  - Rafe — `rafe`
+  - Furkhan — `furkhan`
 
 Hind Pharma is the populated testing tenant and keeps the existing medical/product data.
 
@@ -65,7 +63,6 @@ Hind Pharma is the populated testing tenant and keeps the existing medical/produ
 **Shop Home:** https://muhammedayaz77.github.io/HindPharma/shop/india-medical-agency
 
 - Admin username: `riyaz`
-- Admin password: `riyaz@123`
 - Temporary testing data: **0 medicals, 0 products, 1 admin user**
 
 The India Medical Agency tenant has its own shop identity and logo. It must never display Hind Pharma's shop name.
