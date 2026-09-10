@@ -1,0 +1,20 @@
+[
+  {
+    "id": "P-TEMP-00001",
+    "code": "00001",
+    "name": "PRODUCT NAME",
+    "unit": "PCS",
+    "mrp": 100,
+    "formula": null,
+    "company": "COMPANY NAME"
+  },
+  {
+    "id": "P-TEMP-00002",
+    "code": "00002",
+    "name": "ANOTHER PRODUCT",
+    "unit": "BOX",
+    "mrp": 250,
+    "formula": null,
+    "company": "COMPANY NAME"
+  }
+]

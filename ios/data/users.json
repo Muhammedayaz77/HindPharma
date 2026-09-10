@@ -1,0 +1,34 @@
+[
+  {
+    "id": "USR001",
+    "username": "HindPharma",
+    "password_hash": "470f4343e30ad2cdfb79b7293d05e14b2d3bb532e9e16600b6df57f24331a7fd",
+    "role": "manager",
+    "admin_id": 1,
+    "is_active": true
+  },
+  {
+    "id": "EMP001",
+    "username": "aman",
+    "name": "Aman",
+    "role": "employee",
+    "admin_id": 1,
+    "is_active": true
+  },
+  {
+    "id": "EMP002",
+    "username": "rafe",
+    "name": "Rafe",
+    "role": "employee",
+    "admin_id": 1,
+    "is_active": true
+  },
+  {
+    "id": "EMP003",
+    "username": "furkhan",
+    "name": "Furkhan",
+    "role": "employee",
+    "admin_id": 1,
+    "is_active": true
+  }
+]

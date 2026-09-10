@@ -18,13 +18,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Generate JSON data tables
+      - name: Generate JSON data tables for all clients
         run: python scripts/prepare_products.py
 
       - name: Commit generated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/products.json data/companies.json data/suppliers.json data/inventory.json data/purchases.json
+          git add web/data/products.json web/data/companies.json web/data/suppliers.json web/data/inventory.json web/data/purchases.json
+          git add android/data/products.json android/data/companies.json android/data/suppliers.json android/data/inventory.json android/data/purchases.json
+          git add ios/data/products.json ios/data/companies.json ios/data/suppliers.json ios/data/inventory.json ios/data/purchases.json
           git diff --cached --quiet || git commit -m "Generate Hind Pharma JSON data tables"
           git push

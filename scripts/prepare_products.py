@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 
 SOURCE_FILE = Path("OLD_HindPharmaDataFile")
-DATA_DIR = Path("data")
+DATA_DIRS = [Path("web/data"), Path("android/data"), Path("ios/data")]
 
 FORMULAS = {
     "ABIXIM 200 TAB 10": "Cefixime 200 mg",
@@ -29,9 +29,10 @@ def clean(value):
 
 
 def write_json(name, records):
-    DATA_DIR.mkdir(parents=True, exist_ok=True)
-    with (DATA_DIR / name).open("w", encoding="utf-8") as file:
-        json.dump(records, file, ensure_ascii=False, indent=2)
+    for data_dir in DATA_DIRS:
+        data_dir.mkdir(parents=True, exist_ok=True)
+        with (data_dir / name).open("w", encoding="utf-8") as file:
+            json.dump(records, file, ensure_ascii=False, indent=2)
 
 
 def prepare_data():
@@ -96,7 +97,7 @@ def prepare_data():
     write_json("suppliers.json", [{"name": value["name"]} for value in suppliers.values()])
     write_json("inventory.json", inventory)
     write_json("purchases.json", purchases)
-    print(f"Prepared {len(products)} products, {len(companies)} companies, {len(suppliers)} suppliers, {len(inventory)} inventory records and {len(purchases)} purchase records")
+    print(f"Prepared {len(products)} products, {len(companies)} companies, {len(suppliers)} suppliers, {len(inventory)} inventory records and {len(purchases)} purchase records for all three clients")
 
 
 if __name__ == "__main__":
