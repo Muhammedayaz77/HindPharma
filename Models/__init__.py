@@ -1,1 +1,0 @@
-# Obsolete root model package removed. Platform backends own their models.
