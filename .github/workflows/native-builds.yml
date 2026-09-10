@@ -23,18 +23,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-
       - name: Set up JDK
         uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: '17'
-
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v5
         with:
-          gradle-version: '9.1.0'
-
+          gradle-version: '9.3.1'
       - name: Build Android debug APK
         run: gradle -p android assembleDebug
 
@@ -44,6 +41,5 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-
       - name: Build iOS app
         run: xcodebuild -project ios/HindPharmaApp.xcodeproj -scheme HindPharmaApp -sdk iphonesimulator -configuration Debug build CODE_SIGNING_ALLOWED=NO
