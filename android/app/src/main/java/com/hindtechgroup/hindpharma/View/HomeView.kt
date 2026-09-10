@@ -8,6 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.hindtechgroup.hindpharma.Models.SelectedMedical
 import com.hindtechgroup.hindpharma.Models.SessionUser
 import com.hindtechgroup.hindpharma.Models.roleDisplayName
 import com.hindtechgroup.hindpharma.ViewModel.HomeViewModel
@@ -44,10 +45,13 @@ private fun LoginView(viewModel: HomeViewModel) {
 @Composable
 private fun ShopHomeView(user: SessionUser, viewModel: HomeViewModel) {
     var route by remember { mutableStateOf<String?>(null) }
+    var selectedMedical by remember { mutableStateOf<SelectedMedical?>(null) }
+    var cart by remember { mutableStateOf(emptyList<com.hindtechgroup.hindpharma.Models.CartItem>()) }
     when (route) {
         "Daily Calling" -> { DailyCallingView(user, { route = null }); return }
-        "Medical List" -> { MedicalListView(user, { route = null }); return }
-        "Products" -> { ProductListView(user, { route = null }); return }
+        "Medical List" -> { MedicalListView(user, { route = null }, { medical -> selectedMedical = medical; route = "Products" }); return }
+        "Products" -> { val medical = selectedMedical; if (medical != null) { ProductListView(user, medical, { route = "Medical List" }, { items -> cart = items; route = "Order" }) } else { route = "Medical List" }; return }
+        "Order" -> { val medical = selectedMedical; if (medical != null) { OrderView(user, medical, cart, { route = "Products" }, { cart = emptyList(); selectedMedical = null; route = "Medical List" }) } else { route = "Medical List" }; return }
     }
     Column(Modifier.fillMaxSize().padding(20.dp)) {
         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
@@ -57,7 +61,7 @@ private fun ShopHomeView(user: SessionUser, viewModel: HomeViewModel) {
         Text("Home", style = MaterialTheme.typography.titleLarge, modifier = Modifier.padding(top = 24.dp, bottom = 12.dp))
         LazyVerticalGrid(columns = GridCells.Fixed(2), verticalArrangement = Arrangement.spacedBy(12.dp), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
             items(homeActions.filter { user.role in it.roles }) { action ->
-                Card(Modifier.fillMaxWidth()) { Button(onClick = { route = action.title }, Modifier.fillMaxWidth().padding(8.dp)) { Text(action.title) } }
+                Card(Modifier.fillMaxWidth()) { Button(onClick = { route = if (action.title == "Order" || action.title == "Products") "Medical List" else action.title }, Modifier.fillMaxWidth().padding(8.dp)) { Text(action.title) } }
             }
         }
     }
