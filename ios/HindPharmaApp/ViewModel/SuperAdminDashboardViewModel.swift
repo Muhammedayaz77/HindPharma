@@ -1,0 +1,2 @@
+import Foundation
+@MainActor final class SuperAdminDashboardViewModel:ObservableObject{@Published var admins:[AdminSummary]=[];@Published var isLoading=false;@Published var errorMessage:String?;func load(token:String?)async{guard !isLoading else{return};isLoading=true;defer{isLoading=false};do{admins=try await APIClient(token:token).superAdminDashboard().admins}catch{errorMessage=error.localizedDescription}}}
