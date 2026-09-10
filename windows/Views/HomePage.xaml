@@ -1,0 +1,12 @@
+<Page x:Class="HindPharma.Windows.Views.HomePage" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ScrollViewer>
+        <StackPanel Spacing="16" Padding="32">
+            <TextBlock Text="HIND PHARMA" FontSize="30" FontWeight="SemiBold"/>
+            <TextBlock x:Name="Subtitle" FontSize="18" Opacity="0.75"/>
+            <TextBlock Text="Home" FontSize="24" Margin="0,16,0,0"/>
+            <ItemsRepeater x:Name="Actions"/>
+            <Button Content="Logout" Click="Logout_Click" HorizontalAlignment="Left" Margin="0,16,0,0"/>
+            <InfoBar x:Name="Message" IsOpen="False" IsClosable="True"/>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
