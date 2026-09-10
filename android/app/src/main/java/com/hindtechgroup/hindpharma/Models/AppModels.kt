@@ -1,6 +1,19 @@
 package com.hindtechgroup.hindpharma.Models
 
-/**
- * Shared domain models will be added here as each web feature is ported.
- * Models remain Android-specific and are not shared with iOS or web code.
- */
+data class SessionUser(
+    val id: String,
+    val username: String,
+    val role: String,
+    val adminId: String? = null,
+    val businessName: String? = null,
+    val subscriptionExpiry: String? = null,
+    val token: String
+)
+
+val SessionUser.roleDisplayName: String
+    get() = when (role) {
+        "super_admin" -> "HTG Super Admin"
+        "admin" -> "Admin"
+        "manager" -> "Manager"
+        else -> "Employee"
+    }
