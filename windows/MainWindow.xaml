@@ -1,0 +1,26 @@
+<Window
+    x:Class="HindPharma.Windows.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid Background="{ThemeResource PageBackgroundBrush}">
+        <NavigationView x:Name="NavView"
+                        PaneDisplayMode="Left"
+                        IsBackButtonVisible="Collapsed"
+                        SelectionChanged="NavView_SelectionChanged">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="Home" Tag="home" Icon="Home"/>
+                <NavigationViewItem Content="Daily Calling" Tag="calling" Icon="Phone"/>
+                <NavigationViewItem Content="Medical List" Tag="medicals" Icon="Contact"/>
+                <NavigationViewItem Content="Products" Tag="products" Icon="Shop"/>
+                <NavigationViewItem Content="Order" Tag="order" Icon="Cart"/>
+                <NavigationViewItem Content="Manager Dashboard" Tag="manager" Icon="People"/>
+                <NavigationViewItem Content="Admin Dashboard" Tag="admin" Icon="Setting"/>
+                <NavigationViewItem Content="HTG Super Admin" Tag="super_admin" Icon="Globe"/>
+            </NavigationView.MenuItems>
+            <Frame x:Name="ContentFrame"/>
+        </NavigationView>
+    </Grid>
+</Window>

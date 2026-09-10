@@ -1,0 +1,11 @@
+<Page x:Class="HindPharma.Windows.Views.OrderPage" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+ <StackPanel Padding="28" Spacing="14">
+  <TextBlock Text="Final Order" FontSize="28" FontWeight="SemiBold"/>
+  <TextBlock x:Name="MedicalLabel" FontSize="18"/>
+  <ListView x:Name="CartList"><ListView.ItemTemplate><DataTemplate><Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="14" Padding="8"><TextBlock Text="{Binding Product.Name}"/><TextBlock Grid.Column="1" Text="{Binding Quantity}"/><TextBlock Grid.Column="2" Text="{Binding Product.Mrp}"/></Grid></DataTemplate></ListView.ItemTemplate></ListView>
+  <TextBlock x:Name="Total" FontSize="20" FontWeight="SemiBold"/>
+  <StackPanel Orientation="Horizontal" Spacing="10"><Button Content="Back to Products" Click="Back_Click"/><Button Content="Submit Order" Click="Submit_Click"/></StackPanel>
+  <ProgressRing x:Name="Progress" IsActive="False"/>
+  <InfoBar x:Name="Info" IsOpen="False" IsClosable="True"/>
+ </StackPanel>
+</Page>
