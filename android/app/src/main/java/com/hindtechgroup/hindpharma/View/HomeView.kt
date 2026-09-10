@@ -15,13 +15,9 @@ import kotlinx.coroutines.launch
 
 private data class HomeAction(val title: String, val roles: Set<String>)
 private val homeActions = listOf(
-    HomeAction("Daily Calling", setOf("admin", "manager", "employee")),
-    HomeAction("Medical List", setOf("admin", "manager", "employee")),
-    HomeAction("Products", setOf("admin", "manager", "employee")),
-    HomeAction("Order", setOf("admin", "manager", "employee")),
-    HomeAction("Manager Dashboard", setOf("admin", "manager")),
-    HomeAction("Admin Dashboard", setOf("admin")),
-    HomeAction("HTG Super Admin", setOf("super_admin"))
+    HomeAction("Daily Calling", setOf("admin", "manager", "employee")), HomeAction("Medical List", setOf("admin", "manager", "employee")),
+    HomeAction("Products", setOf("admin", "manager", "employee")), HomeAction("Order", setOf("admin", "manager", "employee")),
+    HomeAction("Manager Dashboard", setOf("admin", "manager")), HomeAction("Admin Dashboard", setOf("admin")), HomeAction("HTG Super Admin", setOf("super_admin"))
 )
 
 @Composable
@@ -48,7 +44,10 @@ private fun LoginView(viewModel: HomeViewModel) {
 @Composable
 private fun ShopHomeView(user: SessionUser, viewModel: HomeViewModel) {
     var route by remember { mutableStateOf<String?>(null) }
-    if (route == "Daily Calling") { DailyCallingView(user, { route = null }); return }
+    when (route) {
+        "Daily Calling" -> { DailyCallingView(user, { route = null }); return }
+        "Medical List" -> { MedicalListView(user, { route = null }); return }
+    }
     Column(Modifier.fillMaxSize().padding(20.dp)) {
         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
             Column { Text(user.businessName ?: "Hind Pharma", style = MaterialTheme.typography.headlineSmall); Text("${user.username} · ${user.roleDisplayName}") }
