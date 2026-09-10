@@ -1,0 +1,12 @@
+<Page x:Class="HindPharma.Windows.Views.LoginPage" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <StackPanel Width="420" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="14">
+            <TextBlock Text="HIND PHARMA" FontSize="32" FontWeight="SemiBold" HorizontalAlignment="Center"/>
+            <TextBlock Text="Login to start your shop work" Opacity="0.7" HorizontalAlignment="Center" Margin="0,0,0,18"/>
+            <TextBox x:Name="UsernameBox" PlaceholderText="Username"/>
+            <PasswordBox x:Name="PasswordBox" PlaceholderText="Password"/>
+            <Button x:Name="LoginButton" Content="LOGIN" Click="Login_Click"/>
+            <InfoBar x:Name="ErrorBar" IsOpen="False" IsClosable="False" Severity="Error"/>
+        </StackPanel>
+    </Grid>
+</Page>
