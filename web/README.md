@@ -10,4 +10,4 @@ The complete web application lives under this directory. Its source is independe
 - `data/` — static data consumed by the web prototype
 - `temp/` — temporary web services retained until their replacements are finalized
 
-The GitHub Pages deployment workflow publishes the contents of this directory as the site root, so existing public URLs such as `/View/...`, `/Assets/...` and `/data/...` remain stable after the repository reorganization.
+GitHub Pages will publish this directory as the site root so the existing public URLs remain stable.
