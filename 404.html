@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hind Pharma</title>
+  <script>
+    (function () {
+      const path = window.location.pathname;
+      const marker = '/HindPharma/';
+      if (!path.startsWith(marker)) return;
+
+      const requested = path.slice(marker.length);
+      if (!requested || requested === '404.html' || requested.startsWith('web/')) return;
+
+      // Compatibility for the pre-reorganization public URLs while GitHub Pages
+      // is served from the repository branch root. The real application remains
+      // under /web and is never duplicated into the repository root.
+      window.location.replace(marker + 'web/' + requested + window.location.search + window.location.hash);
+    })();
+  </script>
+</head>
+<body>
+  <p>Hind Pharma page not found.</p>
+</body>
+</html>
