@@ -1,3 +1,27 @@
 import SwiftUI
-struct ManagerDashboardView:View{let user:SessionUser;@StateObject private var vm=ManagerDashboardViewModel();var body:some View{List{if let e=vm.errorMessage{Text(e).foregroundStyle(.red)}Section("Business Operations"){StatRow(title:"ACTIVE EMPLOYEES",value:vm.employeeCount);StatRow(title:"MEDICALS",value:vm.medicalCount);StatRow(title:"PRODUCTS",value:vm.productCount)}}.overlay{if vm.isLoading{ProgressView()}}.navigationTitle("Manager Dashboard").task{await vm.load(token:user.token)}}
-struct StatRow:View{let title:String;let value:Int;var body:some View{HStack{Text(title);Spacer();Text("\(value)").font(.title2.bold())}}}
+
+struct ManagerDashboardView: View {
+    let user: SessionUser
+    @StateObject private var vm = ManagerDashboardViewModel()
+    var body: some View {
+        List {
+            if let error = vm.errorMessage { Text(error).foregroundStyle(.red) }
+            Section("Business Operations") {
+                StatRow(title: "ACTIVE EMPLOYEES", value: vm.employeeCount)
+                StatRow(title: "MEDICALS", value: vm.medicalCount)
+                StatRow(title: "PRODUCTS", value: vm.productCount)
+            }
+        }
+        .overlay { if vm.isLoading { ProgressView() } }
+        .navigationTitle("Manager Dashboard")
+        .task { await vm.load(token: user.token) }
+    }
+}
+
+struct StatRow: View {
+    let title: String
+    let value: Int
+    var body: some View {
+        HStack { Text(title); Spacer(); Text("\(value)").font(.title2.bold()) }
+    }
+}
