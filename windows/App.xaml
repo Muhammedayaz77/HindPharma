@@ -1,0 +1,20 @@
+<Application
+    x:Class="HindPharma.Windows.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Light">
+                    <SolidColorBrush x:Key="PageBackgroundBrush" Color="#F7F8FA" />
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Dark">
+                    <SolidColorBrush x:Key="PageBackgroundBrush" Color="#111315" />
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="HighContrast">
+                    <SolidColorBrush x:Key="PageBackgroundBrush" Color="#000000" />
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
