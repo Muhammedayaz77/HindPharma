@@ -8,6 +8,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.hindtechgroup.hindpharma.Models.SessionUser
@@ -15,6 +16,7 @@ import com.hindtechgroup.hindpharma.ViewModel.MedicalListViewModel
 
 @Composable
 fun MedicalListView(user: SessionUser, onBack: () -> Unit, viewModel: MedicalListViewModel = viewModel()) {
+    val context = LocalContext.current
     LaunchedEffect(user.token) { viewModel.load(user.token) }
     Column(Modifier.fillMaxSize().padding(16.dp)) {
         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
@@ -31,7 +33,7 @@ fun MedicalListView(user: SessionUser, onBack: () -> Unit, viewModel: MedicalLis
                         Text(medical.name, style = MaterialTheme.typography.titleMedium)
                         medical.area?.let { Text(it, style = MaterialTheme.typography.bodyMedium) }
                         medical.phone?.let { phone ->
-                            TextButton(onClick = { runCatching { val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$phone")); androidx.compose.ui.platform.LocalContext.current.startActivity(intent) } }) { Text(phone) }
+                            TextButton(onClick = { context.startActivity(Intent(Intent.ACTION_DIAL, Uri.parse("tel:$phone"))) }) { Text(phone) }
                         }
                     }
                 }
