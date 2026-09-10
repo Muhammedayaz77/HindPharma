@@ -47,6 +47,7 @@ private fun ShopHomeView(user: SessionUser, viewModel: HomeViewModel) {
     when (route) {
         "Daily Calling" -> { DailyCallingView(user, { route = null }); return }
         "Medical List" -> { MedicalListView(user, { route = null }); return }
+        "Products" -> { ProductListView(user, { route = null }); return }
     }
     Column(Modifier.fillMaxSize().padding(20.dp)) {
         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
