@@ -11,11 +11,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.hindtechgroup.hindpharma.Models.SelectedMedical
 import com.hindtechgroup.hindpharma.Models.SessionUser
 import com.hindtechgroup.hindpharma.ViewModel.MedicalListViewModel
 
 @Composable
-fun MedicalListView(user: SessionUser, onBack: () -> Unit, viewModel: MedicalListViewModel = viewModel()) {
+fun MedicalListView(user: SessionUser, onBack: () -> Unit, onSelected: (SelectedMedical) -> Unit, viewModel: MedicalListViewModel = viewModel()) {
     val context = LocalContext.current
     LaunchedEffect(user.token) { viewModel.load(user.token) }
     Column(Modifier.fillMaxSize().padding(16.dp)) {
@@ -28,13 +29,14 @@ fun MedicalListView(user: SessionUser, onBack: () -> Unit, viewModel: MedicalLis
         if (viewModel.isLoading) LinearProgressIndicator(Modifier.fillMaxWidth())
         LazyColumn(verticalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxSize()) {
             items(viewModel.filtered, key = { it.id }) { medical ->
-                Card(Modifier.fillMaxWidth()) {
+                Card(onClick = { onSelected(SelectedMedical(medical.id, medical.name)) }, modifier = Modifier.fillMaxWidth()) {
                     Column(Modifier.padding(14.dp)) {
                         Text(medical.name, style = MaterialTheme.typography.titleMedium)
                         medical.area?.let { Text(it, style = MaterialTheme.typography.bodyMedium) }
                         medical.phone?.let { phone ->
                             TextButton(onClick = { context.startActivity(Intent(Intent.ACTION_DIAL, Uri.parse("tel:$phone"))) }) { Text(phone) }
                         }
+                        Text("Tap to select", style = MaterialTheme.typography.labelMedium)
                     }
                 }
             }
