@@ -224,7 +224,7 @@ document.getElementById('cartBtn').onclick = () => {
 let searchTimer;
 search.addEventListener('input', event => {
   clearTimeout(searchTimer);
-  searchTimer = setTimeout(() => searchProducts(event.target.value), 80);
+  searchTimer = setTimeout(() => searchProducts(event.target.value), 160);
 });
 
 document.getElementById('intro').textContent = `Ordering for ${medical}. Tap anywhere on a product card to select it.`;
