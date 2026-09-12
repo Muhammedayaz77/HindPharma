@@ -1,0 +1,14 @@
+:root{--htg-bg:#f6faf8;--htg-surface:#fff;--htg-surface2:#edf6f2;--htg-text:#10201b;--htg-muted:#60736c;--htg-line:#dce9e4;--htg-brand:#159a73;--htg-glow:rgba(21,154,115,.2);--htg-shadow:0 20px 60px rgba(18,60,48,.10)}
+html[data-theme=dark]{--htg-bg:#07110e;--htg-surface:#0d1a16;--htg-surface2:#11251f;--htg-text:#eefaf6;--htg-muted:#a2b9b0;--htg-line:#1d3930;--htg-brand:#34d6a3;--htg-glow:rgba(52,214,163,.16);--htg-shadow:0 24px 80px rgba(0,0,0,.35)}
+html,body{background:var(--htg-bg);color:var(--htg-text);transition:background .25s ease,color .25s ease}
+.htgThemeBtn{display:inline-flex!important;align-items:center;justify-content:center;width:44px;height:44px;padding:0!important;border:1px solid var(--htg-line)!important;border-radius:12px!important;background:color-mix(in srgb,var(--htg-surface) 88%,transparent)!important;color:var(--htg-text)!important;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.06);font-size:20px;line-height:1}
+.htgThemeBtn:hover{background:var(--htg-surface2)!important;transform:translateY(-1px)}
+.htgThemeIcon{display:grid;place-items:center;width:1.2em;height:1.2em}
+html[data-theme=dark] header,html[data-theme=dark] .header{background:color-mix(in srgb,var(--htg-surface) 92%,transparent)!important;border-color:var(--htg-line)!important}
+html[data-theme=dark] .card,html[data-theme=dark] .box,html[data-theme=dark] .sheet,html[data-theme=dark] .heroImage,html[data-theme=dark] .secondary,html[data-theme=dark] .search,html[data-theme=dark] .modal .sheet{background:var(--htg-surface)!important;color:var(--htg-text)!important;border-color:var(--htg-line)!important}
+html[data-theme=dark] input,html[data-theme=dark] textarea,html[data-theme=dark] select{background:var(--htg-surface)!important;color:var(--htg-text)!important;border-color:var(--htg-line)!important}
+html[data-theme=dark] p,html[data-theme=dark] .sub,html[data-theme=dark] .count,html[data-theme=dark] .user,html[data-theme=dark] .muted{color:var(--htg-muted)!important}
+html[data-theme=dark] .back,html[data-theme=dark] a{color:inherit}
+html[data-theme=dark] .footer{color:var(--htg-muted)!important}
+@media(max-width:720px){.htgThemeBtn{width:44px;height:44px;border-radius:12px!important}.navActions{gap:8px!important}}
+@media(prefers-reduced-motion:reduce){.htgThemeBtn{transition:none!important}}
