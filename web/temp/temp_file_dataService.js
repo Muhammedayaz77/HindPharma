@@ -10,12 +10,16 @@ function nextYearISO(start = new Date()) {
 export class TempDataService {
   constructor(basePath = '../data/') {
     this.basePath = basePath;
+    this._jsonCache = new Map();
   }
 
   async readJson(fileName) {
-    const response = await fetch(`${this.basePath}${fileName}`, { cache: 'no-store' });
+    if (this._jsonCache.has(fileName)) return this._jsonCache.get(fileName);
+    const response = await fetch(`${this.basePath}${fileName}`, { cache: 'default' });
     if (!response.ok) throw new Error(`Unable to load ${fileName}.`);
-    return response.json();
+    const data = await response.json();
+    this._jsonCache.set(fileName, data);
+    return data;
   }
 
   readOverlay(key) {
