@@ -33,7 +33,7 @@ export class JsonProductDataSource extends ProductDataSource {
 export class ApiProductDataSource extends ProductDataSource {
   constructor(baseUrl = API_BASE_URL) {
     super();
-    this.baseUrl = baseUrl.replace(/\/$//, '');
+    this.baseUrl = baseUrl.replace(/\/$/, '');
     this._cache = null;
   }
 
