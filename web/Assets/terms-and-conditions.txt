@@ -1,0 +1,106 @@
+Terms & Conditions — HindTechGroupAboutBusinessesProductsServicesTechnologyCareersContact☼
+
+LEGAL • WEBSITE TERMS
+Terms & Conditions
+Please read these terms carefully before using the HindTechGroup website or relying on information published through it.
+Effective date: 12 September 2026
+
+IMPORTANT NOTICE
+These Terms & Conditions are intended to establish clear rules for use of this website and to protect HindTechGroup, its businesses, personnel, intellectual property and users to the maximum extent permitted by applicable law. They do not remove or restrict any consumer, statutory or other legal right that cannot lawfully be excluded or limited.
+This website is primarily an informational corporate website. A reference to a product, service, project, business or capability on this website does not by itself create an offer, sale, warranty, contract, agency, partnership or other binding commitment unless expressly agreed in a separate written agreement.
+
+1. Acceptance of these Terms
+By accessing, browsing, using or interacting with this website, you acknowledge that you have read, understood and agree to be bound by these Terms & Conditions, together with the Privacy Policy and any additional terms expressly stated for a particular service, product, project or transaction.
+If you do not agree with these terms, please do not use the website. If you use the website on behalf of a company, organisation or other entity, you represent that you are authorised to accept these terms on its behalf.
+2. About HindTechGroup
+“HindTechGroup”, “HTG”, “we”, “us” and “our” refer to HindTechGroup and, where the context requires, the relevant business, project, service or website operator associated with the HindTechGroup brand. The website may present multiple business areas, including software development, healthcare/pharma-related activities and electric-vehicle charging solutions.
+Where a particular business operates through a separate legal entity, brand, agreement, licence or regulatory framework, the terms applicable to that activity may be different. Those specific terms will take precedence over these general website terms to the extent of any conflict.
+3. Permitted Use
+You may access the website for lawful personal, professional and informational purposes. You must not use the website or its content to:
+- break any applicable law, regulation, court order or regulatory requirement;
+- infringe intellectual-property, privacy, publicity or other rights of HindTechGroup or any third party;
+- attempt unauthorised access, probe, scan, disrupt, overload or interfere with the website, server, network or security controls;
+- introduce malware, ransomware, malicious code or other harmful material;
+- scrape, crawl, harvest or systematically copy content or data except where expressly permitted by law or by us in writing;
+- impersonate HindTechGroup, its employees, representatives or another person;
+- use the website for fraud, deception, spam, harassment or unlawful solicitation;
+- use automated systems in a manner that materially interferes with website availability or performance; or
+- attempt to bypass access controls, security features, rate limits or other technical restrictions.
+
+4. Website Information Is General Information
+Information on this website is provided for general informational and business-communication purposes. We make reasonable efforts to keep information useful and current, but information may be incomplete, delayed, changed, withdrawn or temporarily unavailable.
+You should independently verify important information before making a business, financial, technical, medical, safety, employment or purchasing decision. Nothing on this website constitutes professional legal, financial, investment, medical, pharmaceutical, engineering, electrical, safety or other regulated professional advice.
+5. No Medical or Healthcare Advice
+Any healthcare, pharmaceutical or health-related content is informational only and is not a substitute for advice from a qualified doctor, pharmacist or other appropriately licensed healthcare professional. Nothing on this website should be interpreted as diagnosis, treatment advice, a prescription, a medical guarantee or an emergency service.
+Do not use website information to make urgent medical decisions. Product availability, indications, dosage, contraindications, regulatory status and other healthcare matters must be confirmed through appropriate professional and official sources.
+6. Software, Technology and Technical Information
+Descriptions of software, systems, technology, integrations, specifications, capabilities, roadmaps and projects are illustrative unless a separate written agreement states otherwise. Features, compatibility, availability, performance, timelines and specifications may change without notice.
+Any technical implementation should be independently assessed for the intended environment, security requirements, compliance obligations, hardware dependencies and operational risks.
+7. EV Charging and Physical-World Systems
+Information relating to EV charging equipment, electrical systems, installations or mobility technology is general information only. Actual installation, electrical design, commissioning, operation and maintenance must be performed by appropriately qualified professionals and in accordance with applicable laws, standards, manufacturer instructions and site requirements.
+Website information must not be treated as a substitute for a site survey, electrical assessment, engineering design, safety procedure or regulatory approval. Never rely solely on website content for a safety-critical decision.
+8. No Offer, Quote or Guarantee
+Website content, project descriptions, service pages, career information and contact forms do not automatically constitute an offer, quotation, tender, purchase order, employment offer, service-level commitment or guarantee. Any commercial engagement is subject to separate written terms, scope, pricing, availability, approvals and other applicable conditions.
+9. Intellectual Property
+Unless expressly stated otherwise, the website and its contents—including text, logos, trademarks, brand elements, graphics, photographs, illustrations, layouts, UI designs, software, code, documents and other materials—are owned by or licensed to HindTechGroup or their respective rights holders.
+No ownership rights are transferred to you by accessing the website. Except where applicable law permits otherwise, you may not reproduce, republish, distribute, modify, publicly display, commercially exploit, create derivative works from or reverse engineer website materials without prior written permission.
+Third-party names, logos, trademarks and product names remain the property of their respective owners. Their appearance does not necessarily imply endorsement, partnership or affiliation.
+10. User Submissions and Communications
+If you send information, enquiries, ideas, suggestions, feedback, files or other material through the website, you represent that you have the right to provide it and that doing so does not violate another person's rights or confidentiality obligations.
+You should not submit passwords, payment-card information, highly sensitive personal information, confidential trade secrets or material that you are not authorised to disclose through a general website contact form.
+We may use feedback and non-confidential suggestions to improve our products, services and website without creating an obligation to compensate you, unless a separate written agreement says otherwise.
+11. Third-Party Links and Services
+The website may contain links to third-party websites, services, maps, platforms, repositories, applications or resources. These are provided for convenience. HindTechGroup does not control third-party services and is not responsible for their content, availability, security, privacy practices, terms, products or actions.
+Your use of a third-party service is governed by that provider's own terms and policies. Opening an external link is at your own discretion.
+12. Availability and Changes
+We may modify, suspend, restrict or discontinue any part of the website, content, feature, link or service at any time, with or without notice. We do not guarantee uninterrupted, error-free, secure or continuously available access.
+Maintenance, updates, hosting issues, network failures, browser limitations, cyber incidents, force-majeure events and other circumstances outside our reasonable control may affect availability.
+13. Security
+We take reasonable measures appropriate to an informational website, but no internet transmission, website, device or storage system can be guaranteed to be completely secure. You use the website at your own risk and should maintain appropriate security on your own device, browser and network.
+If you believe you have discovered a genuine security vulnerability, please contact us promptly and responsibly rather than exploiting, publicising or abusing it.
+14. Disclaimer of Warranties
+To the maximum extent permitted by applicable law, the website and its content are provided on an “as is” and “as available” basis. HindTechGroup disclaims warranties and representations that cannot lawfully be excluded, and otherwise disclaims implied warranties including, where legally permissible, merchantability, fitness for a particular purpose, non-infringement, availability, accuracy and suitability.
+We do not warrant that the website will meet every requirement, be uninterrupted or error-free, be free from harmful components, or that information will always be complete, accurate or current.
+15. Limitation of Liability
+To the maximum extent permitted by applicable law, HindTechGroup and its owners, affiliates, businesses, officers, employees, contractors, agents, licensors and service providers will not be liable for indirect, incidental, special, consequential, exemplary or punitive loss or damage, or for loss of profits, revenue, business, goodwill, data, opportunity or anticipated savings arising from or connected with use of, inability to use, or reliance on this website or its content.
+Where liability cannot lawfully be excluded but can be limited, our aggregate liability in relation to the website will be limited to the maximum extent permitted by applicable law. Nothing in these terms is intended to exclude or limit liability that cannot legally be excluded or limited, including liability arising from fraud or other non-excludable liability.
+16. Indemnification
+To the maximum extent permitted by law, you agree to indemnify and hold harmless HindTechGroup and its relevant owners, affiliates, businesses, officers, employees, contractors, agents and licensors from claims, losses, liabilities, damages, costs and reasonable expenses arising from your unlawful use of the website, violation of these terms, infringement of third-party rights, misuse of website content or breach of any representation you make under these terms.
+17. Privacy and Personal Data
+Personal information submitted through the website is handled according to our Privacy Policy and applicable data-protection law. These Terms do not replace the Privacy Policy. You should review it before submitting personal information.
+18. Cookies, Analytics and Technical Storage
+The website may use browser storage, cookies or similar technical mechanisms where required for functionality, preferences, security, analytics or other legitimate website purposes. Details are addressed in the Privacy Policy and any applicable notices.
+19. Careers and Recruitment
+Career pages and job information are for recruitment and informational purposes. A vacancy does not guarantee employment, an interview, selection, compensation or continued availability. Any employment relationship is subject to applicable law and a separate employment or engagement document.
+20. Suspension and Termination of Access
+We may restrict or terminate access to the website where reasonably necessary to protect the website, users, our rights, security, operations or legal interests, including where we reasonably believe these terms or applicable law have been breached.
+Provisions that by their nature should survive termination—including intellectual-property protections, disclaimers, limitations of liability, indemnification, governing law and dispute provisions—will survive to the extent permitted by law.
+21. Force Majeure
+We will not be responsible for delay or failure caused by circumstances beyond our reasonable control, including natural disasters, fire, flood, epidemic or pandemic, war, terrorism, civil disturbance, government action, power or telecommunications failures, cyberattacks, internet failures, labour disruptions, infrastructure failures or failures of third-party providers.
+22. Governing Law, Exclusive Jurisdiction and Place of Proceedings
+These Terms & Conditions shall be governed by and construed in accordance with the laws of India, subject to applicable mandatory legal protections.
+Subject to any jurisdiction that applicable law mandatorily gives to a consumer, regulator, tribunal or other competent authority, the courts having competent jurisdiction at Nanded, Maharashtra, India shall have exclusive jurisdiction over disputes, claims, proceedings and causes of action arising out of or relating to this website, these Terms & Conditions, or the use of the website.
+To the maximum extent legally permitted, the parties agree that proceedings between them relating to matters governed by these Terms should be instituted and heard before the competent courts at Nanded, Maharashtra, and neither party will seek to commence such proceedings in another court having no mandatory jurisdiction.
+This clause does not attempt to exclude or restrict any statutory right, consumer remedy, regulatory proceeding, appellate jurisdiction or other forum that applicable law does not permit the parties to contract away. Where a court or law requires a different forum, that mandatory requirement will prevail.
+23. Dispute Resolution
+If a dispute arises, the parties should first attempt in good faith to resolve it through written communication. This does not prevent either party from seeking urgent injunctive, statutory, regulatory or other relief where legally available or necessary.
+24. Severability
+If any provision of these terms is found invalid, unlawful or unenforceable, that provision will be enforced to the maximum extent permitted and the remaining provisions will continue in effect. The invalid provision will not affect the validity of the remaining terms.
+25. No Waiver
+Failure or delay by HindTechGroup to enforce any provision is not a waiver of that provision or any other right. A waiver must be express and will apply only to the specific circumstance for which it is given.
+26. Entire Agreement and Order of Precedence
+These terms, together with the Privacy Policy and any expressly applicable service-specific or transaction-specific terms, constitute the general terms for website use. If a separate written agreement expressly governs a particular product, service, project or transaction, that agreement will prevail over these website terms to the extent of any conflict.
+27. Changes to These Terms
+We may update these terms when our website, businesses, services, technology or legal requirements change. The updated version will be posted on this page with a revised effective date. Your continued use of the website after an update constitutes acceptance to the extent permitted by law.
+28. Electronic Communications
+When you contact us electronically, you consent to receiving communications electronically where permitted by law. Electronic records, notices and communications may be used as evidence of communications and transactions to the extent permitted by applicable law.
+29. Contact
+For questions, notices or concerns regarding these Terms & Conditions, contact:
+HindTechGroup
+Tipu Sultan Road
+Nanded, Maharashtra, India
+Email: Contact HindTechGroup
+PLEASE NOTE
+These terms are designed as a strong general website terms framework, not as a substitute for advice from an Indian-qualified lawyer. The exact legal protections available to HindTechGroup depend on its legal structure, contracts, business activities, licences, customers and applicable laws. Before the website is used for paid transactions, regulated healthcare/pharma activity, EV hardware sales/installations, employment contracts or collection of significant personal data, these terms and the related Privacy Policy should be reviewed by qualified counsel.
+
+← Home   Privacy Policy
