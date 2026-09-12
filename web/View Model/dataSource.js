@@ -17,7 +17,7 @@ export class JsonProductDataSource extends ProductDataSource {
     if (!response.ok) throw new Error('Product JSON could not be loaded');
     this._cache = await response.json();
     this._searchIndex = this._cache.map(product =>
-      \`\${product.name || ''} \${product.company || ''} \${product.formula || ''} \${product.code || ''}\`.toLowerCase()
+      `${product.name || ''} ${product.company || ''} ${product.formula || ''} ${product.code || ''}`.toLowerCase()
     );
     return this._cache;
   }
@@ -33,13 +33,13 @@ export class JsonProductDataSource extends ProductDataSource {
 export class ApiProductDataSource extends ProductDataSource {
   constructor(baseUrl = API_BASE_URL) {
     super();
-    this.baseUrl = baseUrl.replace(/\\/$/, '');
+    this.baseUrl = baseUrl.replace(/\/$//, '');
     this._cache = null;
   }
 
   async getAll() {
     if (this._cache) return this._cache;
-    const response = await fetch(\`\${this.baseUrl}/products\`, { cache: 'default' });
+    const response = await fetch(`${this.baseUrl}/products`, { cache: 'default' });
     if (!response.ok) throw new Error('Product API could not be loaded');
     this._cache = await response.json();
     return this._cache;
@@ -47,7 +47,7 @@ export class ApiProductDataSource extends ProductDataSource {
 
   async search(query = '') {
     if (!query.trim()) return this.getAll();
-    const response = await fetch(\`\${this.baseUrl}/products?search=\${encodeURIComponent(query)}\`, { cache: 'default' });
+    const response = await fetch(`${this.baseUrl}/products?search=${encodeURIComponent(query)}`, { cache: 'default' });
     if (!response.ok) throw new Error('Product API search failed');
     return response.json();
   }
