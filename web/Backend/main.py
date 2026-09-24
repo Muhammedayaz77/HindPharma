@@ -169,6 +169,29 @@ def subscription_warning(principal=Depends(_principal)):
     return {'show': 0 <= days <= 30, 'days_remaining': days, 'expiry': expiry.isoformat()}
 
 
+@app.get('/api/tenant/{slug}')
+def public_tenant(slug: str):
+    with get_connection() as db:
+        row=db.execute('SELECT id,slug,business_name,subtitle,address,phone,email,dl_20b,dl_21b,fssai,gstin,logo,barcode,upi,is_active FROM superAdminTenants WHERE lower(slug)=lower(?)',(slug,)).fetchone()
+    if not row or not row['is_active']:
+        raise HTTPException(404,'Shop not found')
+    return dict(row)
+
+@app.get('/api/super-admin/shop-applications')
+def super_admin_applications(principal=Depends(_principal)):
+    _require(principal,'super_admin')
+    with get_connection() as db:
+        rows=db.execute('''
+          SELECT a.id,a.tenant_id,a.admin_username,a.admin_name,a.application_status,
+                 t.slug,t.business_name,t.subtitle,t.address,t.phone,t.email,t.logo,t.upi,
+                 p.amount,p.payment_status,p.transaction_id,p.paid_at
+          FROM superAdminApplications a
+          LEFT JOIN superAdminTenants t ON t.id=a.tenant_id
+          LEFT JOIN superAdminPayments p ON p.application_id=a.id
+          ORDER BY a.id DESC
+        ''').fetchall()
+    return [dict(r) for r in rows]
+
 # ---------------- Super Admin ----------------
 @app.get('/api/super-admin/dashboard')
 def super_dashboard(principal=Depends(_principal)):
