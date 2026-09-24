@@ -534,7 +534,10 @@ def get_orders(principal=Depends(_principal)):
     return orders
 
 
-from tenant_routes import register as register_tenant_routes
+try:
+    from .tenant_routes import register as register_tenant_routes
+except ImportError:
+    from tenant_routes import register as register_tenant_routes
 register_tenant_routes(app)
 
 if __name__ == '__main__':
