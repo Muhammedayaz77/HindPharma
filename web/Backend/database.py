@@ -166,23 +166,37 @@ CREATE INDEX IF NOT EXISTS idx_audit_admin_id ON audit_logs(admin_id);
 CREATE INDEX IF NOT EXISTS idx_audit_created_at ON audit_logs(created_at);
 """
 
-MYSQL_SCHEMA = SQLITE_SCHEMA.replace(
-    "INTEGER PRIMARY KEY AUTOINCREMENT", "BIGINT PRIMARY KEY AUTO_INCREMENT"
-).replace(
-    "INTEGER NOT NULL", "BIGINT NOT NULL"
-).replace(
-    "INTEGER PRIMARY KEY", "BIGINT PRIMARY KEY"
-).replace(
-    "REAL", "DECIMAL(12,2)"
-).replace(
-    "TEXT", "VARCHAR(255)"
-)
-
-# Keep MySQL text columns that may contain longer content as TEXT.
-for _column in ("password_hash", "logo", "barcode", "upi", "details", "image"):
-    MYSQL_SCHEMA = MYSQL_SCHEMA.replace(f"{_column} VARCHAR(255)", f"{_column} TEXT")
-
-
+MYSQL_SCHEMA = """
+CREATE TABLE IF NOT EXISTS super_admins(id BIGINT PRIMARY KEY AUTO_INCREMENT,username VARCHAR(255) NOT NULL UNIQUE,password_hash TEXT NOT NULL,name VARCHAR(255) NOT NULL,is_active TINYINT NOT NULL DEFAULT 1,created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE IF NOT EXISTS superAdminTenants(id BIGINT PRIMARY KEY AUTO_INCREMENT,slug VARCHAR(255) NOT NULL UNIQUE,business_name VARCHAR(255) NOT NULL,subtitle VARCHAR(255),address VARCHAR(500),phone VARCHAR(100),email VARCHAR(255),dl_20b VARCHAR(255),dl_21b VARCHAR(255),fssai VARCHAR(255),gstin VARCHAR(255),logo TEXT,barcode TEXT,upi TEXT,is_active TINYINT NOT NULL DEFAULT 0,created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE IF NOT EXISTS superAdminApplications(id BIGINT PRIMARY KEY AUTO_INCREMENT,tenant_id BIGINT,admin_username VARCHAR(255) NOT NULL,admin_name VARCHAR(255),application_status VARCHAR(50) NOT NULL DEFAULT 'pending_payment',created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,FOREIGN KEY(tenant_id) REFERENCES superAdminTenants(id) ON DELETE SET NULL);
+CREATE TABLE IF NOT EXISTS superAdminPayments(id BIGINT PRIMARY KEY AUTO_INCREMENT,application_id BIGINT NOT NULL,tenant_id BIGINT,amount DECIMAL(12,2) NOT NULL DEFAULT 0,payment_status VARCHAR(50) NOT NULL DEFAULT 'pending',transaction_id VARCHAR(255),payment_method VARCHAR(100),paid_at DATETIME,created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,FOREIGN KEY(application_id) REFERENCES superAdminApplications(id) ON DELETE CASCADE,FOREIGN KEY(tenant_id) REFERENCES superAdminTenants(id) ON DELETE SET NULL);
+CREATE TABLE IF NOT EXISTS superAdminActivityLogs(id BIGINT PRIMARY KEY AUTO_INCREMENT,action VARCHAR(255) NOT NULL,tenant_id BIGINT,application_id BIGINT,details TEXT,created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,FOREIGN KEY(tenant_id) REFERENCES superAdminTenants(id) ON DELETE SET NULL,FOREIGN KEY(application_id) REFERENCES superAdminApplications(id) ON DELETE SET NULL);
+CREATE TABLE IF NOT EXISTS admins(id BIGINT PRIMARY KEY AUTO_INCREMENT,username VARCHAR(255) NOT NULL UNIQUE,password_hash TEXT NOT NULL,name VARCHAR(255),business_name VARCHAR(255) NOT NULL,phone VARCHAR(100),email VARCHAR(255),address VARCHAR(500),tenant_id BIGINT,is_active TINYINT NOT NULL DEFAULT 1,subscription_plan VARCHAR(50) NOT NULL DEFAULT 'YEARLY',subscription_start DATE NOT NULL,subscription_expiry DATE NOT NULL,created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,FOREIGN KEY(tenant_id) REFERENCES superAdminTenants(id) ON DELETE SET NULL);
+CREATE TABLE IF NOT EXISTS users(id BIGINT PRIMARY KEY AUTO_INCREMENT,admin_id BIGINT NOT NULL,username VARCHAR(255) NOT NULL UNIQUE,password_hash TEXT NOT NULL,role VARCHAR(20) NOT NULL,name VARCHAR(255),phone VARCHAR(100),is_active TINYINT NOT NULL DEFAULT 1,created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,FOREIGN KEY(admin_id) REFERENCES admins(id) ON DELETE CASCADE);
+CREATE TABLE IF NOT EXISTS medicals(id BIGINT PRIMARY KEY AUTO_INCREMENT,admin_id BIGINT NOT NULL,name VARCHAR(255) NOT NULL,area VARCHAR(255),phone VARCHAR(100),is_active TINYINT NOT NULL DEFAULT 1,created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,FOREIGN KEY(admin_id) REFERENCES admins(id) ON DELETE CASCADE,UNIQUE(admin_id,name,area));
+CREATE TABLE IF NOT EXISTS products(id BIGINT PRIMARY KEY AUTO_INCREMENT,admin_id BIGINT NOT NULL,product_id VARCHAR(255),code VARCHAR(255),name VARCHAR(255) NOT NULL,unit VARCHAR(100),mrp DECIMAL(12,2),formula VARCHAR(500),company VARCHAR(255),image TEXT,is_active TINYINT NOT NULL DEFAULT 1,created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,FOREIGN KEY(admin_id) REFERENCES admins(id) ON DELETE CASCADE,UNIQUE(admin_id,product_id));
+CREATE TABLE IF NOT EXISTS orders(id BIGINT PRIMARY KEY AUTO_INCREMENT,admin_id BIGINT NOT NULL,medical_id BIGINT,created_by BIGINT,status VARCHAR(50) NOT NULL DEFAULT 'pending',created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,FOREIGN KEY(admin_id) REFERENCES admins(id) ON DELETE CASCADE,FOREIGN KEY(medical_id) REFERENCES medicals(id) ON DELETE SET NULL,FOREIGN KEY(created_by) REFERENCES users(id) ON DELETE SET NULL);
+CREATE TABLE IF NOT EXISTS order_items(id BIGINT PRIMARY KEY AUTO_INCREMENT,order_id BIGINT NOT NULL,product_id BIGINT NOT NULL,quantity INT NOT NULL CHECK(quantity > 0),price DECIMAL(12,2),created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,FOREIGN KEY(order_id) REFERENCES orders(id) ON DELETE CASCADE,FOREIGN KEY(product_id) REFERENCES products(id) ON DELETE RESTRICT);
+CREATE TABLE IF NOT EXISTS calling_logs(id BIGINT PRIMARY KEY AUTO_INCREMENT,admin_id BIGINT NOT NULL,medical_id BIGINT NOT NULL,employee_id BIGINT NOT NULL,called_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,is_call TINYINT NOT NULL DEFAULT 1,is_pick TINYINT,is_not_pick TINYINT,created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,FOREIGN KEY(admin_id) REFERENCES admins(id) ON DELETE CASCADE,FOREIGN KEY(medical_id) REFERENCES medicals(id) ON DELETE CASCADE,FOREIGN KEY(employee_id) REFERENCES users(id) ON DELETE CASCADE,CHECK((is_pick IS NULL AND is_not_pick IS NULL) OR ((is_pick IN(0,1)) AND (is_not_pick IN(0,1)) AND (is_pick+is_not_pick=1))));
+CREATE TABLE IF NOT EXISTS audit_logs(id BIGINT PRIMARY KEY AUTO_INCREMENT,admin_id BIGINT,user_id BIGINT,actor_type VARCHAR(50) NOT NULL,action VARCHAR(255) NOT NULL,entity_type VARCHAR(100),entity_id VARCHAR(255),details TEXT,created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,FOREIGN KEY(admin_id) REFERENCES admins(id) ON DELETE SET NULL,FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE SET NULL);
+CREATE INDEX idx_superAdminTenants_slug ON superAdminTenants(slug);
+CREATE INDEX idx_superAdminApplications_status ON superAdminApplications(application_status);
+CREATE INDEX idx_superAdminPayments_status ON superAdminPayments(payment_status);
+CREATE INDEX idx_users_admin_id ON users(admin_id);
+CREATE INDEX idx_medicals_admin_id ON medicals(admin_id);
+CREATE INDEX idx_products_admin_id ON products(admin_id);
+CREATE INDEX idx_products_name ON products(name);
+CREATE INDEX idx_products_code ON products(code);
+CREATE INDEX idx_orders_admin_id ON orders(admin_id);
+CREATE INDEX idx_orders_created_by ON orders(created_by);
+CREATE INDEX idx_calling_logs_admin_id ON calling_logs(admin_id);
+CREATE INDEX idx_calling_logs_employee_id ON calling_logs(employee_id);
+CREATE INDEX idx_calling_logs_medical_id ON calling_logs(medical_id);
+CREATE INDEX idx_calling_logs_called_at ON calling_logs(called_at);
+CREATE INDEX idx_audit_admin_id ON audit_logs(admin_id);
+CREATE INDEX idx_audit_created_at ON audit_logs(created_at);
+"""
 def _table_exists(connection, table_name):
     if DB_ENGINE == "mysql":
         return connection.execute(
