@@ -143,7 +143,7 @@ def login(item: LoginInput):
                     'token': create_token(admin['id'], admin['username'], 'admin', admin['id'])}
 
         user = db.execute('SELECT u.*,a.business_name,a.is_active AS admin_active,a.subscription_expiry FROM users u JOIN admins a ON a.id=u.admin_id WHERE lower(u.username)=lower(?)', (username,)).fetchone()
-        if user and user['is_active'] and user['admin_active'] and date.fromisoformat(user['subscription_expiry']) >= date.today() and verify_password(item.password, user['password_hash']):
+        if user and user['is_active'] and user['admin_active'] and _as_date(user['subscription_expiry']) >= date.today() and verify_password(item.password, user['password_hash']):
             return {'id': user['id'], 'username': user['username'], 'role': user['role'], 'admin_id': user['admin_id'],
                     'business_name': user['business_name'], 'subscription_expiry': user['subscription_expiry'],
                     'token': create_token(user['id'], user['username'], user['role'], user['admin_id'])}
