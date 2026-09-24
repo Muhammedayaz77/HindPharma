@@ -1,8 +1,62 @@
-import { TempDataService } from '../temp/temp_file_dataService.js?v=20260901-8';
-import { TempSessionService } from '../temp/temp_file_sessionService.js?v=20260901-8';
-import { TenantService } from './tenantService.js?v=20260901-3';
-const session=TempSessionService.requireRole('super_admin');if(!session)throw new Error('HTG Super Admin login required.');
-const service=new TempDataService(),$=id=>document.getElementById(id);$('adminName').textContent=`Signed in as ${session.username}`;$('logoutButton').onclick=()=>{TempSessionService.clear();location.replace('htg-super-admin-login.html')};let pendingApplication=null;
-function message(text,success=false){$('message').textContent=text;$('message').style.color=success?'inherit':''}function render(){const tenants=TenantService.all(),active=tenants.filter(t=>t.is_active!==false).length;const expiring=tenants.filter(t=>t.subscription_expiry&&service.getSubscriptionWarning(t)).length;$('adminCount').textContent=tenants.length;$('activeCount').textContent=active;$('expiringCount').textContent=expiring;$('adminTable').innerHTML=tenants.map(t=>`<tr><td><strong>${t.business_name}</strong><br><small>/shop/${t.slug}</small></td><td>${t.admin_generated?t.username:(t.username||'—')}</td><td>${t.subscription_expiry||'—'}</td><td>${t.payment_status||'paid'}</td><td>${t.application_status==='deleted'?'DELETED':t.is_active===false?'INACTIVE':t.application_status==='pending_payment'?'PAYMENT PENDING':'ACTIVE'}</td><td class="actions">${t.application_status==='pending_payment'?`<button class="btn" data-action="pay" data-id="${t.id}">PAY & GENERATE</button>`:`<button class="btn" data-action="toggle" data-id="${t.id}">${t.is_active===false?'ACTIVATE':'DEACTIVATE'}</button>`}</td></tr>`).join('')||'<tr><td colspan="6">No HTG businesses found.</td></tr>'}
-$('createAdminForm').addEventListener('submit',e=>{e.preventDefault();const username=$('username').value.trim(),businessName=$('businessName').value.trim();if(!username||!businessName)return message('Admin username and business name are required.');if(TenantService.all().some(t=>String(t.username||'').toLowerCase()===username.toLowerCase()))return message('Admin username already exists.');pendingApplication=TenantService.createApplication({username,name:$('name').value.trim(),business_name:businessName,subtitle:$('subtitle').value.trim(),phone:$('phone').value.trim(),email:$('email').value.trim(),address:$('address').value.trim(),dl_20b:$('dl20b').value.trim(),dl_21b:$('dl21b').value.trim(),fssai:$('fssai').value.trim(),gstin:$('gstin').value.trim(),barcode:$('barcode').value.trim(),logo:$('logo').value.trim(),upi:$('upi').value.trim()});$('createAdminForm').reset();$('paymentStep').hidden=false;$('paymentMessage').textContent=`Payment is pending for ${pendingApplication.business_name}.`;message('Business application created. Hind Pharma Admin or another business Admin will be generated only after payment confirmation.');render()});
-$('paymentButton').onclick=()=>{if(!pendingApplication)return;const tenant=TenantService.markPaidAndActivate(pendingApplication.id),accounts=service.getAccounts();accounts.push({id:`ADM-${tenant.id}`,username:tenant.username,password:`${tenant.username}@123`,role:'admin',admin_id:tenant.id,business_name:tenant.business_name,name:tenant.name,subscription_start:tenant.subscription_start,subscription_expiry:tenant.subscription_expiry,is_active:true});service.saveAccounts(accounts);pendingApplication=null;$('paymentStep').hidden=true;message(`Payment confirmed. Business Admin generated: ${tenant.username} / ${tenant.username}@123`,true);render()};$('adminTable').addEventListener('click',e=>{const b=e.target.closest('[data-action]');if(!b)return;const t=TenantService.all().find(x=>String(x.id)===String(b.dataset.id));if(!t)return;if(b.dataset.action==='pay'){pendingApplication=t;$('paymentStep').hidden=false;$('paymentMessage').textContent=`Confirm payment for ${t.business_name}.`;return}if(b.dataset.action==='toggle'){t.is_active=t.is_active===false;TenantService.save(t);const a=service.getAccounts().find(x=>x.username?.toLowerCase()===t.username?.toLowerCase());if(a){a.is_active=t.is_active;service.saveAccounts(service.getAccounts())}render()}});$('refreshButton').onclick=render;render();
+import { API_BASE_URL } from '../API/apiConfig.js';
+import { TempSessionService } from '../temp/temp_file_sessionService.js';
+
+const session=TempSessionService.requireRole('super_admin');
+if(!session)throw new Error('HTG Super Admin login required.');
+const $=id=>document.getElementById(id);
+$('adminName').textContent='Signed in as '+session.username;
+$('logoutButton').onclick=()=>{TempSessionService.clear();location.replace('htg-super-admin-login.html')};
+let applications=[],pendingApplication=null;
+
+async function api(path,options={}){
+ const headers=new Headers(options.headers||{});
+ headers.set('Authorization','Bearer '+session.token);
+ if(options.body&&!headers.has('Content-Type'))headers.set('Content-Type','application/json');
+ const r=await fetch(API_BASE_URL+path,{...options,headers,cache:'no-store'});
+ if(!r.ok){let m='Request failed ('+r.status+')';try{const b=await r.json();m=b.detail||m}catch(_){}throw new Error(m)}
+ return r.json();
+}
+function message(text,success=false){$('message').textContent=text;$('message').className='message '+(success?'success':'')}
+function render(){
+ const active=applications.filter(a=>a.application_status==='active'&&a.is_active!==false).length;
+ const expiring=applications.filter(a=>a.subscription_expiry).length;
+ $('adminCount').textContent=applications.length;$('activeCount').textContent=active;$('expiringCount').textContent=expiring;
+ $('adminTable').innerHTML=applications.map(a=>{
+   const status=a.application_status==='pending_payment'?'PAYMENT PENDING':a.is_active===false?'INACTIVE':'ACTIVE';
+   const action=a.application_status==='pending_payment'
+     ? '<button class="btn" data-action="pay" data-id="'+a.id+'">PAY & GENERATE</button>'
+     : '<button class="btn" data-action="toggle" data-id="'+(a.admin_id||'')+'">'+(a.is_active===false?'ACTIVATE':'DEACTIVATE')+'</button>';
+   return '<tr><td><strong>'+(a.business_name||'—')+'</strong><br><small>/shop/'+(a.slug||'—')+'</small></td><td>'+(a.admin_username||'—')+'</td><td>'+(a.subscription_expiry||'—')+'</td><td>'+(a.payment_status||'pending')+'</td><td>'+status+'</td><td class="actions">'+action+'</td></tr>';
+ }).join('')||'<tr><td colspan="6">No HTG businesses found.</td></tr>';
+}
+async function load(){
+ try{applications=await api('/super-admin/shop-applications');render()}
+ catch(e){message(e.message);$('adminTable').innerHTML='<tr><td colspan="6">Could not load businesses.</td></tr>'}
+}
+$('createAdminForm').addEventListener('submit',async e=>{
+ e.preventDefault();
+ try{
+   const body={admin_username:$('username').value.trim(),admin_name:$('name').value.trim(),business_name:$('businessName').value.trim(),subtitle:$('subtitle').value.trim()||null,phone:$('phone').value.trim()||null,email:$('email').value.trim()||null,address:$('address').value.trim()||null,dl_20b:$('dl20b').value.trim()||null,dl_21b:$('dl21b').value.trim()||null,fssai:$('fssai').value.trim()||null,gstin:$('gstin').value.trim()||null,barcode:$('barcode').value.trim()||null,logo:$('logo').value.trim()||null,upi:$('upi').value.trim()||null,amount:0};
+   pendingApplication=await api('/super-admin/shop-applications',{method:'POST',body:JSON.stringify(body)});
+   $('createAdminForm').reset();$('paymentStep').hidden=false;$('paymentMessage').textContent='Payment is pending for '+body.business_name+'.';message('Business application created. Admin will be generated only after payment confirmation.');await load();
+ }catch(err){message(err.message)}
+});
+$('paymentButton').onclick=async()=>{
+ if(!pendingApplication)return;
+ try{
+   const transactionId=prompt('Enter payment transaction/reference ID:');
+   if(!transactionId||!transactionId.trim())return;
+   const result=await api('/super-admin/shop-applications/'+pendingApplication.application_id+'/payment',{method:'POST',body:JSON.stringify({transaction_id:transactionId.trim(),payment_method:'manual',amount:0})});
+   pendingApplication=null;$('paymentStep').hidden=true;
+   message('Payment confirmed. Business Admin generated: '+result.username+' / '+result.initial_password,true);await load();
+ }catch(err){message(err.message)}
+};
+$('adminTable').addEventListener('click',async e=>{
+ const b=e.target.closest('[data-action]');if(!b)return;
+ try{
+   if(b.dataset.action==='pay'){pendingApplication=applications.find(x=>String(x.id)===String(b.dataset.id));$('paymentStep').hidden=false;$('paymentMessage').textContent='Confirm payment for '+(pendingApplication?.business_name||'this business')+'.';return}
+   if(b.dataset.action==='toggle'&&b.dataset.id){const current=applications.find(x=>String(x.admin_id)===String(b.dataset.id));const active=current?.is_active!==false;await api('/admins/'+b.dataset.id+'/status?active='+(!active),{method:'PATCH'});await load()}
+ }catch(err){message(err.message)}
+});
+$('refreshButton').onclick=load;
+load();
