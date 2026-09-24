@@ -73,7 +73,16 @@ When creating a new HTG business/shop, HTG Super Admin collects:
 
 The application starts as `pending_payment`. A new business Admin is generated only after payment is confirmed.
 
-## SQLite tables
+## Database architecture
+
+The project uses **one database per environment**, not separate databases per shop:
+
+- **Local development/testing:** SQLite (`web/Backend/hind_pharma.db`). This is kept for offline development and safe local testing.
+- **Production/live hosting:** MySQL on the hosting server. The same FastAPI code selects MySQL through `DATABASE_URL`.
+- **The 13 application tables are the same logical schema in both databases.**
+- Shops are tenants inside the same production database; a separate database is not created for every shop.
+
+### Tables
 
 HTG Super Admin control tables use the `superAdmin` prefix:
 
@@ -84,6 +93,22 @@ HTG Super Admin control tables use the `superAdmin` prefix:
 
 Operational tenant tables remain separate (`admins`, `users`, `medicals`, `products`, `orders`, `calling_logs`) and are tenant-scoped. The `admins` table represents business-level Admin accounts; it is not the HTG Super Admin account.
 
-## Important deployment note
+## Deployment architecture
 
-GitHub Pages is static, so the browser-side prototype stores newly created tenant metadata locally. The SQLite/FastAPI backend contains the persistent multi-tenant schema and payment-gated API routes for the real deployment. A real payment gateway/webhook must be connected before treating a payment as independently verified in production.
+`Browser → FastAPI/Python → MySQL → 13 application tables`
+
+For local development:
+
+`Browser → FastAPI/Python → SQLite → 13 application tables`
+
+GitHub Pages remains a static frontend/prototype only; it is not the production database/backend. The live deployment must run the FastAPI backend on hosting and connect it to the hosting MySQL database. A real payment gateway/webhook must be connected before treating a payment as independently verified in production.
+
+### Production configuration
+
+Set `DATABASE_URL` in the hosting environment to the MySQL connection string. Never commit the real MySQL username/password to GitHub.
+
+Example:
+
+`mysql+pymysql://MYSQL_USER:MYSQL_PASSWORD@MYSQL_HOST:3306/MYSQL_DATABASE`
+
+The local `.env.example` keeps SQLite as the default development database.
