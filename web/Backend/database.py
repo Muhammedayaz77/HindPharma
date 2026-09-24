@@ -283,6 +283,17 @@ def _seed_tenants(connection):
         )
     connection.execute("UPDATE admins SET tenant_id=(SELECT id FROM superAdminTenants WHERE slug='hind-pharma') WHERE username='Ayaz' AND tenant_id IS NULL")
     connection.execute("UPDATE admins SET tenant_id=(SELECT id FROM superAdminTenants WHERE slug='india-medical-agency') WHERE username='riyaz' AND tenant_id IS NULL")
+    for username, admin_name, slug in [("Ayaz","Ayaz","hind-pharma"),("riyaz","Riyaz","india-medical-agency")]:
+        tenant = connection.execute("SELECT id FROM superAdminTenants WHERE slug=?", (slug,)).fetchone()
+        if tenant and not connection.execute("SELECT 1 FROM superAdminApplications WHERE tenant_id=?", (tenant["id"],)).fetchone():
+            app_id = connection.execute(
+                "INSERT INTO superAdminApplications(tenant_id,admin_username,admin_name,application_status) VALUES(?,?,?,'active')",
+                (tenant["id"], username, admin_name),
+            ).lastrowid
+            connection.execute(
+                "INSERT INTO superAdminPayments(application_id,tenant_id,amount,payment_status,transaction_id,payment_method,paid_at) VALUES(?,?,0,'paid',?,'seed',CURRENT_TIMESTAMP)",
+                (app_id, tenant["id"], "SEED-"+username),
+            )
 
 
 def _seed_hind_pharma_users(connection):
