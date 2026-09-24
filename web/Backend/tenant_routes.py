@@ -1,8 +1,12 @@
 from datetime import date
 from fastapi import Depends, HTTPException
 from pydantic import BaseModel
-from .database import get_connection
-from .main import _principal, _require
+try:
+    from .database import get_connection
+    from .main import _principal, _require
+except ImportError:
+    from database import get_connection
+    from main import _principal, _require
 from Helper.password import hash_password
 
 class ShopApplicationInput(BaseModel):
