@@ -17,7 +17,7 @@ async function request(path, options={}) {
 }
 
 export class TempDataService {
-  async getUsers(){ return request('/users'); }
+  getSubscriptionWarning(user){ if(!user||user.role==='super_admin'||!user.subscription_expiry)return null; const days=Math.ceil((new Date(user.subscription_expiry+'T23:59:59')-new Date())/86400000); return days>=0&&days<=30?{days,expiry:user.subscription_expiry}:null; }\n  async getUsers(){ return request('/users'); }\n  async getAllTenantUsers(){ return request('/users'); }
   async addUser(user){ return request('/users',{method:'POST',body:JSON.stringify({username:user.username,role:user.role,name:user.name||null,phone:user.phone||null})}); }
   async deleteUser(user){ return request(`/users/${encodeURIComponent(user.id)}`,{method:'DELETE'}); }
   async resetUserPassword(user){ return request(`/users/${encodeURIComponent(user.id)}/reset-password`,{method:'POST'}); }
