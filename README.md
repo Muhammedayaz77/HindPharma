@@ -106,3 +106,18 @@ Do not jump directly from Home to Final Order. Browser Back should return throug
 ## FINAL DAILY CALLING FLOW
 
 `Home → Daily Calling → Today's Medicals → Medical Name + Mobile → Tap Mobile → 📞 Call → isCall automatically recorded → Picked / Not Picked`
+
+
+## Database / Deployment
+
+Hind Pharma uses one database per environment:
+
+- **Local:** SQLite for development and testing.
+- **Live:** MySQL on the production hosting server.
+- The same 13 logical tables are used in both environments.
+- Multiple shops/tenants share the production database and are isolated by tenant/business relationships.
+- Do not commit production MySQL credentials to GitHub.
+
+The backend selects the database from `DATABASE_URL`. See `.env.example` for the local and production configuration examples.
+
+**Important:** GitHub Pages is only the static frontend/prototype. The live application must use the FastAPI backend connected to the production MySQL database.
