@@ -510,7 +510,8 @@ def create_order(order: OrderInput, principal=Depends(_principal)):
     with get_connection() as db:
         if order.medical_id is not None and not db.execute('SELECT 1 FROM medicals WHERE id=? AND admin_id=? AND is_active=1', (order.medical_id, admin_id)).fetchone():
             raise HTTPException(400, 'Medical does not belong to this business')
-        creator_id = principal['id'] if principal['role'] != 'admin' else None\n        cursor = db.execute('INSERT INTO orders(admin_id,medical_id,created_by) VALUES(?,?,?)', (admin_id, order.medical_id, creator_id))
+        creator_id = principal['id'] if principal['role'] != 'admin' else None
+        cursor = db.execute('INSERT INTO orders(admin_id,medical_id,created_by) VALUES(?,?,?)', (admin_id, order.medical_id, creator_id))
         order_id = cursor.lastrowid
         for item in order.items:
             if item.quantity < 1: raise HTTPException(400, 'Quantity must be at least 1')
