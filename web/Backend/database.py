@@ -270,6 +270,21 @@ def _seed_accounts(connection):
         )
 
 
+def _seed_tenants(connection):
+    insert_ignore = "INSERT IGNORE" if DB_ENGINE == "mysql" else "INSERT OR IGNORE"
+    tenants = [
+        (1, "hind-pharma", "Hind Pharma", "Surgical and Generic Medicine Distributor", "Shop No. 2, Tipu Sultan Road, Quadri Colony, Nanded-431604.", "9028773301", "hindpharma07@gmail.com", "MH-NAN-20B-455829", "MH-NAN-21B-455830", "", "27BFSPA3240L1ZB", "../Assets/Images/hind-pharma-default.svg", "", "HINDPHARMA2022@SBI"),
+        (2, "india-medical-agency", "India Medical Agency", "Pharmaceutical Distributor", "", "", "", "", "", "", "", "../Assets/Images/india-medical-agency-default.svg", "", ""),
+    ]
+    for row in tenants:
+        connection.execute(
+            f"{insert_ignore} INTO superAdminTenants(id,slug,business_name,subtitle,address,phone,email,dl_20b,dl_21b,fssai,gstin,logo,barcode,upi,is_active) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,1)",
+            row,
+        )
+    connection.execute("UPDATE admins SET tenant_id=(SELECT id FROM superAdminTenants WHERE slug='hind-pharma') WHERE username='Ayaz' AND tenant_id IS NULL")
+    connection.execute("UPDATE admins SET tenant_id=(SELECT id FROM superAdminTenants WHERE slug='india-medical-agency') WHERE username='riyaz' AND tenant_id IS NULL")
+
+
 def _seed_hind_pharma_users(connection):
     admin = connection.execute("SELECT id FROM admins WHERE username='Ayaz'").fetchone()
     if not admin:
@@ -307,6 +322,7 @@ def initialize_database():
             _create_schema(connection)
             _migrate_existing_data_sqlite(connection)
         _seed_accounts(connection)
+        _seed_tenants(connection)
         _seed_hind_pharma_users(connection)
         _ensure_mysql_indexes(connection)
 
