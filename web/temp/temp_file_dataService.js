@@ -40,7 +40,5 @@ export class TempDataService {
   async createOrder(order){ return request('/orders',{method:'POST',body:JSON.stringify(order)}); }
   async getOrders(){ return request('/orders',{cache:'no-store'}); }
 
-  async getAccounts(){ return []; }
-  async authenticateUser(username,password){ return new (class extends Object {})(); }
   async sha256(value){ return value; }
 }
