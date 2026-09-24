@@ -18,7 +18,7 @@ except ModuleNotFoundError:
     from Helper.password import hash_password, verify_password
 
 initialize_database()
-app = FastAPI(title='Hind Pharma Local API', version='2.1.0')
+app = FastAPI(title='Hind Pharma API', version='2.2.0')
 app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_credentials=False, allow_methods=['*'], allow_headers=['*'])
 
 ROLES = {'super_admin', 'admin', 'manager', 'employee'}
@@ -122,7 +122,8 @@ def _audit(db, principal, action, entity_type=None, entity_id=None, details=None
 
 @app.get('/api/health')
 def health():
-    return {'status': 'ok', 'database': 'sqlite', 'version': '2.1.0'}
+    from database import database_engine
+    return {'status': 'ok', 'database': database_engine(), 'version': '2.2.0'}
 
 
 @app.post('/api/login')
