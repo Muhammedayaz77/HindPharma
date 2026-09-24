@@ -180,23 +180,21 @@ CREATE TABLE IF NOT EXISTS orders(id BIGINT PRIMARY KEY AUTO_INCREMENT,admin_id 
 CREATE TABLE IF NOT EXISTS order_items(id BIGINT PRIMARY KEY AUTO_INCREMENT,order_id BIGINT NOT NULL,product_id BIGINT NOT NULL,quantity INT NOT NULL CHECK(quantity > 0),price DECIMAL(12,2),created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,FOREIGN KEY(order_id) REFERENCES orders(id) ON DELETE CASCADE,FOREIGN KEY(product_id) REFERENCES products(id) ON DELETE RESTRICT);
 CREATE TABLE IF NOT EXISTS calling_logs(id BIGINT PRIMARY KEY AUTO_INCREMENT,admin_id BIGINT NOT NULL,medical_id BIGINT NOT NULL,employee_id BIGINT NOT NULL,called_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,is_call TINYINT NOT NULL DEFAULT 1,is_pick TINYINT,is_not_pick TINYINT,created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,FOREIGN KEY(admin_id) REFERENCES admins(id) ON DELETE CASCADE,FOREIGN KEY(medical_id) REFERENCES medicals(id) ON DELETE CASCADE,FOREIGN KEY(employee_id) REFERENCES users(id) ON DELETE CASCADE,CHECK((is_pick IS NULL AND is_not_pick IS NULL) OR ((is_pick IN(0,1)) AND (is_not_pick IN(0,1)) AND (is_pick+is_not_pick=1))));
 CREATE TABLE IF NOT EXISTS audit_logs(id BIGINT PRIMARY KEY AUTO_INCREMENT,admin_id BIGINT,user_id BIGINT,actor_type VARCHAR(50) NOT NULL,action VARCHAR(255) NOT NULL,entity_type VARCHAR(100),entity_id VARCHAR(255),details TEXT,created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,FOREIGN KEY(admin_id) REFERENCES admins(id) ON DELETE SET NULL,FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE SET NULL);
-CREATE INDEX idx_superAdminTenants_slug ON superAdminTenants(slug);
-CREATE INDEX idx_superAdminApplications_status ON superAdminApplications(application_status);
-CREATE INDEX idx_superAdminPayments_status ON superAdminPayments(payment_status);
-CREATE INDEX idx_users_admin_id ON users(admin_id);
-CREATE INDEX idx_medicals_admin_id ON medicals(admin_id);
-CREATE INDEX idx_products_admin_id ON products(admin_id);
-CREATE INDEX idx_products_name ON products(name);
-CREATE INDEX idx_products_code ON products(code);
-CREATE INDEX idx_orders_admin_id ON orders(admin_id);
-CREATE INDEX idx_orders_created_by ON orders(created_by);
-CREATE INDEX idx_calling_logs_admin_id ON calling_logs(admin_id);
-CREATE INDEX idx_calling_logs_employee_id ON calling_logs(employee_id);
-CREATE INDEX idx_calling_logs_medical_id ON calling_logs(medical_id);
-CREATE INDEX idx_calling_logs_called_at ON calling_logs(called_at);
-CREATE INDEX idx_audit_admin_id ON audit_logs(admin_id);
-CREATE INDEX idx_audit_created_at ON audit_logs(created_at);
 """
+MYSQL_INDEXES = [
+("idx_superAdminTenants_slug","superAdminTenants","slug"),("idx_superAdminApplications_status","superAdminApplications","application_status"),("idx_superAdminPayments_status","superAdminPayments","payment_status"),("idx_users_admin_id","users","admin_id"),("idx_medicals_admin_id","medicals","admin_id"),("idx_products_admin_id","products","admin_id"),("idx_products_name","products","name"),("idx_products_code","products","code"),("idx_orders_admin_id","orders","admin_id"),("idx_orders_created_by","orders","created_by"),("idx_calling_logs_admin_id","calling_logs","admin_id"),("idx_calling_logs_employee_id","calling_logs","employee_id"),("idx_calling_logs_medical_id","calling_logs","medical_id"),("idx_calling_logs_called_at","calling_logs","called_at"),("idx_audit_admin_id","audit_logs","admin_id"),("idx_audit_created_at","audit_logs","created_at")
+]
+
+def _ensure_mysql_indexes(connection):
+    if DB_ENGINE != "mysql":
+        return
+    for index_name, table_name, column_name in MYSQL_INDEXES:
+        try:
+            connection.execute(f"CREATE INDEX {index_name} ON {table_name}({column_name})")
+        except Exception as exc:
+            if "Duplicate key name" not in str(exc) and "already exists" not in str(exc):
+                raise
+
 def _table_exists(connection, table_name):
     if DB_ENGINE == "mysql":
         return connection.execute(
@@ -310,6 +308,7 @@ def initialize_database():
             _migrate_existing_data_sqlite(connection)
         _seed_accounts(connection)
         _seed_hind_pharma_users(connection)
+        _ensure_mysql_indexes(connection)
 
 
 if __name__ == "__main__":
