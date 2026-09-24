@@ -184,9 +184,11 @@ def super_admin_applications(principal=Depends(_principal)):
         rows=db.execute('''
           SELECT a.id,a.tenant_id,a.admin_username,a.admin_name,a.application_status,
                  t.slug,t.business_name,t.subtitle,t.address,t.phone,t.email,t.logo,t.upi,
+                 ad.id AS admin_id,ad.is_active,ad.subscription_expiry,
                  p.amount,p.payment_status,p.transaction_id,p.paid_at
           FROM superAdminApplications a
           LEFT JOIN superAdminTenants t ON t.id=a.tenant_id
+          LEFT JOIN admins ad ON ad.tenant_id=t.id
           LEFT JOIN superAdminPayments p ON p.application_id=a.id
           ORDER BY a.id DESC
         ''').fetchall()
