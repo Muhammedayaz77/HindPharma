@@ -397,7 +397,7 @@ def record_call_click(medical_id: int, principal=Depends(_principal)):
             if seconds < CALL_COOLDOWN_SECONDS:
                 raise HTTPException(429, f'Please wait {max(1, int(CALL_COOLDOWN_SECONDS - seconds))} seconds before the next call.')
         db.execute('''INSERT INTO calling_logs(admin_id,medical_id,employee_id,called_at,is_call,is_pick,is_not_pick)
-                      VALUES(?,?,?,?,1,NULL,NULL)''', (admin_id,medical_id,employee_id,now.isoformat(timespec='seconds'),'1'))
+                      VALUES(?,?,?,?,1,NULL,NULL)''', (admin_id,medical_id,employee_id,now.isoformat(timespec='seconds')))
     return {'status':'ok','medical_id':medical_id,'is_call':True,'cooldown_seconds':CALL_COOLDOWN_SECONDS}
 
 
@@ -510,7 +510,7 @@ def create_order(order: OrderInput, principal=Depends(_principal)):
     with get_connection() as db:
         if order.medical_id is not None and not db.execute('SELECT 1 FROM medicals WHERE id=? AND admin_id=? AND is_active=1', (order.medical_id, admin_id)).fetchone():
             raise HTTPException(400, 'Medical does not belong to this business')
-        cursor = db.execute('INSERT INTO orders(admin_id,medical_id,created_by) VALUES(?,?,?)', (admin_id, order.medical_id, principal['id']))
+        creator_id = principal['id'] if principal['role'] != 'admin' else None\n        cursor = db.execute('INSERT INTO orders(admin_id,medical_id,created_by) VALUES(?,?,?)', (admin_id, order.medical_id, creator_id))
         order_id = cursor.lastrowid
         for item in order.items:
             if item.quantity < 1: raise HTTPException(400, 'Quantity must be at least 1')
