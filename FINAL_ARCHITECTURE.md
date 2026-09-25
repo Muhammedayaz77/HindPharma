@@ -53,13 +53,13 @@ A single PharmaFlow application serves multiple shops. The final public tenant U
 
 Tenant URL:
 
-`/hindhealthcare/pharmaflow/{customer-slug}`
+`/pharmaflow/{customer-slug}`
 
 Examples:
 
-- `/hindhealthcare/pharmaflow/xyz-pharma`
-- `/hindhealthcare/pharmaflow/abc-pharma`
-- `/hindhealthcare/pharmaflow/hind-pharma`
+- `/pharmaflow/xyz-pharma`
+- `/pharmaflow/abc-pharma`
+- `/pharmaflow/hind-pharma`
 
 The same PharmaFlow Home template is rendered for every tenant. The URL slug identifies the public tenant page, but it is **not** a permission mechanism. Protected API access must derive the business identity from the authenticated token/admin relationship.
 
