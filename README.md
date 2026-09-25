@@ -1,8 +1,8 @@
-# Hind Pharma
+# PharmaFlow — by Hind HealthCare
 
 ## Three Independent Clients
 
-Hind Pharma is maintained as three independent client projects. Each client owns its own backend support files, database definitions, seed/data files, helpers, assets and client code. No client imports source code from another client.
+PharmaFlow is a multi-tenant pharma wholesale management platform developed under **Hind HealthCare**, the healthcare technology vertical of **Hind Tech Group**. Hind Pharma is one customer/shop tenant using the product. Each client owns its own backend support files, database definitions, seed/data files, helpers, assets and client code. No client imports source code from another client.
 
 ```text
 HindPharma/
@@ -75,7 +75,7 @@ The India Medical Agency tenant has its own shop identity and logo. It must neve
 
 HTG Super Admin is above individual business Admins and is not a shop user.
 
-### Hind Pharma Admin
+### PharmaFlow — by Hind HealthCare Admin
 
 `Hind Pharma Shop Home → Admin Dashboard → manage Hind Pharma business`
 
@@ -108,7 +108,7 @@ Do not jump directly from Home to Final Order. Browser Back should return throug
 `Home → Daily Calling → Today's Medicals → Medical Name + Mobile → Tap Mobile → 📞 Call → isCall automatically recorded → Picked / Not Picked`
 
 
-## Database / Deployment
+## Product / Database / Deployment
 
 Hind Pharma uses one database per environment:
 
