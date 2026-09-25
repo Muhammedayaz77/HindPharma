@@ -332,9 +332,11 @@ def initialize_database():
             _migrate_legacy_users_sqlite(connection)
             _create_schema(connection)
             _migrate_existing_data_sqlite(connection)
-        _seed_accounts(connection)
-        _seed_tenants(connection)
-        _seed_hind_pharma_users(connection)
+        seed_demo_data = os.getenv("HIND_PHARMA_SEED_DEMO_DATA", "false").strip().lower() in {"1", "true", "yes", "on"}
+        if seed_demo_data:
+            _seed_accounts(connection)
+            _seed_tenants(connection)
+            _seed_hind_pharma_users(connection)
         _ensure_mysql_indexes(connection)
 
 
