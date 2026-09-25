@@ -552,7 +552,17 @@ register_tenant_routes(app)
 def pharmaflow_home(slug: str = 'hind-pharma'):
     return FileResponse(FRONTEND_INDEX)
 
-app.mount('/', StaticFiles(directory=WEB_ROOT), name='frontend')
+# Expose only browser-facing files; never expose Backend, database or project internals.
+for _public_path in ('View', 'View Model', 'Assets', 'API', 'Models', 'Helper', 'temp', 'data'):
+    app.mount(
+        f'/{_public_path}',
+        StaticFiles(directory=WEB_ROOT / _public_path),
+        name=f'frontend_{_public_path.lower().replace(" ", "_")}',
+    )
+
+@app.get('/', include_in_schema=False)
+def frontend_root():
+    return FileResponse(FRONTEND_INDEX)
 
 if __name__ == '__main__':
     import uvicorn
