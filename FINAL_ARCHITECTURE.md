@@ -47,9 +47,21 @@ The same shop Home can be opened publicly without login. Login is required for p
 
 ## Multi-tenant shops
 
-A single application serves multiple shops. Shop identity is represented by a slug:
+A single PharmaFlow application serves multiple shops. The final public tenant URL hierarchy is:
 
-`/shop/{shop-slug}`
+`Hind Tech Group → Hind HealthCare → PharmaFlow → Customer/Tenant`
+
+Tenant URL:
+
+`/hindhealthcare/pharmaflow/{customer-slug}`
+
+Examples:
+
+- `/hindhealthcare/pharmaflow/xyz-pharma`
+- `/hindhealthcare/pharmaflow/abc-pharma`
+- `/hindhealthcare/pharmaflow/hind-pharma`
+
+The same PharmaFlow Home template is rendered for every tenant. The URL slug identifies the public tenant page, but it is **not** a permission mechanism. Protected API access must derive the business identity from the authenticated token/admin relationship.
 
 No separate HTML page is generated for every shop. The Home is rendered from tenant data.
 
@@ -101,7 +113,13 @@ For local development:
 
 `Browser → FastAPI/Python → SQLite → 13 application tables`
 
-GitHub Pages remains a static frontend/prototype only; it is not the production database/backend. Live deployment branding is **PharmaFlow by Hind HealthCare**. The live deployment must run the FastAPI backend on hosting and connect it to the hosting MySQL database. A real payment gateway/webhook must be connected before treating a payment as independently verified in production.
+GitHub Pages remains a static frontend/prototype only; it is not the production database/backend. Live deployment branding is **PharmaFlow by Hind HealthCare**.
+
+### Product and URL hierarchy
+
+`Hind Tech Group → Hind HealthCare → PharmaFlow → Customer/Tenant`
+
+`PharmaFlow` is intentionally present in the URL so future Hind HealthCare products can have their own URL namespace without mixing customer routes. The live deployment must run the FastAPI backend on hosting and connect it to the hosting MySQL database. A real payment gateway/webhook must be connected before treating a payment as independently verified in production.
 
 ### Production configuration
 
