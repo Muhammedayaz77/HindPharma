@@ -1,7 +1,10 @@
 from datetime import date, datetime
 from typing import Optional
+from pathlib import Path
 
 from fastapi import Depends, FastAPI, Header, HTTPException
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
@@ -19,6 +22,8 @@ except ModuleNotFoundError:
 
 initialize_database()
 app = FastAPI(title='PharmaFlow API', version='2.3.0')
+WEB_ROOT = Path(__file__).resolve().parents[1]
+FRONTEND_INDEX = WEB_ROOT / 'View' / 'index.html'
 app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_credentials=False, allow_methods=['*'], allow_headers=['*'])
 
 ROLES = {'super_admin', 'admin', 'manager', 'employee'}
@@ -540,6 +545,16 @@ except ImportError:
     from tenant_routes import register as register_tenant_routes
 register_tenant_routes(app)
 
+# Public tenant URLs are resolved to the shared PharmaFlow Home template.
+# Static files remain available from /View, /Assets, /API, /Helper, etc.
+@app.get('/pharmaflow', include_in_schema=False)
+@app.get('/pharmaflow/{slug}', include_in_schema=False)
+def pharmaflow_home(slug: str = 'hind-pharma'):
+    return FileResponse(FRONTEND_INDEX)
+
+app.mount('/', StaticFiles(directory=WEB_ROOT), name='frontend')
+
 if __name__ == '__main__':
     import uvicorn
     uvicorn.run('main:app', host='127.0.0.1', port=8000, reload=True)
+
