@@ -69,4 +69,4 @@ def register(app):
             db.execute('UPDATE superAdminTenants SET is_active=1,updated_at=CURRENT_TIMESTAMP WHERE id=?',(tenant['id'],))
             db.execute('UPDATE superAdminApplications SET application_status=?,updated_at=CURRENT_TIMESTAMP WHERE id=?',('active',application_id))
             db.execute('INSERT INTO superAdminActivityLogs(action,tenant_id,application_id,details) VALUES(?,?,?,?)',('PAYMENT_CONFIRMED_AND_ADMIN_GENERATED',tenant['id'],application_id,f'admin_id={admin_id}'))
-        return {'status':'active','admin_id':admin_id,'username':application['admin_username'],'initial_password':f"{application['admin_username']}@123",'shop_url':f'/shop/{tenant["slug"]}'}
+        return {'status':'active','admin_id':admin_id,'username':application['admin_username'],'initial_password':f"{application['admin_username']}@123",'shop_url':f'/pharmaflow/{tenant["slug"]}'}
