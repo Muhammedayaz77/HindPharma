@@ -26,7 +26,7 @@ function render(){
    const action=a.application_status==='pending_payment'
      ? '<button class="btn" data-action="pay" data-id="'+a.id+'">PAY & GENERATE</button>'
      : '<button class="btn" data-action="toggle" data-id="'+(a.admin_id||'')+'">'+(a.is_active===false?'ACTIVATE':'DEACTIVATE')+'</button>';
-   return '<tr><td><strong>'+(a.business_name||'—')+'</strong><br><small>/shop/'+(a.slug||'—')+'</small></td><td>'+(a.admin_username||'—')+'</td><td>'+(a.subscription_expiry||'—')+'</td><td>'+(a.payment_status||'pending')+'</td><td>'+status+'</td><td class="actions">'+action+'</td></tr>';
+   return '<tr><td><strong>'+(a.business_name||'—')+'</strong><br><small>/pharmaflow/'+(a.slug||'—')+'</small></td><td>'+(a.admin_username||'—')+'</td><td>'+(a.subscription_expiry||'—')+'</td><td>'+(a.payment_status||'pending')+'</td><td>'+status+'</td><td class="actions">'+action+'</td></tr>';
  }).join('')||'<tr><td colspan="6">No HTG businesses found.</td></tr>';
 }
 async function load(){
