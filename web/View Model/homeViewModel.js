@@ -1,7 +1,7 @@
 import { TempSessionService } from '../temp/temp_file_sessionService.js';
 import { TenantService } from './tenantService.js';
-const dynamicShop=location.pathname.includes('/shop/');
-const base=dynamicShop?'/HindPharma/View/':'';
+const dynamicTenant=location.pathname.includes('/hindhealthcare/pharmaflow/')||location.pathname.includes('/shop/');
+const base=dynamicTenant?'/HindPharma/View/':'';
 const page=name=>`${base}${name}?shop=${encodeURIComponent(TenantService.currentSlug())}`;
 const productBrand='PharmaFlow';
 const platformBrand='Hind HealthCare';
