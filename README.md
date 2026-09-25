@@ -5,7 +5,7 @@
 PharmaFlow is a multi-tenant pharma wholesale management platform developed under **Hind HealthCare**, the healthcare technology vertical of **Hind Tech Group**. Hind Pharma is one customer/shop tenant using the product. Each client owns its own backend support files, database definitions, seed/data files, helpers, assets and client code. No client imports source code from another client.
 
 ```text
-HindPharma/
+PharmaFlow/
 ├── web/
 │   ├── Backend/
 │   ├── database/
@@ -33,6 +33,18 @@ The root contains project-level documentation and CI/tooling only. Runtime/backe
 
 ## FINAL TESTING LINKS
 
+### Final tenant URL structure
+
+`https://hindtechgroup.co.in/hindhealthcare/pharmaflow/{customer-slug}`
+
+Examples:
+
+- `https://hindtechgroup.co.in/hindhealthcare/pharmaflow/xyz-pharma`
+- `https://hindtechgroup.co.in/hindhealthcare/pharmaflow/abc-pharma`
+- `https://hindtechgroup.co.in/hindhealthcare/pharmaflow/hind-pharma`
+
+All customers use the same PharmaFlow application and Home template; tenant data is loaded dynamically from the customer slug and protected APIs use the authenticated business identity.
+
 Use these links in this order. **HTG Super Admin is a completely separate group-level flow from all Hind Pharma shop users.**
 
 ### 1. HTG Super Admin — group-level system login
@@ -48,7 +60,7 @@ HTG Super Admin is the parent-level control role. It manages HTG business units/
 
 ### 2. Hind Pharma — Shop Home
 
-**Shop Home:** https://muhammedayaz77.github.io/HindPharma/shop/hind-pharma
+**Shop Home:** https://muhammedayaz77.github.io/HindPharma/hindhealthcare/pharmaflow/hind-pharma
 
 - Admin username: `Ayaz`
 - Employees:
@@ -60,7 +72,7 @@ Hind Pharma is the populated testing tenant and keeps the existing medical/produ
 
 ### 3. India Medical Agency — Shop Home
 
-**Shop Home:** https://muhammedayaz77.github.io/HindPharma/shop/india-medical-agency
+**Shop Home:** https://muhammedayaz77.github.io/HindPharma/hindhealthcare/pharmaflow/india-medical-agency
 
 - Admin username: `riyaz`
 - Temporary testing data: **0 medicals, 0 products, 1 admin user**
