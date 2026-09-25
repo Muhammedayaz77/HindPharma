@@ -35,13 +35,13 @@ The root contains project-level documentation and CI/tooling only. Runtime/backe
 
 ### Final tenant URL structure
 
-`https://hindtechgroup.co.in/hindhealthcare/pharmaflow/{customer-slug}`
+`https://hindhealthcare.hindtechgroup.co.in/pharmaflow/{customer-slug}`
 
 Examples:
 
-- `https://hindtechgroup.co.in/hindhealthcare/pharmaflow/xyz-pharma`
-- `https://hindtechgroup.co.in/hindhealthcare/pharmaflow/abc-pharma`
-- `https://hindtechgroup.co.in/hindhealthcare/pharmaflow/hind-pharma`
+- `https://hindhealthcare.hindtechgroup.co.in/pharmaflow/xyz-pharma`
+- `https://hindhealthcare.hindtechgroup.co.in/pharmaflow/abc-pharma`
+- `https://hindhealthcare.hindtechgroup.co.in/pharmaflow/hind-pharma`
 
 All customers use the same PharmaFlow application and Home template; tenant data is loaded dynamically from the customer slug and protected APIs use the authenticated business identity.
 
@@ -60,7 +60,7 @@ HTG Super Admin is the parent-level control role. It manages HTG business units/
 
 ### 2. Hind Pharma — Shop Home
 
-**Shop Home:** https://muhammedayaz77.github.io/HindPharma/hindhealthcare/pharmaflow/hind-pharma
+**Shop Home:** https://hindhealthcare.hindtechgroup.co.in/pharmaflow/hind-pharma
 
 - Admin username: `Ayaz`
 - Employees:
@@ -72,7 +72,7 @@ Hind Pharma is the populated testing tenant and keeps the existing medical/produ
 
 ### 3. India Medical Agency — Shop Home
 
-**Shop Home:** https://muhammedayaz77.github.io/HindPharma/hindhealthcare/pharmaflow/india-medical-agency
+**Shop Home:** https://hindhealthcare.hindtechgroup.co.in/pharmaflow/india-medical-agency
 
 - Admin username: `riyaz`
 - Temporary testing data: **0 medicals, 0 products, 1 admin user**
