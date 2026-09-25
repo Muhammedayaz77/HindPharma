@@ -1,7 +1,7 @@
 import { TempSessionService } from '../temp/temp_file_sessionService.js';
 import { TenantService } from './tenantService.js';
-const dynamicTenant=location.pathname.includes('/hindhealthcare/pharmaflow/')||location.pathname.includes('/shop/');
-const base=dynamicTenant?'/HindPharma/View/':'';
+const dynamicTenant=location.pathname.includes('/pharmaflow/')||location.pathname.includes('/shop/');
+const base=dynamicTenant?(location.hostname.endsWith('github.io')?'/PharmaFlow/View/':'/View/'):'/View/';
 const page=name=>`${base}${name}?shop=${encodeURIComponent(TenantService.currentSlug())}`;
 const productBrand='PharmaFlow';
 const platformBrand='Hind HealthCare';
