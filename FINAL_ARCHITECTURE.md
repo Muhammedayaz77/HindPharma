@@ -1,6 +1,6 @@
-# Hind Pharma — Final Architecture
+# PharmaFlow — Final Architecture
 
-This document is the locked workflow for the project.
+This document is the locked workflow for **PharmaFlow**, the pharma wholesale management product under **Hind HealthCare** of **Hind Tech Group (HTG)**.
 
 ## HTG business hierarchy
 
@@ -11,7 +11,7 @@ This document is the locked workflow for the project.
 - Manager: all Employee work + Manager work within that business.
 - Employee: employee work only within that business.
 
-For the Hind Pharma tenant:
+For the Hind Pharma customer tenant:
 
 `HTG Super Admin → Hind Pharma Admin → Manager → Employee`
 
@@ -101,7 +101,7 @@ For local development:
 
 `Browser → FastAPI/Python → SQLite → 13 application tables`
 
-GitHub Pages remains a static frontend/prototype only; it is not the production database/backend. The live deployment must run the FastAPI backend on hosting and connect it to the hosting MySQL database. A real payment gateway/webhook must be connected before treating a payment as independently verified in production.
+GitHub Pages remains a static frontend/prototype only; it is not the production database/backend. Live deployment branding is **PharmaFlow by Hind HealthCare**. The live deployment must run the FastAPI backend on hosting and connect it to the hosting MySQL database. A real payment gateway/webhook must be connected before treating a payment as independently verified in production.
 
 ### Production configuration
 
