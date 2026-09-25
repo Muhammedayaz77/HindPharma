@@ -1,8 +1,8 @@
 # PharmaFlow — by Hind HealthCare
 
-## Three Independent Clients
+## Project Structure
 
-PharmaFlow is a multi-tenant pharma wholesale management platform developed under **Hind HealthCare**, the healthcare technology vertical of **Hind Tech Group**. Hind Pharma is one customer/shop tenant using the product. Each client owns its own backend support files, database definitions, seed/data files, helpers, assets and client code. No client imports source code from another client.
+PharmaFlow is a multi-tenant pharma wholesale management platform developed under **Hind HealthCare**, the healthcare technology vertical of **Hind Tech Group**. Hind Pharma is one customer/shop tenant using the product. The web application is one shared multi-tenant PharmaFlow application. Customers/shops are tenants in the same production database and are isolated by authenticated business relationships.
 
 ```text
 PharmaFlow/
@@ -49,12 +49,12 @@ Use these links in this order. **HTG Super Admin is a completely separate group-
 
 ### 1. HTG Super Admin — group-level system login
 
-**Login:** https://muhammedayaz77.github.io/HindPharma/View/htg-super-admin-login.html
+**Login:** https://muhammedayaz77.github.io/PharmaFlow/View/htg-super-admin-login.html
 
 After successful login it opens the HTG Super Admin Dashboard automatically.
 
 - Username: `Muhammed`
-- Dashboard: https://muhammedayaz77.github.io/HindPharma/View/htg-super-admin.html
+- Dashboard: https://muhammedayaz77.github.io/PharmaFlow/View/htg-super-admin.html
 
 HTG Super Admin is the parent-level control role. It manages HTG business units/tenant shops and their business Admin accounts. It never enters a shop Home through this flow.
 
@@ -132,4 +132,25 @@ Hind Pharma uses one database per environment:
 
 The backend selects the database from `DATABASE_URL`. See `.env.example` for the local and production configuration examples.
 
-**Important:** GitHub Pages is only the static frontend/prototype. The live application must use the FastAPI backend connected to the production MySQL database.
+**Important:** GitHub Pages is only the static frontend/prototype. The live application uses the same FastAPI backend to serve the frontend and API, connected to the production MySQL database.
+
+## cPanel Production Layout
+
+Clone the repository on the hosting account, then configure the cPanel Python application with:
+
+- Application root: `~/pharmaflow/PharmaFlow/web/Backend`
+- Startup file: `main.py`
+- Application object: `app`
+- Python dependencies: `web/Backend/requirements.txt`
+- Production database: MySQL through `DATABASE_URL`
+- Production auth secret: `HIND_PHARMA_AUTH_SECRET`
+- Demo seed data: `HIND_PHARMA_SEED_DEMO_DATA=false`
+
+FastAPI serves only the browser-facing `View`, `View Model`, `Assets`, `API`, `Models`, `Helper`, `temp`, and `data` directories. Backend/database source files are not exposed as public static files.
+
+Canonical live routes:
+
+- `/` — PharmaFlow Home
+- `/pharmaflow/{customer-slug}` — customer tenant Home
+- `/api/health` — backend health check
+- `/api/...` — application API
