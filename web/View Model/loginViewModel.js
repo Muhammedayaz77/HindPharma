@@ -2,6 +2,7 @@ import { TempAuthDataSource } from '../temp/temp_file_authDataSource.js?v=202609
 import { TempDataService } from '../temp/temp_file_dataService.js?v=20260901-3';
 import { TempSessionService } from '../temp/temp_file_sessionService.js?v=20260901-4';
 import { ErrorModel } from '../Models/errorModel.js';
+import { TenantService } from './tenantService.js';
 
 const form = document.getElementById('form');
 const error = document.getElementById('error');
@@ -12,7 +13,8 @@ function showError(loginError) {
     error.textContent = loginError?.message || 'Unable to complete login. Please try again.';
 }
 
-if (TempSessionService.isLoggedIn()) location.replace('index.html');
+const shopSlug = TenantService.currentSlug();
+if (TempSessionService.isLoggedIn()) location.replace(`/pharmaflow/${encodeURIComponent(shopSlug)}`);
 
 form.addEventListener('submit', async event => {
     event.preventDefault();
@@ -29,7 +31,7 @@ form.addEventListener('submit', async event => {
         if (!user) throw ErrorModel.invalidCredentials();
 
         TempSessionService.save(user);
-        location.replace('index.html');
+        location.replace(`/pharmaflow/${encodeURIComponent(shopSlug)}`);
     } catch (loginError) {
         showError(loginError);
     }
