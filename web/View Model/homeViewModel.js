@@ -5,8 +5,6 @@ const base=dynamicShop?'/HindPharma/View/':'';
 const page=name=>`${base}${name}?shop=${encodeURIComponent(TenantService.currentSlug())}`;
 const productBrand='PharmaFlow';
 const platformBrand='Hind HealthCare';
-const productBrand='PharmaFlow';
-const platformBrand='Hind HealthCare';
 const HomeViewModel={
 paymentVpa:'HINDPHARMA2022@SBI',paymentName:'PharmaFlow by Hind HealthCare',
 async initialize(){const tenant=await TenantService.loadCurrent(),session=TempSessionService.get();this.applyTenant(tenant);this.setupLoginState(session,tenant);this.setupRoleActions(session);this.setupPaymentQrCode(tenant);this.setupPdfDownload(tenant);if(session)TempSessionService.startExpiryWatcher(()=>location.reload())},
